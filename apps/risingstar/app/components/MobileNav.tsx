@@ -44,13 +44,13 @@ export default function MobileNav() {
       <nav className={`mobile-nav-drawer ${isOpen ? "open" : ""}`}>
         <div className="mobile-nav-header">
           <span className="fw-bold brand-text fs-5">Menu</span>
-          <button
+          {/* <button
             className="mobile-nav-close"
             onClick={() => setIsOpen(false)}
             aria-label="Close menu"
           >
             ✕
-          </button>
+          </button> */}
         </div>
         <div className="mobile-nav-links">
           <a href="#about" className="mobile-nav-link" onClick={handleLinkClick}>
