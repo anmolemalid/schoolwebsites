@@ -181,7 +181,7 @@ export default function HomePage() {
           <div className="row align-items-center g-5">
             <div className="col-lg-6 text-center text-lg-start">
               <div className="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 mb-3">
-                <span className="badge-pill-kids">⭐️ Admissions Open 2025-26</span>
+                <span className="badge-pill-kids">⭐️ Admissions Open 2026-27</span>
                 <span className="badge-pill-kids bg-primary-subtle text-primary">Govt. Recognized</span>
               </div>
               <h1 className="display-4 fw-bold mb-3" style={{ lineHeight: "1.15" }}>
@@ -224,7 +224,7 @@ export default function HomePage() {
               Providing modern infrastructure, safe transport, and interactive education to ensure holistic growth for children in Ghaziabad.
             </p>
           </div>
-          
+
           <div className="row g-4">
             <div className="col-md-4">
               <div className="card-kids h-100 text-center">
@@ -274,11 +274,10 @@ export default function HomePage() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`curriculum-tab-btn ${
-                  activeTab === tab.id
-                    ? `active-${tab.color} shadow-sm border`
-                    : "border-transparent text-muted"
-                }`}
+                className={`curriculum-tab-btn ${activeTab === tab.id
+                  ? `active-${tab.color} shadow-sm border`
+                  : "border-transparent text-muted"
+                  }`}
               >
                 {tab.title}
               </button>
@@ -289,16 +288,14 @@ export default function HomePage() {
           <div
             className="row align-items-center g-5 p-4 rounded-4 shadow-sm border"
             style={{
-              background: `radial-gradient(circle at 10% 10%, rgba(${
-                selectedCurriculum.color === "yellow" ? "255, 169, 77" :
+              background: `radial-gradient(circle at 10% 10%, rgba(${selectedCurriculum.color === "yellow" ? "255, 169, 77" :
                 selectedCurriculum.color === "blue" ? "77, 171, 247" :
-                selectedCurriculum.color === "green" ? "81, 207, 98" : "177, 151, 252"
-              }, 0.05) 0%, white 100%)`,
-              borderLeft: `8px solid var(--${
-                selectedCurriculum.color === "yellow" ? "yellow-sunny" :
+                  selectedCurriculum.color === "green" ? "81, 207, 98" : "177, 151, 252"
+                }, 0.05) 0%, white 100%)`,
+              borderLeft: `8px solid var(--${selectedCurriculum.color === "yellow" ? "yellow-sunny" :
                 selectedCurriculum.color === "blue" ? "blue-sky" :
-                selectedCurriculum.color === "green" ? "green-grass" : "purple-magic"
-              })`
+                  selectedCurriculum.color === "green" ? "green-grass" : "purple-magic"
+                })`
             }}
           >
             <div className="col-lg-6">
@@ -307,7 +304,7 @@ export default function HomePage() {
               </span>
               <h3 className="fw-bold mb-3 display-6">{selectedCurriculum.title}</h3>
               <p className="text-muted fs-5 mb-4">{selectedCurriculum.desc}</p>
-              
+
               <div className="row g-3 mb-4">
                 <div className="col-6">
                   <div className="p-3 rounded-3 bg-light-subtle border">
@@ -443,9 +440,8 @@ export default function HomePage() {
               <div key={idx} className="timeline-kids-item">
                 <div className="timeline-kids-badge">{item.icon}</div>
                 <div
-                  className={`timeline-kids-card ${
-                    item.side === "left" ? "timeline-left" : "timeline-right"
-                  }`}
+                  className={`timeline-kids-card ${item.side === "left" ? "timeline-left" : "timeline-right"
+                    }`}
                 >
                   <span
                     className="badge mb-2 rounded-pill px-3 py-1"
@@ -579,7 +575,7 @@ export default function HomePage() {
             <div className="col-lg-6">
               <span className="badge-pill-kids mb-2">Have Questions?</span>
               <h3 className="display-6 fw-bold mb-4">Admissions & Transport FAQs</h3>
-              
+
               <div className="faq-container">
                 {faqData.map((faq, idx) => {
                   const isOpen = openFaq === idx;
@@ -614,13 +610,13 @@ export default function HomePage() {
                   📍 <strong>Address:</strong> C-47, Sector-9, New Vijay Nagar, Ghaziabad, U.P. 201009
                 </p>
                 <div className="rounded-4 overflow-hidden border shadow-sm" style={{ height: "350px", position: "relative" }}>
-                  <iframe 
-                    src="https://maps.google.com/maps?q=28.643333,77.427889&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen={true} 
-                    loading="lazy" 
+                  <iframe
+                    src="https://maps.google.com/maps?q=28.643333,77.427889&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
