@@ -5,9 +5,96 @@ import type { Metadata } from "next";
 import MobileNav from "./components/MobileNav";
 
 export const metadata: Metadata = {
-  title: "Rising Kids School | Play Group to 5th | Vijay Nagar, Ghaziabad",
+  title: "Rising Kids School | Play Group to 5th Class | Vijay Nagar, Ghaziabad",
   description:
-    "Rising Kids School in Vijay Nagar, Ghaziabad offers nurturing preschool education (Play Group, Nursery, LKG, UKG) and primary classes (Grades 1-5) aligned with CBSE guidelines.",
+    "Rising Kids School is a Govt. recognized English Medium Co-Educational school in Vijay Nagar, Ghaziabad offering Play Group, Nursery, LKG, UKG & primary classes (1st-5th) aligned with CBSE guidelines. AC classrooms, CCTV, GPS transport.",
+  keywords: [
+    "Rising Kids School",
+    "best school in Vijay Nagar Ghaziabad",
+    "preschool Ghaziabad",
+    "play group school near me",
+    "nursery school Vijay Nagar",
+    "LKG UKG admission Ghaziabad",
+    "CBSE school Ghaziabad",
+    "primary school Vijay Nagar",
+    "English medium school Ghaziabad",
+    "best play school Ghaziabad",
+    "school admission 2025-26",
+    "kids school near Vijay Nagar",
+    "co-educational school Ghaziabad",
+    "top school in Ghaziabad",
+    "affordable school Ghaziabad",
+    "AC classroom school Ghaziabad",
+    "CCTV school Ghaziabad",
+    "GPS transport school Ghaziabad",
+    "smart class school Vijay Nagar",
+    "montessori school Ghaziabad",
+    "kindergarten Ghaziabad",
+    "pre primary school Ghaziabad",
+    "best nursery school near me",
+    "school admission open 2025",
+    "new session admission Ghaziabad",
+    "play school Pratap Vihar",
+    "school near Siddharth Vihar",
+    "school Sector 9 Vijay Nagar",
+    "best school for kids Ghaziabad",
+    "child care school Ghaziabad",
+    "safe school for children Ghaziabad",
+    "activity based learning school",
+    "holistic education school Ghaziabad",
+    "sports school Ghaziabad",
+    "creative arts school for kids",
+    "school with transport facility Ghaziabad",
+    "rising star school Ghaziabad",
+    "rising kids Vijay Nagar",
+  ],
+  authors: [{ name: "Rising Kids School" }],
+  creator: "Rising Kids School",
+  publisher: "Rising Kids School",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Rising Kids School",
+    title: "Rising Kids School | Play Group to 5th Class | Vijay Nagar, Ghaziabad",
+    description:
+      "Govt. recognized English Medium school in Vijay Nagar, Ghaziabad. Play Group to 5th Class with AC classrooms, CCTV surveillance, smart classes & GPS-enabled transport.",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Rising Kids School Campus - Vijay Nagar, Ghaziabad",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rising Kids School | Vijay Nagar, Ghaziabad",
+    description:
+      "Best preschool & primary school in Vijay Nagar, Ghaziabad. Admissions open for Play Group to 5th Class. CBSE aligned curriculum.",
+    images: ["/images/logo.png"],
+  },
+  alternates: {
+    canonical: "https://risingkidsschool.com",
+  },
+  category: "Education",
+  other: {
+    "geo.region": "IN-UP",
+    "geo.placename": "Ghaziabad",
+    "geo.position": "28.643333;77.427889",
+    "ICBM": "28.643333, 77.427889",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -15,11 +102,45 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" data-bs-theme="light">
       <head>
         <link rel="icon" href="/images/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&family=Caveat:wght@700&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "School",
+              name: "Rising Kids School",
+              description:
+                "Govt. recognized English Medium Co-Educational school offering Play Group, Nursery, LKG, UKG and primary classes (1st to 5th) in Vijay Nagar, Ghaziabad.",
+              url: "https://risingkidsschool.com",
+              logo: "https://risingkidsschool.com/images/logo.png",
+              image: "https://risingkidsschool.com/images/logo.png",
+              telephone: ["+918826239341", "+918826239346"],
+              email: "info@risingkids.org",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "C-47, Sector-9, New Vijay Nagar",
+                addressLocality: "Ghaziabad",
+                addressRegion: "Uttar Pradesh",
+                postalCode: "201009",
+                addressCountry: "IN",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 28.643333,
+                longitude: 77.427889,
+              },
+              openingHours: "Mo-Sa 08:00-14:00",
+              priceRange: "$$",
+              sameAs: [],
+            }),
+          }}
         />
       </head>
       <body>
