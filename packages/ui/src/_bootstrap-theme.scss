@@ -1,0 +1,53 @@
+// Bootstrap 5.3 — SchoolWebsites light theme
+[data-bs-theme="light"] {
+  color-scheme: light;
+  --bs-body-color: var(--sw-text);
+  --bs-body-color-rgb: 28, 25, 23;
+  --bs-body-bg: var(--sw-bg);
+  --bs-body-bg-rgb: 250, 250, 249;
+  --bs-emphasis-color: var(--sw-text-strong);
+  --bs-secondary-color: var(--sw-text-muted);
+  --bs-secondary-bg: var(--sw-bg-elevated);
+  --bs-tertiary-color: var(--sw-text-muted);
+  --bs-tertiary-bg: var(--sw-bg-card);
+  --bs-primary: var(--sw-accent);
+  --bs-primary-rgb: 15, 23, 42;
+  --bs-link-color: var(--sw-accent);
+  --bs-link-hover-color: var(--sw-accent-hover);
+  --bs-link-color-rgb: 15, 23, 42;
+  --bs-link-hover-color-rgb: 51, 65, 85;
+  --bs-border-color: var(--sw-border);
+  --bs-border-color-translucent: rgba(28, 25, 23, 0.08);
+  --bs-heading-color: var(--sw-text-strong);
+  --bs-body-font-family: var(--sw-font-body);
+  --bs-focus-ring-color: var(--sw-focus-ring);
+  --bs-form-valid-color: var(--sw-accent);
+  --bs-form-valid-border-color: var(--sw-accent);
+}
+
+// Bootstrap 5.3 — SchoolWebsites dark theme
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+  --bs-body-color: var(--sw-text);
+  --bs-body-color-rgb: 230, 237, 243;
+  --bs-body-bg: var(--sw-bg);
+  --bs-body-bg-rgb: 10, 14, 20;
+  --bs-emphasis-color: var(--sw-text);
+  --bs-secondary-color: var(--sw-text-muted);
+  --bs-secondary-bg: var(--sw-bg-elevated);
+  --bs-tertiary-color: var(--sw-text-muted);
+  --bs-tertiary-bg: var(--sw-bg-card);
+  --bs-primary: var(--sw-accent);
+  --bs-primary-rgb: 56, 189, 248;
+  --bs-link-color: var(--sw-accent);
+  --bs-link-hover-color: var(--sw-accent-hover);
+  --bs-link-color-rgb: 56, 189, 248;
+  --bs-link-hover-color-rgb: 125, 211, 252;
+  --bs-border-color: var(--sw-border);
+  --bs-border-color-translucent: rgba(255, 255, 255, 0.06);
+  --bs-heading-color: inherit;
+  --bs-body-font-family: var(--sw-font-body);
+  --bs-focus-ring-color: var(--sw-focus-ring);
+  --bs-form-valid-color: var(--sw-accent);
+  --bs-form-valid-border-color: var(--sw-accent);
+}

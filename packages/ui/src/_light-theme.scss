@@ -1,0 +1,63 @@
+// Light-theme-only: depth, shadows, typography polish
+[data-bs-theme="light"] {
+  body {
+    background: #fafaf9;
+    color: var(--sw-text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  // Headings: slightly stronger contrast in light
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--sw-text-strong);
+  }
+
+  // Cards
+  [class*="-card"],
+  .card {
+    box-shadow: var(--sw-card-shadow);
+    transition: box-shadow 0.25s ease, transform 0.2s ease, border-color 0.2s ease;
+    &:hover {
+      box-shadow: var(--sw-card-shadow-hover);
+    }
+  }
+
+  .btn-primary {
+    box-shadow: var(--sw-shadow-sm);
+    &:hover {
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.22);
+    }
+  }
+
+  .btn-outline-secondary,
+  .btn-ghost {
+    border: 1px solid var(--sw-outline-btn-border);
+    color: var(--sw-text-muted);
+    &:hover {
+      background: var(--sw-accent-dim);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+  }
+
+  .form-control,
+  .form-select {
+    border-color: var(--sw-border);
+    background: var(--sw-bg-card);
+    color: var(--sw-text);
+    &::placeholder {
+      color: var(--sw-text-muted);
+    }
+    &:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--sw-focus-ring);
+    }
+  }
+
+  .form-label {
+    color: var(--sw-text-muted);
+  }
+
+  .section-label {
+    color: var(--accent);
+  }
+}

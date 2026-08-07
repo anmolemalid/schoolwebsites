@@ -1,0 +1,26 @@
+{
+  "name": "risingstar",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3008",
+    "build": "cd ../../packages/ui && npm run build && cd ../../apps/risingstar && next build",
+    "start": "next start -p 3006",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@schoolwebsites/ui": "file:../../packages/ui",
+    "bootstrap": "^5.3.8",
+    "next": "14.2.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.18",
+    "typescript": "^5"
+  }
+}

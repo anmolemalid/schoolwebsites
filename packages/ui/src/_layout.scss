@@ -1,0 +1,30 @@
+// Layout — global gutter and container for consistent horizontal padding across apps
+// Mobile: 16px gutter from top to bottom (header, main, footer)
+@media (max-width: 767px) {
+  :root {
+    --sw-gutter: 16px;
+  }
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--sw-gutter);
+  padding-right: var(--sw-gutter);
+}
+
+// Optional: use for header/footer inner wrapper so content aligns with .container
+.header-inner {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--sw-gutter);
+  padding-right: var(--sw-gutter);
+}
+
+.container-narrow {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}

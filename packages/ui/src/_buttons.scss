@@ -1,0 +1,38 @@
+// Shared button extensions on top of Bootstrap .btn
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+
+  &:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--bg);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-outline-secondary,
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+
+  &:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: transparent;
+  }
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}

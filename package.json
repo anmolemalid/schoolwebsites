@@ -1,0 +1,24 @@
+{
+  "name": "schoolwebsites-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "npm@10.9.0",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:risingstar": "turbo run dev --filter=risingstar",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "turbo-ignore": "^2.8.10"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

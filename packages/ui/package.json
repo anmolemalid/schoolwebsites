@@ -1,0 +1,27 @@
+{
+  "name": "@schoolwebsites/ui",
+  "version": "1.0.0",
+  "description": "SchoolWebsites common CSS framework on top of Bootstrap",
+  "private": true,
+  "main": "dist/schoolwebsites-ui.css",
+  "style": "dist/schoolwebsites-ui.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "npm run build:css && npm run build:css:min",
+    "build:css": "sass src/index.scss dist/schoolwebsites-ui.css --no-source-map",
+    "build:css:min": "sass src/index.scss dist/schoolwebsites-ui.min.css --no-source-map --style=compressed",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "bootstrap": "^5.0.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.8",
+    "sass": "1.97.3"
+  },
+  "license": "UNLICENSED"
+}

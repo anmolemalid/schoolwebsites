@@ -1,0 +1,114 @@
+// Theme-agnostic tokens (same for light and dark)
+:root {
+  --sw-font-head: "Plus Jakarta Sans", sans-serif;
+  --sw-font-body: "DM Sans", system-ui, sans-serif;
+  --sw-font-head-line: 1.25;
+  --sw-space-xs: 0.25rem;
+  --sw-space-sm: 0.5rem;
+  --sw-space-md: 1rem;
+  --sw-space-lg: 1.5rem;
+  --sw-space-xl: 2rem;
+  --sw-space-2xl: 3rem;
+  --sw-space-3xl: 4rem;
+  --sw-space-4xl: 6rem;
+  --sw-radius: 8px;
+  --sw-radius-lg: 12px;
+  --sw-header-h: 71px;
+  --sw-container-max: 1440px;
+  /** Horizontal page gutter (header, container, footer). Use for consistent left/right padding. Mobile: 16px via layout. */
+  --sw-gutter: var(--sw-space-xl);
+  --gutter: var(--sw-gutter);
+  --font-head: var(--sw-font-head);
+  --font-body: var(--sw-font-body);
+  --font-head-line: var(--sw-font-head-line);
+  --space-xs: var(--sw-space-xs);
+  --space-sm: var(--sw-space-sm);
+  --space-md: var(--sw-space-md);
+  --space-lg: var(--sw-space-lg);
+  --space-xl: var(--sw-space-xl);
+  --space-2xl: var(--sw-space-2xl);
+  --space-3xl: var(--sw-space-3xl);
+  --space-4xl: var(--sw-space-4xl);
+  --radius: var(--sw-radius);
+  --radius-lg: var(--sw-radius-lg);
+  --header-h: var(--sw-header-h);
+  --container-max: var(--sw-container-max);
+  --container: min(var(--sw-container-max), 100% - 2rem);
+}
+
+// Light theme — clear section boundaries: odd = white, even = #F5F9FF
+[data-bs-theme="light"] {
+  --sw-bg: #fafbff;
+  --sw-bg-section: #ffffff;
+  --sw-bg-section-alt: #F5F9FF;
+  --sw-bg-subtle: #f8faff;
+  --sw-bg-elevated: #ffffff;
+  --sw-bg-card: #ffffff;
+  --sw-text: #1c1917;
+  --sw-text-strong: #0c0a09;
+  --sw-text-muted: #44403c;
+  --sw-text-footer: #44403c;
+  --sw-nav-link: #44403c;
+  --sw-accent: #0f172a;
+  --sw-accent-dim: rgba(15, 23, 42, 0.08);
+  --sw-accent-hover: #334155;
+  --sw-border: #e5eaf2;
+  --sw-border-subtle: #eef2f8;
+  --sw-outline-btn-border: #94a3b8;
+  --sw-header-bg: #ffffff;
+  --sw-header-bg-scrolled: #ffffff;
+  --sw-header-border: #e5eaf2;
+  --sw-header-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --sw-card-shadow: 0 1px 2px rgba(28, 25, 23, 0.04), 0 4px 12px rgba(28, 25, 23, 0.04);
+  --sw-card-shadow-hover: 0 4px 12px rgba(28, 25, 23, 0.06), 0 12px 24px rgba(28, 25, 23, 0.06);
+  --sw-focus-ring: rgba(15, 23, 42, 0.2);
+  --sw-shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.05);
+  --sw-shadow-md: 0 4px 12px rgba(28, 25, 23, 0.06);
+  --sw-image-shadow: 0 12px 40px rgba(28, 25, 23, 0.1), 0 0 0 1px var(--sw-border);
+  --sw-hover-shadow: 0 6px 20px rgba(28, 25, 23, 0.08);
+  --bg: var(--sw-bg);
+  --bg-elevated: var(--sw-bg-elevated);
+  --bg-card: var(--sw-bg-card);
+  --text: var(--sw-text);
+  --text-muted: var(--sw-text-muted);
+  --accent: var(--sw-accent);
+  --accent-dim: var(--sw-accent-dim);
+  --accent-hover: var(--sw-accent-hover);
+  --border: var(--sw-border);
+}
+
+// Dark theme
+[data-bs-theme="dark"] {
+  --sw-bg: #0a0e14;
+  --sw-bg-subtle: #0f1419;
+  --sw-bg-elevated: #0f1419;
+  --sw-bg-card: #151b23;
+  --sw-text: #e6edf3;
+  --sw-text-strong: #f0f6fc;
+  --sw-text-muted: #8b9cad;
+  --sw-accent: #38bdf8;
+  --sw-accent-dim: rgba(56, 189, 248, 0.15);
+  --sw-accent-hover: #7dd3fc;
+  --sw-border: #1e2730;
+  --sw-border-subtle: #1e2730;
+  --sw-header-bg: rgba(10, 14, 20, 0.12);
+  --sw-header-bg-scrolled: rgba(10, 14, 20, 0.92);
+  --sw-header-border: rgba(255, 255, 255, 0.06);
+  --sw-header-shadow: none;
+  --sw-card-shadow: none;
+  --sw-card-shadow-hover: none;
+  --sw-focus-ring: rgba(56, 189, 248, 0.25);
+  --sw-shadow-sm: none;
+  --sw-shadow-md: none;
+  --sw-image-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  --sw-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  --bg: var(--sw-bg);
+  --bg-elevated: var(--sw-bg-elevated);
+  --bg-card: var(--sw-bg-card);
+  --text: var(--sw-text);
+  --text-muted: var(--sw-text-muted);
+  --accent: var(--sw-accent);
+  --accent-dim: var(--sw-accent-dim);
+  --accent-hover: var(--sw-accent-hover);
+  --border: var(--sw-border);
+}
