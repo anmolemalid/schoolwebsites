@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import HeroBannerSlider from "./components/HeroBannerSlider";
 
 const curriculumData = [
   {
@@ -48,45 +49,73 @@ const curriculumData = [
 const galleryData = [
   {
     id: 1,
-    title: "Rising Kids School Campus",
-    desc: "Our beautiful campus at C 47, Sector 9, New Vijay Nagar, Ghaziabad.",
+    title: "Preschool & Kindergarten Classroom",
+    desc: "Nurturing learning environment with bilingual educational wall charts and colorful desks.",
     category: "classroom",
-    image: "/images/hero_school.png"
+    image: "/images/gallery/1.png"
   },
   {
     id: 2,
-    title: "Vibrant Classroom",
-    desc: "Bright, colorful desks and hindi/english educational wall charts where kids learn joyfully.",
-    category: "classroom",
-    image: "/images/classroom.png"
+    title: "Music, Rhythm & Activity Hall",
+    desc: "Children playing tambourines and percussion instruments with joyful singing.",
+    category: "activities",
+    image: "/images/gallery/2.png"
   },
   {
     id: 3,
-    title: "Sensory Indoor Play Area",
-    desc: "Activity room with soft colorful mats, wooden puzzle blocks, and learning kits.",
+    title: "Montessori Nursery Activity Tables",
+    desc: "Low wooden activity tables with shape sorters, puzzles, and sensory kits.",
     category: "indoor",
-    image: "/images/indoor_games.png"
+    image: "/images/gallery/3.png"
   },
   {
     id: 4,
-    title: "Interactive Dice Play Zone",
-    desc: "Alphabet soft mats, large plush dice block toys, and small indoor slides for sensory learning.",
-    category: "indoor",
-    image: "/images/indoor_dice_mat.png"
+    title: "Outdoor Swings & Play Lawn",
+    desc: "Lush green grass lawn, safe swings, slides, and morning physical sports.",
+    category: "outdoor",
+    image: "/images/gallery/4.avif"
   },
   {
     id: 5,
-    title: "Nursery Activities Area",
-    desc: "Low wooden tables with shapes sorters, puzzles, and sensory toys where toddlers explore.",
+    title: "Early Phonics & Guided Reading",
+    desc: "Teacher guided reading sessions building English & Hindi vocabulary.",
     category: "classroom",
-    image: "/images/nursery_activities.png"
+    image: "/images/gallery/5.jpg"
   },
   {
     id: 6,
-    title: "Outdoor Play Lawn",
-    desc: "Lush green grass lawns, slides, swings, and active climbing frames for kids.",
+    title: "Smart IT & Computer Lab",
+    desc: "Individual computer stations with educational headsets and STEM modules.",
+    category: "classroom",
+    image: "/images/gallery/6.jpg"
+  },
+  {
+    id: 7,
+    title: "Joyful & Confident Learners",
+    desc: "Encouraging curiosity, moral values, and public speaking confidence.",
+    category: "classroom",
+    image: "/images/gallery/7.jpg"
+  },
+  {
+    id: 8,
+    title: "Sensory Toys & Block Building",
+    desc: "Building fine motor skills and spatial logic using safe block toys.",
+    category: "indoor",
+    image: "/images/gallery/8.avif"
+  },
+  {
+    id: 9,
+    title: "Outdoor Climbing & Sports Lawn",
+    desc: "Active playground equipment ensuring physical coordination and teamwork.",
     category: "outdoor",
-    image: "/images/outdoor_games.png"
+    image: "/images/gallery/9.avif"
+  },
+  {
+    id: 10,
+    title: "Creative Arts, Painting & Origami",
+    desc: "Watercolor painting, origami crafts, and creative drawing workshops.",
+    category: "activities",
+    image: "/images/gallery/10.jpg"
   }
 ];
 
@@ -203,7 +232,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="col-lg-6">
-              <div className="image-carousel"></div>
+              <HeroBannerSlider />
             </div>
           </div>
         </div>
@@ -347,7 +376,7 @@ export default function HomePage() {
             <span className="badge-pill-kids mb-2">School Infrastructure</span>
             <h2 className="display-5 fw-bold mb-3">Explore Play & Learn Spaces</h2>
             <p className="text-muted col-md-7 mx-auto">
-              Step inside our bright, air-conditioned rooms and green grassy play areas in Vijay Nagar. Click to view a close-up.
+              Step inside our bright, air-conditioned rooms, computer lab, library, art studio, and green grassy play areas in Vijay Nagar. Click to view a close-up.
             </p>
           </div>
 
@@ -357,19 +386,25 @@ export default function HomePage() {
               onClick={() => setGalleryFilter("all")}
               className={`gallery-filter-btn ${galleryFilter === "all" ? "active" : ""}`}
             >
-              All Spaces
+              All Spaces ({galleryData.length})
             </button>
             <button
               onClick={() => setGalleryFilter("classroom")}
               className={`gallery-filter-btn ${galleryFilter === "classroom" ? "active" : ""}`}
             >
-              Classrooms 🏫
+              Classrooms & IT Lab 🏫
+            </button>
+            <button
+              onClick={() => setGalleryFilter("activities")}
+              className={`gallery-filter-btn ${galleryFilter === "activities" ? "active" : ""}`}
+            >
+              Arts & Music Activities 🎨
             </button>
             <button
               onClick={() => setGalleryFilter("indoor")}
               className={`gallery-filter-btn ${galleryFilter === "indoor" ? "active" : ""}`}
             >
-              Indoor Games Play Zone 🧸
+              Indoor Sensory Zone 🧸
             </button>
             <button
               onClick={() => setGalleryFilter("outdoor")}
