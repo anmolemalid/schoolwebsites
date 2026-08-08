@@ -49,7 +49,7 @@ export default function MobileNav() {
     <>
       {/* Hamburger Button */}
       <button
-        className={`hamburger-btn d-lg-none ${isOpen ? "active" : ""}`}
+        className={`hamburger-btn d-lg-none ${isOpen ? "d-none" : ""}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label={t.header.menuToggle}
         aria-expanded={isOpen}
@@ -76,6 +76,11 @@ export default function MobileNav() {
               <small className="brand-tagline-mockup">{t.school.tagline.toUpperCase()}</small>
             </div>
           </div>
+          <button
+            className="btn-close"
+            onClick={() => setIsOpen(false)}
+            aria-label={t.header.closeMenu}
+          />
         </div>
 
         {/* Drawer Links */}
