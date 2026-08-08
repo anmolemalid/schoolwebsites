@@ -149,7 +149,15 @@
       "session": "2026-27",
       "tagline": "Safe | Caring | Creative | Future Ready",
       "button": "ENQUIRE NOW"
-    }
+    },
+    "checklist": [
+      "Safe & Caring Environment",
+      "Smart Learning Classrooms",
+      "Activity Based Learning",
+      "Overall Personality Development"
+    ],
+    "admissionsBadge": "ADMISSIONS",
+    "openBadge": "OPEN"
   },
   "home": {
     "whyChooseUs": {
@@ -356,16 +364,51 @@
           "description": "Phonics-based English language development and practical math reasoning that build rock-solid foundational skills."
         }
       ]
-    }
+    },
+    "kicker": "Where Young Minds Flourish",
+    "franchiseBadge": "⭐ A Proud Hello Kids Franchise",
+    "locationBadge": "📍 New Vijay Nagar, Ghaziabad",
+    "vision": {
+      "title": "👁️ Vision",
+      "description": "To build confident, curious, and responsible young learners prepared for secondary education."
+    },
+    "mission": {
+      "title": "🚀 Mission",
+      "description": "To provide engaging, high-quality, and meaningful education in a safe and supportive environment."
+    },
+    "values": {
+      "title": "💛 Core Values",
+      "description": "Respect, responsibility, kindness, empathy, and academic excellence."
+    },
+    "community": {
+      "title": "🤝 Community",
+      "description": "A school community where children, teachers, and parents grow together seamlessly."
+    },
+    "holisticCards": [
+      {
+        "title": "Self-Confidence",
+        "description": "Encouraging children to speak up, ask questions, participate in stage events, and explore new learning horizons fearlessly."
+      },
+      {
+        "title": "Social & Emotional Skills",
+        "description": "Helping children learn sharing, teamwork, mutual respect, and emotional expression in group activities."
+      },
+      {
+        "title": "Life Skills & Habits",
+        "description": "Building independence, table etiquettes, personal hygiene, responsibility, and practical everyday skills."
+      }
+    ]
   },
   "curriculum": {
     "banner": {
-      "title": "Academic Curriculum & Programs",
-      "subtitle": "Playway to Class V: A balanced learning journey fostering curiosity, foundational skills, and holistic development."
+      "kicker": "A Child-Friendly Early Learning Approach",
+      "title": "Hello Kids Curriculum",
+      "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized",
+      "breadcrumbActive": "Hello Kids Curriculum"
     },
     "heroBox": {
       "title": "Interactive Learning",
-      "description": "Building curious, confident & joyful learners every day.",
+      "subtitle": "Building curious, confident & joyful learners every day.",
       "button": "Talk to Us"
     },
     "learningAreas": {
@@ -424,12 +467,116 @@
           "focus": "Structured English, Mathematics, EVS/Science, Hindi, Computer Literacy, and Co-curricular clubs."
         }
       ]
+    },
+    "wholeChild": {
+      "tag": "LEARNING AREAS",
+      "heading": "Whole-Child Development",
+      "subheading": "The curriculum page explains the franchise curriculum using official Hello Kids material and the school's actual implementation across key learning areas.",
+      "learningAreas": [
+        {
+          "icon": "🧠",
+          "title": "Cognitive Development",
+          "desc": "Building thinking, observation, problem-solving, and early concepts through hands-on activities.",
+          "badgeColor": "bg-warning-subtle text-dark border-warning",
+          "accentBorder": "#ffd200"
+        },
+        {
+          "icon": "🗣️",
+          "title": "Language & Literacy",
+          "desc": "Developing communication, vocabulary, listening, phonics, and early literacy.",
+          "badgeColor": "bg-primary-subtle text-primary border-primary",
+          "accentBorder": "#004a90"
+        },
+        {
+          "icon": "💛",
+          "title": "Social & Emotional",
+          "desc": "Confidence, sharing, empathy, self-expression, and positive relationship building.",
+          "badgeColor": "bg-danger-subtle text-danger border-danger",
+          "accentBorder": "#ef4444"
+        },
+        {
+          "icon": "🏃",
+          "title": "Physical Development",
+          "desc": "Movement, coordination, motor skills, outdoor play, and active exercises.",
+          "badgeColor": "bg-success-subtle text-success border-success",
+          "accentBorder": "#22c55e"
+        },
+        {
+          "icon": "🎨",
+          "title": "Creative Development",
+          "desc": "Art, music, imagination, craftwork, and hands-on creative self-expression.",
+          "badgeColor": "bg-info-subtle text-info border-info",
+          "accentBorder": "#06b6d4"
+        },
+        {
+          "icon": "🌱",
+          "title": "Life Skills & Values",
+          "desc": "Independence, responsibility, good habits, hygiene, and positive moral values.",
+          "badgeColor": "bg-secondary-subtle text-secondary border-secondary",
+          "accentBorder": "#8b5cf6"
+        }
+      ]
+    },
+    "classStructure": {
+      "tag": "CLASS STRUCTURE",
+      "heading": "Age-Wise Learning Levels",
+      "subheading": "From Play Group to Class V, every level is structured to guide your child step-by-step into formal CBSE education.",
+      "keyFocusLabel": "Key Focus Areas:",
+      "programs": [
+        {
+          "level": "Play Group & Nursery",
+          "age": "2 - 3 Years",
+          "desc": "Sensory exploration, motor skills discovery, wooden puzzle blocks, and gentle English-Hindi speech expression in a warm home-like room.",
+          "focus": [
+            "Sensory Development",
+            "Language Expression",
+            "Motor Skills & Play"
+          ]
+        },
+        {
+          "level": "LKG & UKG (Kindergarten)",
+          "age": "4 - 5 Years",
+          "desc": "Pre-primary readiness focusing on English phonics, early writing readiness, basic math counting, and CBSE formal class preparation.",
+          "focus": [
+            "Phonics & Writing Readiness",
+            "Basic Counting & Shapes",
+            "Group Discipline"
+          ]
+        },
+        {
+          "level": "Junior Primary (Classes 1 - 2)",
+          "age": "6 - 7 Years",
+          "desc": "Transition to structured academic periods. Independent reading, basic spellings, environmental science (EVS), elementary math, and basic computer exposure.",
+          "focus": [
+            "Bilingual Reading Confidently",
+            "Environmental Science (EVS)",
+            "Computer Basics"
+          ]
+        },
+        {
+          "level": "Senior Primary (Classes 3 - 5)",
+          "age": "8 - 10 Years",
+          "desc": "Nurturing logic, critical thinking, science experiments, social studies, IT keyboard skills, coding logic, and local sports events.",
+          "focus": [
+            "Logic & Critical Thinking",
+            "Science & Computer IT Lab",
+            "Sports & Public Speaking"
+          ]
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Want to know more?",
+      "subtitle": "Speak to the school team about the programme and age-wise learning plan.",
+      "talkButton": "Talk to Us",
+      "admissionsButton": "Admissions"
     }
   },
   "admissions": {
     "banner": {
-      "title": "Admissions 2026-27",
-      "subtitle": "Join the Rising Kids family. A seamless, transparent, and parent-friendly admission process for Play Group to Class V."
+      "kicker": "Start Your Child's Journey Today",
+      "title": "Admissions Open 2026-27",
+      "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
     },
     "heroBox": {
       "title": "Direct Helpdesk",
@@ -466,12 +613,69 @@
       "submitButton": "Submit Enquiry",
       "submitting": "Submitting...",
       "successMessage": "Thank you! Our admissions coordinator will contact you shortly on your provided phone number."
+    },
+    "helpdesk": {
+      "title": "Direct Helpdesk",
+      "subtitle": "Instant guidance for registration & eligibility.",
+      "button": "Call Now"
+    },
+    "joyfulStart": {
+      "title": "Give your child a joyful start",
+      "subtitle": "Contact the school to understand eligibility, availability, fees and the admission process.",
+      "callButton": "Call Now",
+      "whatsappButton": "WhatsApp"
+    },
+    "process": {
+      "tag": "SIMPLE PROCESS",
+      "heading": "How admission works",
+      "subheading": "Three straightforward steps to secure your child's joyful learning foundation.",
+      "steps": [
+        {
+          "num": "1️⃣",
+          "title": "Enquire",
+          "desc": "Call, WhatsApp or submit the enquiry form below."
+        },
+        {
+          "num": "2️⃣",
+          "title": "Visit",
+          "desc": "Meet the school team and see the learning environment."
+        },
+        {
+          "num": "3️⃣",
+          "title": "Apply",
+          "desc": "Complete the admission formalities and document requirements."
+        }
+      ]
+    },
+    "enquirySection": {
+      "tag": "ENQUIRE",
+      "heading": "Request a call back",
+      "subheading": "Fill in your details below and our team will get in touch with you shortly.",
+      "form": {
+        "namePlaceholder": "Parent / Guardian Name",
+        "phonePlaceholder": "Mobile Number",
+        "selectClassDefault": "Select Class",
+        "classOptions": [
+          "Play Group",
+          "Nursery",
+          "LKG",
+          "UKG",
+          "Class I-V"
+        ],
+        "messagePlaceholder": "Your message",
+        "submitButton": "Submit Enquiry",
+        "successHeading": "Thank you!",
+        "successMessagePrefix": "The school team will contact you shortly regarding admission for",
+        "defaultChild": "your child",
+        "submitAnother": "Submit Another Enquiry"
+      }
     }
   },
   "facilities": {
     "banner": {
-      "title": "School Facilities & Campus",
-      "subtitle": "Purpose-built, safe, vibrant, and fully equipped infrastructure supporting joyful early childhood education."
+      "kicker": "Safe, Smart & Joyful Environment",
+      "title": "Our School Facilities",
+      "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
     },
     "heroBox": {
       "title": "Campus Tour",
@@ -513,12 +717,89 @@
         "First-aid emergency medical box and dedicated pediatric on-call support.",
         "Fire safety certified equipment and regular safety evacuation drills."
       ]
+    },
+    "highlights": {
+      "tag": "CAMPUS HIGHLIGHTS",
+      "heading": "Designed for Young Learners",
+      "subheading": "We provide state-of-the-art facilities that spark curiosity and keep children safe, healthy, and happy every single day.",
+      "items": [
+        {
+          "icon": "📖",
+          "title": "Smart Learning Classrooms",
+          "desc": "Air-conditioned rooms with child-safe wooden furniture, interactive audiovisual smart screens, and colorful soft wall cushioning.",
+          "accentBorder": "#ffd200"
+        },
+        {
+          "icon": "💻",
+          "title": "Computer & IT Lab",
+          "desc": "Dedicated computers with educational learning software, headsets, and age-appropriate early coding & typing logic modules.",
+          "accentBorder": "#004a90"
+        },
+        {
+          "icon": "🛡️",
+          "title": "24x7 CCTV & Safe Campus",
+          "desc": "Continuous camera surveillance in all classrooms, entry gates, corridors, and play lawns with verified security personnel.",
+          "accentBorder": "#ef4444"
+        },
+        {
+          "icon": "🚌",
+          "title": "GPS Van & Bus Transport",
+          "desc": "Clean, well-maintained school vans with real-time GPS tracking covering Vijay Nagar, Pratap Vihar, and Siddharth Vihar.",
+          "accentBorder": "#22c55e"
+        },
+        {
+          "icon": "📚",
+          "title": "School Library & Story Corner",
+          "desc": "Rich collection of picture storybooks, bilingual readers, encyclopedia, and quiet reading nooks fostering early literacy.",
+          "accentBorder": "#06b6d4"
+        },
+        {
+          "icon": "⚽",
+          "title": "Outdoor Play Lawn & Swings",
+          "desc": "Lush grassy play lawn with safe rubberized swings, slides, climbers, and morning sports activities for physical development.",
+          "accentBorder": "#8b5cf6"
+        }
+      ]
+    },
+    "safetyStandards": {
+      "tag": "CARE & SAFETY",
+      "heading": "Health & Hygiene Standards",
+      "subheading": "Ensuring the highest levels of child well-being, cleanliness, and security across the entire school campus.",
+      "items": [
+        {
+          "icon": "💧",
+          "title": "RO Purified Water",
+          "desc": "100% pure drinking water with multi-stage filtration checked daily for child health."
+        },
+        {
+          "icon": "🧼",
+          "title": "Sanitized Restrooms",
+          "desc": "Child-friendly, low-height washrooms cleaned and disinfected multiple times every day."
+        },
+        {
+          "icon": "🩺",
+          "title": "First-Aid Ready",
+          "desc": "Equipped medical room and trained staff for immediate care and doctor-on-call support."
+        },
+        {
+          "icon": "🚸",
+          "title": "Gated Security",
+          "desc": "Single-point gated access with visitor badge protocol and child pickup verification."
+        }
+      ]
+    },
+    "actionBanner": {
+      "title": "Want to see our campus in person?",
+      "subtitle": "Book a personalized walk-through tour with our principal and coordinator.",
+      "visitButton": "Book Campus Visit",
+      "admissionsButton": "Admissions"
     }
   },
   "gallery": {
     "banner": {
-      "title": "Campus Gallery",
-      "subtitle": "A vibrant glimpse into daily learning, stage celebrations, sports days, and happy milestones at Rising Kids."
+      "kicker": "Moments of Joy & Achievements",
+      "title": "School Photo Gallery",
+      "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
     },
     "heroBox": {
       "title": "Campus Life",
@@ -531,12 +812,140 @@
       "celebrations": "Events & Celebrations",
       "sports": "Sports & Play",
       "creative": "Art & Activities"
+    },
+    "campusLife": {
+      "tag": "CAMPUS LIFE",
+      "heading": "Explore Play & Learn Spaces",
+      "subheading": "Step inside our bright, air-conditioned classrooms, IT lab, library, art room, and green play lawns in Vijay Nagar. Click any photo to enlarge.",
+      "filterLabels": {
+        "all": "All Spaces",
+        "classroom": "Classrooms & IT Lab 🏫",
+        "activities": "Arts & Music 🎨",
+        "indoor": "Indoor Sensory Zone 🧸",
+        "outdoor": "Outdoor Play Lawn ⚽"
+      },
+      "tapToView": "🔍 Tap to view",
+      "items": [
+        {
+          "id": 1,
+          "title": "Preschool & Kindergarten Classroom",
+          "desc": "Nurturing learning environment with bilingual educational wall charts and colorful desks.",
+          "category": "classroom",
+          "image": "/images/gallery/1.png"
+        },
+        {
+          "id": 2,
+          "title": "Music, Rhythm & Activity Hall",
+          "desc": "Children playing tambourines and percussion instruments with joyful singing.",
+          "category": "activities",
+          "image": "/images/gallery/2.png"
+        },
+        {
+          "id": 3,
+          "title": "Montessori Nursery Activity Tables",
+          "desc": "Low wooden activity tables with shape sorters, puzzles, and sensory kits.",
+          "category": "indoor",
+          "image": "/images/gallery/3.png"
+        },
+        {
+          "id": 4,
+          "title": "Outdoor Swings & Play Lawn",
+          "desc": "Lush green grass lawn, safe swings, slides, and morning physical sports.",
+          "category": "outdoor",
+          "image": "/images/gallery/4.avif"
+        },
+        {
+          "id": 5,
+          "title": "Early Phonics & Guided Reading",
+          "desc": "Teacher guided reading sessions building English & Hindi vocabulary.",
+          "category": "classroom",
+          "image": "/images/gallery/5.jpg"
+        },
+        {
+          "id": 6,
+          "title": "Smart IT & Computer Lab",
+          "desc": "Individual computer stations with educational headsets and STEM modules.",
+          "category": "classroom",
+          "image": "/images/gallery/6.jpg"
+        },
+        {
+          "id": 7,
+          "title": "Joyful & Confident Learners",
+          "desc": "Encouraging curiosity, moral values, and public speaking confidence.",
+          "category": "classroom",
+          "image": "/images/gallery/7.jpg"
+        },
+        {
+          "id": 8,
+          "title": "Sensory Toys & Block Building",
+          "desc": "Building fine motor skills and spatial logic using safe block toys.",
+          "category": "indoor",
+          "image": "/images/gallery/8.avif"
+        },
+        {
+          "id": 9,
+          "title": "Outdoor Climbing & Sports Lawn",
+          "desc": "Active playground equipment ensuring physical coordination and teamwork.",
+          "category": "outdoor",
+          "image": "/images/gallery/9.avif"
+        },
+        {
+          "id": 10,
+          "title": "Creative Arts, Painting & Origami",
+          "desc": "Watercolor painting, origami crafts, and creative drawing workshops.",
+          "category": "activities",
+          "image": "/images/gallery/10.jpg"
+        },
+        {
+          "id": 11,
+          "title": "Student Group Photograph",
+          "desc": "Happy students at Rising Kids School.",
+          "category": "classroom",
+          "image": "/assets/students.jpg"
+        },
+        {
+          "id": 12,
+          "title": "Rising Kids School Campus",
+          "desc": "School campus at C-47, Sector 9, New Vijay Nagar, Ghaziabad.",
+          "category": "outdoor",
+          "image": "/assets/school-banner.jpg"
+        }
+      ]
+    },
+    "campusExperience": {
+      "tag": "CAMPUS EXPERIENCE",
+      "heading": "Experience Rising Kids in Person",
+      "subheading": "A warm, welcoming, and safe learning environment where every child feels cherished, inspired, and motivated.",
+      "highlights": [
+        {
+          "icon": "🌟",
+          "title": "Safe & Sanitized Campus",
+          "desc": "Air-conditioned smart rooms, CCTV surveillance, clean washrooms, and sanitized learning resources."
+        },
+        {
+          "icon": "🤝",
+          "title": "Loving & Qualified Educators",
+          "desc": "Passionate teachers trained in early childhood education, patient guidance, and motherly care."
+        },
+        {
+          "icon": "🎯",
+          "title": "Joyful Hands-On Learning",
+          "desc": "Activity-based curriculum fostering creativity, curiosity, and strong foundational knowledge."
+        }
+      ]
+    },
+    "actionBanner": {
+      "title": "Ready to explore our campus?",
+      "subtitle": "Book a personalized campus tour and meet our educators in New Vijay Nagar, Ghaziabad.",
+      "tourButton": "Book Campus Tour",
+      "admissionsButton": "Admissions Open"
     }
   },
   "events": {
     "banner": {
-      "title": "School Events & Calendar",
-      "subtitle": "Celebrating festivals, cultural heritage, annual sports, science exhibitions, and graduation ceremonies."
+      "kicker": "Celebrating Learning, Creativity & Childhood",
+      "title": "Events & Activities",
+      "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
     },
     "heroBox": {
       "title": "Celebrations",
@@ -574,12 +983,90 @@
         "month": "March",
         "description": "Honoring our young kindergarten and primary graduates with certificates and academic honors."
       }
-    ]
+    ],
+    "calendar": {
+      "tag": "SCHOOL CALENDAR",
+      "heading": "Joyful Celebrations & Activities",
+      "subheading": "Co-curricular events build public speaking confidence, teamwork, and lifelong memories for our young stars.",
+      "items": [
+        {
+          "icon": "🇮🇳",
+          "title": "Independence Day & Republic Day",
+          "date": "August 15 & January 26",
+          "desc": "Celebrating national pride through flag hoisting, patriotic songs, costume parades, and speeches by young students.",
+          "accentBorder": "#ffd200"
+        },
+        {
+          "icon": "🎨",
+          "title": "Art & Creative Activities",
+          "date": "Monthly Feature",
+          "desc": "Hands-on activities, watercolor painting, origami crafts, and clay modeling that encourage imagination and expression.",
+          "accentBorder": "#004a90"
+        },
+        {
+          "icon": "🏆",
+          "title": "Sports & Fitness Meet",
+          "date": "Winter Term",
+          "desc": "Fun athletic races, obstacle courses, tug-of-war, and yoga demonstrations that encourage movement, teamwork, and confidence.",
+          "accentBorder": "#22c55e"
+        },
+        {
+          "icon": "🎉",
+          "title": "Annual Celebrations & Stage Function",
+          "date": "Annual Event",
+          "desc": "Special days, stage performances, group dances, nursery rhyme recitations, and theatrical plays that children look forward to.",
+          "accentBorder": "#ef4444"
+        },
+        {
+          "icon": "🔬",
+          "title": "Science & Nature Discovery",
+          "date": "Interactive Module",
+          "desc": "Child-friendly science experiments, plant sprouting, color mixing, and sensory nature observation activities.",
+          "accentBorder": "#06b6d4"
+        },
+        {
+          "icon": "🪔",
+          "title": "Festivals & Cultural Unity",
+          "date": "Throughout the Year",
+          "desc": "Diwali diya painting, Janmashtami dress-up, Christmas carols, and Eid greetings teaching respect for all cultures.",
+          "accentBorder": "#8b5cf6"
+        }
+      ]
+    },
+    "whyEvents": {
+      "tag": "BEYOND TEXTBOOKS",
+      "heading": "Why Events Matter at Rising Kids",
+      "subheading": "Active participation develops social ease, expressive speech, and joyful collaborative spirit.",
+      "benefits": [
+        {
+          "icon": "🎤",
+          "title": "Stage Confidence",
+          "desc": "Encouraging children to speak in front of audiences, sing rhymes, and perform fearlessly."
+        },
+        {
+          "icon": "🤝",
+          "title": "Team Spirit & Empathy",
+          "desc": "Working with classmates in group presentations, sports relays, and collaborative crafts."
+        },
+        {
+          "icon": "🌟",
+          "title": "Joyful Memories",
+          "desc": "Creating cherishable childhood moments that make schooling exciting and memorable."
+        }
+      ]
+    },
+    "actionBanner": {
+      "title": "Join our upcoming school celebrations",
+      "subtitle": "Schedule a campus visit or talk to our coordinators to know more about admissions.",
+      "enquireButton": "Enquire Admissions",
+      "contactButton": "Contact Us"
+    }
   },
   "contact": {
     "banner": {
-      "title": "Contact & Visit Campus",
-      "subtitle": "We would love to welcome you and your child. Get in touch with our admissions office or schedule a campus visit."
+      "kicker": "We Would Be Happy to Answer Your Questions",
+      "title": "Contact Rising Kids School",
+      "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
     },
     "heroBox": {
       "title": "Direct Helpdesk",
@@ -602,6 +1089,33 @@
       "messageLabel": "Your Message",
       "submitButton": "Send Message",
       "successMessage": "Message received! We will reach out to you shortly."
+    },
+    "getInTouch": {
+      "heading": "Get in touch",
+      "addressLabel": "📍 Address",
+      "phoneLabel": "📞 Phone",
+      "emailLabel": "✉ Email",
+      "callButton": "Call School",
+      "whatsappButton": "WhatsApp"
+    },
+    "sendEnquiry": {
+      "heading": "Send an enquiry",
+      "namePlaceholder": "Your Name",
+      "phonePlaceholder": "Phone Number",
+      "emailPlaceholder": "Email Address",
+      "messagePlaceholder": "How can we help?",
+      "submitButton": "Send Message",
+      "successHeading": "Thank you!",
+      "successMessage": "Your enquiry has been received. The school team will contact you shortly.",
+      "sendAnother": "Send Another Message"
+    },
+    "findUs": {
+      "tag": "FIND US",
+      "heading": "New Vijay Nagar, Ghaziabad",
+      "address": "C-47, Sector 9, New Vijay Nagar, Ghaziabad (U.P.) 201009",
+      "cardTitle": "Campus Location & Directions",
+      "cardDesc": "Easily accessible from Vijay Nagar, Pratap Vihar, and Siddharth Vihar. Open Google Maps for turn-by-turn navigation.",
+      "button": "Open Google Maps"
     }
   },
   "footer": {
@@ -610,12 +1124,162 @@
     "usefulLinksTitle": "USEFUL LINKS",
     "contactTitle": "CONTACT US",
     "copyright": "© 2026 Rising Kids School. All Rights Reserved.",
-    "developedBy": "Powered by"
+    "developedBy": "Powered by",
+    "downloads": "Downloads",
+    "newsUpdates": "News & Updates",
+    "designedFor": "Designed with ❤️ for",
+    "companyName": "NavSlash Technologies"
   },
   "floatingActions": {
     "whatsappChat": "Chat on WhatsApp",
     "callUs": "📞 Call Us",
     "whatsapp": "💬 WhatsApp",
     "direction": "📍 Direction"
+  },
+  "heroSliderBadges": {
+    "safeTitle": "100% Safe",
+    "safeSub": "CCTV & GPS Vans",
+    "ratioTitle": "1:10 Ratio",
+    "ratioSub": "Individual Care",
+    "exploreCta": "Explore Space ➜"
+  },
+  "heroSlider": {
+    "slides": [
+      {
+        "id": 1,
+        "image": "/images/slider/1.png",
+        "tagIcon": "🏫",
+        "tag": "Preschool & Primary School",
+        "title": "Rising Kids School, Vijay Nagar",
+        "subtitle": "Govt. recognized, nurturing English-medium school from Play Group to 5th Class in Sector 9, Ghaziabad.",
+        "badgeColor": "coral",
+        "highlights": [
+          "1:10 Teacher Ratio",
+          "Safe GPS Vans",
+          "100% CCTV Monitored"
+        ],
+        "ctaLink": "#about"
+      },
+      {
+        "id": 2,
+        "image": "/images/slider/2.png",
+        "tagIcon": "👩‍🏫",
+        "tag": "Experienced Caring Teachers",
+        "title": "Interactive & Loving Classrooms",
+        "subtitle": "Dedicated educators guiding early phonics, bilingual discovery, and elementary math foundations.",
+        "badgeColor": "blue",
+        "highlights": [
+          "Loving Environment",
+          "Bilingual Phonics",
+          "Air-Conditioned Rooms"
+        ],
+        "ctaLink": "#curriculum"
+      },
+      {
+        "id": 3,
+        "image": "/images/slider/3.png",
+        "tagIcon": "🎨",
+        "tag": "Creative Arts & Paper Crafts",
+        "title": "Vibrant Art Studio & Origami",
+        "subtitle": "Unleashing creative thinking with watercolor painting, origami, and tactile motor crafts.",
+        "badgeColor": "yellow",
+        "highlights": [
+          "Color Exploration",
+          "Origami & Paper Craft",
+          "Fine Motor Development"
+        ],
+        "ctaLink": "#gallery"
+      },
+      {
+        "id": 4,
+        "image": "/images/slider/4.jpg",
+        "tagIcon": "🌟",
+        "tag": "Joyful & Confident Learners",
+        "title": "Where Every Child Shines Bright",
+        "subtitle": "Nurturing curiosity, strong moral values, public speaking, and self-confidence through joyful learning.",
+        "badgeColor": "green",
+        "highlights": [
+          "Holistic Growth",
+          "Moral Values",
+          "Confidence Building"
+        ],
+        "ctaLink": "#about"
+      },
+      {
+        "id": 5,
+        "image": "/images/slider/5.png",
+        "tagIcon": "💻",
+        "tag": "Early IT & Smart Learning",
+        "title": "Smart IT & Digital Literacy Lab",
+        "subtitle": "Early computer discovery, interactive audio-visual modules, and STEM coding puzzles.",
+        "badgeColor": "blue",
+        "highlights": [
+          "Individual Workstations",
+          "Educational Headsets",
+          "STEM Science Modules"
+        ],
+        "ctaLink": "#curriculum"
+      },
+      {
+        "id": 6,
+        "image": "/images/slider/6.png",
+        "tagIcon": "🧸",
+        "tag": "Montessori & Sensory Zone",
+        "title": "Sensory Play & Dice Mats",
+        "subtitle": "Tactile Montessori learning, giant plush dice, alphabet mats, and shape sorters.",
+        "badgeColor": "orange",
+        "highlights": [
+          "Giant Plush Dice",
+          "Alphabet Soft Mat",
+          "Safe Toddler Slides"
+        ],
+        "ctaLink": "#gallery"
+      },
+      {
+        "id": 7,
+        "image": "/images/slider/7.png",
+        "tagIcon": "🧩",
+        "tag": "Indoor Play & Sensory Learning",
+        "title": "Play Group & Activity Room",
+        "subtitle": "Soft colorful mats, wooden puzzle blocks, and interactive learning kits.",
+        "badgeColor": "purple",
+        "highlights": [
+          "Sensory Blocks",
+          "Group Play",
+          "Motor Skills"
+        ],
+        "ctaLink": "#gallery"
+      },
+      {
+        "id": 8,
+        "image": "/images/slider/8.jpg",
+        "tagIcon": "📖",
+        "tag": "Storytelling & Library Nook",
+        "title": "Joyful Reading & Phonics Nook",
+        "subtitle": "Bilingual illustrated storybooks, cozy reading circles, and English-Hindi vocabulary practice.",
+        "badgeColor": "green",
+        "highlights": [
+          "Vibrant Picture Books",
+          "Cozy Reading Rugs",
+          "Teacher Guided Reading"
+        ],
+        "ctaLink": "#curriculum"
+      },
+      {
+        "id": 9,
+        "image": "/images/slider/9.avif",
+        "tagIcon": "⚽️",
+        "tag": "Outdoor Play & Sports",
+        "title": "Lush Green Play Grounds",
+        "subtitle": "Safe green grass lawns, slides, swings, and active physical play for kids.",
+        "badgeColor": "coral",
+        "highlights": [
+          "Green Lawn",
+          "Safe Swings & Slides",
+          "Morning Exercises"
+        ],
+        "ctaLink": "#gallery"
+      }
+    ]
   }
 }

@@ -4,117 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import { t } from "../lib/i18n";
 
-const galleryItems = [
-  {
-    id: 1,
-    title: "Preschool & Kindergarten Classroom",
-    desc: "Nurturing learning environment with bilingual educational wall charts and colorful desks.",
-    category: "classroom",
-    image: "/images/gallery/1.png",
-  },
-  {
-    id: 2,
-    title: "Music, Rhythm & Activity Hall",
-    desc: "Children playing tambourines and percussion instruments with joyful singing.",
-    category: "activities",
-    image: "/images/gallery/2.png",
-  },
-  {
-    id: 3,
-    title: "Montessori Nursery Activity Tables",
-    desc: "Low wooden activity tables with shape sorters, puzzles, and sensory kits.",
-    category: "indoor",
-    image: "/images/gallery/3.png",
-  },
-  {
-    id: 4,
-    title: "Outdoor Swings & Play Lawn",
-    desc: "Lush green grass lawn, safe swings, slides, and morning physical sports.",
-    category: "outdoor",
-    image: "/images/gallery/4.avif",
-  },
-  {
-    id: 5,
-    title: "Early Phonics & Guided Reading",
-    desc: "Teacher guided reading sessions building English & Hindi vocabulary.",
-    category: "classroom",
-    image: "/images/gallery/5.jpg",
-  },
-  {
-    id: 6,
-    title: "Smart IT & Computer Lab",
-    desc: "Individual computer stations with educational headsets and STEM modules.",
-    category: "classroom",
-    image: "/images/gallery/6.jpg",
-  },
-  {
-    id: 7,
-    title: "Joyful & Confident Learners",
-    desc: "Encouraging curiosity, moral values, and public speaking confidence.",
-    category: "classroom",
-    image: "/images/gallery/7.jpg",
-  },
-  {
-    id: 8,
-    title: "Sensory Toys & Block Building",
-    desc: "Building fine motor skills and spatial logic using safe block toys.",
-    category: "indoor",
-    image: "/images/gallery/8.avif",
-  },
-  {
-    id: 9,
-    title: "Outdoor Climbing & Sports Lawn",
-    desc: "Active playground equipment ensuring physical coordination and teamwork.",
-    category: "outdoor",
-    image: "/images/gallery/9.avif",
-  },
-  {
-    id: 10,
-    title: "Creative Arts, Painting & Origami",
-    desc: "Watercolor painting, origami crafts, and creative drawing workshops.",
-    category: "activities",
-    image: "/images/gallery/10.jpg",
-  },
-  {
-    id: 11,
-    title: "Student Group Photograph",
-    desc: "Happy students at Rising Kids School.",
-    category: "classroom",
-    image: "/assets/students.jpg",
-  },
-  {
-    id: 12,
-    title: "Rising Kids School Campus",
-    desc: "School campus at C-47, Sector 9, New Vijay Nagar, Ghaziabad.",
-    category: "outdoor",
-    image: "/assets/school-banner.jpg",
-  },
-];
-
-const campusHighlights = [
-  {
-    icon: "🌟",
-    title: "Safe & Sanitized Campus",
-    desc: "Air-conditioned smart rooms, CCTV surveillance, clean washrooms, and sanitized learning resources.",
-  },
-  {
-    icon: "🤝",
-    title: "Loving & Qualified Educators",
-    desc: "Passionate teachers trained in early childhood education, patient guidance, and motherly care.",
-  },
-  {
-    icon: "🎯",
-    title: "Joyful Hands-On Learning",
-    desc: "Activity-based curriculum fostering creativity, curiosity, and strong foundational knowledge.",
-  },
-];
-
 export default function GalleryPage() {
+  const galleryItems = t.gallery.campusLife.items;
+  const campusHighlights = t.gallery.campusExperience.highlights;
+
   const [filter, setFilter] = useState("all");
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   const filtered = galleryItems.filter(
-    (item) => filter === "all" || item.category === filter
+    (item: any) => filter === "all" || item.category === filter
   );
 
   return (
@@ -129,38 +27,38 @@ export default function GalleryPage() {
                 <ol className="breadcrumb mb-2" style={{ fontSize: "0.88rem" }}>
                   <li className="breadcrumb-item">
                     <Link href="/" className="text-white text-opacity-75 text-decoration-none">
-                      Home
+                      {t.nav.home}
                     </Link>
                   </li>
                   <li className="breadcrumb-item active text-warning fw-bold" aria-current="page">
-                    Gallery
+                    {t.nav.gallery}
                   </li>
                 </ol>
               </nav>
 
               {/* Title & Kicker */}
-              <div className="page-blue-banner-kicker">Moments of Joy &amp; Achievements</div>
-              <h1 className="page-blue-banner-title">School Photo Gallery</h1>
+              <div className="page-blue-banner-kicker">{t.gallery.banner.kicker}</div>
+              <h1 className="page-blue-banner-title">{t.gallery.banner.title}</h1>
               <p className="page-blue-banner-subtitle mb-3">
-                Play Group to Class V &nbsp;|&nbsp; Co-Education &nbsp;|&nbsp; English Medium &nbsp;|&nbsp; Govt. Recognized
+                {t.gallery.banner.subtitle}
               </p>
 
               <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
                 <span className="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
-                  ⭐ A Proud Hello Kids Franchise
+                  {t.about.franchiseBadge}
                 </span>
                 <span className="badge bg-white text-primary fw-bold px-3 py-2 rounded-pill">
-                  📍 New Vijay Nagar, Ghaziabad
+                  {t.about.locationBadge}
                 </span>
               </div>
             </div>
 
             <div className="col-lg-4 text-center text-lg-end">
               <div className="p-3 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-25 shadow-sm text-center text-white d-inline-block w-100" style={{ maxWidth: "320px" }}>
-                <div className="fw-bold fs-5 text-warning mb-1">Campus Life</div>
-                <div className="small mb-3 text-white text-opacity-90">Experience our joyful classrooms, celebrations &amp; play lawns.</div>
+                <div className="fw-bold fs-5 text-warning mb-1">{t.gallery.heroBox.title}</div>
+                <div className="small mb-3 text-white text-opacity-90">{t.gallery.heroBox.description}</div>
                 <Link href="/contact" className="btn btn-warning w-100 fw-bold rounded-pill text-dark text-uppercase d-inline-flex align-items-center justify-content-center gap-2" style={{ letterSpacing: "0.5px" }}>
-                  <span>Book Campus Tour</span>
+                  <span>{t.gallery.heroBox.button}</span>
                   <span className="rounded-circle d-inline-flex align-items-center justify-content-center text-dark" style={{ width: "20px", height: "20px", backgroundColor: "rgba(0,0,0,0.1)", flexShrink: 0 }}>
                     <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6" />
@@ -178,13 +76,13 @@ export default function GalleryPage() {
         <div className="container">
           <div className="text-center mb-5">
             <span className="badge bg-primary-subtle text-primary border border-primary px-3 py-1 rounded-pill fw-bold small mb-2">
-              CAMPUS LIFE
+              {t.gallery.campusLife.tag}
             </span>
             <h2 className="display-5 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Explore Play &amp; Learn Spaces
+              {t.gallery.campusLife.heading}
             </h2>
             <p className="text-muted col-md-8 mx-auto fs-5">
-              Step inside our bright, air-conditioned classrooms, IT lab, library, art room, and green play lawns in Vijay Nagar. Click any photo to enlarge.
+              {t.gallery.campusLife.subheading}
             </p>
 
             {/* Category Filter Pills */}
@@ -195,7 +93,7 @@ export default function GalleryPage() {
                   filter === "all" ? "btn-primary shadow" : "btn-light border text-dark"
                 }`}
               >
-                All Spaces ({galleryItems.length})
+                {t.gallery.campusLife.filterLabels.all} ({galleryItems.length})
               </button>
               <button
                 onClick={() => setFilter("classroom")}
@@ -203,7 +101,7 @@ export default function GalleryPage() {
                   filter === "classroom" ? "btn-primary shadow" : "btn-light border text-dark"
                 }`}
               >
-                Classrooms &amp; IT Lab 🏫
+                {t.gallery.campusLife.filterLabels.classroom}
               </button>
               <button
                 onClick={() => setFilter("activities")}
@@ -211,7 +109,7 @@ export default function GalleryPage() {
                   filter === "activities" ? "btn-primary shadow" : "btn-light border text-dark"
                 }`}
               >
-                Arts &amp; Music 🎨
+                {t.gallery.campusLife.filterLabels.activities}
               </button>
               <button
                 onClick={() => setFilter("indoor")}
@@ -219,7 +117,7 @@ export default function GalleryPage() {
                   filter === "indoor" ? "btn-primary shadow" : "btn-light border text-dark"
                 }`}
               >
-                Indoor Sensory Zone 🧸
+                {t.gallery.campusLife.filterLabels.indoor}
               </button>
               <button
                 onClick={() => setFilter("outdoor")}
@@ -227,14 +125,14 @@ export default function GalleryPage() {
                   filter === "outdoor" ? "btn-primary shadow" : "btn-light border text-dark"
                 }`}
               >
-                Outdoor Play Lawn ⚽
+                {t.gallery.campusLife.filterLabels.outdoor}
               </button>
             </div>
           </div>
 
           {/* Photo Grid */}
           <div className="row g-4">
-            {filtered.map((item) => (
+            {filtered.map((item: any) => (
               <div key={item.id} className="col-md-6 col-lg-4">
                 <div
                   className="rounded-4 overflow-hidden shadow-sm border position-relative"
@@ -261,7 +159,7 @@ export default function GalleryPage() {
                       {item.desc}
                     </p>
                     <span className="badge bg-warning text-dark rounded-pill px-2 py-1" style={{ fontSize: "0.72rem" }}>
-                      🔍 Tap to view
+                      {t.gallery.campusLife.tapToView}
                     </span>
                   </div>
                 </div>
@@ -276,18 +174,18 @@ export default function GalleryPage() {
         <div className="container">
           <div className="text-center mb-5">
             <span className="badge bg-warning-subtle text-dark border border-warning px-3 py-1 rounded-pill fw-bold small mb-2">
-              CAMPUS EXPERIENCE
+              {t.gallery.campusExperience.tag}
             </span>
             <h2 className="display-5 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Experience Rising Kids in Person
+              {t.gallery.campusExperience.heading}
             </h2>
             <p className="text-muted col-md-7 mx-auto">
-              A warm, welcoming, and safe learning environment where every child feels cherished, inspired, and motivated.
+              {t.gallery.campusExperience.subheading}
             </p>
           </div>
 
           <div className="row g-4">
-            {campusHighlights.map((hl, idx) => (
+            {campusHighlights.map((hl: any, idx: number) => (
               <div key={idx} className="col-md-4">
                 <div className="p-4 bg-white rounded-4 border shadow-sm h-100 text-center">
                   <div className="fs-1 mb-2">{hl.icon}</div>
@@ -313,10 +211,10 @@ export default function GalleryPage() {
           >
             <div>
               <h2 className="fw-bold mb-2 text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Ready to explore our campus?
+                {t.gallery.actionBanner.title}
               </h2>
               <p className="mb-0 text-white text-opacity-90 fs-5">
-                Book a personalized campus tour and meet our educators in New Vijay Nagar, Ghaziabad.
+                {t.gallery.actionBanner.subtitle}
               </p>
             </div>
             <div className="d-flex gap-3 flex-wrap">
@@ -325,14 +223,14 @@ export default function GalleryPage() {
                 className="btn btn-warning btn-lg px-4 rounded-pill fw-bold text-dark text-uppercase shadow"
                 style={{ letterSpacing: "0.5px" }}
               >
-                Book Campus Tour
+                {t.gallery.actionBanner.tourButton}
               </Link>
               <Link
                 href="/admissions"
                 className="btn btn-outline-light btn-lg px-4 rounded-pill fw-bold text-uppercase d-inline-flex align-items-center gap-2"
                 style={{ letterSpacing: "0.5px" }}
               >
-                <span>Admissions Open</span>
+                <span>{t.gallery.actionBanner.admissionsButton}</span>
                 <span className="rounded-circle d-inline-flex align-items-center justify-content-center text-white" style={{ width: "20px", height: "20px", backgroundColor: "rgba(255,255,255,0.2)", flexShrink: 0 }}>
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="9 18 15 12 9 6" />

@@ -30,7 +30,7 @@ export default function AboutPage() {
               </nav>
 
               {/* Kicker & Title */}
-              <div className="page-blue-banner-kicker">Where Young Minds Flourish</div>
+              <div className="page-blue-banner-kicker">{t.about.kicker}</div>
               <h1 className="page-blue-banner-title">{t.about.banner.title}</h1>
               <p className="page-blue-banner-subtitle mb-3">
                 {t.school.gradeSpan} &nbsp;|&nbsp; {t.school.system} &nbsp;|&nbsp; {t.school.medium} &nbsp;|&nbsp; {t.school.recognition}
@@ -38,10 +38,10 @@ export default function AboutPage() {
 
               <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
                 <span className="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
-                  ⭐ A Proud Hello Kids Franchise
+                  {t.about.franchiseBadge}
                 </span>
                 <span className="badge bg-white text-primary fw-bold px-3 py-2 rounded-pill">
-                  📍 New Vijay Nagar, Ghaziabad
+                  {t.about.locationBadge}
                 </span>
               </div>
             </div>
@@ -97,26 +97,26 @@ export default function AboutPage() {
               <div className="row g-3">
                 <div className="col-sm-6">
                   <div className="p-3 rounded-3 bg-light border h-100">
-                    <h5 className="fw-bold mb-1 text-primary">👁️ Vision</h5>
-                    <p className="small text-muted mb-0">To build confident, curious, and responsible young learners prepared for secondary education.</p>
+                    <h5 className="fw-bold mb-1 text-primary">{t.about.vision.title}</h5>
+                    <p className="small text-muted mb-0">{t.about.vision.description}</p>
                   </div>
                 </div>
                 <div className="col-sm-6">
                   <div className="p-3 rounded-3 bg-light border h-100">
-                    <h5 className="fw-bold mb-1 text-success">🚀 Mission</h5>
-                    <p className="small text-muted mb-0">To provide engaging, high-quality, and meaningful education in a safe and supportive environment.</p>
+                    <h5 className="fw-bold mb-1 text-success">{t.about.mission.title}</h5>
+                    <p className="small text-muted mb-0">{t.about.mission.description}</p>
                   </div>
                 </div>
                 <div className="col-sm-6">
                   <div className="p-3 rounded-3 bg-light border h-100">
-                    <h5 className="fw-bold mb-1 text-warning">💛 Core Values</h5>
-                    <p className="small text-muted mb-0">Respect, responsibility, kindness, empathy, and academic excellence.</p>
+                    <h5 className="fw-bold mb-1 text-warning">{t.about.values.title}</h5>
+                    <p className="small text-muted mb-0">{t.about.values.description}</p>
                   </div>
                 </div>
                 <div className="col-sm-6">
                   <div className="p-3 rounded-3 bg-light border h-100">
-                    <h5 className="fw-bold mb-1 text-purple" style={{ color: "var(--secondary-grape)" }}>🤝 Community</h5>
-                    <p className="small text-muted mb-0">A school community where children, teachers, and parents grow together seamlessly.</p>
+                    <h5 className="fw-bold mb-1 text-purple" style={{ color: "var(--secondary-grape)" }}>{t.about.community.title}</h5>
+                    <p className="small text-muted mb-0">{t.about.community.description}</p>
                   </div>
                 </div>
               </div>
@@ -140,27 +140,27 @@ export default function AboutPage() {
             <div className="col-md-4">
               <div className="card-kids h-100 text-center">
                 <div className="card-kids-icon color-bg-yellow mx-auto">🌟</div>
-                <h4 className="fw-bold mb-3">Self-Confidence</h4>
+                <h4 className="fw-bold mb-3">{t.about.holisticCards[0].title}</h4>
                 <p className="text-muted small mb-0">
-                  Encouraging children to speak up, ask questions, participate in stage events, and explore new learning horizons fearlessly.
+                  {t.about.holisticCards[0].description}
                 </p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="card-kids h-100 text-center">
                 <div className="card-kids-icon color-bg-blue mx-auto">🤝</div>
-                <h4 className="fw-bold mb-3">Social &amp; Emotional Skills</h4>
+                <h4 className="fw-bold mb-3">{t.about.holisticCards[1].title}</h4>
                 <p className="text-muted small mb-0">
-                  Helping children learn sharing, teamwork, mutual respect, and emotional expression in group activities.
+                  {t.about.holisticCards[1].description}
                 </p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="card-kids h-100 text-center">
                 <div className="card-kids-icon color-bg-green mx-auto">🎯</div>
-                <h4 className="fw-bold mb-3">Life Skills &amp; Habits</h4>
+                <h4 className="fw-bold mb-3">{t.about.holisticCards[2].title}</h4>
                 <p className="text-muted small mb-0">
-                  Building independence, table etiquettes, personal hygiene, responsibility, and practical everyday skills.
+                  {t.about.holisticCards[2].description}
                 </p>
               </div>
             </div>

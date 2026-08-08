@@ -15,117 +15,16 @@ export interface HeroSlide {
   ctaLink?: string;
 }
 
-const HERO_SLIDES: HeroSlide[] = [
-  {
-    id: 1,
-    image: "/images/slider/1.png",
-    tagIcon: "🏫",
-    tag: "Preschool & Primary School",
-    title: "Rising Kids School, Vijay Nagar",
-    subtitle: "Govt. recognized, nurturing English-medium school from Play Group to 5th Class in Sector 9, Ghaziabad.",
-    badgeColor: "coral",
-    highlights: ["1:10 Teacher Ratio", "Safe GPS Vans", "100% CCTV Monitored"],
-    ctaLink: "#about"
-  },
-  {
-    id: 2,
-    image: "/images/slider/2.png",
-    tagIcon: "👩‍🏫",
-    tag: "Experienced Caring Teachers",
-    title: "Interactive & Loving Classrooms",
-    subtitle: "Dedicated educators guiding early phonics, bilingual discovery, and elementary math foundations.",
-    badgeColor: "blue",
-    highlights: ["Loving Environment", "Bilingual Phonics", "Air-Conditioned Rooms"],
-    ctaLink: "#curriculum"
-  },
-  {
-    id: 3,
-    image: "/images/slider/3.png",
-    tagIcon: "🎨",
-    tag: "Creative Arts & Paper Crafts",
-    title: "Vibrant Art Studio & Origami",
-    subtitle: "Unleashing creative thinking with watercolor painting, origami, and tactile motor crafts.",
-    badgeColor: "yellow",
-    highlights: ["Color Exploration", "Origami & Paper Craft", "Fine Motor Development"],
-    ctaLink: "#gallery"
-  },
-  {
-    id: 4,
-    image: "/images/slider/4.jpg",
-    tagIcon: "🌟",
-    tag: "Joyful & Confident Learners",
-    title: "Where Every Child Shines Bright",
-    subtitle: "Nurturing curiosity, strong moral values, public speaking, and self-confidence through joyful learning.",
-    badgeColor: "green",
-    highlights: ["Holistic Growth", "Moral Values", "Confidence Building"],
-    ctaLink: "#about"
-  },
-  {
-    id: 5,
-    image: "/images/slider/5.png",
-    tagIcon: "💻",
-    tag: "Early IT & Smart Learning",
-    title: "Smart IT & Digital Literacy Lab",
-    subtitle: "Early computer discovery, interactive audio-visual modules, and STEM coding puzzles.",
-    badgeColor: "blue",
-    highlights: ["Individual Workstations", "Educational Headsets", "STEM Science Modules"],
-    ctaLink: "#curriculum"
-  },
-  {
-    id: 6,
-    image: "/images/slider/6.png",
-    tagIcon: "🧸",
-    tag: "Montessori & Sensory Zone",
-    title: "Sensory Play & Dice Mats",
-    subtitle: "Tactile Montessori learning, giant plush dice, alphabet mats, and shape sorters.",
-    badgeColor: "orange",
-    highlights: ["Giant Plush Dice", "Alphabet Soft Mat", "Safe Toddler Slides"],
-    ctaLink: "#gallery"
-  },
-  {
-    id: 7,
-    image: "/images/slider/7.png",
-    tagIcon: "🧩",
-    tag: "Indoor Play & Sensory Learning",
-    title: "Play Group & Activity Room",
-    subtitle: "Soft colorful mats, wooden puzzle blocks, and interactive learning kits.",
-    badgeColor: "purple",
-    highlights: ["Sensory Blocks", "Group Play", "Motor Skills"],
-    ctaLink: "#gallery"
-  },
-  {
-    id: 8,
-    image: "/images/slider/8.jpg",
-    tagIcon: "📖",
-    tag: "Storytelling & Library Nook",
-    title: "Joyful Reading & Phonics Nook",
-    subtitle: "Bilingual illustrated storybooks, cozy reading circles, and English-Hindi vocabulary practice.",
-    badgeColor: "green",
-    highlights: ["Vibrant Picture Books", "Cozy Reading Rugs", "Teacher Guided Reading"],
-    ctaLink: "#curriculum"
-  },
-  {
-    id: 9,
-    image: "/images/slider/9.avif",
-    tagIcon: "⚽️",
-    tag: "Outdoor Play & Sports",
-    title: "Lush Green Play Grounds",
-    subtitle: "Safe green grass lawns, slides, swings, and active physical play for kids.",
-    badgeColor: "coral",
-    highlights: ["Green Lawn", "Safe Swings & Slides", "Morning Exercises"],
-    ctaLink: "#gallery"
-  }
-];
-
 export default function HeroBannerSlider() {
+  const slides = t.heroSlider.slides;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [progress, setProgress] = useState(0);
 
-  const totalSlides = HERO_SLIDES.length;
-  const currentSlide = HERO_SLIDES[currentIndex];
+  const totalSlides = slides.length;
+  const currentSlide = slides[currentIndex];
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % totalSlides);
@@ -178,16 +77,16 @@ export default function HeroBannerSlider() {
       <div className="slider-floating-badge badge-top-right">
         <span className="badge-icon">🛡️</span>
         <div className="badge-text">
-          <strong>100% Safe</strong>
-          <small>CCTV & GPS Vans</small>
+          <strong>{t.heroSliderBadges.safeTitle}</strong>
+          <small>{t.heroSliderBadges.safeSub}</small>
         </div>
       </div>
 
       <div className="slider-floating-badge badge-bottom-left">
         <span className="badge-icon">⭐</span>
         <div className="badge-text">
-          <strong>1:10 Ratio</strong>
-          <small>Individual Care</small>
+          <strong>{t.heroSliderBadges.ratioTitle}</strong>
+          <small>{t.heroSliderBadges.ratioSub}</small>
         </div>
       </div>
 
@@ -203,7 +102,7 @@ export default function HeroBannerSlider() {
 
         {/* Slides Viewport */}
         <div className="hero-slides-viewport">
-          {HERO_SLIDES.map((slide, idx) => {
+          {slides.map((slide: any, idx: number) => {
             const isActive = idx === currentIndex;
             return (
               <div
@@ -242,7 +141,7 @@ export default function HeroBannerSlider() {
 
                   {/* Highlight Chips */}
                   <div className="slide-highlights d-flex flex-wrap gap-2 mb-3">
-                    {slide.highlights.map((highlight, hIdx) => (
+                    {slide.highlights.map((highlight: string, hIdx: number) => (
                       <span key={hIdx} className="highlight-chip">
                         ✨ {highlight}
                       </span>
@@ -255,7 +154,7 @@ export default function HeroBannerSlider() {
                       href={slide.ctaLink || "#gallery"}
                       className="btn btn-sm btn-slide-action rounded-pill px-3 py-1 fw-bold"
                     >
-                      Explore Space ➜
+                      {t.heroSliderBadges.exploreCta}
                     </a>
                   </div>
                 </div>
@@ -294,7 +193,7 @@ export default function HeroBannerSlider() {
           </button>
 
           <div className="slider-dots-group">
-            {HERO_SLIDES.map((_, idx) => (
+            {slides.map((_: any, idx: number) => (
               <button
                 key={idx}
                 className={`slider-dot ${idx === currentIndex ? "active" : ""}`}
@@ -308,7 +207,7 @@ export default function HeroBannerSlider() {
 
       {/* Interactive Thumbnail Quick Jump Strip */}
       <div className="slider-thumbnail-strip" role="tablist" aria-label="Slide thumbnail strip">
-        {HERO_SLIDES.map((slide, idx) => (
+        {slides.map((slide: any, idx: number) => (
           <button
             key={slide.id}
             onClick={() => goToSlide(idx)}

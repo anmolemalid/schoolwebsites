@@ -403,12 +403,10 @@ export default function HomePage() {
                       <input type="tel" className="form-control rounded-3" placeholder={t.home.quickEnquiry.form.mobile} required />
                     </div>
                     <div className="col-12">
-                      <select className="form-select rounded-3" defaultValue="Play Group">
-                        <option value="Play Group">Class Seeking: Play Group</option>
-                        <option value="Nursery">Class Seeking: Nursery</option>
-                        <option value="LKG">Class Seeking: LKG</option>
-                        <option value="UKG">Class Seeking: UKG</option>
-                        <option value="Class 1-5">Class Seeking: Class I to V</option>
+                      <select className="form-select rounded-3" defaultValue={t.home.quickEnquiry.form.options[0]}>
+                        {t.home.quickEnquiry.form.options.map((opt: string, idx: number) => (
+                          <option key={idx} value={opt}>{opt}</option>
+                        ))}
                       </select>
                     </div>
                     <div className="col-12">

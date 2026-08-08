@@ -7,69 +7,10 @@ export const metadata: Metadata = {
   description: t.meta.pages.facilities.description,
 };
 
-const facilityItems = [
-  {
-    icon: "📖",
-    title: "Smart Learning Classrooms",
-    desc: "Air-conditioned rooms with child-safe wooden furniture, interactive audiovisual smart screens, and colorful soft wall cushioning.",
-    accentBorder: "#ffd200",
-  },
-  {
-    icon: "💻",
-    title: "Computer & IT Lab",
-    desc: "Dedicated computers with educational learning software, headsets, and age-appropriate early coding & typing logic modules.",
-    accentBorder: "#004a90",
-  },
-  {
-    icon: "🛡️",
-    title: "24x7 CCTV & Safe Campus",
-    desc: "Continuous camera surveillance in all classrooms, entry gates, corridors, and play lawns with verified security personnel.",
-    accentBorder: "#ef4444",
-  },
-  {
-    icon: "🚌",
-    title: "GPS Van & Bus Transport",
-    desc: "Clean, well-maintained school vans with real-time GPS tracking covering Vijay Nagar, Pratap Vihar, and Siddharth Vihar.",
-    accentBorder: "#22c55e",
-  },
-  {
-    icon: "📚",
-    title: "School Library & Story Corner",
-    desc: "Rich collection of picture storybooks, bilingual readers, encyclopedia, and quiet reading nooks fostering early literacy.",
-    accentBorder: "#06b6d4",
-  },
-  {
-    icon: "⚽",
-    title: "Outdoor Play Lawn & Swings",
-    desc: "Lush grassy play lawn with safe rubberized swings, slides, climbers, and morning sports activities for physical development.",
-    accentBorder: "#8b5cf6",
-  },
-];
-
-const safetyStandards = [
-  {
-    icon: "💧",
-    title: "RO Purified Water",
-    desc: "100% pure drinking water with multi-stage filtration checked daily for child health.",
-  },
-  {
-    icon: "🧼",
-    title: "Sanitized Restrooms",
-    desc: "Child-friendly, low-height washrooms cleaned and disinfected multiple times every day.",
-  },
-  {
-    icon: "🩺",
-    title: "First-Aid Ready",
-    desc: "Equipped medical room and trained staff for immediate care and doctor-on-call support.",
-  },
-  {
-    icon: "🚸",
-    title: "Gated Security",
-    desc: "Single-point gated access with visitor badge protocol and child pickup verification.",
-  },
-];
-
 export default function FacilitiesPage() {
+  const facilityItems = t.facilities.highlights.items;
+  const safetyStandards = t.facilities.safetyStandards.items;
+
   return (
     <div className="facilities-page">
       {/* Royal Blue Hero Banner */}
@@ -82,38 +23,38 @@ export default function FacilitiesPage() {
                 <ol className="breadcrumb mb-2" style={{ fontSize: "0.88rem" }}>
                   <li className="breadcrumb-item">
                     <Link href="/" className="text-white text-opacity-75 text-decoration-none">
-                      Home
+                      {t.nav.home}
                     </Link>
                   </li>
                   <li className="breadcrumb-item active text-warning fw-bold" aria-current="page">
-                    Facilities
+                    {t.nav.facilities}
                   </li>
                 </ol>
               </nav>
 
               {/* Title & Kicker */}
-              <div className="page-blue-banner-kicker">Safe, Smart &amp; Joyful Environment</div>
-              <h1 className="page-blue-banner-title">Our School Facilities</h1>
+              <div className="page-blue-banner-kicker">{t.facilities.banner.kicker}</div>
+              <h1 className="page-blue-banner-title">{t.facilities.banner.title}</h1>
               <p className="page-blue-banner-subtitle mb-3">
-                Play Group to Class V &nbsp;|&nbsp; Co-Education &nbsp;|&nbsp; English Medium &nbsp;|&nbsp; Govt. Recognized
+                {t.facilities.banner.subtitle}
               </p>
 
               <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
                 <span className="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
-                  ⭐ A Proud Hello Kids Franchise
+                  {t.about.franchiseBadge}
                 </span>
                 <span className="badge bg-white text-primary fw-bold px-3 py-2 rounded-pill">
-                  📍 New Vijay Nagar, Ghaziabad
+                  {t.about.locationBadge}
                 </span>
               </div>
             </div>
 
             <div className="col-lg-4 text-center text-lg-end">
               <div className="p-3 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-25 shadow-sm text-center text-white d-inline-block w-100" style={{ maxWidth: "320px" }}>
-                <div className="fw-bold fs-5 text-warning mb-1">Campus Tour</div>
-                <div className="small mb-3 text-white text-opacity-90">Experience our classrooms, play lawns &amp; IT lab in person.</div>
+                <div className="fw-bold fs-5 text-warning mb-1">{t.facilities.heroBox.title}</div>
+                <div className="small mb-3 text-white text-opacity-90">{t.facilities.heroBox.description}</div>
                 <Link href="/contact" className="btn btn-warning w-100 fw-bold rounded-pill text-dark text-uppercase d-inline-flex align-items-center justify-content-center gap-2" style={{ letterSpacing: "0.5px" }}>
-                  <span>Book Campus Visit</span>
+                  <span>{t.facilities.heroBox.button}</span>
                   <span className="rounded-circle d-inline-flex align-items-center justify-content-center text-dark" style={{ width: "20px", height: "20px", backgroundColor: "rgba(0,0,0,0.1)", flexShrink: 0 }}>
                     <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6" />
@@ -131,19 +72,19 @@ export default function FacilitiesPage() {
         <div className="container">
           <div className="text-center mb-5">
             <span className="badge bg-primary-subtle text-primary border border-primary px-3 py-1 rounded-pill fw-bold small mb-2">
-              CAMPUS HIGHLIGHTS
+              {t.facilities.highlights.tag}
             </span>
             <h2 className="display-5 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Designed for Young Learners
+              {t.facilities.highlights.heading}
             </h2>
             <p className="text-muted col-md-8 mx-auto fs-5">
-              We provide state-of-the-art facilities that spark curiosity and keep children safe, healthy, and happy every single day.
+              {t.facilities.highlights.subheading}
             </p>
           </div>
 
           {/* 6 Facility Cards */}
           <div className="row g-4">
-            {facilityItems.map((item, idx) => (
+            {facilityItems.map((item: any, idx: number) => (
               <div key={idx} className="col-md-6 col-lg-4">
                 <div
                   className="p-4 bg-white rounded-4 border shadow-sm h-100 d-flex flex-column justify-content-between transition-all"
@@ -173,18 +114,18 @@ export default function FacilitiesPage() {
         <div className="container">
           <div className="text-center mb-5">
             <span className="badge bg-warning-subtle text-dark border border-warning px-3 py-1 rounded-pill fw-bold small mb-2">
-              CARE &amp; SAFETY
+              {t.facilities.safetyStandards.tag}
             </span>
             <h2 className="display-5 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Health &amp; Hygiene Standards
+              {t.facilities.safetyStandards.heading}
             </h2>
             <p className="text-muted col-md-7 mx-auto">
-              Ensuring the highest levels of child well-being, cleanliness, and security across the entire school campus.
+              {t.facilities.safetyStandards.subheading}
             </p>
           </div>
 
           <div className="row g-4">
-            {safetyStandards.map((std, idx) => (
+            {safetyStandards.map((std: any, idx: number) => (
               <div key={idx} className="col-md-6 col-lg-3">
                 <div className="p-4 bg-white rounded-4 border shadow-sm h-100 text-center">
                   <div className="fs-1 mb-2">{std.icon}</div>
@@ -210,10 +151,10 @@ export default function FacilitiesPage() {
           >
             <div>
               <h2 className="fw-bold mb-2 text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Want to see our campus in person?
+                {t.facilities.actionBanner.title}
               </h2>
               <p className="mb-0 text-white text-opacity-90 fs-5">
-                Book a personalized walk-through tour with our principal and coordinator.
+                {t.facilities.actionBanner.subtitle}
               </p>
             </div>
             <div className="d-flex gap-3 flex-wrap">
@@ -222,14 +163,14 @@ export default function FacilitiesPage() {
                 className="btn btn-warning btn-lg px-4 rounded-pill fw-bold text-dark text-uppercase shadow"
                 style={{ letterSpacing: "0.5px" }}
               >
-                Book Campus Visit
+                {t.facilities.actionBanner.visitButton}
               </Link>
               <Link
                 href="/admissions"
                 className="btn btn-outline-light btn-lg px-4 rounded-pill fw-bold text-uppercase d-inline-flex align-items-center gap-2"
                 style={{ letterSpacing: "0.5px" }}
               >
-                <span>Admissions</span>
+                <span>{t.facilities.actionBanner.admissionsButton}</span>
                 <span className="rounded-circle d-inline-flex align-items-center justify-content-center text-white" style={{ width: "20px", height: "20px", backgroundColor: "rgba(255,255,255,0.2)", flexShrink: 0 }}>
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="9 18 15 12 9 6" />

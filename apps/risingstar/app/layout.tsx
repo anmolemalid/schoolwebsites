@@ -188,8 +188,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <ul className="footer-links-mockup">
                   <li><Link href="/gallery"><span className="footer-link-arrow">▸</span> {t.nav.gallery}</Link></li>
                   <li><Link href="/events"><span className="footer-link-arrow">▸</span> {t.nav.events}</Link></li>
-                  <li><Link href="/admissions"><span className="footer-link-arrow">▸</span> Downloads</Link></li>
-                  <li><Link href="/events"><span className="footer-link-arrow">▸</span> News & Updates</Link></li>
+                  <li><Link href="/admissions"><span className="footer-link-arrow">▸</span> {t.footer.downloads}</Link></li>
+                  <li><Link href="/events"><span className="footer-link-arrow">▸</span> {t.footer.newsUpdates}</Link></li>
                   <li><Link href="/contact"><span className="footer-link-arrow">▸</span> {t.nav.contactUs}</Link></li>
                 </ul>
               </div>
@@ -242,7 +242,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
             <span>{t.footer.copyright}</span>
             <span>
-              Designed with ❤️ for{" "}
+              {t.footer.designedFor}{" "}
               <a
                 href="https://www.navslash.com/"
                 target="_blank"
@@ -250,7 +250,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 className="text-decoration-none fw-bold"
                 style={{ color: "inherit" }}
               >
-                NavSlash Technologies
+                {t.footer.companyName}
               </a>
             </span>
           </div>

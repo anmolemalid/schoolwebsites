@@ -71,7 +71,7 @@ export default function HeroBannerSection() {
               marginBottom: "0.2rem",
             }}
           >
-            Where Young Minds
+            {t.hero.kicker}
           </div>
 
           {/* Bold Condensed Headline */}
@@ -85,8 +85,8 @@ export default function HeroBannerSection() {
               fontWeight: 800,
             }}
           >
-            <span style={{ color: "#ffffff", display: "block" }}>LEARN, GROW &amp;</span>
-            <span style={{ color: "#ffd200", display: "block" }}>SHINE TOGETHER</span>
+            <span style={{ color: "#ffffff", display: "block" }}>{t.hero.headline.line1}</span>
+            <span style={{ color: "#ffd200", display: "block" }}>{t.hero.headline.line2}</span>
           </h1>
 
           {/* Dotted Accent Line */}
@@ -109,7 +109,7 @@ export default function HeroBannerSection() {
               fontFamily: "Arial, Helvetica, sans-serif",
             }}
           >
-            Play Group to Class V
+            {t.hero.gradeBadge}
           </div>
 
           {/* 3 Icons Line: Co-Education | English Medium | Govt. Recognized */}
@@ -119,15 +119,15 @@ export default function HeroBannerSection() {
           >
             <div className="d-flex align-items-center gap-1">
               <span style={{ color: "#ffd200", fontSize: "1.1rem" }}>👥</span>
-              <span>Co-Education</span>
+              <span>{t.hero.badges.coEducation}</span>
             </div>
             <div className="d-flex align-items-center gap-1">
               <span style={{ color: "#ffd200", fontSize: "1.1rem" }}>📖</span>
-              <span>English Medium</span>
+              <span>{t.hero.badges.englishMedium}</span>
             </div>
             <div className="d-flex align-items-center gap-1">
               <span style={{ color: "#ffd200", fontSize: "1.1rem" }}>🛡️</span>
-              <span>Govt. Recognized</span>
+              <span>{t.hero.badges.govtRecognized}</span>
             </div>
           </div>
         </div>
@@ -272,7 +272,7 @@ export default function HeroBannerSection() {
                     fontFamily: "Arial, Helvetica, sans-serif",
                   }}
                 >
-                  ADMISSIONS OPEN
+                  {t.hero.admissionsCard.title}
                 </div>
                 <div
                   className="fw-bold"
@@ -285,7 +285,7 @@ export default function HeroBannerSection() {
                     fontFamily: "Arial, Helvetica, sans-serif",
                   }}
                 >
-                  2026-27
+                  {t.hero.admissionsCard.session}
                 </div>
               </div>
             </div>
@@ -299,7 +299,7 @@ export default function HeroBannerSection() {
                 color: "#495057",
               }}
             >
-              Safe &nbsp;|&nbsp; Caring &nbsp;|&nbsp; Creative &nbsp;|&nbsp; Future Ready
+              {t.hero.admissionsCard.tagline}
             </div>
 
             {/* ENQUIRE NOW Button with Arrow Icon */}
@@ -316,7 +316,7 @@ export default function HeroBannerSection() {
                 border: "none",
               }}
             >
-              <span>ENQUIRE NOW</span>
+              <span>{t.hero.admissionsCard.button}</span>
               <span
                 className="rounded-circle d-inline-flex align-items-center justify-content-center text-white"
                 style={{
@@ -368,7 +368,7 @@ export default function HeroBannerSection() {
                   textShadow: "0 2px 6px rgba(0,0,0,0.45)",
                 }}
               >
-                Where Young Minds
+                {t.hero.kicker}
               </div>
 
               {/* Big Bold Headline */}
@@ -383,8 +383,8 @@ export default function HeroBannerSection() {
                   textShadow: "0 3px 10px rgba(0,0,0,0.45)",
                 }}
               >
-                <span style={{ color: "#ffffff", display: "block" }}>LEARN, GROW &amp;</span>
-                <span style={{ color: "#ffd200", display: "block" }}>SHINE TOGETHER</span>
+                <span style={{ color: "#ffffff", display: "block" }}>{t.hero.headline.line1}</span>
+                <span style={{ color: "#ffd200", display: "block" }}>{t.hero.headline.line2}</span>
               </h1>
 
               {/* Yellow Horizontal Accent Line */}
@@ -410,7 +410,7 @@ export default function HeroBannerSection() {
                   textShadow: "0 2px 5px rgba(0,0,0,0.35)",
                 }}
               >
-                Play Group to Class V
+                {t.hero.gradeBadge}
               </div>
 
               {/* Features: Co-Education | English Medium | Govt. Recognized */}
@@ -425,7 +425,7 @@ export default function HeroBannerSection() {
                   textShadow: "0 1px 4px rgba(0,0,0,0.4)",
                 }}
               >
-                Co-Education &nbsp;|&nbsp; English Medium &nbsp;|&nbsp; Govt. Recognized
+                {t.hero.badges.coEducation} &nbsp;|&nbsp; {t.hero.badges.englishMedium} &nbsp;|&nbsp; {t.hero.badges.govtRecognized}
               </div>
             </div>
 
@@ -461,7 +461,7 @@ export default function HeroBannerSection() {
                       width: "88%",
                     }}
                   >
-                    ADMISSIONS
+                    {t.hero.admissionsBadge}
                   </div>
 
                   {/* Middle Yellow Plaque: OPEN */}
@@ -483,7 +483,7 @@ export default function HeroBannerSection() {
                       zIndex: 2,
                     }}
                   >
-                    OPEN
+                    {t.hero.openBadge}
                   </div>
 
                   {/* Bottom Red Bar: 2026-27 */}
@@ -500,80 +500,31 @@ export default function HeroBannerSection() {
                       width: "88%",
                     }}
                   >
-                    2026-27
+                    {t.hero.admissionsCard.session}
                   </div>
                 </div>
 
                 {/* Checklist */}
                 <ul className="list-unstyled mb-2 text-start ps-1 ps-lg-2" style={{ color: "#ffffff" }}>
-                  <li className="d-flex align-items-center mb-1 fw-semibold" style={{ fontSize: "0.94rem", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
-                    <span
-                      className="rounded-circle me-2 d-inline-flex align-items-center justify-content-center fw-bold shadow-sm"
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        backgroundColor: "#ffd200",
-                        color: "#0b3b78",
-                        fontSize: "0.75rem",
-                        fontWeight: 900,
-                        flexShrink: 0,
-                      }}
-                    >
-                      ✓
-                    </span>
-                    Safe &amp; Caring Environment
-                  </li>
-                  <li className="d-flex align-items-center mb-1 fw-semibold" style={{ fontSize: "0.94rem", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
-                    <span
-                      className="rounded-circle me-2 d-inline-flex align-items-center justify-content-center fw-bold shadow-sm"
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        backgroundColor: "#ffd200",
-                        color: "#0b3b78",
-                        fontSize: "0.75rem",
-                        fontWeight: 900,
-                        flexShrink: 0,
-                      }}
-                    >
-                      ✓
-                    </span>
-                    Smart Learning Classrooms
-                  </li>
-                  <li className="d-flex align-items-center mb-1 fw-semibold" style={{ fontSize: "0.94rem", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
-                    <span
-                      className="rounded-circle me-2 d-inline-flex align-items-center justify-content-center fw-bold shadow-sm"
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        backgroundColor: "#ffd200",
-                        color: "#0b3b78",
-                        fontSize: "0.75rem",
-                        fontWeight: 900,
-                        flexShrink: 0,
-                      }}
-                    >
-                      ✓
-                    </span>
-                    Activity Based Learning
-                  </li>
-                  <li className="d-flex align-items-center mb-2 fw-semibold" style={{ fontSize: "0.94rem", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
-                    <span
-                      className="rounded-circle me-2 d-inline-flex align-items-center justify-content-center fw-bold shadow-sm"
-                      style={{
-                        width: "20px",
-                        height: "20px",
-                        backgroundColor: "#ffd200",
-                        color: "#0b3b78",
-                        fontSize: "0.75rem",
-                        fontWeight: 900,
-                        flexShrink: 0,
-                      }}
-                    >
-                      ✓
-                    </span>
-                    Overall Personality Development
-                  </li>
+                  {t.hero.checklist.map((item: string, idx: number) => (
+                    <li key={idx} className="d-flex align-items-center mb-1 fw-semibold" style={{ fontSize: "0.94rem", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
+                      <span
+                        className="rounded-circle me-2 d-inline-flex align-items-center justify-content-center fw-bold shadow-sm"
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          backgroundColor: "#ffd200",
+                          color: "#0b3b78",
+                          fontSize: "0.75rem",
+                          fontWeight: 900,
+                          flexShrink: 0,
+                        }}
+                      >
+                        ✓
+                      </span>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
 
                 {/* Yellow Enquire Now Button */}
@@ -593,7 +544,7 @@ export default function HeroBannerSection() {
                       minWidth: "190px",
                     }}
                   >
-                    <span>ENQUIRE NOW</span>
+                    <span>{t.hero.admissionsCard.button}</span>
                     <span
                       className="rounded-circle d-inline-flex align-items-center justify-content-center text-white"
                       style={{

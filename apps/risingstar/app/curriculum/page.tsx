@@ -7,79 +7,10 @@ export const metadata: Metadata = {
   description: t.meta.pages.curriculum.description,
 };
 
-const learningAreas = [
-  {
-    icon: "🧠",
-    title: "Cognitive Development",
-    desc: "Building thinking, observation, problem-solving, and early concepts through hands-on activities.",
-    badgeColor: "bg-warning-subtle text-dark border-warning",
-    accentBorder: "#ffd200",
-  },
-  {
-    icon: "🗣️",
-    title: "Language & Literacy",
-    desc: "Developing communication, vocabulary, listening, phonics, and early literacy.",
-    badgeColor: "bg-primary-subtle text-primary border-primary",
-    accentBorder: "#004a90",
-  },
-  {
-    icon: "💛",
-    title: "Social & Emotional",
-    desc: "Confidence, sharing, empathy, self-expression, and positive relationship building.",
-    badgeColor: "bg-danger-subtle text-danger border-danger",
-    accentBorder: "#ef4444",
-  },
-  {
-    icon: "🏃",
-    title: "Physical Development",
-    desc: "Movement, coordination, motor skills, outdoor play, and active exercises.",
-    badgeColor: "bg-success-subtle text-success border-success",
-    accentBorder: "#22c55e",
-  },
-  {
-    icon: "🎨",
-    title: "Creative Development",
-    desc: "Art, music, imagination, craftwork, and hands-on creative self-expression.",
-    badgeColor: "bg-info-subtle text-info border-info",
-    accentBorder: "#06b6d4",
-  },
-  {
-    icon: "🌱",
-    title: "Life Skills & Values",
-    desc: "Independence, responsibility, good habits, hygiene, and positive moral values.",
-    badgeColor: "bg-secondary-subtle text-secondary border-secondary",
-    accentBorder: "#8b5cf6",
-  },
-];
-
-const classPrograms = [
-  {
-    level: "Play Group & Nursery",
-    age: "2 - 3 Years",
-    desc: "Sensory exploration, motor skills discovery, wooden puzzle blocks, and gentle English-Hindi speech expression in a warm home-like room.",
-    focus: ["Sensory Development", "Language Expression", "Motor Skills & Play"],
-  },
-  {
-    level: "LKG & UKG (Kindergarten)",
-    age: "4 - 5 Years",
-    desc: "Pre-primary readiness focusing on English phonics, early writing readiness, basic math counting, and CBSE formal class preparation.",
-    focus: ["Phonics & Writing Readiness", "Basic Counting & Shapes", "Group Discipline"],
-  },
-  {
-    level: "Junior Primary (Classes 1 - 2)",
-    age: "6 - 7 Years",
-    desc: "Transition to structured academic periods. Independent reading, basic spellings, environmental science (EVS), elementary math, and basic computer exposure.",
-    focus: ["Bilingual Reading Confidently", "Environmental Science (EVS)", "Computer Basics"],
-  },
-  {
-    level: "Senior Primary (Classes 3 - 5)",
-    age: "8 - 10 Years",
-    desc: "Nurturing logic, critical thinking, science experiments, social studies, IT keyboard skills, coding logic, and local sports events.",
-    focus: ["Logic & Critical Thinking", "Science & Computer IT Lab", "Sports & Public Speaking"],
-  },
-];
-
 export default function CurriculumPage() {
+  const learningAreas = t.curriculum.wholeChild.learningAreas;
+  const classPrograms = t.curriculum.classStructure.programs;
+
   return (
     <div className="curriculum-page">
       {/* Royal Blue Hero Banner */}
@@ -92,38 +23,38 @@ export default function CurriculumPage() {
                 <ol className="breadcrumb mb-2" style={{ fontSize: "0.88rem" }}>
                   <li className="breadcrumb-item">
                     <Link href="/" className="text-white text-opacity-75 text-decoration-none">
-                      Home
+                      {t.nav.home}
                     </Link>
                   </li>
                   <li className="breadcrumb-item active text-warning fw-bold" aria-current="page">
-                    Hello Kids Curriculum
+                    {t.curriculum.banner.breadcrumbActive}
                   </li>
                 </ol>
               </nav>
 
               {/* Title & Kicker */}
-              <div className="page-blue-banner-kicker">A Child-Friendly Early Learning Approach</div>
-              <h1 className="page-blue-banner-title">Hello Kids Curriculum</h1>
+              <div className="page-blue-banner-kicker">{t.curriculum.banner.kicker}</div>
+              <h1 className="page-blue-banner-title">{t.curriculum.banner.title}</h1>
               <p className="page-blue-banner-subtitle mb-3">
-                Play Group to Class V &nbsp;|&nbsp; Co-Education &nbsp;|&nbsp; English Medium &nbsp;|&nbsp; Govt. Recognized
+                {t.curriculum.banner.subtitle}
               </p>
 
               <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
                 <span className="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
-                  ⭐ A Proud Hello Kids Franchise
+                  {t.about.franchiseBadge}
                 </span>
                 <span className="badge bg-white text-primary fw-bold px-3 py-2 rounded-pill">
-                  📍 New Vijay Nagar, Ghaziabad
+                  {t.about.locationBadge}
                 </span>
               </div>
             </div>
 
             <div className="col-lg-4 text-center text-lg-end">
               <div className="p-3 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-25 shadow-sm text-center text-white d-inline-block w-100" style={{ maxWidth: "320px" }}>
-                <div className="fw-bold fs-5 text-warning mb-1">Interactive Learning</div>
-                <div className="small mb-3 text-white text-opacity-90">Building curious, confident &amp; joyful learners every day.</div>
+                <div className="fw-bold fs-5 text-warning mb-1">{t.curriculum.heroBox.title}</div>
+                <div className="small mb-3 text-white text-opacity-90">{t.curriculum.heroBox.subtitle}</div>
                 <Link href="/contact" className="btn btn-warning w-100 fw-bold rounded-pill text-dark text-uppercase d-inline-flex align-items-center justify-content-center gap-2" style={{ letterSpacing: "0.5px" }}>
-                  <span>Talk to Us</span>
+                  <span>{t.curriculum.heroBox.button}</span>
                   <span className="rounded-circle d-inline-flex align-items-center justify-content-center text-dark" style={{ width: "20px", height: "20px", backgroundColor: "rgba(0,0,0,0.1)", flexShrink: 0 }}>
                     <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6" />
@@ -141,19 +72,19 @@ export default function CurriculumPage() {
         <div className="container">
           <div className="text-center mb-5">
             <span className="badge bg-primary-subtle text-primary border border-primary px-3 py-1 rounded-pill fw-bold small mb-2">
-              LEARNING AREAS
+              {t.curriculum.wholeChild.tag}
             </span>
             <h2 className="display-5 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Whole-Child Development
+              {t.curriculum.wholeChild.heading}
             </h2>
             <p className="text-muted col-md-8 mx-auto fs-5">
-              The curriculum page explains the franchise curriculum using official Hello Kids material and the school&apos;s actual implementation across key learning areas.
+              {t.curriculum.wholeChild.subheading}
             </p>
           </div>
 
           {/* 6 Whole-Child Learning Area Cards */}
           <div className="row g-4">
-            {learningAreas.map((area, idx) => (
+            {learningAreas.map((area: any, idx: number) => (
               <div key={idx} className="col-md-6 col-lg-4">
                 <div
                   className="p-4 bg-white rounded-4 border shadow-sm h-100 d-flex flex-column justify-content-between transition-all"
@@ -183,18 +114,18 @@ export default function CurriculumPage() {
         <div className="container">
           <div className="text-center mb-5">
             <span className="badge bg-warning-subtle text-dark border border-warning px-3 py-1 rounded-pill fw-bold small mb-2">
-              CLASS STRUCTURE
+              {t.curriculum.classStructure.tag}
             </span>
             <h2 className="display-5 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Age-Wise Learning Levels
+              {t.curriculum.classStructure.heading}
             </h2>
             <p className="text-muted col-md-7 mx-auto">
-              From Play Group to Class V, every level is structured to guide your child step-by-step into formal CBSE education.
+              {t.curriculum.classStructure.subheading}
             </p>
           </div>
 
           <div className="row g-4">
-            {classPrograms.map((prog, idx) => (
+            {classPrograms.map((prog: any, idx: number) => (
               <div key={idx} className="col-md-6">
                 <div className="p-4 bg-white rounded-4 border shadow-sm h-100">
                   <div className="d-flex justify-content-between align-items-center mb-3">
@@ -204,9 +135,9 @@ export default function CurriculumPage() {
                     <span className="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold">{prog.age}</span>
                   </div>
                   <p className="text-muted mb-4" style={{ lineHeight: 1.6 }}>{prog.desc}</p>
-                  <h6 className="fw-bold text-dark mb-2 small text-uppercase" style={{ letterSpacing: "0.5px" }}>Key Focus Areas:</h6>
+                  <h6 className="fw-bold text-dark mb-2 small text-uppercase" style={{ letterSpacing: "0.5px" }}>{t.curriculum.classStructure.keyFocusLabel}</h6>
                   <div className="d-flex flex-wrap gap-2">
-                    {prog.focus.map((item, fIdx) => (
+                    {prog.focus.map((item: string, fIdx: number) => (
                       <span key={fIdx} className="badge bg-light text-dark border px-3 py-2 rounded-pill">
                         ✨ {item}
                       </span>
@@ -228,10 +159,10 @@ export default function CurriculumPage() {
           >
             <div>
               <h2 className="fw-bold mb-2 text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Want to know more?
+                {t.curriculum.ctaBanner.title}
               </h2>
               <p className="mb-0 text-white text-opacity-90 fs-5">
-                Speak to the school team about the programme and age-wise learning plan.
+                {t.curriculum.ctaBanner.subtitle}
               </p>
             </div>
             <div className="d-flex gap-3 flex-wrap">
@@ -240,14 +171,14 @@ export default function CurriculumPage() {
                 className="btn btn-warning btn-lg px-4 rounded-pill fw-bold text-dark text-uppercase shadow"
                 style={{ letterSpacing: "0.5px" }}
               >
-                Talk to Us
+                {t.curriculum.ctaBanner.talkButton}
               </Link>
               <Link
                 href="/admissions"
                 className="btn btn-outline-light btn-lg px-4 rounded-pill fw-bold text-uppercase d-inline-flex align-items-center gap-2"
                 style={{ letterSpacing: "0.5px" }}
               >
-                <span>Admissions</span>
+                <span>{t.curriculum.ctaBanner.admissionsButton}</span>
                 <span className="rounded-circle d-inline-flex align-items-center justify-content-center text-white" style={{ width: "20px", height: "20px", backgroundColor: "rgba(255,255,255,0.2)", flexShrink: 0 }}>
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="9 18 15 12 9 6" />
