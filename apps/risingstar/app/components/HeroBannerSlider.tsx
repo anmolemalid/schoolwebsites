@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { t } from "../lib/i18n";
 
 export interface HeroSlide {
   id: number;

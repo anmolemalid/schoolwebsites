@@ -1,0 +1,621 @@
+{
+  "meta": {
+    "siteName": "Rising Kids School",
+    "defaultTitle": "Rising Kids School | Play Group to Class V | Vijay Nagar, Ghaziabad",
+    "titleTemplate": "%s | Rising Kids School Ghaziabad",
+    "defaultDescription": "Rising Kids School is dedicated to nurturing young minds with quality education, strong values, and a joyful learning environment in New Vijay Nagar, Ghaziabad. Play Group to Class V.",
+    "siteUrl": "https://risingkidsschool.com",
+    "locale": "en_IN",
+    "ogImage": "/assets/hero_kids_thumbs_up.png",
+    "twitterHandle": "@risingkidsschool",
+    "keywords": [
+      "Rising Kids School",
+      "Rising Kids School Ghaziabad",
+      "best school in Vijay Nagar Ghaziabad",
+      "preschool Ghaziabad",
+      "play group school near me",
+      "nursery school Vijay Nagar",
+      "LKG UKG admission Ghaziabad",
+      "primary school Vijay Nagar",
+      "Hello Kids franchise Ghaziabad",
+      "top primary school Sector 9 Vijay Nagar"
+    ],
+    "pages": {
+      "home": {
+        "title": "Rising Kids School | Play Group to Class V | Vijay Nagar, Ghaziabad",
+        "description": "Welcome to Rising Kids School. Providing quality English-medium education, holistic growth, smart classrooms & safe transport from Play Group to Class V in Sector 9, New Vijay Nagar, Ghaziabad.",
+        "keywords": "Rising Kids School, play school Ghaziabad, primary school Vijay Nagar, school admissions Ghaziabad 2026-27",
+        "ogTitle": "Rising Kids School - Where Young Minds Learn, Grow & Shine",
+        "ogDescription": "Govt. Recognized preschool and primary school in New Vijay Nagar, Ghaziabad. Admissions Open for 2026-27."
+      },
+      "about": {
+        "title": "About Us | Rising Kids School Vijay Nagar, Ghaziabad",
+        "description": "Learn about Rising Kids School, our Hello Kids franchise legacy, leadership vision, mission, and our 4 core developmental pillars for foundational child education.",
+        "keywords": "about Rising Kids School, Hello Kids franchise, best preschool philosophy, primary school leadership Ghaziabad",
+        "ogTitle": "About Rising Kids School - Nurturing Excellence & Lifelong Values",
+        "ogDescription": "Inspiring curiosity, building confidence, and shaping bright futures in New Vijay Nagar, Ghaziabad."
+      },
+      "curriculum": {
+        "title": "Academic Curriculum & Programs | Rising Kids School",
+        "description": "Explore our interactive curriculum, STEM activities, phonics, Montessori learning, and age-wise progression from Play Group, Nursery, LKG, UKG to Class I - V.",
+        "keywords": "school curriculum, phonics learning, Montessori preschool, primary school syllabus, early childhood education Ghaziabad",
+        "ogTitle": "Academics & Curriculum - Rising Kids School Ghaziabad",
+        "ogDescription": "6 Core pillars of child development and structured learning stages for Play Group to Class V."
+      },
+      "admissions": {
+        "title": "Admissions 2026-27 | Rising Kids School Ghaziabad",
+        "description": "Enroll your child at Rising Kids School for the 2026-27 academic session. Simple 3-step admission process, fee structure guidance, eligibility criteria, and online callback enquiry.",
+        "keywords": "school admissions 2026-27, nursery admission Ghaziabad, play group admission Vijay Nagar, primary school enrollment",
+        "ogTitle": "Admissions Open 2026-27 - Rising Kids School",
+        "ogDescription": "A seamless, transparent admission process for Play Group to Class V. Request a callback or visit our campus today."
+      },
+      "facilities": {
+        "title": "Campus Facilities & Safety | Rising Kids School",
+        "description": "Tour our child-safe campus featuring smart air-conditioned classrooms, CCTV surveillance, soft-turf play zones, Montessori activity lab, and RO purified drinking water.",
+        "keywords": "school facilities, CCTV campus Ghaziabad, AC classrooms, child-safe playground, smart class school",
+        "ogTitle": "World-Class Campus Facilities - Rising Kids School",
+        "ogDescription": "Purpose-built, safe, vibrant, and fully equipped infrastructure supporting joyful early childhood education."
+      },
+      "gallery": {
+        "title": "Photo Gallery & Campus Life | Rising Kids School",
+        "description": "Browse photo highlights of classroom activities, celebrations, festival events, sports days, and student milestones at Rising Kids School, Vijay Nagar.",
+        "keywords": "school photo gallery, campus life photos, annual function pictures, sports day celebrations",
+        "ogTitle": "Campus Life & Gallery - Rising Kids School",
+        "ogDescription": "A vibrant glimpse into daily learning, stage celebrations, sports days, and happy milestones."
+      },
+      "events": {
+        "title": "Events Calendar & Celebrations | Rising Kids School",
+        "description": "Stay updated with our annual school events calendar, sports day, annual function, Independence Day parade, science exhibitions, and festival celebrations.",
+        "keywords": "school events calendar, annual day function, sports day, festival celebrations school Ghaziabad",
+        "ogTitle": "School Events & Celebrations - Rising Kids School",
+        "ogDescription": "Building stage confidence, teamwork & lifelong memories through rich cultural and sports events."
+      },
+      "contact": {
+        "title": "Contact Us & Campus Location | Rising Kids School",
+        "description": "Get in touch with Rising Kids School in New Vijay Nagar, Ghaziabad. Phone helpline, office visiting hours, email enquiry, and interactive Google Maps directions.",
+        "keywords": "contact Rising Kids School, school location Vijay Nagar, school phone number Ghaziabad, campus visit enquiry",
+        "ogTitle": "Contact & Visit Campus - Rising Kids School",
+        "ogDescription": "We would love to welcome you. Visit our campus in Sector 9, New Vijay Nagar, Ghaziabad."
+      }
+    }
+  },
+  "school": {
+    "name": "Rising Kids School",
+    "fullName": "Rising Kids School - A Proud Hello Kids Franchise",
+    "tagline": "Nurturing Excellence",
+    "motto": "Where Young Minds Learn, Grow & Shine Together",
+    "gradeSpan": "Play Group to Class V",
+    "recognition": "Govt. Recognized & Registered",
+    "medium": "English Medium",
+    "system": "Co-Education",
+    "location": {
+      "address": "C-47, Sector 9, New Vijay Nagar",
+      "city": "Ghaziabad",
+      "state": "Uttar Pradesh",
+      "pincode": "201009",
+      "fullAddress": "C-47, Sector 9, New Vijay Nagar, Ghaziabad (U.P.) 201009",
+      "mapsUrl": "https://www.google.com/maps?q=28.643333,77.427889",
+      "embedMapsUrl": "https://maps.google.com/maps?q=28.643333,77.427889&t=&z=16&ie=UTF8&iwloc=&output=embed"
+    },
+    "contacts": {
+      "phonePrimary": "+91 8826239341",
+      "phoneSecondary": "+91 8826239346",
+      "phoneDisplay": "+91 8826239341, +91 8826239346",
+      "email": "inforisingkidsschool@gmail.com",
+      "whatsapp": "+918826239341",
+      "whatsappLink": "https://wa.me/918826239341?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Rising%20Kids%20School."
+    },
+    "social": {
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com"
+    },
+    "timings": {
+      "schoolHours": "8:30 AM - 1:30 PM (Mon - Sat)",
+      "officeHours": "8:00 AM - 3:00 PM (Mon - Sat)"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "curriculum": "Curriculum",
+    "admissions": "Admissions",
+    "facilities": "Facilities",
+    "gallery": "Gallery",
+    "events": "Events",
+    "contactUs": "Contact Us"
+  },
+  "header": {
+    "phoneAria": "Call school helpline",
+    "whatsappAria": "Chat on WhatsApp",
+    "facebookAria": "Facebook Page",
+    "instagramAria": "Instagram Profile",
+    "menuToggle": "Toggle navigation menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "kicker": "Where Young Minds",
+    "headline": {
+      "line1": "LEARN, GROW &",
+      "line2": "SHINE TOGETHER"
+    },
+    "gradeBadge": "Play Group to Class V",
+    "badges": {
+      "coEducation": "Co-Education",
+      "englishMedium": "English Medium",
+      "govtRecognized": "Govt. Recognized"
+    },
+    "admissionsCard": {
+      "title": "ADMISSIONS OPEN",
+      "session": "2026-27",
+      "tagline": "Safe | Caring | Creative | Future Ready",
+      "button": "ENQUIRE NOW"
+    }
+  },
+  "home": {
+    "whyChooseUs": {
+      "tag": "WHY CHOOSE US",
+      "heading": "Nurturing Young Minds Every Day",
+      "cards": [
+        {
+          "title": "Experienced Teachers",
+          "icon": "🎓"
+        },
+        {
+          "title": "Safe & Secure Campus",
+          "icon": "🛡️"
+        },
+        {
+          "title": "Smart Classrooms",
+          "icon": "📖"
+        },
+        {
+          "title": "Creative & Fun Activities",
+          "icon": "🎨"
+        },
+        {
+          "title": "Sports & Outdoor Activities",
+          "icon": "⚽"
+        },
+        {
+          "title": "Transport Facility",
+          "icon": "🚌"
+        }
+      ]
+    },
+    "aboutSection": {
+      "kicker": "ABOUT",
+      "title": "RISING KIDS SCHOOL ⭐",
+      "description": "Rising Kids School is dedicated to nurturing young minds with quality education, strong values and a joyful learning environment. We focus on holistic development through academics, co-curricular activities and life skills.",
+      "vision": {
+        "title": "Our Vision",
+        "description": "To be a center of excellence in education, inspiring children to become confident and responsible individuals."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "To provide a safe, caring and stimulating environment that fosters academic excellence and all-round development."
+      },
+      "values": {
+        "title": "Our Values",
+        "description": "Respect, Responsibility, Honesty, Kindness and Excellence in everything we do."
+      },
+      "readMore": "READ MORE"
+    },
+    "quickAccess": {
+      "admissionsCard": {
+        "title": "ADMISSIONS OPEN",
+        "description": "For Play Group to Class V",
+        "button": "APPLY NOW"
+      },
+      "academicsCard": {
+        "title": "ACADEMICS",
+        "description": "Strong foundation for a bright future.",
+        "button": "EXPLORE"
+      },
+      "facilitiesCard": {
+        "title": "OUR FACILITIES",
+        "description": "Modern facilities for happy learning.",
+        "button": "VIEW FACILITIES"
+      },
+      "galleryCard": {
+        "title": "GALLERY",
+        "description": "Moments of joy and achievements.",
+        "button": "VIEW GALLERY"
+      }
+    },
+    "upcomingEvents": {
+      "tag": "UPCOMING EVENTS",
+      "heading": "Celebrations & School Days",
+      "events": [
+        {
+          "day": "15",
+          "month": "AUG",
+          "title": "Independence Day Celebration 🇮🇳",
+          "description": "Patriotic songs, costume parade & speeches"
+        },
+        {
+          "day": "05",
+          "month": "SEP",
+          "title": "Teachers' Day Celebration 🧑‍🏫",
+          "description": "Student gratitude function & stage shows"
+        },
+        {
+          "day": "20",
+          "month": "SEP",
+          "title": "Annual Sports Day 🏆",
+          "description": "Athletic races, obstacle games & medals"
+        }
+      ],
+      "viewAllButton": "VIEW ALL EVENTS"
+    },
+    "quickEnquiry": {
+      "tag": "ENQUIRY",
+      "heading": "Request a Call Back",
+      "description": "Leave your contact details and our admissions officer will reach out promptly.",
+      "form": {
+        "parentName": "Parent Name",
+        "mobile": "Mobile Number",
+        "classSelectDefault": "Class Seeking: Play Group",
+        "options": [
+          "Class Seeking: Play Group",
+          "Class Seeking: Nursery",
+          "Class Seeking: LKG",
+          "Class Seeking: UKG",
+          "Class Seeking: Class I to V"
+        ],
+        "message": "Your Message (Optional)",
+        "submitButton": "SUBMIT ENQUIRY ➜",
+        "successHeading": "Form Submitted Successfully!",
+        "successMessage": "Our team will call you back within 24 hours.",
+        "submitAnother": "Submit Another"
+      }
+    },
+    "campusLocation": {
+      "tag": "CAMPUS LOCATION",
+      "heading": "Visit Rising Kids School",
+      "address": "📍 C-47, Sector 9, New Vijay Nagar, Ghaziabad (U.P.) 201009",
+      "button": "📍 Open Location in Google Maps"
+    }
+  },
+  "slider": [
+    {
+      "tag": "Preschool & Primary School",
+      "title": "Rising Kids School, Vijay Nagar",
+      "subtitle": "Govt. recognized, nurturing English-medium school from Play Group to 5th Class in Sector 9, Ghaziabad.",
+      "highlights": [
+        "1:10 Teacher Ratio",
+        "Safe GPS Vans",
+        "100% CCTV Monitored"
+      ]
+    },
+    {
+      "tag": "Experienced Caring Teachers",
+      "title": "Interactive & Loving Classrooms",
+      "subtitle": "Dedicated educators guiding early phonics, bilingual discovery, and elementary math foundations.",
+      "highlights": [
+        "Loving Environment",
+        "Bilingual Phonics",
+        "Air-Conditioned Rooms"
+      ]
+    },
+    {
+      "tag": "Creative Arts & Paper Crafts",
+      "title": "Vibrant Art Studio & Origami",
+      "subtitle": "Unleashing creative thinking with watercolor painting, origami, and tactile motor crafts.",
+      "highlights": [
+        "Color Exploration",
+        "Origami & Paper Craft",
+        "Fine Motor Development"
+      ]
+    },
+    {
+      "tag": "Joyful & Confident Learners",
+      "title": "Where Every Child Shines Bright",
+      "subtitle": "Nurturing curiosity, strong moral values, public speaking, and self-confidence through joyful learning.",
+      "highlights": [
+        "Holistic Growth",
+        "Moral Values",
+        "Confidence Building"
+      ]
+    }
+  ],
+  "about": {
+    "banner": {
+      "title": "About Rising Kids School",
+      "subtitle": "Inspiring curiosity, building confidence, and shaping bright young futures since inception in New Vijay Nagar, Ghaziabad."
+    },
+    "heroBox": {
+      "title": "Admissions Open 2026-27",
+      "description": "Nurturing curiosity, character & creativity every day.",
+      "button": "Enquire Now"
+    },
+    "welcome": {
+      "tag": "WHO WE ARE",
+      "heading": "A Loving & Inspiring Foundation for Lifelong Success",
+      "paragraph1": "Rising Kids School is a premier early childhood and primary education institution in Vijay Nagar, Ghaziabad. We blend world-class early learning methodologies with rich values, individualized attention, and joyful exploration.",
+      "paragraph2": "As an authorized Hello Kids franchise school, we provide children from Play Group to Class V with a safe, nurturing, and technology-enabled learning ecosystem where every child discovers their unique talents."
+    },
+    "moreThanAcademics": {
+      "tag": "OUR PHILOSOPHY",
+      "heading": "More Than Academics: Holistic Child Growth",
+      "description": "We believe education is the spark that lights up a child's inner potential across cognitive, emotional, and social dimensions.",
+      "cards": [
+        {
+          "title": "Safe & Caring Environment",
+          "description": "CCTV-monitored campus, child-proof infrastructure, and highly empathetic staff ensuring 100% emotional and physical security."
+        },
+        {
+          "title": "Joyful Playway Learning",
+          "description": "Interactive Montessori apparatus, hands-on STEM activities, and sensory play spaces designed for active early exploration."
+        },
+        {
+          "title": "Character & Value Building",
+          "description": "Daily assemblies, moral stories, empathy exercises, and cultural celebrations fostering respect, kindness, and integrity."
+        },
+        {
+          "title": "Foundational Literacy & Numeracy",
+          "description": "Phonics-based English language development and practical math reasoning that build rock-solid foundational skills."
+        }
+      ]
+    }
+  },
+  "curriculum": {
+    "banner": {
+      "title": "Academic Curriculum & Programs",
+      "subtitle": "Playway to Class V: A balanced learning journey fostering curiosity, foundational skills, and holistic development."
+    },
+    "heroBox": {
+      "title": "Interactive Learning",
+      "description": "Building curious, confident & joyful learners every day.",
+      "button": "Talk to Us"
+    },
+    "learningAreas": {
+      "tag": "LEARNING AREAS",
+      "heading": "6 Core Pillars of Child Development",
+      "description": "Our curriculum is structured to support multi-faceted development through age-appropriate, interactive experiences.",
+      "areas": [
+        {
+          "title": "Language & Phonics",
+          "description": "Phonics-based reading, vocabulary enrichment, storytelling, and early creative writing."
+        },
+        {
+          "title": "Mathematical Thinking",
+          "description": "Number sense, spatial awareness, logical puzzles, and real-world problem solving."
+        },
+        {
+          "title": "Environmental Discovery",
+          "description": "Understanding nature, science observations, weather cycles, and community awareness."
+        },
+        {
+          "title": "Creative & Performing Arts",
+          "description": "Drawing, clay modelling, music, rhythmic movement, role-play, and annual stage performances."
+        },
+        {
+          "title": "Physical & Motor Skills",
+          "description": "Gross motor outdoor play, fine motor pencil grip, yoga, agility drills, and coordination."
+        },
+        {
+          "title": "Social-Emotional Learning",
+          "description": "Teamwork, sharing, emotional expression, polite communication, and self-confidence."
+        }
+      ]
+    },
+    "classes": {
+      "tag": "CLASS STRUCTURES",
+      "heading": "Tailored Stages for Every Age",
+      "stages": [
+        {
+          "grade": "Play Group (1.8 - 2.5 Yrs)",
+          "focus": "Sensory exploration, gentle socialization, music, motor coordination, and settling in."
+        },
+        {
+          "grade": "Nursery (2.5 - 3.5 Yrs)",
+          "focus": "Phonics sounds, coloring, shape recognition, basic vocabulary, and rhythm."
+        },
+        {
+          "grade": "LKG (3.5 - 4.5 Yrs)",
+          "focus": "Letter tracing, early reading, counting up to 50, environmental awareness, and crafts."
+        },
+        {
+          "grade": "UKG (4.5 - 5.5 Yrs)",
+          "focus": "Sentence reading, addition concepts, Hindi letters, general awareness, and stage confidence."
+        },
+        {
+          "grade": "Primary: Class I - V",
+          "focus": "Structured English, Mathematics, EVS/Science, Hindi, Computer Literacy, and Co-curricular clubs."
+        }
+      ]
+    }
+  },
+  "admissions": {
+    "banner": {
+      "title": "Admissions 2026-27",
+      "subtitle": "Join the Rising Kids family. A seamless, transparent, and parent-friendly admission process for Play Group to Class V."
+    },
+    "heroBox": {
+      "title": "Direct Helpdesk",
+      "description": "Instant guidance for registration & eligibility.",
+      "button": "Call Now"
+    },
+    "steps": {
+      "tag": "HOW TO APPLY",
+      "heading": "3 Simple Steps to Enrol Your Child",
+      "items": [
+        {
+          "step": "Step 1: Campus Visit & Enquiry",
+          "description": "Visit our New Vijay Nagar campus, explore our joyful classrooms, and meet our academic counselor."
+        },
+        {
+          "step": "Step 2: Interaction & Form",
+          "description": "Informal and friendly child interaction with our teachers followed by submitting the registration form."
+        },
+        {
+          "step": "Step 3: Document Verification & Welcome",
+          "description": "Complete fee formalities, collect the welcome kit, uniform, and books, and start the joyful journey."
+        }
+      ]
+    },
+    "form": {
+      "title": "Request an Admission Callback",
+      "parentName": "Parent / Guardian Name",
+      "phone": "Mobile Number",
+      "email": "Email Address (Optional)",
+      "childAge": "Child's Age / DOB",
+      "grade": "Grade Applying For",
+      "selectGrade": "Select Grade",
+      "message": "Any Specific Questions / Requirements",
+      "submitButton": "Submit Enquiry",
+      "submitting": "Submitting...",
+      "successMessage": "Thank you! Our admissions coordinator will contact you shortly on your provided phone number."
+    }
+  },
+  "facilities": {
+    "banner": {
+      "title": "School Facilities & Campus",
+      "subtitle": "Purpose-built, safe, vibrant, and fully equipped infrastructure supporting joyful early childhood education."
+    },
+    "heroBox": {
+      "title": "Campus Tour",
+      "description": "Experience our classrooms, play lawns & IT lab in person.",
+      "button": "Book Campus Visit"
+    },
+    "items": [
+      {
+        "title": "Smart & Air-Conditioned Classrooms",
+        "description": "Bright, ventilated, and child-safe classrooms equipped with interactive audio-visual learning aids."
+      },
+      {
+        "title": "Indoor & Outdoor Play Zones",
+        "description": "Soft-turf play lawns, non-toxic slides, swings, and climbing sets that build gross motor agility."
+      },
+      {
+        "title": "Activity & Montessori Lab",
+        "description": "Hands-on sensorial kits, building blocks, flashcards, and interactive STEM learning materials."
+      },
+      {
+        "title": "Computer & IT Center",
+        "description": "Child-friendly computers introducing foundational digital literacy and coding basics."
+      },
+      {
+        "title": "CCTV Surveillance & Safety",
+        "description": "24/7 high-definition camera coverage across all gates, corridors, activity rooms, and playgrounds."
+      },
+      {
+        "title": "Hygienic RO Drinking Water & Sanitation",
+        "description": "Child-height sanitized washrooms and continuous RO purified clean drinking water dispensers."
+      }
+    ],
+    "safety": {
+      "tag": "SAFETY FIRST",
+      "heading": "Uncompromising Safety Standards",
+      "points": [
+        "Strict background verification for all teaching and non-teaching staff.",
+        "Parent gate-pass ID card security system for safe child drop & pickup.",
+        "First-aid emergency medical box and dedicated pediatric on-call support.",
+        "Fire safety certified equipment and regular safety evacuation drills."
+      ]
+    }
+  },
+  "gallery": {
+    "banner": {
+      "title": "Campus Gallery",
+      "subtitle": "A vibrant glimpse into daily learning, stage celebrations, sports days, and happy milestones at Rising Kids."
+    },
+    "heroBox": {
+      "title": "Campus Life",
+      "description": "Experience our joyful classrooms, celebrations & play lawns.",
+      "button": "Book Campus Tour"
+    },
+    "categories": {
+      "all": "All Photos",
+      "classrooms": "Classrooms & Labs",
+      "celebrations": "Events & Celebrations",
+      "sports": "Sports & Play",
+      "creative": "Art & Activities"
+    }
+  },
+  "events": {
+    "banner": {
+      "title": "School Events & Calendar",
+      "subtitle": "Celebrating festivals, cultural heritage, annual sports, science exhibitions, and graduation ceremonies."
+    },
+    "heroBox": {
+      "title": "Celebrations",
+      "description": "Building stage confidence, teamwork & lifelong memories.",
+      "button": "Contact School"
+    },
+    "highlights": [
+      {
+        "title": "Annual Sports Day",
+        "month": "December",
+        "description": "Races, relay games, drill displays, and parent-child athletic events celebrating active fitness."
+      },
+      {
+        "title": "Grand Annual Function",
+        "month": "February",
+        "description": "Magnificent stage dramas, themed dance performances, musical recitals, and prize distributions."
+      },
+      {
+        "title": "Science & Craft Exhibition",
+        "month": "October",
+        "description": "Young inventors showcasing creative science models, robotic toys, and recycled art exhibits."
+      },
+      {
+        "title": "Festivals of India Week",
+        "month": "Year-Round",
+        "description": "Diwali, Eid, Christmas, Janmashtami, Independence Day, and Republic Day celebrations in traditional attire."
+      },
+      {
+        "title": "Mother's & Grandparents' Day",
+        "month": "May & September",
+        "description": "Special classroom bonding activities, handwritten cards, games, and heartfelt gratitude celebrations."
+      },
+      {
+        "title": "Graduation & Award Ceremony",
+        "month": "March",
+        "description": "Honoring our young kindergarten and primary graduates with certificates and academic honors."
+      }
+    ]
+  },
+  "contact": {
+    "banner": {
+      "title": "Contact & Visit Campus",
+      "subtitle": "We would love to welcome you and your child. Get in touch with our admissions office or schedule a campus visit."
+    },
+    "heroBox": {
+      "title": "Direct Helpdesk",
+      "description": "Instant assistance for admissions, timings & visits.",
+      "button": "Call School"
+    },
+    "info": {
+      "campusAddressTitle": "Campus Address",
+      "phoneTitle": "Phone Numbers",
+      "emailTitle": "Email Address",
+      "officeHoursTitle": "Visiting Hours"
+    },
+    "form": {
+      "heading": "Send Us a Message",
+      "subheading": "Fill out the quick form below and our counselor will call you within 2 business hours.",
+      "nameLabel": "Your Name",
+      "phoneLabel": "Phone Number",
+      "emailLabel": "Email Address",
+      "subjectLabel": "Subject / Topic",
+      "messageLabel": "Your Message",
+      "submitButton": "Send Message",
+      "successMessage": "Message received! We will reach out to you shortly."
+    }
+  },
+  "footer": {
+    "about": "Rising Kids School is a premier primary & early childhood education center in New Vijay Nagar, Ghaziabad, dedicated to nurturing values, confidence, and holistic academic excellence.",
+    "quickLinksTitle": "QUICK LINKS",
+    "usefulLinksTitle": "USEFUL LINKS",
+    "contactTitle": "CONTACT US",
+    "copyright": "© 2026 Rising Kids School. All Rights Reserved.",
+    "developedBy": "Powered by"
+  },
+  "floatingActions": {
+    "whatsappChat": "Chat on WhatsApp",
+    "callUs": "📞 Call Us",
+    "whatsapp": "💬 WhatsApp",
+    "direction": "📍 Direction"
+  }
+}

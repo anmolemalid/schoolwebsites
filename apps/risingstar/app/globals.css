@@ -28,14 +28,68 @@
   --header-h: 80px;
 }
 
-/* Global Overrides */
+/* Global Typography matching prototype with responsive font-size */
+html {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1023px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  html {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-floating-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25d366;
+  z-index: 9999;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65);
+  color: #ffffff;
+}
+
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: var(--kids-bg);
-  color: var(--kids-dark);
-  padding-top: var(--header-h);
+  color: #17324d;
   overflow-x: hidden;
   position: relative;
+  line-height: 1.6;
+}
+
+/* Site Container Max-Width 1240px */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid {
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 h1,
@@ -45,9 +99,9 @@ h4,
 h5,
 h6,
 .brand-text {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 600;
-  color: var(--kids-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #102f54;
 }
 
 /* Background Blob Animations */
@@ -1895,6 +1949,7 @@ footer {
 
 
 @keyframes float-stars {
+
   0%,
   100% {
     transform: scale(1) translateY(0);
@@ -1974,6 +2029,7 @@ footer {
   0% {
     transform: translateY(0px) rotate(0deg);
   }
+
   100% {
     transform: translateY(-8px) rotate(1.5deg);
   }
@@ -2065,13 +2121,11 @@ footer {
 .hero-slide-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(17, 19, 31, 0.95) 0%,
-    rgba(17, 19, 31, 0.6) 42%,
-    rgba(17, 19, 31, 0.15) 80%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(17, 19, 31, 0.95) 0%,
+      rgba(17, 19, 31, 0.6) 42%,
+      rgba(17, 19, 31, 0.15) 80%,
+      rgba(0, 0, 0, 0.1) 100%);
 }
 
 /* Caption and Details Overlay */
@@ -2353,4 +2407,842 @@ footer {
   overflow: hidden;
   text-overflow: ellipsis;
   backdrop-filter: blur(4px);
+}
+
+/* ----------------------------------------------------
+   EXACT MOCKUP DESIGN STYLES & OVERRIDES
+   ---------------------------------------------------- */
+
+:root {
+  --navy-topbar: #06234b;
+  --navy-royal: #003b8e;
+  --navy-footer: #00357b;
+  --yellow-sunshine: #ffc107;
+  --yellow-hover: #e0a800;
+  --coral-accent: #d90429;
+  --cream-light-bg: #fffde7;
+}
+
+/* Topbar */
+.topbar-mockup {
+  background-color: var(--navy-topbar);
+  color: #ffffff;
+  font-size: 0.84rem;
+}
+
+.topbar-mockup a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.topbar-mockup a:hover {
+  color: var(--yellow-sunshine);
+}
+
+/* Header Navbar */
+.header-brand-logo {
+  height: 52px;
+  object-fit: contain;
+}
+
+.brand-title-mockup {
+  color: var(--navy-royal) !important;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.5px;
+}
+
+.brand-tagline-mockup {
+  color: var(--coral-accent) !important;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.nav-link-mockup {
+  color: #333333;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-link-mockup:hover {
+  color: var(--navy-royal);
+}
+
+.nav-link-mockup-active {
+  background-color: var(--yellow-sunshine) !important;
+  color: var(--navy-topbar) !important;
+  font-weight: 700 !important;
+  border-radius: 20px;
+  padding: 0.4rem 1.1rem !important;
+  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+}
+
+/* Hero Section Scalloped Royal Navy Blue */
+.hero-mockup-section {
+  background: linear-gradient(140deg, #002b66 0%, #003b8e 60%, #004fb8 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding-top: 2.5rem;
+  padding-bottom: 6rem;
+}
+
+.cursive-kicker {
+  font-family: 'Caveat', cursive;
+  color: var(--yellow-sunshine);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero-main-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 800;
+  font-size: 2.7rem;
+  line-height: 1.12;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-main-title .text-yellow {
+  color: var(--yellow-sunshine) !important;
+}
+
+.hero-badge-pill {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+}
+
+/* Center Hero Cutout Frame */
+.hero-kids-frame {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 5px solid var(--yellow-sunshine);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  background-color: var(--yellow-sunshine);
+}
+
+.hero-kids-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Admissions Card Hero Right */
+.admissions-hero-card {
+  background: #ffffff;
+  color: #222222;
+  border-radius: 20px;
+  padding: 1.6rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 193, 7, 0.6);
+  position: relative;
+}
+
+.admissions-badge-tag {
+  background-color: var(--coral-accent);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 8px 8px 0 0;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.admissions-open-box {
+  background-color: var(--yellow-sunshine);
+  color: var(--navy-topbar);
+  font-weight: 900;
+  font-size: 1.85rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.admissions-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem 0;
+}
+
+.admissions-check-list li {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.admissions-check-icon {
+  background-color: var(--yellow-sunshine);
+  color: var(--navy-topbar);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.btn-enquire-now {
+  background-color: var(--yellow-sunshine);
+  color: var(--navy-topbar) !important;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 30px;
+  border: none;
+  width: 100%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
+}
+
+.btn-enquire-now:hover {
+  background-color: var(--yellow-hover);
+  transform: translateY(-2px);
+}
+
+/* Feature 6 Tiles */
+.feature-tile-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  height: 100%;
+}
+
+.feature-tile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: var(--yellow-sunshine);
+}
+
+.feature-icon-wrapper {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 0.8rem auto;
+  border-radius: 16px;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 1px solid #eee;
+}
+
+/* About Rising Kids School */
+.about-kicker {
+  color: var(--coral-accent);
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.about-title-mockup {
+  color: var(--navy-royal);
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.about-icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--yellow-sunshine);
+  background: #fff8e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.btn-navy-pill {
+  background-color: var(--navy-royal);
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 0.7rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.btn-navy-pill:hover {
+  background-color: var(--navy-topbar);
+  transform: translateY(-2px);
+}
+
+/* Quick Access 4-Card Cream Section */
+.quick-access-cream-bg {
+  background-color: #fff9e6;
+  position: relative;
+  overflow: visible !important;
+  z-index: 5;
+  min-height: 200px;
+}
+
+@media (min-width: 992px) {
+  .quick-access-cream-bg {
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.girl-popup-img {
+  position: relative;
+  z-index: 15;
+  margin-top: -58px;
+  max-height: 258px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 991.98px) {
+  .girl-popup-img {
+    margin-top: 0;
+    max-height: 200px;
+  }
+}
+
+.cream-doodle-star {
+  position: absolute;
+  top: 10px;
+  right: 18%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.cream-doodle-pencil {
+  position: absolute;
+  top: 12px;
+  right: 1.5%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.cream-doodle-flower {
+  position: absolute;
+  bottom: 12px;
+  right: 22%;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.quick-feature-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.15rem 0.95rem 0.95rem 0.95rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.quick-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 45, 98, 0.12);
+}
+
+.quick-card-title {
+  color: #002d62;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 0.94rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.quick-card-content {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-align: left;
+  margin-bottom: 0.85rem;
+  min-height: 52px;
+}
+
+.quick-card-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-card-desc {
+  font-size: 0.82rem;
+  color: #2b2b2b;
+  line-height: 1.35;
+  margin: 0;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-quick-action {
+  background-color: #002d62;
+  color: #ffffff !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 45, 98, 0.22);
+}
+
+.btn-quick-action:hover {
+  background-color: #0b3b78;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 45, 98, 0.32);
+}
+
+/* Footer Section */
+.footer-mockup-bg {
+  background-color: #0b3b78;
+  /* Deep Royal Navy matching the mockup */
+  color: #ffffff;
+}
+
+.footer-school-title {
+  color: #ffffff !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+}
+
+.footer-school-meta {
+  color: #ffffff;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.footer-social-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-social-btn:hover {
+  background-color: #ffffff;
+  color: #0b3b78;
+}
+
+.footer-social-btn.yt-btn {
+  background-color: #ef4444;
+  border-color: #ef4444;
+  color: #ffffff;
+}
+
+.footer-social-btn.yt-btn:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.footer-title-mockup {
+  color: #ffffff !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.02rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.1rem;
+}
+
+.footer-links-mockup {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-mockup li {
+  margin-bottom: 0.55rem;
+}
+
+.footer-links-mockup a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-links-mockup a:hover {
+  color: #ffd200;
+  transform: translateX(3px);
+}
+
+.footer-link-arrow {
+  color: #ffd200;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.95rem;
+  color: #ffffff;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-contact-icon {
+  color: #ffd200;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.copyright-bar-yellow {
+  background-color: #ffc72c;
+  color: #0b2246;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.85rem 0;
+}
+
+/* Page Blue Banner */
+.page-blue-banner {
+  background: #004a90;
+  background-color: #004a90;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding: 3.2rem 0;
+  border-bottom: 4px solid #ffd200;
+}
+
+.page-blue-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle at 85% 30%, rgba(255, 210, 0, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.page-blue-banner-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: calc(2.2rem + 1vw);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  line-height: 1.15;
+}
+
+.page-blue-banner-kicker {
+  font-family: 'Caveat', cursive;
+  font-size: 1.9rem;
+  color: #ffd200;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.page-blue-banner-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Mobile Fixed 3-Segment Bottom Action Bar */
+.mobile-action-bar-3seg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+  display: flex;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.bar-seg-blue {
+  background-color: var(--navy-royal);
+  color: #ffffff !important;
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.bar-seg-yellow {
+  background-color: var(--yellow-sunshine);
+  color: var(--navy-topbar) !important;
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* ----------------------------------------------------
+   HERO BANNER EXACT MOCKUP COMPONENT STYLES
+   ---------------------------------------------------- */
+
+.hero-banner-exact-container {
+  background-color: #004a90;
+  color: #ffffff;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11, 59, 120, 0.2);
+  height: 420px;
+  min-height: 420px;
+  max-height: 420px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 991.98px) {
+  .hero-banner-exact-container {
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    display: block;
+  }
+}
+
+.hero-banner-content-row {
+  height: 420px;
+  min-height: 420px;
+}
+
+@media (max-width: 991.98px) {
+  .hero-banner-content-row {
+    height: auto;
+    min-height: auto;
+  }
+}
+
+.hero-banner-bg {
+  background-image: url('/assets/banner.png');
+  background-size: 70%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: transform 0.8s ease;
+}
+
+.banner-mobile-img-wrapper {
+  background: #0b3b78;
+  border: 2px solid rgba(255, 193, 7, 0.4);
+}
+
+.hero-exact-banner {
+  background-color: #0b3b78;
+  color: #ffffff;
+}
+
+.admissions-exact-box {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.max-w-1400 {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-kicker-script {
+  font-family: 'Caveat', cursive;
+  color: #ffc107;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-title-exact {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 900;
+  font-size: 3.1rem;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.hero-sub-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.hero-center-arch-frame {
+  max-width: 440px;
+}
+
+.arch-border-shape {
+  border: 6px solid #ffc107;
+  border-radius: 200px 200px 0 0;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  background-color: #ffc107;
+}
+
+.banner-tag-red {
+  background-color: #d90429;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 0.35rem 1.6rem;
+  border-radius: 8px 8px 0 0;
+  display: inline-block;
+}
+
+.banner-tag-yellow-open {
+  background-color: #ffc107;
+  color: #06234b;
+  font-weight: 900;
+  font-size: 2.9rem;
+  letter-spacing: 1px;
+  padding: 0.2rem 1.2rem;
+  line-height: 1;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.banner-tag-red-year {
+  background-color: #d90429;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 0.3rem 1.4rem;
+  border-radius: 0 0 10px 10px;
+  display: inline-block;
+}
+
+.admissions-exact-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admissions-exact-checklist li {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+}
+
+.check-yellow-circle {
+  background-color: #ffc107;
+  color: #06234b;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.75rem;
+  margin-right: 0.6rem;
+  flex-shrink: 0;
+}
+
+.btn-exact-enquire {
+  background-color: #ffc107;
+  color: #06234b !important;
+  font-weight: 900;
+  font-size: 1.15rem;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  border: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 6px 18px rgba(255, 193, 7, 0.4);
+}
+
+.btn-exact-enquire:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
 }

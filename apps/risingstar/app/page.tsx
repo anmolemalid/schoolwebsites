@@ -1,660 +1,457 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import HeroBannerSlider from "./components/HeroBannerSlider";
-
-const curriculumData = [
-  {
-    id: "preschool",
-    title: "Play Group & Nursery",
-    age: "2 - 3 Years",
-    color: "yellow",
-    desc: "A warm, nurturing environment where learning begins through sensory play. We focus on motor skills development, language expression in English and Hindi, and social play using safe wooden toys and block builders.",
-    ratio: "1:6 Ratio",
-    size: "12 Kids Max",
-    focus: ["Sensory Development", "Bilingual Words Discovery", "Creative Group Play"]
-  },
-  {
-    id: "kindergarten",
-    title: "LKG & UKG",
-    age: "4 - 5 Years",
-    color: "blue",
-    desc: "Structuring foundations for primary school. Children develop early writing readiness, basic phonics in English, counting & simple math concepts, and social habits, preparing them for formal CBSE formats.",
-    ratio: "1:10 Ratio",
-    size: "18 Kids Max",
-    focus: ["English & Hindi Phonics", "Mathematics Basics", "Writing & Art Readiness"]
-  },
-  {
-    id: "primary-junior",
-    title: "Junior Primary (Classes 1-2)",
-    age: "6 - 7 Years",
-    color: "green",
-    desc: "Transitioning to formal CBSE-aligned classes. Focus is on independent reading, basic spelling, environmental science concepts (EVS), elementary math, and basic yoga & physical fitness.",
-    ratio: "1:15 Ratio",
-    size: "24 Kids Max",
-    focus: ["Bilingual Reading Confidently", "Environmental Studies (EVS)", "Art, Craft & Yoga"]
-  },
-  {
-    id: "primary-senior",
-    title: "Senior Primary (Classes 3-5)",
-    age: "8 - 10 Years",
-    color: "purple",
-    desc: "Nurturing deep thinking, logic, and self-confidence. Includes structured modules in Mathematics, Science, Social Studies, computer basics, coding puzzles, music, and local sports events.",
-    ratio: "1:18 Ratio",
-    size: "25 Kids Max",
-    focus: ["Critical Thinking & Logic", "Introduction to Science & IT", "Physical Games & Sports"]
-  }
-];
-
-const galleryData = [
-  {
-    id: 1,
-    title: "Preschool & Kindergarten Classroom",
-    desc: "Nurturing learning environment with bilingual educational wall charts and colorful desks.",
-    category: "classroom",
-    image: "/images/gallery/1.png"
-  },
-  {
-    id: 2,
-    title: "Music, Rhythm & Activity Hall",
-    desc: "Children playing tambourines and percussion instruments with joyful singing.",
-    category: "activities",
-    image: "/images/gallery/2.png"
-  },
-  {
-    id: 3,
-    title: "Montessori Nursery Activity Tables",
-    desc: "Low wooden activity tables with shape sorters, puzzles, and sensory kits.",
-    category: "indoor",
-    image: "/images/gallery/3.png"
-  },
-  {
-    id: 4,
-    title: "Outdoor Swings & Play Lawn",
-    desc: "Lush green grass lawn, safe swings, slides, and morning physical sports.",
-    category: "outdoor",
-    image: "/images/gallery/4.avif"
-  },
-  {
-    id: 5,
-    title: "Early Phonics & Guided Reading",
-    desc: "Teacher guided reading sessions building English & Hindi vocabulary.",
-    category: "classroom",
-    image: "/images/gallery/5.jpg"
-  },
-  {
-    id: 6,
-    title: "Smart IT & Computer Lab",
-    desc: "Individual computer stations with educational headsets and STEM modules.",
-    category: "classroom",
-    image: "/images/gallery/6.jpg"
-  },
-  {
-    id: 7,
-    title: "Joyful & Confident Learners",
-    desc: "Encouraging curiosity, moral values, and public speaking confidence.",
-    category: "classroom",
-    image: "/images/gallery/7.jpg"
-  },
-  {
-    id: 8,
-    title: "Sensory Toys & Block Building",
-    desc: "Building fine motor skills and spatial logic using safe block toys.",
-    category: "indoor",
-    image: "/images/gallery/8.avif"
-  },
-  {
-    id: 9,
-    title: "Outdoor Climbing & Sports Lawn",
-    desc: "Active playground equipment ensuring physical coordination and teamwork.",
-    category: "outdoor",
-    image: "/images/gallery/9.avif"
-  },
-  {
-    id: 10,
-    title: "Creative Arts, Painting & Origami",
-    desc: "Watercolor painting, origami crafts, and creative drawing workshops.",
-    category: "activities",
-    image: "/images/gallery/10.jpg"
-  }
-];
-
-const timelineData = [
-  {
-    time: "07:45 AM",
-    title: "Morning Assembly & Prayer",
-    desc: "Welcoming kids, doing daily morning exercises, prayer songs, and a small speech to start the day.",
-    icon: "🙏",
-    side: "left"
-  },
-  {
-    time: "08:15 AM",
-    title: "Foundational Lessons",
-    desc: "Focused interactive periods for English, Hindi, and Mathematics using boards and tablet charts.",
-    icon: "📚",
-    side: "right"
-  },
-  {
-    time: "10:00 AM",
-    title: "Tiffin & Fruit Break",
-    desc: "Kids wash hands, learn table etiquettes, and share home-packed tiffin meals with friends.",
-    icon: "🍱",
-    side: "left"
-  },
-  {
-    time: "10:30 AM",
-    title: "Activity & Outdoor Games",
-    desc: "Playing on slides, swings, or doing indoor sensory games like blocks building and clay work.",
-    icon: "⚽️",
-    side: "right"
-  },
-  {
-    time: "12:00 PM",
-    title: "Creative Arts & Computers",
-    desc: "Drawing workshops, musical rhyme sessions, or basic computer keyboard practice.",
-    icon: "🎨",
-    side: "left"
-  },
-  {
-    time: "01:30 PM",
-    title: "National Anthem & Home Dismissal",
-    desc: "Reviewing daily lessons, packing school bags, singing the National Anthem, and boarding school vans.",
-    icon: "🚌",
-    side: "right"
-  }
-];
-
-const faqData = [
-  {
-    question: "What is the admissions criteria and age limit?",
-    answer: "For Play Group, children should be 2+ years. For Nursery, 3+ years. For LKG, 4+ years. UKG requires 5+ years by 31st March of the admission year. For Class 1, the child should be 6+ years old."
-  },
-  {
-    question: "Is transport available in and around Vijay Nagar, Ghaziabad?",
-    answer: "Yes! We run GPS-enabled school vans and small buses covering all blocks of Vijay Nagar, Pratap Vihar, Siddharth Vihar, and nearby Ghaziabad sectors. All transport vehicles have verified drivers and female attendants."
-  },
-  {
-    question: "Are the classrooms air-conditioned and safe?",
-    answer: "Yes, all preschool and primary classrooms are fully air-conditioned to ensure comfort during hot weather. Classrooms have child-safe rounded furniture, wall cushioning, and continuous CCTV surveillance."
-  },
-  {
-    question: "Does the curriculum align with the CBSE board?",
-    answer: "Our nursery and kindergarten levels follow early childhood education patterns, whereas Classes 1-5 follow a structured curriculum aligned with CBSE board guidelines to ensure smooth transitions into secondary education."
-  }
-];
+import HeroBannerSection from "./components/HeroBannerSection";
+import { t } from "./lib/i18n";
 
 export default function HomePage() {
-  const [activeTab, setActiveTab] = useState("preschool");
-  const [galleryFilter, setGalleryFilter] = useState("all");
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
-
-  const selectedCurriculum = curriculumData.find((c) => c.id === activeTab) || curriculumData[0];
-  const filteredGallery = galleryData.filter(
-    (item) => galleryFilter === "all" || item.category === galleryFilter
-  );
 
   return (
     <div className="home-page position-relative">
-      {/* Decorative Background Blobs */}
-      <div className="bg-blob-container">
-        <div className="floating-blob blob-yellow"></div>
-        <div className="floating-blob blob-blue"></div>
-        <div className="floating-blob blob-pink"></div>
-      </div>
+      {/* ----------------------------------------------------
+         1. HERO BANNER SECTION (Exact Prototype & Mockup Design)
+         ---------------------------------------------------- */}
+      <HeroBannerSection />
 
-      {/* Hero Section */}
-      <section className="hero-school d-flex align-items-center">
+      {/* ----------------------------------------------------
+         2. WHY CHOOSE US / 6 FEATURE CARDS
+         ---------------------------------------------------- */}
+      <section className="py-5 bg-white border-bottom">
         <div className="container">
-          <div className="row align-items-center g-5">
-            <div className="col-lg-6 text-center text-lg-start">
-              <div className="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 mb-3">
-                <span className="badge-pill-kids">⭐️ Admissions Open 2026-27</span>
-                <span className="badge-pill-kids bg-primary-subtle text-primary">Govt. Recognized</span>
-              </div>
-              <h1 className="display-4 fw-bold mb-3" style={{ lineHeight: "1.15" }}>
-                Nurturing Excellence, <br />
-                <span className="text-primary" style={{ color: "var(--secondary-grape) !important" }}>
-                  Learning & Growing
-                </span>
-                Together!
-              </h1>
-              <h2 className="fs-5 fw-bold text-muted mb-4 font-body" style={{ fontFamily: "Quicksand" }}>
-                Rising Kids School is an English Medium, Co-Educational school from Play Group to 5th Class in Vijay Nagar, Ghaziabad.
-              </h2>
-              <p className="text-muted mb-4" style={{ fontFamily: "Quicksand" }}>
-                📍 <strong>Campus:</strong> C-47, Sector-9, New Vijay Nagar, Ghaziabad, U.P. 201009
-              </p>
-              <div className="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
-                <a href="#admissions" className="btn btn-orange btn-lg px-5 py-3 rounded-pill">Book a Campus Tour</a>
-                <a href="#curriculum" className="btn btn-bounce-secondary btn-lg px-5 py-3 rounded-pill">Explore Programs</a>
+          <div className="text-center mb-4">
+            <span className="badge bg-warning-subtle text-dark fw-bold px-3 py-1 rounded-pill small mb-2 border border-warning">{t.home.whyChooseUs.tag}</span>
+            <h2 className="fw-bold fs-3 text-dark">{t.home.whyChooseUs.heading}</h2>
+          </div>
+
+          <div className="row g-3 text-center justify-content-center">
+            <div className="col-6 col-md-4 col-lg-2">
+              <div className="feature-tile-card">
+                <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[0].icon}</div>
+                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[0].title}</strong>
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-6 col-md-4 col-lg-2">
+              <div className="feature-tile-card">
+                <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[1].icon}</div>
+                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[1].title}</strong>
+              </div>
+            </div>
+            <div className="col-6 col-md-4 col-lg-2">
+              <div className="feature-tile-card">
+                <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[2].icon}</div>
+                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[2].title}</strong>
+              </div>
+            </div>
+            <div className="col-6 col-md-4 col-lg-2">
+              <div className="feature-tile-card">
+                <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[3].icon}</div>
+                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[3].title}</strong>
+              </div>
+            </div>
+            <div className="col-6 col-md-4 col-lg-2">
+              <div className="feature-tile-card">
+                <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[4].icon}</div>
+                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[4].title}</strong>
+              </div>
+            </div>
+            <div className="col-6 col-md-4 col-lg-2">
+              <div className="feature-tile-card">
+                <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[5].icon}</div>
+                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[5].title}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ----------------------------------------------------
+         3. ABOUT RISING KIDS SCHOOL SECTION
+         ---------------------------------------------------- */}
+      <section className="py-5 bg-light" id="about">
+        <div className="container py-3">
+          <div className="row align-items-center g-5">
+            {/* Left Photo of Building Gate */}
+            <div className="col-lg-5">
+              <div className="rounded-4 overflow-hidden shadow border p-2 bg-white">
+                <img
+                  src="/assets/school_building_front.png"
+                  alt="Rising Kids School Building Gate"
+                  className="w-100 rounded-3 object-fit-cover"
+                  style={{ maxHeight: "380px" }}
+                />
+              </div>
+            </div>
+
+            {/* Right About Text */}
+            <div className="col-lg-7">
+              <span className="about-kicker d-block mb-1">{t.home.aboutSection.kicker}</span>
+              <h2 className="about-title-mockup mb-3">
+                {t.home.aboutSection.title}
+              </h2>
+              <p className="text-muted fs-6 mb-4 leading-relaxed">
+                {t.home.aboutSection.description}
+              </p>
+
+              {/* 3 Columns for Vision, Mission, Values */}
+              <div className="row g-3 mb-4">
+                <div className="col-md-4">
+                  <div className="about-icon-circle">🏆</div>
+                  <h6 className="fw-bold text-dark mb-1">{t.home.aboutSection.vision.title}</h6>
+                  <p className="small text-muted mb-0">
+                    {t.home.aboutSection.vision.description}
+                  </p>
+                </div>
+
+                <div className="col-md-4">
+                  <div className="about-icon-circle">🏫</div>
+                  <h6 className="fw-bold text-dark mb-1">{t.home.aboutSection.mission.title}</h6>
+                  <p className="small text-muted mb-0">
+                    {t.home.aboutSection.mission.description}
+                  </p>
+                </div>
+
+                <div className="col-md-4">
+                  <div className="about-icon-circle">🎯</div>
+                  <h6 className="fw-bold text-dark mb-1">{t.home.aboutSection.values.title}</h6>
+                  <p className="small text-muted mb-0">
+                    {t.home.aboutSection.values.description}
+                  </p>
+                </div>
+              </div>
+
+              <Link href="/about" className="btn-navy-pill">
+                {t.home.aboutSection.readMore}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ----------------------------------------------------
+         4. QUICK ACCESS 4-CARD CREAM SECTION (Painted Hands Girl)
+         ---------------------------------------------------- */}
+      <section className="quick-access-cream-bg py-2 border-top border-bottom position-relative">
+        {/* Subtle Background Yellow Doodles */}
+        <div className="cream-doodle-star d-none d-lg-block">
+          <svg width="34" height="34" viewBox="0 0 45 45" fill="none">
+            <path
+              d="M22.5 2 L28 16 L43 18 L32 29 L35 44 L22.5 36 L10 44 L13 29 L2 18 L17 16 Z"
+              stroke="#ffd200"
+              strokeWidth="2.2"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+
+        <div className="cream-doodle-pencil d-none d-lg-block">
+          <svg width="40" height="40" viewBox="0 0 55 55" fill="none">
+            <g transform="rotate(45 27 27)">
+              <rect x="12" y="22" width="28" height="10" rx="1.5" stroke="#ffd200" strokeWidth="2.2" />
+              <polygon points="40,22 50,27 40,32" stroke="#ffd200" strokeWidth="2.2" fill="none" />
+              <line x1="46" y1="25" x2="46" y2="29" stroke="#ffd200" strokeWidth="1.8" />
+              <line x1="20" y1="22" x2="20" y2="32" stroke="#ffd200" strokeWidth="1.8" />
+            </g>
+          </svg>
+        </div>
+
+        <div className="cream-doodle-flower d-none d-lg-block">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+            <path
+              d="M20 20 C 12 10, 5 18, 15 25 C 5 32, 12 40, 20 25 C 28 40, 35 32, 25 25 C 35 18, 28 10, 20 20 Z"
+              stroke="#ffd200"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+
+        <div className="container-fluid px-3 px-lg-4 py-1 position-relative" style={{ zIndex: 2 }}>
+          <div className="row align-items-center g-2 g-lg-3">
+            
+            {/* 4 Feature Cards Grid */}
+            <div className="col-12 col-lg-9 col-xl-9">
+              <div className="row g-2 g-xl-3 row-cols-1 row-cols-sm-2 row-cols-md-4">
+                
+                {/* 1. ADMISSIONS OPEN CARD */}
+                <div className="col">
+                  <div className="quick-feature-card">
+                    <div className="quick-card-title">{t.home.quickAccess.admissionsCard.title}</div>
+                    <div className="quick-card-content">
+                      <div className="quick-card-icon">
+                        <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
+                          <rect x="8" y="24" width="48" height="32" rx="2" fill="#fff3c4" stroke="#002d62" strokeWidth="2" />
+                          <rect x="12" y="28" width="8" height="9" rx="1" fill="#60a5fa" stroke="#002d62" strokeWidth="1.5" />
+                          <rect x="12" y="41" width="8" height="9" rx="1" fill="#60a5fa" stroke="#002d62" strokeWidth="1.5" />
+                          <rect x="44" y="28" width="8" height="9" rx="1" fill="#60a5fa" stroke="#002d62" strokeWidth="1.5" />
+                          <rect x="44" y="41" width="8" height="9" rx="1" fill="#60a5fa" stroke="#002d62" strokeWidth="1.5" />
+                          <rect x="25" y="16" width="14" height="40" fill="#fed7aa" stroke="#002d62" strokeWidth="2" />
+                          <circle cx="32" cy="24" r="5" fill="#fef08a" stroke="#002d62" strokeWidth="1.5" />
+                          <polyline points="32,21 32,24 35,24" stroke="#002d62" strokeWidth="1.5" strokeLinecap="round" />
+                          <path d="M28 56 V45 Q32 40 36 45 V56 Z" fill="#002d62" />
+                          <polygon points="4,24 32,5 60,24" fill="#ef4444" stroke="#002d62" strokeWidth="2" />
+                          <line x1="32" y1="5" x2="32" y2="1" stroke="#002d62" strokeWidth="2" />
+                          <polygon points="32,1 39,4 32,7" fill="#ef4444" />
+                        </svg>
+                      </div>
+                      <p className="quick-card-desc">{t.home.quickAccess.admissionsCard.description}</p>
+                    </div>
+                    <div className="text-center mt-auto">
+                      <Link href="/admissions" className="btn-quick-action">
+                        {t.home.quickAccess.admissionsCard.button}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2. ACADEMICS CARD */}
+                <div className="col">
+                  <div className="quick-feature-card">
+                    <div className="quick-card-title">{t.home.quickAccess.academicsCard.title}</div>
+                    <div className="quick-card-content">
+                      <div className="quick-card-icon">
+                        <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
+                          {/* Bottom Red Book */}
+                          <path d="M12 48 L46 41 L54 46 L20 53 Z" fill="#f87171" stroke="#002d62" strokeWidth="1.8" />
+                          <path d="M12 48 V52 L20 57 V53 Z" fill="#dc2626" stroke="#002d62" strokeWidth="1.8" />
+                          <path d="M20 57 L54 50 V46 L20 53 Z" fill="#fef3c7" stroke="#002d62" strokeWidth="1.8" />
+                          {/* Middle Yellow Book */}
+                          <path d="M14 36 L48 29 L56 34 L22 41 Z" fill="#fde047" stroke="#002d62" strokeWidth="1.8" />
+                          <path d="M14 36 V40 L22 45 V41 Z" fill="#ca8a04" stroke="#002d62" strokeWidth="1.8" />
+                          <path d="M22 45 L56 38 V34 L22 41 Z" fill="#ffffff" stroke="#002d62" strokeWidth="1.8" />
+                          {/* Top Teal Book */}
+                          <path d="M10 24 L44 17 L52 22 L18 29 Z" fill="#06b6d4" stroke="#002d62" strokeWidth="1.8" />
+                          <path d="M10 24 V28 L18 33 V29 Z" fill="#0891b2" stroke="#002d62" strokeWidth="1.8" />
+                          <path d="M18 33 L52 26 V22 L18 29 Z" fill="#fef9c3" stroke="#002d62" strokeWidth="1.8" />
+                        </svg>
+                      </div>
+                      <p className="quick-card-desc">{t.home.quickAccess.academicsCard.description}</p>
+                    </div>
+                    <div className="text-center mt-auto">
+                      <Link href="/curriculum" className="btn-quick-action">
+                        {t.home.quickAccess.academicsCard.button}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 3. OUR FACILITIES CARD */}
+                <div className="col">
+                  <div className="quick-feature-card">
+                    <div className="quick-card-title">{t.home.quickAccess.facilitiesCard.title}</div>
+                    <div className="quick-card-content">
+                      <div className="quick-card-icon">
+                        <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
+                          <line x1="16" y1="18" x2="10" y2="56" stroke="#002d62" strokeWidth="2.5" strokeLinecap="round" />
+                          <line x1="22" y1="18" x2="16" y2="56" stroke="#002d62" strokeWidth="2.5" strokeLinecap="round" />
+                          <line x1="14" y1="26" x2="20" y2="26" stroke="#002d62" strokeWidth="2" strokeLinecap="round" />
+                          <line x1="12" y1="36" x2="18" y2="36" stroke="#002d62" strokeWidth="2" strokeLinecap="round" />
+                          <line x1="11" y1="46" x2="17" y2="46" stroke="#002d62" strokeWidth="2" strokeLinecap="round" />
+                          <polygon points="12,18 24,10 28,18" fill="#ef4444" stroke="#002d62" strokeWidth="2" />
+                          <path d="M22 22 C 24 36, 32 46, 52 48" stroke="#002d62" strokeWidth="7" strokeLinecap="round" />
+                          <path d="M22 22 C 24 36, 32 46, 52 48" stroke="#f97316" strokeWidth="4.5" strokeLinecap="round" />
+                          <path d="M20 20 C 22 34, 30 44, 50 46" stroke="#fbbf24" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                      </div>
+                      <p className="quick-card-desc">{t.home.quickAccess.facilitiesCard.description}</p>
+                    </div>
+                    <div className="text-center mt-auto">
+                      <Link href="/facilities" className="btn-quick-action">
+                        {t.home.quickAccess.facilitiesCard.button}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 4. GALLERY CARD */}
+                <div className="col">
+                  <div className="quick-feature-card">
+                    <div className="quick-card-title">{t.home.quickAccess.galleryCard.title}</div>
+                    <div className="quick-card-content">
+                      <div className="quick-card-icon">
+                        <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
+                          <g transform="rotate(-10 28 34)">
+                            <rect x="14" y="14" width="30" height="36" rx="2" fill="#ffffff" stroke="#002d62" strokeWidth="2" />
+                            <rect x="17" y="17" width="24" height="22" fill="#60a5fa" />
+                            <circle cx="29" cy="26" r="5" fill="#fde047" />
+                            <path d="M17 35 L23 29 L31 37 L36 32 L41 37 H17 Z" fill="#22c55e" />
+                          </g>
+                          <g transform="rotate(8 36 34)">
+                            <rect x="22" y="16" width="30" height="36" rx="2" fill="#ffffff" stroke="#002d62" strokeWidth="2" />
+                            <rect x="25" y="19" width="24" height="22" fill="#3b82f6" />
+                            <circle cx="37" cy="27" r="4.5" fill="#f87171" />
+                            <path d="M25 38 C 28 32, 34 32, 37 36 C 41 30, 46 32, 49 38 Z" fill="#fbbf24" />
+                          </g>
+                        </svg>
+                      </div>
+                      <p className="quick-card-desc">{t.home.quickAccess.galleryCard.description}</p>
+                    </div>
+                    <div className="text-center mt-auto">
+                      <Link href="/gallery" className="btn-quick-action">
+                        {t.home.quickAccess.galleryCard.button}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Right Painted Hands Girl Graphic with Top Pop-Up Overflow */}
+            <div className="col-12 col-lg-3 col-xl-3 text-center text-lg-end">
+              <div className="position-relative d-inline-block">
+                <img
+                  src="/assets/painted_hands_girl.png"
+                  alt="School Girl with Colorful Painted Hands Smiling"
+                  className="img-fluid girl-popup-img"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ----------------------------------------------------
+         5. UPCOMING EVENTS & BANNER SLIDER
+         ---------------------------------------------------- */}
+      <section className="py-5 bg-white">
+        <div className="container">
+          <div className="row g-5 align-items-center">
+            {/* Left Events Cards */}
+            <div className="col-lg-5">
+              <span className="badge bg-warning-subtle text-dark fw-bold px-3 py-1 rounded-pill small mb-2 border border-warning">{t.home.upcomingEvents.tag}</span>
+              <h3 className="fw-bold fs-3 text-dark mb-4">{t.home.upcomingEvents.heading}</h3>
+
+              <div className="d-flex flex-column gap-3 mb-4">
+                <div className="p-3 bg-light rounded-3 border d-flex align-items-center gap-3">
+                  <div className="bg-primary text-white p-2 rounded-3 text-center fw-bold" style={{ width: "60px" }}>
+                    <div className="fs-5 leading-none">{t.home.upcomingEvents.events[0].day}</div>
+                    <div className="small">{t.home.upcomingEvents.events[0].month}</div>
+                  </div>
+                  <div>
+                    <h6 className="fw-bold mb-0 text-dark">{t.home.upcomingEvents.events[0].title}</h6>
+                    <small className="text-muted">{t.home.upcomingEvents.events[0].description}</small>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-light rounded-3 border d-flex align-items-center gap-3">
+                  <div className="bg-primary text-white p-2 rounded-3 text-center fw-bold" style={{ width: "60px" }}>
+                    <div className="fs-5 leading-none">{t.home.upcomingEvents.events[1].day}</div>
+                    <div className="small">{t.home.upcomingEvents.events[1].month}</div>
+                  </div>
+                  <div>
+                    <h6 className="fw-bold mb-0 text-dark">{t.home.upcomingEvents.events[1].title}</h6>
+                    <small className="text-muted">{t.home.upcomingEvents.events[1].description}</small>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-light rounded-3 border d-flex align-items-center gap-3">
+                  <div className="bg-primary text-white p-2 rounded-3 text-center fw-bold" style={{ width: "60px" }}>
+                    <div className="fs-5 leading-none">{t.home.upcomingEvents.events[2].day}</div>
+                    <div className="small">{t.home.upcomingEvents.events[2].month}</div>
+                  </div>
+                  <div>
+                    <h6 className="fw-bold mb-0 text-dark">{t.home.upcomingEvents.events[2].title}</h6>
+                    <small className="text-muted">{t.home.upcomingEvents.events[2].description}</small>
+                  </div>
+                </div>
+              </div>
+
+              <Link href="/events" className="btn btn-warning rounded-pill px-4 py-2 fw-bold text-dark">
+                {t.home.upcomingEvents.viewAllButton}
+              </Link>
+            </div>
+
+            {/* Right Campus Slider */}
+            <div className="col-lg-7">
               <HeroBannerSlider />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Waves Divider SVG */}
-      <svg className="kids-divider" viewBox="0 0 1440 74" preserveAspectRatio="none">
-        <path d="M0,32L80,37.3C160,43,320,53,480,48C640,43,800,21,960,16C1120,11,1280,21,1360,26.7L1440,32L1440,74L1360,74C1280,74,1120,74,960,74C800,74,640,74,480,74C320,74,160,74,80,74L0,74Z"></path>
-      </svg>
-
-      {/* Why Choose Section */}
-      <section className="py-5" id="about">
-        <div className="container">
-          <div className="text-center mb-5">
-            <span className="badge-pill-kids mb-2">Our School Core Values</span>
-            <h2 className="display-5 fw-bold mb-3">Nurturing Young Minds</h2>
-            <p className="text-muted col-md-7 mx-auto fs-5">
-              Providing modern infrastructure, safe transport, and interactive education to ensure holistic growth for children in Ghaziabad.
-            </p>
-          </div>
-
-          <div className="row g-4">
-            <div className="col-md-4">
-              <div className="card-kids h-100 text-center">
-                <div className="card-kids-icon color-bg-yellow mx-auto">🧸</div>
-                <h4 className="fw-bold mb-3">Sensory & Play Learning</h4>
-                <p className="text-muted small mb-0">
-                  Building strong intellectual foundations using jigsaw boards, sand games, and colorful geometric blocks in class.
-                </p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card-kids h-100 text-center">
-                <div className="card-kids-icon color-bg-blue mx-auto">🎨</div>
-                <h4 className="fw-bold mb-3">Creative Expression</h4>
-                <p className="text-muted small mb-0">
-                  Daily classes for drawing, hindi poetry recitation, music, and craft workshops to support creative expression.
-                </p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card-kids h-100 text-center">
-                <div className="card-kids-icon color-bg-green mx-auto">⚽️</div>
-                <h4 className="fw-bold mb-3">Physical Games & Sports</h4>
-                <p className="text-muted small mb-0">
-                  Safe swings, slides, running fields, yoga, and gymnastics routines helping children gain solid physical control.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Curriculum Tabs Section */}
-      <section className="py-5 bg-white border-top border-bottom" id="curriculum">
-        <div className="container">
-          <div className="text-center mb-5">
-            <span className="badge-pill-kids mb-2">Bilingual & Structured Education</span>
-            <h2 className="display-5 fw-bold mb-3">Our Academic Programs</h2>
-            <p className="text-muted col-md-7 mx-auto">
-              Select an age group below to discover how our curriculum guides your child step-by-step from play group to Class 5 level.
-            </p>
-          </div>
-
-          {/* Curriculum Nav Tabs */}
-          <div className="curriculum-nav mb-5">
-            {curriculumData.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`curriculum-tab-btn ${activeTab === tab.id
-                  ? `active-${tab.color} shadow-sm border`
-                  : "border-transparent text-muted"
-                  }`}
-              >
-                {tab.title}
-              </button>
-            ))}
-          </div>
-
-          {/* Curriculum Display Detail Card */}
-          <div
-            className="row align-items-center g-5 p-4 rounded-4 shadow-sm border"
-            style={{
-              background: `radial-gradient(circle at 10% 10%, rgba(${selectedCurriculum.color === "yellow" ? "255, 169, 77" :
-                selectedCurriculum.color === "blue" ? "77, 171, 247" :
-                  selectedCurriculum.color === "green" ? "81, 207, 98" : "177, 151, 252"
-                }, 0.05) 0%, white 100%)`,
-              borderLeft: `8px solid var(--${selectedCurriculum.color === "yellow" ? "yellow-sunny" :
-                selectedCurriculum.color === "blue" ? "blue-sky" :
-                  selectedCurriculum.color === "green" ? "green-grass" : "purple-magic"
-                })`
-            }}
-          >
-            <div className="col-lg-6">
-              <span className="badge bg-secondary-subtle text-secondary px-3 py-1 rounded-pill mb-3 fw-bold">
-                Age Target: {selectedCurriculum.age}
-              </span>
-              <h3 className="fw-bold mb-3 display-6">{selectedCurriculum.title}</h3>
-              <p className="text-muted fs-5 mb-4">{selectedCurriculum.desc}</p>
-
-              <div className="row g-3 mb-4">
-                <div className="col-6">
-                  <div className="p-3 rounded-3 bg-light-subtle border">
-                    <span className="d-block text-muted small fw-bold">🧑‍🏫 Teacher Ratio</span>
-                    <strong className="fs-5">{selectedCurriculum.ratio}</strong>
-                  </div>
-                </div>
-                <div className="col-6">
-                  <div className="p-3 rounded-3 bg-light-subtle border">
-                    <span className="d-block text-muted small fw-bold">🏫 Room Strength</span>
-                    <strong className="fs-5">{selectedCurriculum.size}</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-6">
-              <div className="p-4 bg-white rounded-4 border shadow-sm">
-                <h4 className="fw-bold mb-3 text-primary d-flex align-items-center gap-2">
-                  <span>🚀</span> Core Focus Activities
-                </h4>
-                <ul className="list-group list-group-flush">
-                  {selectedCurriculum.focus.map((item, idx) => (
-                    <li key={idx} className="list-group-item bg-transparent py-3 d-flex align-items-center gap-3">
-                      <span className="fs-4">🌟</span>
-                      <span className="fw-semibold text-dark">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive Gallery Section */}
-      <section className="py-5" id="gallery">
-        <div className="container">
-          <div className="text-center mb-5">
-            <span className="badge-pill-kids mb-2">School Infrastructure</span>
-            <h2 className="display-5 fw-bold mb-3">Explore Play & Learn Spaces</h2>
-            <p className="text-muted col-md-7 mx-auto">
-              Step inside our bright, air-conditioned rooms, computer lab, library, art studio, and green grassy play areas in Vijay Nagar. Click to view a close-up.
-            </p>
-          </div>
-
-          {/* Filter Navigation */}
-          <div className="d-flex justify-content-center gap-2 mb-4 flex-wrap">
-            <button
-              onClick={() => setGalleryFilter("all")}
-              className={`gallery-filter-btn ${galleryFilter === "all" ? "active" : ""}`}
-            >
-              All Spaces ({galleryData.length})
-            </button>
-            <button
-              onClick={() => setGalleryFilter("classroom")}
-              className={`gallery-filter-btn ${galleryFilter === "classroom" ? "active" : ""}`}
-            >
-              Classrooms & IT Lab 🏫
-            </button>
-            <button
-              onClick={() => setGalleryFilter("activities")}
-              className={`gallery-filter-btn ${galleryFilter === "activities" ? "active" : ""}`}
-            >
-              Arts & Music Activities 🎨
-            </button>
-            <button
-              onClick={() => setGalleryFilter("indoor")}
-              className={`gallery-filter-btn ${galleryFilter === "indoor" ? "active" : ""}`}
-            >
-              Indoor Sensory Zone 🧸
-            </button>
-            <button
-              onClick={() => setGalleryFilter("outdoor")}
-              className={`gallery-filter-btn ${galleryFilter === "outdoor" ? "active" : ""}`}
-            >
-              Outdoor Play Lawn ⚽
-            </button>
-          </div>
-
-          {/* Grid Layout */}
-          <div className="row g-4 justify-content-center">
-            {filteredGallery.map((item) => (
-              <div
-                key={item.id}
-                className="col-md-6 col-lg-6"
-                onClick={() => setLightboxImage(item.image)}
-              >
-                <div className="gallery-item" style={{ height: "350px" }}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-100 h-100 object-fit-cover"
-                  />
-                  <div className="gallery-item-info text-white">
-                    <h4 className="fw-bold text-white mb-2">{item.title}</h4>
-                    <p className="small text-white-50 mb-0">{item.desc}</p>
-                    <span className="badge mt-2 bg-primary-subtle text-primary text-uppercase rounded-pill px-3 py-1 text-xs">
-                      🔍 Tap to view
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Lightbox Modal rendering */}
-      {lightboxImage && (
-        <div className="lightbox-modal" onClick={() => setLightboxImage(null)}>
-          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>
-              ❌
-            </button>
-            <img src={lightboxImage} alt="Expanded Preview" className="img-fluid" />
-          </div>
-        </div>
-      )}
-
-      {/* Wavy Divider reverse */}
-      <svg className="kids-divider kids-divider-reverse" viewBox="0 0 1440 74" preserveAspectRatio="none">
-        <path d="M0,32L80,37.3C160,43,320,53,480,48C640,43,800,21,960,16C1120,11,1280,21,1360,26.7L1440,32L1440,74L1360,74C1280,74,1120,74,960,74C800,74,640,74,480,74C320,74,160,74,80,74L0,74Z"></path>
-      </svg>
-
-      {/* Daily Routine Timeline */}
-      <section className="py-5 bg-white border-top border-bottom" id="timeline">
-        <div className="container">
-          <div className="text-center mb-5">
-            <span className="badge-pill-kids mb-2">School Timings & Routines</span>
-            <h2 className="display-5 fw-bold mb-3">A Day in Life of a Star</h2>
-            <p className="text-muted col-md-7 mx-auto">
-              Our daily routine is structured to balance academic lessons, active games, tiffin breaks, and moral learning.
-            </p>
-          </div>
-
-          <div className="timeline-kids">
-            {timelineData.map((item, idx) => (
-              <div key={idx} className="timeline-kids-item">
-                <div className="timeline-kids-badge">{item.icon}</div>
-                <div
-                  className={`timeline-kids-card ${item.side === "left" ? "timeline-left" : "timeline-right"
-                    }`}
-                >
-                  <span
-                    className="badge mb-2 rounded-pill px-3 py-1"
-                    style={{
-                      backgroundColor: "rgba(132, 94, 247, 0.1)",
-                      color: "var(--secondary-grape)",
-                      fontWeight: 700
-                    }}
-                  >
-                    {item.time}
-                  </span>
-                  <h4 className="fw-bold text-dark mt-1 mb-2">{item.title}</h4>
-                  <p className="text-muted small mb-0">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Wavy Divider */}
-      <svg className="kids-divider" viewBox="0 0 1440 74" preserveAspectRatio="none">
-        <path d="M0,32L80,37.3C160,43,320,53,480,48C640,43,800,21,960,16C1120,11,1280,21,1360,26.7L1440,32L1440,74L1360,74C1280,74,1120,74,960,74C800,74,640,74,480,74C320,74,160,74,80,74L0,74Z"></path>
-      </svg>
-
-      {/* Interactive Inquiry Portal & Accordion FAQs */}
-      <section className="py-5" id="admissions">
+      {/* ----------------------------------------------------
+         6. ENQUIRY FORM & GOOGLE MAPS LOCATION
+         ---------------------------------------------------- */}
+      <section className="py-5 bg-light border-top" id="contact-section">
         <div className="container">
           <div className="row g-5">
-            {/* Inquiry Form Card */}
+            {/* Quick Enquiry Form */}
             <div className="col-lg-6">
-              <div className="inquiry-card-kids p-4 p-md-5">
-                {!formSubmitted ? (
-                  <>
-                    <h3 className="fw-bold mb-3 brand-text">Admission Inquiry</h3>
-                    <p className="text-muted mb-4 font-body">
-                      Fill out the inquiry form below. Our admissions desk will call you to schedule a school tour!
-                    </p>
-                    <form
-                      onSubmit={(e) => {
-                        e.preventDefault();
-                        setFormSubmitted(true);
-                      }}
-                    >
-                      <div className="mb-3">
-                        <label className="form-label fw-bold text-dark small">Student Full Name</label>
-                        <input
-                          type="text"
-                          className="form-control form-control-kids"
-                          placeholder="e.g. Aarav Sharma"
-                          required
-                        />
-                      </div>
-                      <div className="row g-3 mb-3">
-                        <div className="col-md-6">
-                          <label className="form-label fw-bold text-dark small">Admission For</label>
-                          <select className="form-select form-control-kids" required>
-                            <option value="">Select Class Group</option>
-                            <option value="playgroup">Play Group (2-3 Yrs)</option>
-                            <option value="kindergarten">Kindergarten (LKG/UKG)</option>
-                            <option value="primary-junior">Junior Primary (Classes 1-2)</option>
-                            <option value="primary-senior">Senior Primary (Classes 3-5)</option>
-                          </select>
-                        </div>
-                        <div className="col-md-6">
-                          <label className="form-label fw-bold text-dark small">Parent Full Name</label>
-                          <input
-                            type="text"
-                            className="form-control form-control-kids"
-                            placeholder="e.g. Rajesh Sharma"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="row g-3 mb-3">
-                        <div className="col-md-6">
-                          <label className="form-label fw-bold text-dark small">Parent Email</label>
-                          <input
-                            type="email"
-                            className="form-control form-control-kids"
-                            placeholder="parent@email.com"
-                            required
-                          />
-                        </div>
-                        <div className="col-md-6">
-                          <label className="form-label fw-bold text-dark small">Mobile Number</label>
-                          <input
-                            type="tel"
-                            className="form-control form-control-kids"
-                            placeholder="98765 XXXXX"
-                            pattern="[6-9][0-9]{9}"
-                            title="Please enter a valid 10-digit mobile number"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="mb-4">
-                        <label className="form-label fw-bold text-dark small">Message / Sibling / Transport Details</label>
-                        <textarea
-                          className="form-control form-control-kids"
-                          rows={3}
-                          placeholder="Tell us if you want school van transport details or have sibling queries..."
-                        ></textarea>
-                      </div>
-                      <div className="text-center">
-                        <button type="submit" className="btn btn-bounce-primary btn-lg w-100 rounded-pill py-3">
-                          Submit Star Inquiry ✨
-                        </button>
-                      </div>
-                    </form>
-                  </>
-                ) : (
-                  <div className="success-confetti-container text-center">
-                    <div className="confetti-pop">🎉🌟🧁</div>
-                    <h3 className="fw-bold mt-4 text-success display-6">Inquiry Submitted!</h3>
-                    <p className="text-muted mt-3 font-body">
-                      Dhanyawad! We have received your inquiry. A Rising Kids School coordinator will call you back within 24 hours to book your physical school tour in Vijay Nagar.
-                    </p>
-                    <button
-                      onClick={() => setFormSubmitted(false)}
-                      className="btn btn-bounce-secondary mt-4 px-4 py-2 rounded-pill"
-                    >
-                      Submit Another Inquiry 📝
+              <div className="p-4 p-md-5 bg-white rounded-4 border shadow-sm h-100">
+                <span className="badge bg-warning-subtle text-dark fw-bold px-3 py-1 rounded-pill small mb-2 border border-warning">{t.home.quickEnquiry.tag}</span>
+                <h3 className="fw-bold mb-3" style={{ color: "var(--navy-royal)" }}>{t.home.quickEnquiry.heading}</h3>
+                <p className="text-muted small mb-4">{t.home.quickEnquiry.description}</p>
+
+                {formSubmitted ? (
+                  <div className="text-center py-4">
+                    <div className="display-4 text-success mb-2">🎉</div>
+                    <h5 className="fw-bold text-success">{t.home.quickEnquiry.form.successHeading}</h5>
+                    <p className="text-muted small mb-3">{t.home.quickEnquiry.form.successMessage}</p>
+                    <button onClick={() => setFormSubmitted(false)} className="btn btn-sm btn-outline-primary rounded-pill">
+                      {t.home.quickEnquiry.form.submitAnother}
                     </button>
                   </div>
+                ) : (
+                  <form onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }} className="row g-3">
+                    <div className="col-md-6">
+                      <input type="text" className="form-control rounded-3" placeholder={t.home.quickEnquiry.form.parentName} required />
+                    </div>
+                    <div className="col-md-6">
+                      <input type="tel" className="form-control rounded-3" placeholder={t.home.quickEnquiry.form.mobile} required />
+                    </div>
+                    <div className="col-12">
+                      <select className="form-select rounded-3" defaultValue="Play Group">
+                        <option value="Play Group">Class Seeking: Play Group</option>
+                        <option value="Nursery">Class Seeking: Nursery</option>
+                        <option value="LKG">Class Seeking: LKG</option>
+                        <option value="UKG">Class Seeking: UKG</option>
+                        <option value="Class 1-5">Class Seeking: Class I to V</option>
+                      </select>
+                    </div>
+                    <div className="col-12">
+                      <textarea className="form-control rounded-3" rows={3} placeholder={t.home.quickEnquiry.form.message}></textarea>
+                    </div>
+                    <div className="col-12">
+                      <button type="submit" className="btn btn-warning w-100 py-2 rounded-pill fw-bold text-dark">
+                        {t.home.quickEnquiry.form.submitButton}
+                      </button>
+                    </div>
+                  </form>
                 )}
               </div>
             </div>
 
-            {/* Accordion FAQs */}
+            {/* Google Maps Campus Location */}
             <div className="col-lg-6">
-              <span className="badge-pill-kids mb-2">Have Questions?</span>
-              <h3 className="display-6 fw-bold mb-4">Admissions & Transport FAQs</h3>
+              <div className="p-4 p-md-5 bg-white rounded-4 border shadow-sm h-100 text-center d-flex flex-column justify-content-between">
+                <div>
+                  <span className="badge bg-warning-subtle text-dark fw-bold px-3 py-1 rounded-pill small mb-2 border border-warning">{t.home.campusLocation.tag}</span>
+                  <h3 className="fw-bold mb-2" style={{ color: "var(--navy-royal)" }}>{t.home.campusLocation.heading}</h3>
+                  <p className="text-muted small mb-4">{t.home.campusLocation.address}</p>
+                </div>
 
-              <div className="faq-container">
-                {faqData.map((faq, idx) => {
-                  const isOpen = openFaq === idx;
-                  return (
-                    <div key={idx} className="faq-accordion-item">
-                      <button
-                        className="faq-header-btn"
-                        onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      >
-                        <span>{faq.question}</span>
-                        <span>{isOpen ? "🔼" : "🔽"}</span>
-                      </button>
-                      {isOpen && (
-                        <div className="faq-body-kids">
-                          <p className="mb-0">{faq.answer}</p>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          {/* Google Maps Location Row */}
-          <div className="row mt-5 g-4">
-            <div className="col-12">
-              <div className="p-4 p-md-5 bg-white rounded-4 border shadow-sm text-center">
-                <span className="badge-pill-kids mb-2">Find Us on Google Maps</span>
-                <h3 className="fw-bold mb-2">Visit Our Campus</h3>
-                <p className="text-muted mb-4">
-                  📍 <strong>Address:</strong> C-47, Sector-9, New Vijay Nagar, Ghaziabad, U.P. 201009
-                </p>
-                <div className="rounded-4 overflow-hidden border shadow-sm" style={{ height: "350px", position: "relative" }}>
+                <div className="rounded-3 overflow-hidden border shadow-sm mb-3" style={{ height: "240px" }}>
                   <iframe
-                    src="https://maps.google.com/maps?q=28.643333,77.427889&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    src={t.school.location.embedMapsUrl}
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen={true}
                     loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
+
+                <a
+                  href={t.school.location.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-primary rounded-pill py-2 fw-bold text-decoration-none"
+                >
+                  {t.home.campusLocation.button}
+                </a>
               </div>
             </div>
           </div>
