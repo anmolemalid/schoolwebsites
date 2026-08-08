@@ -76,11 +76,6 @@ export default function MobileNav() {
               <small className="brand-tagline-mockup">{t.school.tagline.toUpperCase()}</small>
             </div>
           </div>
-          <button
-            className="btn-close"
-            onClick={() => setIsOpen(false)}
-            aria-label={t.header.closeMenu}
-          />
         </div>
 
         {/* Drawer Links */}
