@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import MobileNav from "./components/MobileNav";
 import DesktopNav from "./components/DesktopNav";
+import MobileQuickFlipFab from "./components/MobileQuickFlipFab";
 import { t } from "./lib/i18n";
 
 export const metadata: Metadata = {
@@ -42,22 +43,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body>
-        {/* Mobile Top Header Bar - Phone Left & WhatsApp/FB/IG Right */}
-        <div className="d-block d-md-none py-2 px-3 text-white" style={{ backgroundColor: "#002d62", fontSize: "0.85rem" }}>
-          <div className="container d-flex justify-content-between align-items-center">
-            <a href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`} className="text-white text-decoration-none d-inline-flex align-items-center gap-1 fw-semibold">
-              <span style={{ color: "#ffd200" }}>📞</span>
-              <span>{t.school.contacts.phonePrimary}</span>
-            </a>
-            <div className="d-flex align-items-center gap-2">
-              <a href={`https://wa.me/${t.school.contacts.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-white text-decoration-none d-inline-flex align-items-center gap-1 fw-semibold me-1">
-                <span style={{ color: "#25d366" }}>💬</span>
-                <span>{t.floatingActions.whatsapp.replace("💬 ", "")}</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Desktop Top Info Bar */}
         <div className="topbar-mockup py-2 px-3 border-bottom d-none d-md-block">
           <div className="container d-flex justify-content-between align-items-center">
@@ -135,19 +120,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
               {/* Column 1: School Identity */}
               <div className="col-lg-3 col-md-6">
-                <div className="d-flex align-items-start gap-3 mb-2">
-                  <img
-                    src="/assets/finallogo.png"
-                    alt="Rising Kids School Shield Logo"
-                    style={{ width: "58px", height: "68px", objectFit: "contain", flexShrink: 0 }}
-                  />
-                  <div>
-                    <h5 className="footer-school-title text-white">{t.school.name.toUpperCase()}</h5>
-                    <div className="footer-school-meta">
-                      <div>{t.school.gradeSpan}</div>
-                      <div>{t.school.system}, {t.school.medium}</div>
-                      <div>{t.school.recognition}</div>
-                    </div>
+                <div>
+                  <h5 className="footer-school-title text-white">{t.school.name.toUpperCase()}</h5>
+                  <div className="footer-school-meta">
+                    <div>{t.school.gradeSpan}</div>
+                    <div>{t.school.system}, {t.school.medium}</div>
+                    <div>{t.school.recognition}</div>
                   </div>
                 </div>
 
@@ -174,10 +152,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <div className="col-lg-2 col-md-6">
                 <h6 className="footer-title-mockup text-white">{t.footer.quickLinksTitle}</h6>
                 <ul className="footer-links-mockup">
-                  <li><Link href="/"><span className="footer-link-arrow">▸</span> {t.nav.home}</Link></li>
                   <li><Link href="/about"><span className="footer-link-arrow">▸</span> {t.nav.aboutUs}</Link></li>
-                  <li><Link href="/curriculum"><span className="footer-link-arrow">▸</span> {t.nav.curriculum}</Link></li>
                   <li><Link href="/admissions"><span className="footer-link-arrow">▸</span> {t.nav.admissions}</Link></li>
+                  <li><Link href="/curriculum"><span className="footer-link-arrow">▸</span> {t.nav.curriculum}</Link></li>
                   <li><Link href="/facilities"><span className="footer-link-arrow">▸</span> {t.nav.facilities}</Link></li>
                 </ul>
               </div>
@@ -269,18 +246,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </svg>
         </a>
 
-        {/* Mobile Fixed 3-Segment Action Bar */}
-        <div className="mobile-action-bar-3seg d-md-none">
-          <a href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`} className="bar-seg-blue">
-            {t.floatingActions.callUs}
-          </a>
-          <a href={`https://wa.me/${t.school.contacts.whatsapp}`} target="_blank" rel="noopener noreferrer" className="bar-seg-yellow">
-            {t.floatingActions.whatsapp}
-          </a>
-          <a href={t.school.location.mapsUrl} target="_blank" rel="noopener noreferrer" className="bar-seg-blue">
-            {t.floatingActions.direction}
-          </a>
-        </div>
+        {/* Mobile Left-Bottom Flip FAB Action Menu */}
+        <MobileQuickFlipFab />
       </body>
     </html>
   );

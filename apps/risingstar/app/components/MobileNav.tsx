@@ -68,14 +68,10 @@ export default function MobileNav() {
       {/* Slide-out Drawer */}
       <nav className={`mobile-nav-drawer ${isOpen ? "open" : ""}`}>
         {/* Drawer Top Header */}
-        <div className="mobile-nav-header d-flex justify-content-between align-items-center bg-white p-3 border-bottom">
-          <div className="d-flex align-items-center gap-2">
-            <img src="/assets/finallogo.png" alt="Logo" style={{ width: "40px", height: "40px", objectFit: "contain" }} />
-            <div>
-              <span className="fw-bold brand-title-mockup fs-6 d-block leading-tight">{t.school.name.toUpperCase()}</span>
-              <small className="brand-tagline-mockup">{t.school.tagline.toUpperCase()}</small>
-            </div>
-          </div>
+        <div className="mobile-nav-header d-flex justify-content-between align-items-center p-3 border-bottom">
+          <span className="mobile-drawer-title">
+            {t.school.name.toUpperCase().replace(" SCHOOL", "")}
+          </span>
           <button
             className="btn-close"
             onClick={() => setIsOpen(false)}
@@ -85,16 +81,6 @@ export default function MobileNav() {
 
         {/* Drawer Links */}
         <div className="mobile-nav-links p-3">
-          <Link
-            href="/"
-            className="mobile-nav-link"
-            style={getLinkStyle("/")}
-            onClick={handleLinkClick}
-          >
-            <span className="me-2">🏠</span>
-            {t.nav.home}
-          </Link>
-
           <Link
             href="/about"
             className="mobile-nav-link"
@@ -106,16 +92,6 @@ export default function MobileNav() {
           </Link>
 
           <Link
-            href="/curriculum"
-            className="mobile-nav-link"
-            style={getLinkStyle("/curriculum")}
-            onClick={handleLinkClick}
-          >
-            <span className="me-2">📖</span>
-            {t.nav.curriculum}
-          </Link>
-
-          <Link
             href="/admissions"
             className="mobile-nav-link"
             style={getLinkStyle("/admissions")}
@@ -123,6 +99,16 @@ export default function MobileNav() {
           >
             <span className="me-2">📝</span>
             {t.nav.admissions}
+          </Link>
+
+          <Link
+            href="/curriculum"
+            className="mobile-nav-link"
+            style={getLinkStyle("/curriculum")}
+            onClick={handleLinkClick}
+          >
+            <span className="me-2">📖</span>
+            {t.nav.curriculum}
           </Link>
 
           <Link
@@ -164,22 +150,6 @@ export default function MobileNav() {
             <span className="me-2">📞</span>
             {t.nav.contactUs}
           </Link>
-        </div>
-
-        {/* Drawer Bottom Info Box */}
-        <div className="p-3 mt-auto" style={{ backgroundColor: "var(--navy-topbar)", color: "#ffffff" }}>
-          <div className="small mb-2">
-            <strong>📞 {t.contact.info.phoneTitle}:</strong><br />
-            {t.school.contacts.phoneDisplay}
-          </div>
-          <div className="small mb-2">
-            <strong>✉️ {t.contact.info.emailTitle}:</strong><br />
-            {t.school.contacts.email}
-          </div>
-          <div className="small">
-            <strong>📍 {t.contact.info.campusAddressTitle}:</strong><br />
-            {t.school.location.fullAddress}
-          </div>
         </div>
       </nav>
     </>

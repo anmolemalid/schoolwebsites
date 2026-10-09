@@ -15,54 +15,56 @@ export default function DesktopNav() {
   };
 
   return (
-    <nav className="desktop-nav align-items-center gap-2 navigation-links d-none d-lg-flex">
-      <Link
-        href="/"
-        className={`nav-link-mockup ${isActive("/") ? "nav-link-mockup-active" : ""}`}
-      >
-        {t.nav.home}
-      </Link>
+    <nav className="desktop-nav align-items-center gap-1 gap-xl-2 navigation-links d-none d-lg-flex">
       <Link
         href="/about"
-        className={`nav-link-mockup ${isActive("/about") ? "nav-link-mockup-active" : ""}`}
+        className={`nav-link-mockup nav-link-about ${isActive("/about") ? "nav-link-mockup-active" : ""}`}
       >
-        {t.nav.aboutUs}
-      </Link>
-      <Link
-        href="/curriculum"
-        className={`nav-link-mockup ${isActive("/curriculum") ? "nav-link-mockup-active" : ""}`}
-      >
-        {t.nav.curriculum}
+        <span className="nav-icon me-1">🏫</span>
+        <span>{t.nav.aboutUs}</span>
       </Link>
       <Link
         href="/admissions"
-        className={`nav-link-mockup ${isActive("/admissions") ? "nav-link-mockup-active" : ""}`}
+        className={`nav-link-mockup nav-link-admissions ${isActive("/admissions") ? "nav-link-mockup-active" : ""}`}
       >
-        {t.nav.admissions}
+        <span className="nav-icon me-1">🎒</span>
+        <span>{t.nav.admissions}</span>
+        <span className="nav-open-badge ms-1">OPEN</span>
+      </Link>
+      <Link
+        href="/curriculum"
+        className={`nav-link-mockup nav-link-curriculum ${isActive("/curriculum") ? "nav-link-mockup-active" : ""}`}
+      >
+        <span className="nav-icon me-1">📚</span>
+        <span>{t.nav.curriculum}</span>
       </Link>
       <Link
         href="/facilities"
-        className={`nav-link-mockup ${isActive("/facilities") ? "nav-link-mockup-active" : ""}`}
+        className={`nav-link-mockup nav-link-facilities ${isActive("/facilities") ? "nav-link-mockup-active" : ""}`}
       >
-        {t.nav.facilities}
+        <span className="nav-icon me-1">🛝</span>
+        <span>{t.nav.facilities}</span>
       </Link>
       <Link
         href="/gallery"
-        className={`nav-link-mockup ${isActive("/gallery") ? "nav-link-mockup-active" : ""}`}
+        className={`nav-link-mockup nav-link-gallery ${isActive("/gallery") ? "nav-link-mockup-active" : ""}`}
       >
-        {t.nav.gallery}
+        <span className="nav-icon me-1">🎨</span>
+        <span>{t.nav.gallery}</span>
       </Link>
       <Link
         href="/events"
-        className={`nav-link-mockup ${isActive("/events") ? "nav-link-mockup-active" : ""}`}
+        className={`nav-link-mockup nav-link-events ${isActive("/events") ? "nav-link-mockup-active" : ""}`}
       >
-        {t.nav.events}
+        <span className="nav-icon me-1">🎈</span>
+        <span>{t.nav.events}</span>
       </Link>
       <Link
         href="/contact"
-        className={`nav-link-mockup ${isActive("/contact") ? "nav-link-mockup-active" : ""}`}
+        className={`nav-link-mockup nav-link-contact ${isActive("/contact") ? "nav-link-mockup-active" : ""}`}
       >
-        {t.nav.contactUs}
+        <span className="nav-icon me-1">📞</span>
+        <span>{t.nav.contactUs}</span>
       </Link>
     </nav>
   );

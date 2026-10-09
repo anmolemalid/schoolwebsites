@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import FullHeroSlider from "./components/FullHeroSlider";
 import HeroBannerSlider from "./components/HeroBannerSlider";
-import HeroBannerSection from "./components/HeroBannerSection";
 import { t } from "./lib/i18n";
 
 export default function HomePage() {
@@ -12,9 +12,9 @@ export default function HomePage() {
   return (
     <div className="home-page position-relative">
       {/* ----------------------------------------------------
-         1. HERO BANNER SECTION (Exact Prototype & Mockup Design)
+         1. HERO BANNER FULL SLIDER SECTION
          ---------------------------------------------------- */}
-      <HeroBannerSection />
+      <FullHeroSlider />
 
       {/* ----------------------------------------------------
          2. WHY CHOOSE US / 6 FEATURE CARDS
@@ -73,14 +73,14 @@ export default function HomePage() {
       <section className="py-5 bg-light" id="about">
         <div className="container py-3">
           <div className="row align-items-center g-5">
-            {/* Left Photo of Building Gate */}
+            {/* Left Photo of Building & Events Collage */}
             <div className="col-lg-5">
               <div className="rounded-4 overflow-hidden shadow border p-2 bg-white">
                 <img
-                  src="/assets/school_building_front.png"
-                  alt="Rising Kids School Building Gate"
+                  src="/assets/rising_kids_school_about.jpg"
+                  alt="Rising Kids School Campus and Activities"
                   className="w-100 rounded-3 object-fit-cover"
-                  style={{ maxHeight: "380px" }}
+                  style={{ maxHeight: "420px", width: "100%" }}
                 />
               </div>
             </div>

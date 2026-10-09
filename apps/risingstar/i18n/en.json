@@ -85,7 +85,7 @@
     "tagline": "Nurturing Excellence",
     "motto": "Where Young Minds Learn, Grow & Shine Together",
     "gradeSpan": "Play Group to Class V",
-    "recognition": "Govt. Recognized & Registered",
+    "recognition": "Govt. Recognized & Affiliated",
     "medium": "English Medium",
     "system": "Co-Education",
     "location": {
@@ -192,7 +192,7 @@
     },
     "aboutSection": {
       "kicker": "ABOUT",
-      "title": "RISING KIDS SCHOOL ⭐",
+      "title": "RISING KIDS ⭐",
       "description": "Rising Kids School is dedicated to nurturing young minds with quality education, strong values and a joyful learning environment. We focus on holistic development through academics, co-curricular activities and life skills.",
       "vision": {
         "title": "Our Vision",
@@ -235,22 +235,22 @@
       "heading": "Celebrations & School Days",
       "events": [
         {
-          "day": "15",
-          "month": "AUG",
-          "title": "Independence Day Celebration 🇮🇳",
-          "description": "Patriotic songs, costume parade & speeches"
-        },
-        {
-          "day": "05",
-          "month": "SEP",
-          "title": "Teachers' Day Celebration 🧑‍🏫",
-          "description": "Student gratitude function & stage shows"
-        },
-        {
           "day": "20",
-          "month": "SEP",
-          "title": "Annual Sports Day 🏆",
-          "description": "Athletic races, obstacle games & medals"
+          "month": "OCT",
+          "title": "Dussehra Celebration 🏹",
+          "description": "Cultural performances, costume parade & festive Ramleela (20 Oct, 2026)"
+        },
+        {
+          "day": "09",
+          "month": "NOV",
+          "title": "Diwali Celebration 🪔",
+          "description": "Festival of lights, diya decoration & festive celebrations (09 Nov, 2026)"
+        },
+        {
+          "day": "25",
+          "month": "DEC",
+          "title": "Christmas Celebration 🎄",
+          "description": "Santa Claus visit, gift distribution & holiday carols (25 Dec, 2026)"
         }
       ],
       "viewAllButton": "VIEW ALL EVENTS"
