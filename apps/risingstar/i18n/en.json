@@ -17,21 +17,21 @@
       "nursery school Vijay Nagar",
       "LKG UKG admission Ghaziabad",
       "primary school Vijay Nagar",
-      "Hello Kids franchise Ghaziabad",
+      "Rising Kids School Ghaziabad",
       "top primary school Sector 9 Vijay Nagar"
     ],
     "pages": {
       "home": {
         "title": "Rising Kids School | Play Group to Class V | Vijay Nagar, Ghaziabad",
         "description": "Welcome to Rising Kids School. Providing quality English-medium education, holistic growth, smart classrooms & safe transport from Play Group to Class V in Sector 9, New Vijay Nagar, Ghaziabad.",
-        "keywords": "Rising Kids School, play school Ghaziabad, primary school Vijay Nagar, school admissions Ghaziabad 2026-27",
+        "keywords": "Rising Kids School, play school Ghaziabad, primary school Vijay Nagar, school admissions Ghaziabad 2027-28",
         "ogTitle": "Rising Kids School - Where Young Minds Learn, Grow & Shine",
-        "ogDescription": "Govt. Recognized preschool and primary school in New Vijay Nagar, Ghaziabad. Admissions Open for 2026-27."
+        "ogDescription": "Govt. Recognized preschool and primary school in New Vijay Nagar, Ghaziabad. Admissions Open for 2027-28."
       },
       "about": {
         "title": "About Us | Rising Kids School Vijay Nagar, Ghaziabad",
-        "description": "Learn about Rising Kids School, our Hello Kids franchise legacy, leadership vision, mission, and our 4 core developmental pillars for foundational child education.",
-        "keywords": "about Rising Kids School, Hello Kids franchise, best preschool philosophy, primary school leadership Ghaziabad",
+        "description": "Learn about Rising Kids School, our educational philosophy, leadership vision, mission, and our 4 core developmental pillars for foundational child education.",
+        "keywords": "about Rising Kids School, best preschool philosophy, primary school leadership Ghaziabad",
         "ogTitle": "About Rising Kids School - Nurturing Excellence & Lifelong Values",
         "ogDescription": "Inspiring curiosity, building confidence, and shaping bright futures in New Vijay Nagar, Ghaziabad."
       },
@@ -43,10 +43,10 @@
         "ogDescription": "6 Core pillars of child development and structured learning stages for Play Group to Class V."
       },
       "admissions": {
-        "title": "Admissions 2026-27 | Rising Kids School Ghaziabad",
-        "description": "Enroll your child at Rising Kids School for the 2026-27 academic session. Simple 3-step admission process, fee structure guidance, eligibility criteria, and online callback enquiry.",
-        "keywords": "school admissions 2026-27, nursery admission Ghaziabad, play group admission Vijay Nagar, primary school enrollment",
-        "ogTitle": "Admissions Open 2026-27 - Rising Kids School",
+        "title": "Admissions 2027-28 | Rising Kids School Ghaziabad",
+        "description": "Enroll your child at Rising Kids School for the 2027-28 academic session. Simple 3-step admission process, fee structure guidance, eligibility criteria, and online callback enquiry.",
+        "keywords": "school admissions 2027-28, nursery admission Ghaziabad, play group admission Vijay Nagar, primary school enrollment",
+        "ogTitle": "Admissions Open 2027-28 - Rising Kids School",
         "ogDescription": "A seamless, transparent admission process for Play Group to Class V. Request a callback or visit our campus today."
       },
       "facilities": {
@@ -81,7 +81,7 @@
   },
   "school": {
     "name": "Rising Kids School",
-    "fullName": "Rising Kids School - A Proud Hello Kids Franchise",
+    "fullName": "Rising Kids School - Nurturing Excellence",
     "tagline": "Nurturing Excellence",
     "motto": "Where Young Minds Learn, Grow & Shine Together",
     "gradeSpan": "Play Group to Class V",
@@ -146,7 +146,7 @@
     },
     "admissionsCard": {
       "title": "ADMISSIONS OPEN",
-      "session": "2026-27",
+      "session": "2027-28",
       "tagline": "Safe | Caring | Creative | Future Ready",
       "button": "ENQUIRE NOW"
     },
@@ -332,7 +332,7 @@
       "subtitle": "Inspiring curiosity, building confidence, and shaping bright young futures since inception in New Vijay Nagar, Ghaziabad."
     },
     "heroBox": {
-      "title": "Admissions Open 2026-27",
+      "title": "Admissions Open 2027-28",
       "description": "Nurturing curiosity, character & creativity every day.",
       "button": "Enquire Now"
     },
@@ -340,7 +340,7 @@
       "tag": "WHO WE ARE",
       "heading": "A Loving & Inspiring Foundation for Lifelong Success",
       "paragraph1": "Rising Kids School is a premier early childhood and primary education institution in Vijay Nagar, Ghaziabad. We blend world-class early learning methodologies with rich values, individualized attention, and joyful exploration.",
-      "paragraph2": "As an authorized Hello Kids franchise school, we provide children from Play Group to Class V with a safe, nurturing, and technology-enabled learning ecosystem where every child discovers their unique talents."
+      "paragraph2": "At Rising Kids School, we provide children from Play Group to Class V with a safe, nurturing, and technology-enabled learning ecosystem where every child discovers their unique talents."
     },
     "moreThanAcademics": {
       "tag": "OUR PHILOSOPHY",
@@ -366,7 +366,7 @@
       ]
     },
     "kicker": "Where Young Minds Flourish",
-    "franchiseBadge": "⭐ A Proud Hello Kids Franchise",
+    "franchiseBadge": "⭐ Nurturing Excellence",
     "locationBadge": "📍 New Vijay Nagar, Ghaziabad",
     "vision": {
       "title": "👁️ Vision",
@@ -402,9 +402,9 @@
   "curriculum": {
     "banner": {
       "kicker": "A Child-Friendly Early Learning Approach",
-      "title": "Hello Kids Curriculum",
+      "title": "Rising Kids Curriculum",
       "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized",
-      "breadcrumbActive": "Hello Kids Curriculum"
+      "breadcrumbActive": "Rising Kids Curriculum"
     },
     "heroBox": {
       "title": "Interactive Learning",
@@ -471,7 +471,7 @@
     "wholeChild": {
       "tag": "LEARNING AREAS",
       "heading": "Whole-Child Development",
-      "subheading": "The curriculum page explains the franchise curriculum using official Hello Kids material and the school's actual implementation across key learning areas.",
+      "subheading": "Our curriculum page outlines our comprehensive developmental syllabus and the school's actual implementation across key learning areas.",
       "learningAreas": [
         {
           "icon": "🧠",
@@ -575,7 +575,7 @@
   "admissions": {
     "banner": {
       "kicker": "Start Your Child's Journey Today",
-      "title": "Admissions Open 2026-27",
+      "title": "Admissions Open 2027-28",
       "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
     },
     "heroBox": {
@@ -618,6 +618,23 @@
       "title": "Direct Helpdesk",
       "subtitle": "Instant guidance for registration & eligibility.",
       "button": "Call Now"
+    },
+    "sessionDetails": {
+      "tag": "ACADEMIC TIMELINE & BATCHES",
+      "heading": "Admission Schedule & Batch Details",
+      "subheading": "Important timelines for parents planning admissions for session 2027-28.",
+      "allClasses": {
+        "title": "Academic Session (All Classes)",
+        "highlight": "Session start from October to April for all classes",
+        "desc": "Admissions and curriculum session start from October to April across all grades (Playgroup, Nursery, L.K.G, U.K.G, and Class I to V)."
+      },
+      "playgroup": {
+        "title": "Playgroup Class Admissions",
+        "highlight": "Playgroup class admission in two batches",
+        "batch1": "Batch 1 - April",
+        "batch2": "Batch 2 - July",
+        "desc": "Early childhood admissions are scheduled in two flexible batches for toddler convenience."
+      }
     },
     "joyfulStart": {
       "title": "Give your child a joyful start",

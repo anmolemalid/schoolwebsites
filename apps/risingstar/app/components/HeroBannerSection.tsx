@@ -170,7 +170,7 @@ export default function HeroBannerSection() {
               border: "1px solid rgba(0, 45, 98, 0.08)",
             }}
           >
-            {/* Top row: Megaphone + ADMISSIONS OPEN 2026-27 */}
+            {/* Top row: Megaphone + ADMISSIONS OPEN 2027-28 */}
             <div className="d-flex align-items-center justify-content-center gap-3 mb-2">
               {/* Exact Announcement Megaphone Icon Vector */}
               <div
@@ -437,7 +437,7 @@ export default function HeroBannerSection() {
             </div>
 
             {/* =========================================================
-                3. RIGHT COLUMN: ADMISSIONS OPEN 2026-27 Badge, Checklist, Button
+                3. RIGHT COLUMN: ADMISSIONS OPEN 2027-28 Badge, Checklist, Button
                 ========================================================= */}
             <div className="col-12 col-lg-4 position-relative z-3 pe-lg-3 d-flex justify-content-center justify-content-lg-end">
               <div
@@ -486,7 +486,7 @@ export default function HeroBannerSection() {
                     {t.hero.openBadge}
                   </div>
 
-                  {/* Bottom Red Bar: 2026-27 */}
+                  {/* Bottom Red Bar: 2027-28 */}
                   <div
                     className="text-white fw-bold d-block mx-auto"
                     style={{

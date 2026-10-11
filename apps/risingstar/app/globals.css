@@ -64,14 +64,301 @@ html {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+@media (max-width: 767.98px) {
+  .whatsapp-floating-btn {
+    display: none !important;
+  }
+}
+
 .whatsapp-floating-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65);
   color: #ffffff;
 }
 
+/* Print Stylesheet for Single-Page Admissions Slip & Universal Print Hygiene */
+@page {
+  size: A4 portrait;
+  margin: 6mm 8mm;
+}
+
+@media print {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    font-size: 11px !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Completely remove everything outside the enquiry form from document flow */
+  header,
+  footer,
+  nav,
+  .navbar,
+  .topbar-mockup,
+  .whatsapp-floating-btn,
+  .mobile-quick-flip-container,
+  .mobile-fab-backdrop,
+  .fab-options-wrapper,
+  .quick-flip-fab-btn,
+  .fab-flip-trigger,
+  .fab-badge-pill,
+  a[aria-label*="WhatsApp"],
+  a[href*="wa.me"],
+  .admissions-page > section:not(#enquiry),
+  .no-print,
+  .d-print-none {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    position: absolute !important;
+    left: -99999px !important;
+    top: -99999px !important;
+    pointer-events: none !important;
+  }
+
+  /* Reset enquiry section to top with 0 padding */
+  #enquiry {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    display: block !important;
+    height: auto !important;
+    max-height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  #enquiry .container,
+  #enquiry .row,
+  #enquiry .col-lg-9 {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Clean 1-Page Printable Slip */
+  #printable-enquiry-slip {
+    border: 1.5px solid #2e7d32 !important;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+    padding: 8px 14px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 195mm !important;
+    max-height: 272mm !important;
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    overflow: hidden !important;
+  }
+
+  #printable-enquiry-slip .border-bottom {
+    padding-bottom: 3px !important;
+    margin-bottom: 5px !important;
+  }
+
+  #printable-enquiry-slip h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 1px !important;
+  }
+
+  #printable-enquiry-slip p {
+    font-size: 0.72rem !important;
+    line-height: 1.25 !important;
+  }
+
+  #printable-enquiry-slip h4 {
+    font-size: 0.95rem !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+    margin: 0 !important;
+  }
+
+  #printable-enquiry-slip img {
+    height: 44px !important;
+  }
+
+  #printable-enquiry-slip form {
+    gap: 2px !important;
+  }
+
+  #printable-enquiry-slip .form-row-slip {
+    margin-bottom: 3px !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+  }
+
+  #printable-enquiry-slip .badge-col {
+    flex: 0 0 28% !important;
+    max-width: 28% !important;
+    width: 28% !important;
+    padding-right: 4px !important;
+  }
+
+  #printable-enquiry-slip .input-col {
+    flex: 0 0 72% !important;
+    max-width: 72% !important;
+    width: 72% !important;
+    padding-left: 4px !important;
+  }
+
+  #printable-enquiry-slip .badge-slip {
+    font-size: 0.73rem !important;
+    padding: 2px 6px !important;
+    height: 23px !important;
+    line-height: 19px !important;
+    display: flex !important;
+    align-items: center !important;
+    border-radius: 2px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #printable-enquiry-slip .form-control,
+  #printable-enquiry-slip .form-select {
+    height: 23px !important;
+    min-height: 23px !important;
+    font-size: 0.75rem !important;
+    padding: 1px 6px !important;
+    border-radius: 2px !important;
+    border: 1px solid #718096 !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    line-height: 1.2 !important;
+  }
+
+  #printable-enquiry-slip textarea.form-control {
+    height: 23px !important;
+    min-height: 23px !important;
+    resize: none !important;
+    overflow: hidden !important;
+  }
+
+  #printable-enquiry-slip .referral-box {
+    padding: 4px 8px !important;
+    margin-top: 3px !important;
+    margin-bottom: 2px !important;
+    border-radius: 3px !important;
+  }
+
+  #printable-enquiry-slip .referral-title {
+    font-size: 0.75rem !important;
+    padding: 2px 6px !important;
+    margin-bottom: 2px !important;
+    border-radius: 2px !important;
+  }
+
+  #printable-enquiry-slip .referral-item {
+    font-size: 0.7rem !important;
+    padding: 1px 0 !important;
+  }
+
+  #printable-enquiry-slip .referral-item input[type="checkbox"] {
+    width: 11px !important;
+    height: 11px !important;
+    margin-top: 1px !important;
+  }
+
+  #printable-enquiry-slip .decorative-dashes {
+    margin-top: 3px !important;
+    margin-bottom: 2px !important;
+  }
+
+  #printable-enquiry-slip .signatures-strip {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    margin-top: 6px !important;
+    padding-top: 4px !important;
+    border-top: 1px dashed #b0bec5 !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+  }
+
+  /* Yellow Copyright Bar in Print */
+  .copyright-bar-yellow {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background-color: #ffc72c !important;
+    color: #0b2246 !important;
+    font-size: 8.5px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    padding: 4px 12px !important;
+    margin: 8px auto 0 auto !important;
+    width: 100% !important;
+    max-width: 195mm !important;
+    border-radius: 3px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    box-sizing: border-box !important;
+  }
+
+  .copyright-bar-yellow .container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .copyright-bar-yellow span {
+    font-size: 8.5px !important;
+    color: #0b2246 !important;
+    white-space: nowrap !important;
+  }
+
+  .copyright-bar-yellow a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* Preserve exact color representation */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
 body,
-.home-page {
+main,
+.home-page,
+.about-page,
+.admissions-page,
+.curriculum-page,
+.facilities-page,
+.gallery-page,
+.events-page,
+.contact-page {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #FFFDF9;
   background-image: url("/assets/kids_bg_pattern.jpg");
@@ -3597,19 +3884,53 @@ footer {
   width: 100%;
 }
 
-/* Off-White Kids School Doodle Wallpaper Section Overrides */
-.home-page section.bg-white {
+/* Off-White Kids School Doodle Wallpaper Section Overrides - Entire Site */
+main section.bg-white,
+.home-page section.bg-white,
+.about-page section.bg-white,
+.admissions-page section.bg-white,
+.curriculum-page section.bg-white,
+.facilities-page section.bg-white,
+.gallery-page section.bg-white,
+.events-page section.bg-white,
+.contact-page section.bg-white {
   background-color: rgba(255, 255, 255, 0.55) !important;
   backdrop-filter: blur(2px);
 }
 
-.home-page section.bg-light {
+main section.bg-light,
+.home-page section.bg-light,
+.about-page section.bg-light,
+.admissions-page section.bg-light,
+.curriculum-page section.bg-light,
+.facilities-page section.bg-light,
+.gallery-page section.bg-light,
+.events-page section.bg-light,
+.contact-page section.bg-light {
   background-color: rgba(255, 253, 246, 0.45) !important;
   backdrop-filter: blur(2px);
 }
 
+main section.quick-access-cream-bg,
 .home-page section.quick-access-cream-bg {
   background-color: rgba(255, 251, 235, 0.5) !important;
+  backdrop-filter: blur(2px);
+}
+
+/* Translucent tint for sections across all pages so doodle wallpaper is visible */
+.about-page section:not(.page-blue-banner),
+.admissions-page section:not(.hero-banner-slider-section):not(#printable-enquiry-slip),
+.curriculum-page section:not(.page-blue-banner),
+.facilities-page section:not(.page-blue-banner),
+.gallery-page section:not(.page-blue-banner),
+.events-page section:not(.page-blue-banner),
+.contact-page section:not(.page-blue-banner) {
+  background-color: rgba(255, 253, 246, 0.55) !important;
+  backdrop-filter: blur(2px);
+}
+
+.admissions-session-banner-section {
+  background-color: rgba(240, 246, 252, 0.6) !important;
   backdrop-filter: blur(2px);
 }
 
@@ -3622,5 +3943,72 @@ footer {
     aspect-ratio: auto !important;
     object-fit: contain !important;
     display: block !important;
+  }
+}
+
+/* Purple subtle badge utilities */
+.bg-purple-subtle {
+  background-color: #f3e8ff !important;
+}
+
+.text-purple {
+  color: #6b21a8 !important;
+}
+
+.border-purple {
+  border-color: #d8b4fe !important;
+}
+
+/* Responsive Mobile Screen View for Official Admission Enquiry Slip */
+@media screen and (max-width: 767.98px) {
+  #printable-enquiry-slip {
+    padding: 18px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  #printable-enquiry-slip .school-letterhead-logo {
+    height: 52px !important;
+  }
+
+  #printable-enquiry-slip .school-letterhead-title {
+    font-size: 1.35rem !important;
+  }
+
+  #printable-enquiry-slip .form-control,
+  #printable-enquiry-slip .form-select {
+    font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
+    padding: 10px 14px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+  }
+
+  #printable-enquiry-slip .form-control:focus,
+  #printable-enquiry-slip .form-select:focus {
+    border-color: #004a90 !important;
+    box-shadow: 0 0 0 3px rgba(0, 74, 144, 0.15) !important;
+  }
+
+  #printable-enquiry-slip textarea.form-control {
+    min-height: 72px !important;
+  }
+
+  #printable-enquiry-slip .referral-box {
+    padding: 14px 10px !important;
+    border-radius: 10px !important;
+  }
+
+  #printable-enquiry-slip .referral-title {
+    font-size: 0.85rem !important;
+    padding: 6px 12px !important;
+    white-space: normal !important;
+    line-height: 1.35 !important;
+  }
+
+  #printable-enquiry-slip button[type="submit"] {
+    width: 100% !important;
+  }
+
+  #printable-enquiry-slip button[type="button"] {
+    width: 100% !important;
   }
 }
