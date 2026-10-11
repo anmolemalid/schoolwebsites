@@ -330,7 +330,7 @@
   "about": {
     "banner": {
       "title": "About Rising Kids School",
-      "subtitle": "Inspiring curiosity, building confidence, and shaping bright young futures since inception in New Vijay Nagar, Ghaziabad."
+      "subtitle": "Govt. Recognized & Affiliated • 8 Years of Nurturing Confident, Curious & Compassionate Learners in New Vijay Nagar, Ghaziabad."
     },
     "heroBox": {
       "title": "Admissions Open 2027-28",
@@ -339,9 +339,217 @@
     },
     "welcome": {
       "tag": "WHO WE ARE",
-      "heading": "A Loving & Inspiring Foundation for Lifelong Success",
-      "paragraph1": "Rising Kids School is a premier early childhood and primary education institution in Vijay Nagar, Ghaziabad. We blend world-class early learning methodologies with rich values, individualized attention, and joyful exploration.",
-      "paragraph2": "At Rising Kids School, we provide children from Play Group to Class V with a safe, nurturing, and technology-enabled learning ecosystem where every child discovers their unique talents."
+      "tagline": "A Nurturing Space for Confident, Curious and Compassionate Learners",
+      "heading": "A Loving, Govt. Recognized Foundation for Lifelong Success",
+      "paragraph1": "Rising Kids School is a premier, Govt. Recognized & Affiliated early childhood and primary education institution in New Vijay Nagar, Ghaziabad. Established in 2018, we proudly celebrate 8 glorious years of nurturing young minds with value-based education, modern child-centric pedagogy, and individualized care.",
+      "paragraph2": "We seamlessly harmonize joyful playway early learning with the National Education Policy (NEP 2020) framework. With official UDISE+ registration, NCERT PRASHAST inclusive screening, and direct national student profile integration (PEN & APAAR), we provide children from Play Group to Class V with a safe, accredited, and future-ready educational home.",
+      "stats": {
+        "experience": "8 Years",
+        "experienceLabel": "Educational Excellence",
+        "recognition": "Govt. Recognized",
+        "recognitionLabel": "Basic Education Dept.",
+        "udise": "UDISE+ Verified",
+        "udiseLabel": "Unique Government Code",
+        "registry": "PEN & APAAR",
+        "registryLabel": "100% Student Digital ID"
+      }
+    },
+    "corePillars": [
+      { "icon": "💖", "color": "#f43f5e", "title": "Safe & Nurturing Environment", "desc": "CCTV-monitored, secure and emotionally supportive campus." },
+      { "icon": "🌱", "color": "#10b981", "title": "Play-Based Learning", "desc": "Hands-on Montessori apparatus and sensory exploration." },
+      { "icon": "🧘", "color": "#f59e0b", "title": "Holistic Development", "desc": "Balancing cognitive, social-emotional and creative growth." },
+      { "icon": "👥", "color": "#0ea5e9", "title": "Experienced & Registered Teachers", "desc": "Certified educators registered on national teacher databases." },
+      { "icon": "🎓", "color": "#8b5cf6", "title": "Academic Excellence", "desc": "Foundational literacy, numeracy and Olympiad preparation." }
+    ],
+    "growthLadder": [
+      { "step": "1", "label": "Learn", "color": "#0284c7", "icon": "📘", "desc": "Foundational phonics & literacy" },
+      { "step": "2", "label": "Play", "color": "#e11d48", "icon": "📕", "desc": "Hands-on creative discovery" },
+      { "step": "3", "label": "Explore", "color": "#d97706", "icon": "📙", "desc": "STEM experiments & nature tours" },
+      { "step": "4", "label": "Grow", "color": "#059669", "icon": "📗", "desc": "Social-emotional character building" },
+      { "step": "5", "label": "Shine", "color": "#7c3aed", "icon": "🔮", "desc": "Stage confidence & leadership" }
+    ],
+    "govtRecognition": {
+      "tag": "ACCREDITATIONS & AFFILIATIONS",
+      "heading": "Govt. Recognized & Fully Aligned with National Education System",
+      "subtitle": "Rising Kids School operates under strict compliance with statutory government standards, providing parents with verifiable trust, transparent governance, and peace of mind.",
+      "cards": [
+        {
+          "badge": "STATUTORY RECOGNITION",
+          "title": "Government Recognized & Affiliated",
+          "description": "Recognized by the Government of Uttar Pradesh and affiliated with the relevant educational board, we follow all formal schooling guidelines.",
+          "icon": "🏛️"
+        },
+        {
+          "badge": "NATIONAL ALIGNMENT",
+          "title": "Aligned with National Education System",
+          "description": "We follow all educational policies and digital initiatives as per Government guidelines, ensuring every child is a part of the formal schooling system.",
+          "icon": "☀️"
+        },
+        {
+          "badge": "NATIONAL CODE",
+          "title": "UDISE+ Registered Campus",
+          "description": "Allocated an official unique school identification code under the Unified District Information System for Education Plus (UDISE+) by the Ministry of Education, Govt. of India.",
+          "icon": "📋"
+        },
+        {
+          "badge": "POLICY FRAMEWORK",
+          "title": "NEP 2020 & NCF-FS Curriculum",
+          "description": "Curriculum structured around the National Curriculum Framework for Foundational Stage (NCF-FS) with play-based inquiry, multilingual literacy, and joyful discovery.",
+          "icon": "🎯"
+        }
+      ]
+    },
+    "studentBenefits": {
+      "tag": "NATIONAL DIGITAL INITIATIVES & STUDENT PROFILES",
+      "heading": "PRASHAST, Student PEN & APAAR Number",
+      "subtitle": "Connecting our students and certified teachers directly with Government of India digital education portals.",
+      "prashast": {
+        "title": "PRASHAST",
+        "tagline": "Solve • Synergise • Simplify",
+        "badge": "Integrated Teacher Database",
+        "description": "Our teachers are registered on PRASHAST, the integrated teacher database of the Department of School Education, Government of India.",
+        "benefits": [
+          "Pre-Assessment Holistic Screening Tool by NCERT & Ministry of Education.",
+          "Early developmental tracking for individualized child support.",
+          "Zero-rejection inclusive classroom environment where every learner thrives."
+        ]
+      },
+      "pen": {
+        "title": "Student PEN",
+        "subtitle": "( Permanent Education Number )",
+        "badge": "11-Digit Unique National ID",
+        "description": "We create Student PEN for every child as per UDISE+ and Government guidelines.",
+        "benefits": [
+          "Lifelong Academic Identity: Stays with your child throughout their academic journey from preschool through higher secondary.",
+          "Zero Transfer Hassle: Ensures effortless admissions when transitioning to high schools or relocating across any state in India.",
+          "Verified Academic Track Record: Eliminates duplicate or inaccurate records and safeguards your child's educational continuity."
+        ]
+      },
+      "apaar": {
+        "title": "APAAR Number",
+        "subtitle": "Automated Permanent Academic Account Registry",
+        "badge": "ONE NATION, ONE STUDENT ID",
+        "description": "Students are provided with APAAR ID as part of the National Education Policy (NEP) initiatives.",
+        "benefits": [
+          "DigiLocker Linked Repository: All foundational report cards, skill badges, and awards are digitally secured for life.",
+          "Tamper-Proof & Instant Verification: Parents can securely access, download, and share verified credentials anywhere, anytime.",
+          "Lifelong Credit Bedrock: Forms the foundational bedrock for academic credits from Class 1 all the way to college."
+        ]
+      },
+      "inclusiveNote": "Inclusive Care with PRASHAST: Proactive developmental tracking ensures that every child receives individualized attention, nurturing their strengths without academic anxiety."
+    },
+    "deskMessages": {
+      "tag": "LEADERSHIP & GUIDING VISION",
+      "heading": "Messages from the Desk",
+      "subtitle": "Inspiring words from the leadership shaping our vision, values, and the bright futures of our rising stars.",
+      "founder": {
+        "badge": "FOUNDER'S VISION",
+        "title": "Message from the Founder",
+        "name": "Anjali Nair",
+        "role": "Founder & Director",
+        "quote": "Education is not merely about preparing a child for school; it is about lighting the lifelong spark of curiosity, character, and compassion.",
+        "paragraphs": [
+          "When we laid the foundation of Rising Kids School in 2018 in New Vijay Nagar, our dream was simple yet profound: to create a joyful, accredited sanctuary where every child receives world-class foundational learning anchored in timeless values.",
+          "Over these 8 glorious years, our journey has been defined by the smiles of over 500 children and the enduring trust of our parent community. Achieving formal Government Recognition, integrating UDISE+ standards, aligning with NEP 2020, and adopting national digital frameworks like PRASHAST, PEN, and APAAR are milestones that reflect our relentless commitment to educational integrity.",
+          "We welcome every family to become part of our warm school family as we nurture the leaders, thinkers, and compassionate citizens of tomorrow."
+        ],
+        "highlights": [
+          "Founding Vision (Est. 2018)",
+          "Govt. Recognized & UDISE+ Standards",
+          "Affordable Holistic Excellence"
+        ]
+      },
+      "branchHead": {
+        "badge": "ACADEMIC LEADERSHIP",
+        "title": "Message from the Branch Head",
+        "name": "Mr. Sumeet",
+        "role": "Branch Head & Academic Coordinator",
+        "quote": "Every child enters our gates with a unique spark. Our sacred mission is to turn that spark into a radiant, self-assured flame.",
+        "paragraphs": [
+          "Welcome to Rising Kids School, New Vijay Nagar! As the Branch Head, I witness the magic of childhood unfold every single morning—from the curious eyes of our playgroup toddlers to the confident presentations of our Class V learners.",
+          "Our academic framework seamlessly harmonizes playway inquiry, Montessori discovery, and structured foundational literacy and numeracy (FLN). With certified educators, a loving 1:8 early teacher-student ratio, and the PRASHAST inclusive framework, we ensure no child feels rushed or left behind.",
+          "We maintain transparent, everyday partnerships with our parents. Together, we build a joyous, secure ecosystem where learning is an adventure and kindness is a daily practice."
+        ],
+        "highlights": [
+          "Child-Centric Playway Pedagogy",
+          "1:8 Caring Teacher-Student Ratio",
+          "Open Parent-School Synergy"
+        ]
+      }
+    },
+    "timeline": {
+      "tag": "OUR 8-YEAR JOURNEY (2018 – 2026)",
+      "heading": "8 Years of Nurturing Smiles, Building Minds & Shaping Leaders",
+      "subtitle": "From an energetic early-learning haven in 2018 to a premier Govt. Recognized primary institution in New Vijay Nagar, explore our 8-year legacy.",
+      "filterAll": "All 8 Years (2018 - 2026)",
+      "filterPhase1": "Phase 1: Foundation (2018 - 2021)",
+      "filterPhase2": "Phase 2: Growth & Accreditation (2022 - 2026)",
+      "items": [
+        {
+          "year": "2018",
+          "icon": "🌱",
+          "phase": 1,
+          "title": "The Inception & Founding Vision",
+          "subtitle": "Foundational Playgroup & Nursery Wing",
+          "description": "Rising Kids School opened its doors in New Vijay Nagar, Ghaziabad with child-friendly Montessori apparatus, dedicated early educators, and a clear vision to provide value-grounded foundation education."
+        },
+        {
+          "year": "2019",
+          "icon": "🎭",
+          "phase": 1,
+          "title": "Kindergarten Expansion & Stage Culture",
+          "subtitle": "LKG, UKG & Inaugural Annual Gala",
+          "description": "Expanded into Kindergarten programs, established dedicated audio-visual phonics labs, and hosted our 1st Annual Day Gala with 100% stage participation for all children."
+        },
+        {
+          "year": "2020",
+          "icon": "💻",
+          "phase": 1,
+          "title": "Pandemic Resilience & Virtual Storytelling",
+          "subtitle": "Zero Disruption in Early Learning",
+          "description": "Quickly transitioned to interactive virtual circles during COVID-19, home-delivered DIY sensory kits, and conducted weekly parent guidance webinars to keep little minds thriving."
+        },
+        {
+          "year": "2021",
+          "icon": "🌟",
+          "phase": 1,
+          "title": "Blended Innovation & Foundational Literacy",
+          "subtitle": "Safe Campus Reopening & FLN Toolkits",
+          "description": "Safely welcomed children back with sanitized classrooms, outdoor sensory exploration stations, and launched intensive Foundational Literacy and Numeracy (FLN) play modules."
+        },
+        {
+          "year": "2022",
+          "icon": "🏛️",
+          "phase": 2,
+          "title": "Primary Wing & Govt. Recognition",
+          "subtitle": "Class V Extension & UDISE+ Integration",
+          "description": "Earned formal Government Recognition & Affiliation from the Basic Education Department, received our unique UDISE+ government code, and inaugurated science & IT discovery labs."
+        },
+        {
+          "year": "2023",
+          "icon": "📋",
+          "phase": 2,
+          "title": "NEP 2020 & PRASHAST Inclusive Integration",
+          "subtitle": "NCF-FS Alignment & Child Screening",
+          "description": "Fully restructured curriculum under the National Curriculum Framework (NCF-FS) and deployed the NCERT PRASHAST screening framework for personalized inclusive child care."
+        },
+        {
+          "year": "2024",
+          "icon": "🆔",
+          "phase": 2,
+          "title": "PEN & APAAR National Registry Rollout",
+          "subtitle": "100% Digital Student Profiling",
+          "description": "Successfully onboarded 100% of enrolled students into the Ministry of Education's Permanent Education Number (PEN) and DigiLocker-linked APAAR ID registry."
+        },
+        {
+          "year": "2025–26",
+          "icon": "🏆",
+          "phase": 2,
+          "title": "8 Glorious Years of Holistic Excellence",
+          "subtitle": "Olympiad Laurels & Community Trust",
+          "description": "Celebrating 8 years of transformative early education with National Olympiad wins, thriving sports and cultural traditions, and over 500+ happy alumni flourishing in higher schools."
+        }
+      ]
     },
     "moreThanAcademics": {
       "tag": "OUR PHILOSOPHY",

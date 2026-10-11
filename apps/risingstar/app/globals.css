@@ -1052,85 +1052,99 @@ h6,
 }
 
 /* Timeline */
+/* Timeline - 8 Years Journey */
 .timeline-kids {
   position: relative;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .timeline-kids::before {
   content: '';
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 10px;
+  bottom: 10px;
   left: 50%;
-  width: 6px;
-  background: dashed rgba(132, 94, 247, 0.3);
+  width: 4px;
+  background: linear-gradient(180deg, #ffd200 0%, #004a90 50%, #10b981 100%);
   transform: translateX(-50%);
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
   .timeline-kids::before {
-    left: 20px;
+    left: 24px;
   }
 }
 
 .timeline-kids-item {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
 
 .timeline-kids-badge {
   position: absolute;
   left: 50%;
+  top: 16px;
   transform: translateX(-50%);
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: white;
-  border: 4px solid var(--secondary-grape);
+  background: #ffffff;
+  border: 3.5px solid #071c3e;
+  box-shadow: 0 4px 14px rgba(7, 28, 62, 0.2), 0 0 0 4px rgba(255, 210, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-kids-item:hover .timeline-kids-badge {
+  transform: translateX(-50%) scale(1.12);
+  box-shadow: 0 6px 20px rgba(7, 28, 62, 0.3), 0 0 0 6px rgba(255, 210, 0, 0.6);
 }
 
 @media (max-width: 768px) {
   .timeline-kids-badge {
-    left: 20px;
+    left: 24px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.15rem;
   }
 }
 
 .timeline-kids-card {
-  width: 45%;
-  background: white;
-  border: 3px solid #F3F0FF;
+  width: 44%;
+  background: #ffffff;
+  border: 1.5px solid rgba(7, 28, 62, 0.08);
   border-radius: 20px;
-  padding: 20px;
-  box-shadow: var(--shadow-card);
-  transition: all 0.3s ease;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(7, 28, 62, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  text-align: left;
 }
 
 .timeline-kids-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(132, 94, 247, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(7, 28, 62, 0.12);
+  border-color: rgba(255, 210, 0, 0.6);
 }
 
 .timeline-left {
   float: left;
-  text-align: right;
 }
 
 .timeline-right {
   float: right;
-  text-align: left;
 }
 
 @media (max-width: 768px) {
   .timeline-kids-card {
-    width: calc(100% - 60px);
+    width: calc(100% - 62px);
     float: right;
-    text-align: left;
+    padding: 18px 20px;
   }
 }
 
@@ -1138,6 +1152,113 @@ h6,
   content: '';
   display: table;
   clear: both;
+}
+
+/* Timeline Phase Filter Buttons */
+.timeline-filter-btn {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+}
+
+.timeline-filter-btn:not(.active) {
+  background-color: #ffffff !important;
+  color: #071c3e !important;
+  border: 2px solid #cbd5e1 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+.timeline-filter-btn:not(.active):hover {
+  background-color: #f1f5f9 !important;
+  color: #003b8e !important;
+  border-color: #94a3b8 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.timeline-filter-btn.active {
+  background-color: #071c3e !important;
+  color: #ffffff !important;
+  border: 2px solid #071c3e !important;
+  box-shadow: 0 4px 16px rgba(7, 28, 62, 0.25) !important;
+}
+
+.timeline-filter-btn.active:hover {
+  background-color: #0c2d62 !important;
+  color: #ffffff !important;
+  border-color: #0c2d62 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(7, 28, 62, 0.35) !important;
+}
+
+.timeline-filter-btn .timeline-btn-text {
+  font-weight: 700 !important;
+}
+
+.timeline-filter-btn.active .timeline-btn-text {
+  color: #ffffff !important;
+}
+
+.timeline-filter-btn:not(.active) .timeline-btn-text {
+  color: #071c3e !important;
+}
+
+.timeline-filter-btn:not(.active):hover .timeline-btn-text {
+  color: #003b8e !important;
+}
+
+/* Policy & Accreditations Cards */
+.policy-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(7, 28, 62, 0.1);
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(7, 28, 62, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.policy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ffd200 0%, #004a90 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.policy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(7, 28, 62, 0.12);
+  border-color: rgba(0, 74, 144, 0.3);
+}
+
+.policy-card:hover::before {
+  opacity: 1;
+}
+
+/* Student Benefit Cards (PEN & APAAR) */
+.student-benefit-card {
+  background: #ffffff;
+  border: 2px solid rgba(7, 28, 62, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(7, 28, 62, 0.07);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.student-benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 42px rgba(7, 28, 62, 0.14);
 }
 
 /* Inquiry Section & Form */
@@ -4355,4 +4476,9 @@ main section.quick-access-cream-bg,
   #printable-enquiry-slip button[type="button"] {
     width: 100% !important;
   }
+}
+
+/* Offset for Home page enquiry section when navigated via #contact-section */
+#contact-section {
+  scroll-margin-top: 90px;
 }
