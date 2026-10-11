@@ -2742,32 +2742,103 @@ footer {
 /* Feature 6 Tiles */
 .feature-tile-card {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 1.5rem 1rem;
+  border-radius: 20px;
+  padding: 1.6rem 0.8rem 1.4rem;
   text-align: center;
-  border: 1px solid #e9ecef;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s ease;
+  border: 2px solid #eef2f6;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .feature-tile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-  border-color: var(--yellow-sunshine);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(11, 59, 120, 0.12);
 }
 
 .feature-icon-wrapper {
-  width: 65px;
-  height: 65px;
-  margin: 0 auto 0.8rem auto;
-  border-radius: 16px;
-  background-color: #f8f9fa;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem auto;
+  border-radius: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  border: 1px solid #eee;
+  font-size: 3rem;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.feature-tile-card:hover .feature-icon-wrapper {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+.feature-card-title {
+  font-family: 'Fredoka', 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #17324d !important;
+}
+
+/* Individual vibrant playful pastel palettes */
+.card-theme-1 .feature-icon-wrapper {
+  background: linear-gradient(135deg, #fff9db 0%, #ffe066 100%);
+  border: 2px solid #ffd43b;
+  box-shadow: 0 8px 20px rgba(255, 212, 59, 0.35);
+}
+.card-theme-1:hover {
+  border-color: #ffd43b;
+}
+
+.card-theme-2 .feature-icon-wrapper {
+  background: linear-gradient(135deg, #e7f5ff 0%, #a5d8ff 100%);
+  border: 2px solid #74c0fc;
+  box-shadow: 0 8px 20px rgba(116, 192, 252, 0.35);
+}
+.card-theme-2:hover {
+  border-color: #74c0fc;
+}
+
+.card-theme-3 .feature-icon-wrapper {
+  background: linear-gradient(135deg, #ebfbee 0%, #b2f2bb 100%);
+  border: 2px solid #8ce99a;
+  box-shadow: 0 8px 20px rgba(140, 233, 154, 0.35);
+}
+.card-theme-3:hover {
+  border-color: #8ce99a;
+}
+
+.card-theme-4 .feature-icon-wrapper {
+  background: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%);
+  border: 2px solid #ff8787;
+  box-shadow: 0 8px 20px rgba(255, 135, 135, 0.35);
+}
+.card-theme-4:hover {
+  border-color: #ff8787;
+}
+
+.card-theme-5 .feature-icon-wrapper {
+  background: linear-gradient(135deg, #fff4e6 0%, #ffd8a8 100%);
+  border: 2px solid #ffa94d;
+  box-shadow: 0 8px 20px rgba(255, 169, 77, 0.35);
+}
+.card-theme-5:hover {
+  border-color: #ffa94d;
+}
+
+.card-theme-6 .feature-icon-wrapper {
+  background: linear-gradient(135deg, #f3f0ff 0%, #d0bfff 100%);
+  border: 2px solid #b197fc;
+  box-shadow: 0 8px 20px rgba(177, 151, 252, 0.35);
+}
+.card-theme-6:hover {
+  border-color: #b197fc;
 }
 
 /* About Rising Kids School */
@@ -3542,13 +3613,14 @@ footer {
   backdrop-filter: blur(2px);
 }
 
-/* Mobile Hero Banner Slider 1000x1500 Ratio (2:3) */
+/* Mobile Hero Banner Slider: 100% width, auto height based on image aspect ratio */
 @media (max-width: 767px) {
   .hero-slider-img {
-    aspect-ratio: 1000 / 1500 !important;
-    object-fit: cover !important;
-    object-position: center !important;
     width: 100% !important;
     height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    display: block !important;
   }
 }

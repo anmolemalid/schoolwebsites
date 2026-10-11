@@ -28,39 +28,39 @@ export default function HomePage() {
 
           <div className="row g-3 text-center justify-content-center">
             <div className="col-6 col-md-4 col-lg-2">
-              <div className="feature-tile-card">
+              <div className="feature-tile-card card-theme-1">
                 <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[0].icon}</div>
-                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[0].title}</strong>
+                <strong className="d-block text-dark feature-card-title">{t.home.whyChooseUs.cards[0].title}</strong>
               </div>
             </div>
             <div className="col-6 col-md-4 col-lg-2">
-              <div className="feature-tile-card">
+              <div className="feature-tile-card card-theme-2">
                 <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[1].icon}</div>
-                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[1].title}</strong>
+                <strong className="d-block text-dark feature-card-title">{t.home.whyChooseUs.cards[1].title}</strong>
               </div>
             </div>
             <div className="col-6 col-md-4 col-lg-2">
-              <div className="feature-tile-card">
+              <div className="feature-tile-card card-theme-3">
                 <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[2].icon}</div>
-                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[2].title}</strong>
+                <strong className="d-block text-dark feature-card-title">{t.home.whyChooseUs.cards[2].title}</strong>
               </div>
             </div>
             <div className="col-6 col-md-4 col-lg-2">
-              <div className="feature-tile-card">
+              <div className="feature-tile-card card-theme-4">
                 <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[3].icon}</div>
-                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[3].title}</strong>
+                <strong className="d-block text-dark feature-card-title">{t.home.whyChooseUs.cards[3].title}</strong>
               </div>
             </div>
             <div className="col-6 col-md-4 col-lg-2">
-              <div className="feature-tile-card">
+              <div className="feature-tile-card card-theme-5">
                 <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[4].icon}</div>
-                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[4].title}</strong>
+                <strong className="d-block text-dark feature-card-title">{t.home.whyChooseUs.cards[4].title}</strong>
               </div>
             </div>
             <div className="col-6 col-md-4 col-lg-2">
-              <div className="feature-tile-card">
+              <div className="feature-tile-card card-theme-6">
                 <div className="feature-icon-wrapper">{t.home.whyChooseUs.cards[5].icon}</div>
-                <strong className="d-block text-dark small fw-bold">{t.home.whyChooseUs.cards[5].title}</strong>
+                <strong className="d-block text-dark feature-card-title">{t.home.whyChooseUs.cards[5].title}</strong>
               </div>
             </div>
           </div>

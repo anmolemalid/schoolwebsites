@@ -14,20 +14,32 @@ const initialSlides: SlideItem[] = [
   {
     id: 1,
     image: "/assets/slider/hero_banner_1.jpg",
-    alt: "Rising Kids School - Admissions Open Banner",
-    link: "/admissions",
+    alt: "Rising Kids School Banner 1",
+    // 1st image not clickable
   },
   {
     id: 2,
     image: "/assets/slider/hero_banner_2.jpg",
-    alt: "About Us - Govt Recognized & Affiliated Rising Kids School",
+    alt: "Rising Kids School - About Us",
     link: "/about",
   },
   {
     id: 3,
     image: "/assets/slider/hero_banner_3.jpg",
-    alt: "Rising Kids School Activity Banner",
-    link: "/about",
+    alt: "Rising Kids School - Admissions",
+    link: "/admissions",
+  },
+  {
+    id: 4,
+    image: "/assets/slider/hero_banner_4.jpg",
+    alt: "Rising Kids School - Curriculum",
+    link: "/curriculum",
+  },
+  {
+    id: 5,
+    image: "/assets/slider/hero_banner_5.jpg",
+    alt: "Rising Kids School - Facilities",
+    link: "/facilities",
   },
 ];
 
@@ -166,7 +178,7 @@ export default function FullHeroSlider() {
               e.stopPropagation();
               goToPrev();
             }}
-            className="position-absolute top-50 start-0 translate-middle-y btn rounded-circle shadow-sm opacity-85 ms-2 ms-md-4 d-flex align-items-center justify-content-center border-0"
+            className="position-absolute top-50 start-0 translate-middle-y btn rounded-circle shadow-sm opacity-85 ms-2 ms-md-4 d-none d-md-flex align-items-center justify-content-center border-0"
             style={{
               width: "44px",
               height: "44px",
@@ -197,7 +209,7 @@ export default function FullHeroSlider() {
               e.stopPropagation();
               goToNext();
             }}
-            className="position-absolute top-50 end-0 translate-middle-y btn rounded-circle shadow-sm opacity-85 me-2 me-md-4 d-flex align-items-center justify-content-center border-0"
+            className="position-absolute top-50 end-0 translate-middle-y btn rounded-circle shadow-sm opacity-85 me-2 me-md-4 d-none d-md-flex align-items-center justify-content-center border-0"
             style={{
               width: "44px",
               height: "44px",
