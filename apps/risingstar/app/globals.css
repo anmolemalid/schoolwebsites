@@ -3918,12 +3918,12 @@ main section.quick-access-cream-bg,
 }
 
 /* Translucent tint for sections across all pages so doodle wallpaper is visible */
-.about-page section:not(.page-blue-banner),
+.about-page section:not(.hero-banner-slider-section):not(.page-blue-banner),
 .admissions-page section:not(.hero-banner-slider-section):not(#printable-enquiry-slip),
 .curriculum-page section:not(.hero-banner-slider-section):not(.page-blue-banner),
 .facilities-page section:not(.hero-banner-slider-section):not(.page-blue-banner),
-.gallery-page section:not(.page-blue-banner),
-.events-page section:not(.page-blue-banner),
+.gallery-page section:not(.hero-banner-slider-section):not(.page-blue-banner),
+.events-page section:not(.hero-banner-slider-section):not(.page-blue-banner),
 .contact-page section:not(.hero-banner-slider-section):not(.page-blue-banner) {
   background-color: rgba(255, 253, 246, 0.55) !important;
   backdrop-filter: blur(2px);
