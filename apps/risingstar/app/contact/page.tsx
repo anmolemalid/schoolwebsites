@@ -31,7 +31,7 @@ export default function ContactPage() {
             <div className="d-flex flex-wrap align-items-center justify-content-between gap-2">
               <nav
                 aria-label="breadcrumb"
-                className="d-inline-flex align-items-center flex-wrap gap-2 px-3 py-2 rounded-pill shadow-lg"
+                className="d-inline-flex align-items-center flex-wrap gap-2 px-3 py-2 rounded-pill shadow-lg banner-breadcrumb-pill"
                 style={{
                   backgroundColor: "rgba(7, 28, 62, 0.90)",
                   backdropFilter: "blur(12px)",
@@ -64,10 +64,10 @@ export default function ContactPage() {
                 </span>
 
                 {/* Divider for Quick Interactive Nav Jump Chips */}
-                <span className="text-white text-opacity-30 d-none d-sm-inline mx-1">|</span>
+                <span className="text-white text-opacity-30 mx-1 banner-breadcrumb-divider">|</span>
 
-                {/* Interactive Section Jump Chips */}
-                <div className="d-none d-sm-inline-flex align-items-center gap-1">
+                {/* Interactive Section Jump Chips (Shown on >= 1024px) */}
+                <div className="align-items-center flex-wrap gap-1 banner-breadcrumb-chips">
                   <a
                     href="#enquiry-form"
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
@@ -95,7 +95,7 @@ export default function ContactPage() {
               </nav>
 
               {/* Helpline Quick Badge on Right of Banner */}
-              <div className="d-none d-lg-block">
+              <div className="banner-breadcrumb-right-badge">
                 <a
                   href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`}
                   className="badge px-3 py-2 rounded-pill fw-bold text-white shadow-sm d-inline-flex align-items-center gap-2 text-decoration-none"

@@ -83,7 +83,9 @@ html {
 }
 
 @media print {
-  html, body {
+
+  html,
+  body {
     margin: 0 !important;
     padding: 0 !important;
     background: #ffffff !important;
@@ -110,7 +112,7 @@ html {
   .fab-badge-pill,
   a[aria-label*="WhatsApp"],
   a[href*="wa.me"],
-  .admissions-page > section:not(#enquiry),
+  .admissions-page>section:not(#enquiry),
   .no-print,
   .d-print-none {
     display: none !important;
@@ -2778,7 +2780,7 @@ footer {
   color: #1b365d;
   font-weight: 700;
   font-size: 0.92rem;
-  padding: 0.4rem 0.8rem;
+  padding: 0.4rem 0.5rem;
   border-radius: 20px;
   text-decoration: none;
   display: inline-flex;
@@ -3079,6 +3081,7 @@ footer {
   border: 2px solid #ffd43b;
   box-shadow: 0 8px 20px rgba(255, 212, 59, 0.35);
 }
+
 .card-theme-1:hover {
   border-color: #ffd43b;
 }
@@ -3088,6 +3091,7 @@ footer {
   border: 2px solid #74c0fc;
   box-shadow: 0 8px 20px rgba(116, 192, 252, 0.35);
 }
+
 .card-theme-2:hover {
   border-color: #74c0fc;
 }
@@ -3097,6 +3101,7 @@ footer {
   border: 2px solid #8ce99a;
   box-shadow: 0 8px 20px rgba(140, 233, 154, 0.35);
 }
+
 .card-theme-3:hover {
   border-color: #8ce99a;
 }
@@ -3106,6 +3111,7 @@ footer {
   border: 2px solid #ff8787;
   box-shadow: 0 8px 20px rgba(255, 135, 135, 0.35);
 }
+
 .card-theme-4:hover {
   border-color: #ff8787;
 }
@@ -3115,6 +3121,7 @@ footer {
   border: 2px solid #ffa94d;
   box-shadow: 0 8px 20px rgba(255, 169, 77, 0.35);
 }
+
 .card-theme-5:hover {
   border-color: #ffa94d;
 }
@@ -3124,6 +3131,7 @@ footer {
   border: 2px solid #b197fc;
   box-shadow: 0 8px 20px rgba(177, 151, 252, 0.35);
 }
+
 .card-theme-6:hover {
   border-color: #b197fc;
 }
@@ -3952,10 +3960,12 @@ main section.quick-access-cream-bg,
   background-color: rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease-in-out;
 }
+
 .banner-breadcrumb-link:hover {
   background-color: rgba(255, 255, 255, 0.25) !important;
   transform: translateY(-1px);
 }
+
 .banner-nav-chip {
   font-size: 0.8rem;
   background-color: rgba(255, 255, 255, 0.12);
@@ -3963,10 +3973,139 @@ main section.quick-access-cream-bg,
   color: #ffffff !important;
   transition: all 0.2s ease;
 }
+
 .banner-nav-chip:hover {
   background-color: #ffd200 !important;
   color: #071c3e !important;
   transform: translateY(-1px);
+}
+
+/* Responsive Breadcrumb System:
+   - Short breadcrumb till 1023px viewport (Home > Current Page Badge)
+   - Full breadcrumb for >= 1024px viewport (Home > Page Badge | Section Jump Chips)
+*/
+@media (max-width: 1023.98px) {
+
+  .banner-breadcrumb-chips,
+  .banner-breadcrumb-divider,
+  .banner-breadcrumb-right-badge {
+    display: none !important;
+  }
+
+  .banner-breadcrumb-pill {
+    padding: 0.35rem 0.85rem !important;
+    gap: 0.4rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner-breadcrumb-chips {
+    display: inline-flex !important;
+  }
+
+  .banner-breadcrumb-divider {
+    display: inline !important;
+  }
+
+  .banner-breadcrumb-right-badge {
+    display: block !important;
+  }
+}
+
+.feature-hover-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 74, 144, 0.12) !important;
+  border-color: #ffd200 !important;
+}
+
+/* 6 Signature Event Pillars interactive cards */
+.event-pillar-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.event-pillar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 74, 144, 0.14) !important;
+  border-color: rgba(255, 210, 0, 0.8) !important;
+}
+
+.event-pillar-card:hover .event-pillar-icon-box {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.event-pillar-icon-box {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Educational Tours Photo Grid */
+.card-tour-photo {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1.5px solid rgba(0, 74, 144, 0.1) !important;
+}
+
+.card-tour-photo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 74, 144, 0.14) !important;
+  border-color: rgba(255, 210, 0, 0.8) !important;
+}
+
+.card-tour-photo:hover .tour-img-hover {
+  transform: scale(1.06);
+}
+
+.tour-img-hover {
+  transition: transform 0.4s ease;
+}
+
+.tour-photo-pill {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(7, 28, 62, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 210, 0, 0.55);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* Educational Tours Horizontal Scrollable Carousel */
+.tour-carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem 0.25rem 1.25rem 0.25rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tour-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.tour-carousel-item {
+  flex: 0 0 320px;
+  width: 320px;
+  max-width: 85vw;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 576px) {
+  .tour-carousel-item {
+    flex: 0 0 280px;
+    width: 280px;
+  }
 }
 
 /* Curriculum Want to Know More CTA Banner */
@@ -4022,6 +4161,7 @@ main section.quick-access-cream-bg,
   box-shadow: 0 8px 20px rgba(255, 210, 0, 0.35);
   transition: all 0.25s ease;
 }
+
 .cta-btn-gold:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(255, 210, 0, 0.5);
@@ -4042,6 +4182,7 @@ main section.quick-access-cream-bg,
   gap: 0.4rem;
   transition: all 0.2s ease;
 }
+
 .cta-phone-pill:hover {
   background: #ffffff !important;
   color: #071c3e !important;
@@ -4062,6 +4203,7 @@ main section.quick-access-cream-bg,
   gap: 0.4rem;
   transition: all 0.2s ease;
 }
+
 .cta-whatsapp-pill:hover {
   background: #25d366 !important;
   color: #ffffff !important;
@@ -4128,7 +4270,8 @@ main section.quick-access-cream-bg,
 
   #printable-enquiry-slip .form-control,
   #printable-enquiry-slip .form-select {
-    font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
+    font-size: 16px !important;
+    /* Prevents auto-zoom on iOS Safari */
     padding: 10px 14px !important;
     border: 1px solid #cbd5e1 !important;
     border-radius: 8px !important;

@@ -1,0 +1,243 @@
+import { CarouselItem } from "../components/GenericCarousel";
+
+export const educationalTourPhotos: CarouselItem[] = [
+  {
+    id: "tour-1",
+    image: "/images/events/educational-tours/tour_heritage.jpg",
+    tag: "🏛️ Heritage Visit",
+    title: "Historical Monument Walk",
+    desc: "Exploring ancient architectural landmarks and discovering Indian cultural roots.",
+    category: "History & Heritage",
+  },
+  {
+    id: "tour-2",
+    image: "/images/events/educational-tours/tour_science.jpg",
+    tag: "🔬 Science Center",
+    title: "Interactive Science Museum",
+    desc: "Hands-on scientific exhibits, glowing globes, and interactive mechanics models.",
+    category: "STEM & Discovery",
+  },
+  {
+    id: "tour-3",
+    image: "/images/events/educational-tours/tour_nature.jpg",
+    tag: "🌿 Botanical Garden",
+    title: "Nature Discovery Walk",
+    desc: "Examining plants, vibrant flowers, and leaves with magnifying glasses in green parks.",
+    category: "Flora & Environment",
+  },
+  {
+    id: "tour-4",
+    image: "/images/events/educational-tours/tour_planetarium.jpg",
+    tag: "✨ Planetarium Dome",
+    title: "Astronomy & Space Show",
+    desc: "Witnessing celestial galaxy projections, shining planets, and solar system wonders.",
+    category: "Astronomy & Space",
+  },
+  {
+    id: "tour-5",
+    image: "/images/events/educational-tours/tour_farm.jpg",
+    tag: "🌾 Agro Experience",
+    title: "Organic Farm & Ecology Tour",
+    desc: "Observing crops, seasonal harvests, soil conservation, and dairy animals firsthand.",
+    category: "Agriculture & Ecology",
+  },
+  {
+    id: "tour-6",
+    image: "/images/events/educational-tours/tour_pottery.jpg",
+    tag: "🏺 Traditional Craft",
+    title: "Hands-on Pottery Workshop",
+    desc: "Shaping wet clay on pottery wheels to appreciate indigenous artisan traditions.",
+    category: "Art & Indigenous Crafts",
+  },
+  {
+    id: "tour-7",
+    image: "/images/events/educational-tours/tour_rail_museum.jpg",
+    tag: "🚂 Rail Heritage",
+    title: "Transport & Steam Locomotive Museum",
+    desc: "Climbing aboard historic vintage rail coaches and learning transport evolution.",
+    category: "Transport & Engineering",
+  },
+  {
+    id: "tour-8",
+    image: "/images/events/educational-tours/tour_zoo.jpg",
+    tag: "🐾 Wildlife Sanctuary",
+    title: "Zoological Biodiversity Walk",
+    desc: "Safe guided observation of diverse animal species, bird calls, and ecosystem balance.",
+    category: "Zoology & Wildlife",
+  },
+];
+
+export const picnicPhotos: CarouselItem[] = [
+  {
+    id: "picnic-1",
+    image: "/images/events/picnics/picnic_park_mat.jpg",
+    tag: "🥪 Outdoor Picnic",
+    title: "Sunny Park Lawn Lunch",
+    desc: "Sharing tiffin baskets, refreshing juices, and laughing together on open lawns.",
+    category: "Joyful Bonding",
+  },
+  {
+    id: "picnic-2",
+    image: "/images/events/picnics/picnic_farm_visit.jpg",
+    tag: "🌿 Farm Discovery",
+    title: "Organic Farm Excursion",
+    desc: "Hands-on encounters with calves, green vegetation, and farm produce.",
+    category: "Nature & Animals",
+  },
+  {
+    id: "picnic-3",
+    image: "/images/events/picnics/picnic_zoo_safari.jpg",
+    tag: "🦒 Zoo Expedition",
+    title: "Open-Air Wildlife Park",
+    desc: "Observing zebras, giraffes, and exotic flora during a sunny day out.",
+    category: "Wildlife & Parks",
+  },
+  {
+    id: "picnic-4",
+    image: "/images/events/picnics/picnic_lawn_fun.jpg",
+    tag: "🌻 Green Lawns",
+    title: "Rejuvenating Green Spaces",
+    desc: "Recharging minds in clean, scenic natural surroundings away from screens.",
+    category: "Wellness & Play",
+  },
+];
+
+export const annualDayPhotos: CarouselItem[] = [
+  {
+    id: "annual-1",
+    image: "/images/events/annual-day/annual_stage_performance.jpg",
+    tag: "🌟 Grand Gala",
+    title: "100% Student Stage Spectacle",
+    desc: "Vibrant yellow and red sparkling costumes lighting up the auditorium stage.",
+    category: "Stage Confidence",
+  },
+  {
+    id: "annual-2",
+    image: "/images/events/annual-day/annual_theatrical_play.jpg",
+    tag: "🎭 Value Drama",
+    title: "Theatrical Skits & Role-Play",
+    desc: "Enacting moral and patriotic stories with expressive acting and music.",
+    category: "Creative Drama",
+  },
+  {
+    id: "annual-3",
+    image: "/images/events/annual-day/annual_music_rhythm.png",
+    tag: "🎶 Musical Recital",
+    title: "Melody & Rhythm Chorus",
+    desc: "Synchronized instruments, rhymes, and joyful choral songs.",
+    category: "Music & Performing Arts",
+  },
+  {
+    id: "annual-4",
+    image: "/images/events/annual-day/annual_cultural_celebration.png",
+    tag: "🏆 Cultural Honors",
+    title: "Annual Celebration & Awards",
+    desc: "Celebrating student accomplishments and star performers with parents.",
+    category: "Achievements",
+  },
+];
+
+export const sportsDayPhotos: CarouselItem[] = [
+  {
+    id: "sports-1",
+    image: "/images/events/sports-day/sports_track_sprint.jpg",
+    tag: "🏃 Track Sprint",
+    title: "100m Dash & Agility Races",
+    desc: "Spirited runners dashing toward the finish line with determination.",
+    category: "Athletics & Sprints",
+  },
+  {
+    id: "sports-2",
+    image: "/images/events/sports-day/sports_lawn_race.jpg",
+    tag: "🏅 Lawn Sprints",
+    title: "Fun Obstacle Challenges",
+    desc: "Energetic relay sprints on lush green lawns cheered by school houses.",
+    category: "Fitness & Agility",
+  },
+  {
+    id: "sports-3",
+    image: "/images/events/sports-day/sports_swings_agility.avif",
+    tag: "🧘 Agility & Drills",
+    title: "Outdoor Agility & Play Grounds",
+    desc: "Developing gross motor balance, coordination, and physical stamina.",
+    category: "Coordination",
+  },
+  {
+    id: "sports-4",
+    image: "/images/events/sports-day/sports_agility_games.avif",
+    tag: "🤝 Team Spirit",
+    title: "House Sportsmanship & Drills",
+    desc: "Fostering teamwork, camaraderie, and joy in active physical lifestyles.",
+    category: "Sportsmanship",
+  },
+];
+
+export const olympiadPhotos: CarouselItem[] = [
+  {
+    id: "olympiad-1",
+    image: "/images/events/olympiad/olympiad_smart_it_lab.jpg",
+    tag: "💻 Cyber Olympiad",
+    title: "National Cyber Olympiad (NCO)",
+    desc: "Foundational digital reasoning, typing logic, and computer science aptitude.",
+    category: "Digital Logic",
+  },
+  {
+    id: "olympiad-2",
+    image: "/images/events/olympiad/olympiad_guided_learning.jpg",
+    tag: "📐 Math & Science",
+    title: "IMO & NSO Reasoning Practice",
+    desc: "Weekly conceptual problem-solving, pattern finding, and science aptitude.",
+    category: "Analytical Thinking",
+  },
+  {
+    id: "olympiad-3",
+    image: "/images/events/olympiad/olympiad_achievers.jpg",
+    tag: "🥇 Proud Achievers",
+    title: "Medal & Merit Holders",
+    desc: "Honoring national percentile winners with gold medals and certificates.",
+    category: "Academic Excellence",
+  },
+  {
+    id: "olympiad-4",
+    image: "/images/events/olympiad/olympiad_cyber_lab.jpg",
+    tag: "🧠 Logic Lab",
+    title: "Hands-on Technology Practice",
+    desc: "Building critical thinking and confidence for national competitive stages.",
+    category: "STEM & Innovation",
+  },
+];
+
+export const csrRalliesPhotos: CarouselItem[] = [
+  {
+    id: "csr-1",
+    image: "/images/events/csr-rallies/csr_plantation_drive.jpg",
+    tag: "🌱 Green Drive",
+    title: "Greener Tomorrow Together",
+    desc: "Hands-on sapling plantation drive nurturing eco-conscious young citizens.",
+    category: "Environmental Care",
+  },
+  {
+    id: "csr-2",
+    image: "/images/events/csr-rallies/csr_national_rally.jpg",
+    tag: "🇮🇳 Patriotism",
+    title: "Tricolor Awareness March",
+    desc: "Students holding national flags and spreading civic pride through the community.",
+    category: "Civic Consciousness",
+  },
+  {
+    id: "csr-3",
+    image: "/images/events/csr-rallies/csr_school_flag_march.jpg",
+    tag: "📢 Student Voices",
+    title: "Community Social Rally",
+    desc: "Marching with school banners for cleanliness, tree planting, and traffic safety.",
+    category: "Social Impact",
+  },
+  {
+    id: "csr-4",
+    image: "/images/events/csr-rallies/csr_community_pledge.jpg",
+    tag: "🤝 School Body",
+    title: "Rising Kids Community Pledge",
+    desc: "United student assembly committing to empathy, cleanliness, and kindness.",
+    category: "Moral Values",
+  },
+];

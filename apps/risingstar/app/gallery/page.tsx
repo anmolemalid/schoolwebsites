@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { t } from "../lib/i18n";
 
@@ -9,11 +10,65 @@ export default function GalleryPage() {
   const campusHighlights = t.gallery.campusExperience.highlights;
 
   const [filter, setFilter] = useState("all");
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const [activeItem, setActiveItem] = useState<any | null>(null);
+  const [mounted, setMounted] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filtered = galleryItems.filter(
     (item: any) => filter === "all" || item.category === filter
   );
+
+  const currentIndex = activeItem
+    ? filtered.findIndex((it: any) => it.title === activeItem.title && it.image === activeItem.image)
+    : -1;
+
+  const goToPrev = useCallback(() => {
+    if (filtered.length === 0) return;
+    if (currentIndex <= 0) {
+      setActiveItem(filtered[filtered.length - 1]);
+    } else {
+      setActiveItem(filtered[currentIndex - 1]);
+    }
+  }, [currentIndex, filtered]);
+
+  const goToNext = useCallback(() => {
+    if (filtered.length === 0) return;
+    if (currentIndex >= filtered.length - 1) {
+      setActiveItem(filtered[0]);
+    } else {
+      setActiveItem(filtered[currentIndex + 1]);
+    }
+  }, [currentIndex, filtered]);
+
+  useEffect(() => {
+    if (!activeItem) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setActiveItem(null);
+      } else if (e.key === "ArrowLeft") {
+        goToPrev();
+      } else if (e.key === "ArrowRight") {
+        goToNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [activeItem, goToPrev, goToNext]);
 
   return (
     <div className="gallery-page">
@@ -28,7 +83,7 @@ export default function GalleryPage() {
             <div className="d-flex flex-wrap align-items-center justify-content-between gap-2">
               <nav
                 aria-label="breadcrumb"
-                className="d-inline-flex align-items-center flex-wrap gap-2 px-3 py-2 rounded-pill shadow-lg"
+                className="d-inline-flex align-items-center flex-wrap gap-2 px-3 py-2 rounded-pill shadow-lg banner-breadcrumb-pill"
                 style={{
                   backgroundColor: "rgba(7, 28, 62, 0.90)",
                   backdropFilter: "blur(12px)",
@@ -61,10 +116,10 @@ export default function GalleryPage() {
                 </span>
 
                 {/* Divider for Quick Interactive Nav Jump Chips */}
-                <span className="text-white text-opacity-30 d-none d-sm-inline mx-1">|</span>
+                <span className="text-white text-opacity-30 mx-1 banner-breadcrumb-divider">|</span>
 
-                {/* Interactive Section Jump Chips */}
-                <div className="d-none d-sm-inline-flex align-items-center gap-1">
+                {/* Interactive Section Jump Chips (Shown on >= 1024px) */}
+                <div className="align-items-center gap-1 banner-breadcrumb-chips">
                   <a
                     href="#photo-gallery"
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
@@ -91,8 +146,8 @@ export default function GalleryPage() {
                 </div>
               </nav>
 
-              {/* Moments to Remember Badge on Right of Banner */}
-              <div className="d-none d-lg-block">
+              {/* Moments to Remember Badge on Right of Banner (Shown on >= 1024px) */}
+              <div className="banner-breadcrumb-right-badge">
                 <span
                   className="badge px-3 py-2 rounded-pill fw-bold text-white shadow-sm d-inline-flex align-items-center gap-2"
                   style={{
@@ -193,7 +248,7 @@ export default function GalleryPage() {
                     cursor: "pointer",
                     transition: "transform 0.25s ease, box-shadow 0.25s ease",
                   }}
-                  onClick={() => setLightboxImage(item.image)}
+                  onClick={() => setActiveItem(item)}
                 >
                   <img
                     src={item.image}
@@ -401,36 +456,200 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Lightbox Modal */}
-      {lightboxImage && (
-        <div
-          className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center p-3"
-          style={{
-            backgroundColor: "rgba(0, 0, 0, 0.85)",
-            zIndex: 9999,
-          }}
-          onClick={() => setLightboxImage(null)}
-        >
-          <div
-            className="position-relative bg-white rounded-4 p-2 shadow-lg"
-            style={{ maxWidth: "900px", width: "100%" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="btn-close position-absolute top-0 end-0 m-3 p-2 bg-white rounded-circle shadow"
-              aria-label="Close"
-              onClick={() => setLightboxImage(null)}
-            ></button>
-            <img
-              src={lightboxImage}
-              alt="Expanded Preview"
-              className="w-100 rounded-3"
-              style={{ maxHeight: "80vh", objectFit: "contain" }}
-            />
-          </div>
-        </div>
-      )}
+      {/* Cinematic Full Viewport Lightbox Modal (Portaled directly to body) */}
+      {mounted && activeItem && typeof document !== "undefined"
+        ? createPortal(
+            <div
+              className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+              style={{
+                position: "fixed",
+                inset: 0,
+                width: "100vw",
+                height: "100vh",
+                zIndex: 99999999,
+                backgroundColor: "rgba(3, 10, 24, 0.97)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                userSelect: "none",
+                overflow: "hidden",
+              }}
+              onClick={() => setActiveItem(null)}
+              role="dialog"
+              aria-modal="true"
+              aria-label={activeItem.title}
+              onTouchStart={(e) => {
+                touchStartX.current = e.touches[0].clientX;
+              }}
+              onTouchEnd={(e) => {
+                if (touchStartX.current === null) return;
+                const diffX = e.changedTouches[0].clientX - touchStartX.current;
+                if (diffX > 50) {
+                  goToPrev();
+                } else if (diffX < -50) {
+                  goToNext();
+                }
+                touchStartX.current = null;
+              }}
+            >
+              {/* Floating Top Controls Header */}
+              <div
+                className="position-absolute top-0 start-0 end-0 p-3 p-md-4 d-flex align-items-center justify-content-between"
+                style={{ zIndex: 10000001, pointerEvents: "none" }}
+              >
+                {/* Left Info Badges */}
+                <div
+                  className="d-flex align-items-center gap-2"
+                  style={{ pointerEvents: "auto" }}
+                >
+                  <span
+                    className="badge text-dark fw-bold px-3 py-2 rounded-pill shadow-sm"
+                    style={{
+                      fontSize: "0.85rem",
+                      background: "linear-gradient(135deg, #ffd200 0%, #ffaa00 100%)",
+                      boxShadow: "0 4px 15px rgba(255, 210, 0, 0.35)",
+                    }}
+                  >
+                    📸 Campus Life
+                  </span>
+                  <span
+                    className="badge text-white px-3 py-2 rounded-pill shadow-sm"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.15)",
+                      backdropFilter: "blur(8px)",
+                      border: "1px solid rgba(255, 255, 255, 0.25)",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    Photo {currentIndex + 1} of {filtered.length}
+                  </span>
+                </div>
+
+                {/* Right Close Button */}
+                <button
+                  type="button"
+                  onClick={() => setActiveItem(null)}
+                  className="btn btn-warning rounded-pill fw-bold px-3 py-2 d-inline-flex align-items-center gap-2 shadow-lg"
+                  style={{
+                    fontSize: "0.92rem",
+                    border: "2px solid #ffffff",
+                    boxShadow: "0 8px 24px rgba(0, 0, 0, 0.5)",
+                    pointerEvents: "auto",
+                    cursor: "pointer",
+                  }}
+                  aria-label="Close Fullscreen View"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                  <span>Close</span>
+                </button>
+              </div>
+
+              {/* Prev Photo Floating Button */}
+              {filtered.length > 1 && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToPrev();
+                  }}
+                  className="btn position-absolute start-0 top-50 translate-middle-y rounded-circle d-flex align-items-center justify-content-center shadow-lg ms-2 ms-md-4 text-white"
+                  style={{
+                    width: "56px",
+                    height: "56px",
+                    zIndex: 10000001,
+                    backgroundColor: "rgba(7, 28, 62, 0.88)",
+                    backdropFilter: "blur(10px)",
+                    border: "2px solid rgba(255, 210, 0, 0.75)",
+                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.6)",
+                    cursor: "pointer",
+                  }}
+                  title="Previous photo (Left Arrow)"
+                  aria-label="Previous photo"
+                >
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                </button>
+              )}
+
+              {/* Central Full Viewport Hero Image Container */}
+              <div
+                className="w-100 h-100 d-flex align-items-center justify-content-center p-3 p-md-5"
+                onClick={() => setActiveItem(null)}
+              >
+                <img
+                  src={activeItem.image}
+                  alt={activeItem.title}
+                  onClick={(e) => e.stopPropagation()}
+                  className="rounded-4 shadow-lg d-block"
+                  style={{
+                    maxWidth: "96vw",
+                    maxHeight: "86vh",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                    border: "2px solid rgba(255, 255, 255, 0.2)",
+                    boxShadow: "0 25px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(0, 74, 144, 0.4)",
+                    animation: "fadeIn 0.25s ease-out",
+                  }}
+                />
+              </div>
+
+              {/* Next Photo Floating Button */}
+              {filtered.length > 1 && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToNext();
+                  }}
+                  className="btn position-absolute end-0 top-50 translate-middle-y rounded-circle d-flex align-items-center justify-content-center shadow-lg me-2 me-md-4 text-white"
+                  style={{
+                    width: "56px",
+                    height: "56px",
+                    zIndex: 10000001,
+                    backgroundColor: "rgba(7, 28, 62, 0.88)",
+                    backdropFilter: "blur(10px)",
+                    border: "2px solid rgba(255, 210, 0, 0.75)",
+                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.6)",
+                    cursor: "pointer",
+                  }}
+                  title="Next photo (Right Arrow)"
+                  aria-label="Next photo"
+                >
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
+              )}
+
+              {/* Bottom Floating Glassmorphic Caption Pill */}
+              <div
+                className="position-absolute bottom-0 start-50 translate-middle-x mb-3 mb-md-4 px-3 py-2 rounded-4 text-center text-white shadow-lg"
+                style={{
+                  maxWidth: "760px",
+                  width: "calc(100% - 2rem)",
+                  backgroundColor: "rgba(7, 28, 62, 0.92)",
+                  backdropFilter: "blur(16px)",
+                  border: "1.5px solid rgba(255, 210, 0, 0.55)",
+                  zIndex: 10000001,
+                  pointerEvents: "auto",
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="d-flex align-items-center justify-content-center gap-2 mb-1 flex-wrap">
+                  <h5 className="fw-bold text-white mb-0 fs-6">{activeItem.title}</h5>
+                </div>
+                <p className="text-white text-opacity-85 small mb-0" style={{ fontSize: "0.82rem", lineHeight: 1.4 }}>
+                  {activeItem.desc}
+                </p>
+              </div>
+            </div>,
+            document.body
+          )
+        : null}
     </div>
   );
 }
