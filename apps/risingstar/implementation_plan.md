@@ -52,7 +52,7 @@ Localize the website to be fully relevant to **Vijay Nagar, Ghaziabad, India**. 
 - **outdoor_games.png**: Green grassy playground featuring slides, swings, and kids running.
 
 ### Content Localized
-- CBSE aligned foundations and environmental science (EVS) syllabus integrations.
+- Foundational and environmental science (EVS) syllabus integrations.
 - Localized school day timeline (prayer assembly, tiffin fruit break, and school van drop-offs).
 - Transport coverage areas (Vijay Nagar, Pratap Vihar, Siddharth Vihar).
 

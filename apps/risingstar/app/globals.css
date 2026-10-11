@@ -3920,7 +3920,7 @@ main section.quick-access-cream-bg,
 /* Translucent tint for sections across all pages so doodle wallpaper is visible */
 .about-page section:not(.page-blue-banner),
 .admissions-page section:not(.hero-banner-slider-section):not(#printable-enquiry-slip),
-.curriculum-page section:not(.page-blue-banner),
+.curriculum-page section:not(.hero-banner-slider-section):not(.page-blue-banner),
 .facilities-page section:not(.page-blue-banner),
 .gallery-page section:not(.page-blue-banner),
 .events-page section:not(.page-blue-banner),
@@ -3944,6 +3944,128 @@ main section.quick-access-cream-bg,
     object-fit: contain !important;
     display: block !important;
   }
+}
+
+/* Floating Breadcrumb Pill and Nav Jump Chips on Hero Banners */
+.banner-breadcrumb-link {
+  font-size: 0.88rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+.banner-breadcrumb-link:hover {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  transform: translateY(-1px);
+}
+.banner-nav-chip {
+  font-size: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+  transition: all 0.2s ease;
+}
+.banner-nav-chip:hover {
+  background-color: #ffd200 !important;
+  color: #071c3e !important;
+  transform: translateY(-1px);
+}
+
+/* Curriculum Want to Know More CTA Banner */
+.curriculum-cta-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #071c3e 0%, #003770 50%, #0b4991 100%);
+  border: 2px solid rgba(255, 210, 0, 0.45);
+  box-shadow: 0 16px 40px rgba(7, 28, 62, 0.22), 0 0 24px rgba(255, 210, 0, 0.12);
+  border-radius: 1.5rem;
+}
+
+.curriculum-cta-glow-1 {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 210, 0, 0.25) 0%, rgba(255, 210, 0, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.curriculum-cta-glow-2 {
+  position: absolute;
+  bottom: -60px;
+  left: 15%;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(77, 171, 247, 0.22) 0%, rgba(77, 171, 247, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-feature-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  padding: 0.45rem 0.95rem;
+  border-radius: 50rem;
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  backdrop-filter: blur(8px);
+}
+
+.cta-btn-gold {
+  background: linear-gradient(135deg, #ffd200 0%, #ffaa00 100%);
+  color: #071c3e !important;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 8px 20px rgba(255, 210, 0, 0.35);
+  transition: all 0.25s ease;
+}
+.cta-btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 210, 0, 0.5);
+  color: #071c3e !important;
+}
+
+.cta-phone-pill {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: 50rem;
+  font-size: 0.83rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+.cta-phone-pill:hover {
+  background: #ffffff !important;
+  color: #071c3e !important;
+  transform: translateY(-1px);
+}
+
+.cta-whatsapp-pill {
+  background: rgba(37, 211, 102, 0.2);
+  border: 1px solid rgba(37, 211, 102, 0.55);
+  color: #25d366 !important;
+  text-decoration: none;
+  padding: 0.45rem 0.95rem;
+  border-radius: 50rem;
+  font-size: 0.83rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+.cta-whatsapp-pill:hover {
+  background: #25d366 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
 }
 
 /* Purple subtle badge utilities */

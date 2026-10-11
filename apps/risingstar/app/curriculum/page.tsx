@@ -13,62 +13,114 @@ export default function CurriculumPage() {
 
   return (
     <div className="curriculum-page">
-      {/* Royal Blue Hero Banner */}
-      <section className="page-blue-banner">
-        <div className="container position-relative z-2">
-          <div className="row align-items-center justify-content-between g-4">
-            <div className="col-lg-8 text-center text-lg-start">
-              {/* Breadcrumb */}
-              <nav aria-label="breadcrumb">
-                <ol className="breadcrumb mb-2" style={{ fontSize: "0.88rem" }}>
-                  <li className="breadcrumb-item">
-                    <Link href="/" className="text-white text-opacity-75 text-decoration-none">
-                      {t.nav.home}
-                    </Link>
-                  </li>
-                  <li className="breadcrumb-item active text-warning fw-bold" aria-current="page">
-                    {t.curriculum.banner.breadcrumbActive}
-                  </li>
-                </ol>
+      {/* Full Width Curriculum Hero Banner Image with Overlay Breadcrumb */}
+      <section className="position-relative w-100 overflow-hidden bg-white border-bottom no-print hero-banner-slider-section">
+        {/* Interactive Floating Breadcrumb Pill on Banner Image */}
+        <div
+          className="position-absolute top-0 start-0 w-100 px-2 px-md-3"
+          style={{ zIndex: 10, paddingTop: "1rem", paddingBottom: "0.5rem" }}
+        >
+          <div className="container">
+            <div className="d-flex flex-wrap align-items-center justify-content-between gap-2">
+              <nav
+                aria-label="breadcrumb"
+                className="d-inline-flex align-items-center flex-wrap gap-2 px-3 py-2 rounded-pill shadow-lg"
+                style={{
+                  backgroundColor: "rgba(7, 28, 62, 0.90)",
+                  backdropFilter: "blur(12px)",
+                  border: "1.5px solid rgba(255, 210, 0, 0.6)",
+                  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.35), 0 0 16px rgba(255, 210, 0, 0.25)",
+                }}
+              >
+                {/* Home Link with Interactive Hover */}
+                <Link
+                  href="/"
+                  className="text-white text-decoration-none fw-bold d-inline-flex align-items-center gap-1 px-2 py-1 rounded-pill banner-breadcrumb-link"
+                >
+                  <span>🏠</span>
+                  <span>{t.nav.home}</span>
+                </Link>
+
+                <span className="text-warning fw-bold" style={{ fontSize: "0.85rem" }}>▸</span>
+
+                {/* Current Page Active Badge */}
+                <span
+                  className="badge text-dark fw-bold px-3 py-2 rounded-pill d-inline-flex align-items-center gap-1 shadow-sm"
+                  style={{
+                    fontSize: "0.85rem",
+                    background: "linear-gradient(135deg, #ffd200 0%, #ffaa00 100%)",
+                    border: "1px solid #ffffff",
+                  }}
+                >
+                  <span>📚</span>
+                  <span>{t.nav.curriculum}</span>
+                </span>
+
+                {/* Divider for Quick Interactive Nav Jump Chips */}
+                <span className="text-white text-opacity-30 d-none d-sm-inline mx-1">|</span>
+
+                {/* Interactive Section Jump Chips */}
+                <div className="d-none d-sm-inline-flex align-items-center gap-1">
+                  <a
+                    href="#whole-child"
+                    className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
+                  >
+                    <span>🌱</span>
+                    <span>Whole-Child</span>
+                  </a>
+
+                  <a
+                    href="#learning-levels"
+                    className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
+                  >
+                    <span>🎓</span>
+                    <span>Learning Levels</span>
+                  </a>
+
+                  <a
+                    href="#contact-cta"
+                    className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
+                  >
+                    <span>💬</span>
+                    <span>Enquire</span>
+                  </a>
+                </div>
               </nav>
 
-              {/* Title & Kicker */}
-              <div className="page-blue-banner-kicker">{t.curriculum.banner.kicker}</div>
-              <h1 className="page-blue-banner-title">{t.curriculum.banner.title}</h1>
-              <p className="page-blue-banner-subtitle mb-3">
-                {t.curriculum.banner.subtitle}
-              </p>
-
-              <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
-                <span className="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
-                  {t.about.franchiseBadge}
+              {/* Curriculum Level Badge on Right of Banner */}
+              <div className="d-none d-lg-block">
+                <span
+                  className="badge px-3 py-2 rounded-pill fw-bold text-white shadow-sm d-inline-flex align-items-center gap-2"
+                  style={{
+                    backgroundColor: "rgba(0, 74, 144, 0.88)",
+                    backdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255, 210, 0, 0.5)",
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  <span className="spinner-grow spinner-grow-sm text-warning" role="status" style={{ width: "0.6rem", height: "0.6rem" }}></span>
+                  <span>Playgroup to Class V</span>
                 </span>
-                <span className="badge bg-white text-primary fw-bold px-3 py-2 rounded-pill">
-                  {t.about.locationBadge}
-                </span>
-              </div>
-            </div>
-
-            <div className="col-lg-4 text-center text-lg-end">
-              <div className="p-3 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-25 shadow-sm text-center text-white d-inline-block w-100" style={{ maxWidth: "320px" }}>
-                <div className="fw-bold fs-5 text-warning mb-1">{t.curriculum.heroBox.title}</div>
-                <div className="small mb-3 text-white text-opacity-90">{t.curriculum.heroBox.subtitle}</div>
-                <Link href="/contact" className="btn btn-warning w-100 fw-bold rounded-pill text-dark text-uppercase d-inline-flex align-items-center justify-content-center gap-2" style={{ letterSpacing: "0.5px" }}>
-                  <span>{t.curriculum.heroBox.button}</span>
-                  <span className="rounded-circle d-inline-flex align-items-center justify-content-center text-dark" style={{ width: "20px", height: "20px", backgroundColor: "rgba(0,0,0,0.1)", flexShrink: 0 }}>
-                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  </span>
-                </Link>
               </div>
             </div>
           </div>
         </div>
+
+        <picture className="w-100 d-block">
+          <source
+            media="(max-width: 767px)"
+            srcSet="/assets/slider/hero_banner_4_mobile.jpg"
+          />
+          <img
+            src="/assets/slider/hero_banner_4.jpg"
+            alt="Rising Star Academy Curriculum & Holistic Development"
+            className="w-100 h-auto d-block hero-slider-img"
+          />
+        </picture>
       </section>
 
       {/* Whole-Child Development Section */}
-      <section className="py-5" style={{ backgroundColor: "#ffffff" }}>
+      <section id="whole-child" className="py-5" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
           <div className="text-center mb-5">
             <span className="badge bg-primary-subtle text-primary border border-primary px-3 py-1 rounded-pill fw-bold small mb-2">
@@ -110,7 +162,7 @@ export default function CurriculumPage() {
       </section>
 
       {/* Age-Wise Learning Levels Section */}
-      <section className="py-5 border-top border-bottom" style={{ backgroundColor: "#fff9e8" }}>
+      <section id="learning-levels" className="py-5 border-top border-bottom" style={{ backgroundColor: "#fff9e8" }}>
         <div className="container">
           <div className="text-center mb-5">
             <span className="badge bg-warning-subtle text-dark border border-warning px-3 py-1 rounded-pill fw-bold small mb-2">
@@ -151,40 +203,136 @@ export default function CurriculumPage() {
       </section>
 
       {/* Want to Know More? Section */}
-      <section className="py-5" style={{ backgroundColor: "#ffffff" }}>
+      <section id="contact-cta" className="py-5" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
-          <div
-            className="p-4 p-lg-5 rounded-4 text-white text-center text-md-start d-flex flex-column flex-md-row justify-content-between align-items-center gap-4 shadow-sm"
-            style={{ backgroundColor: "#004a90", border: "2px solid #ffd200" }}
-          >
-            <div>
-              <h2 className="fw-bold mb-2 text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                {t.curriculum.ctaBanner.title}
-              </h2>
-              <p className="mb-0 text-white text-opacity-90 fs-5">
-                {t.curriculum.ctaBanner.subtitle}
-              </p>
-            </div>
-            <div className="d-flex gap-3 flex-wrap">
-              <Link
-                href="/contact"
-                className="btn btn-warning btn-lg px-4 rounded-pill fw-bold text-dark text-uppercase shadow"
-                style={{ letterSpacing: "0.5px" }}
-              >
-                {t.curriculum.ctaBanner.talkButton}
-              </Link>
-              <Link
-                href="/admissions"
-                className="btn btn-outline-light btn-lg px-4 rounded-pill fw-bold text-uppercase d-inline-flex align-items-center gap-2"
-                style={{ letterSpacing: "0.5px" }}
-              >
-                <span>{t.curriculum.ctaBanner.admissionsButton}</span>
-                <span className="rounded-circle d-inline-flex align-items-center justify-content-center text-white" style={{ width: "20px", height: "20px", backgroundColor: "rgba(255,255,255,0.2)", flexShrink: 0 }}>
-                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </span>
-              </Link>
+          <div className="curriculum-cta-card p-4 p-md-5 text-white">
+            {/* Ambient Background Glow Elements */}
+            <div className="curriculum-cta-glow-1"></div>
+            <div className="curriculum-cta-glow-2"></div>
+
+            <div className="position-relative z-1">
+              <div className="row align-items-center g-4">
+                {/* Left Content Column */}
+                <div className="col-lg-7 text-center text-lg-start">
+                  {/* Top Badge */}
+                  <div
+                    className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3"
+                    style={{
+                      backgroundColor: "rgba(255, 210, 0, 0.15)",
+                      border: "1px solid rgba(255, 210, 0, 0.5)",
+                      color: "#ffd200",
+                      fontSize: "0.82rem",
+                      fontWeight: 700,
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    <span>✨</span>
+                    <span>PERSONALIZED ACADEMIC GUIDANCE</span>
+                  </div>
+
+                  {/* Heading */}
+                  <h2 className="display-6 fw-bold mb-3 text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                    {t.curriculum.ctaBanner.title}
+                  </h2>
+
+                  {/* Subtitle */}
+                  <p className="lead text-white text-opacity-90 mb-4" style={{ fontSize: "1.05rem", lineHeight: 1.6, maxWidth: "600px" }}>
+                    {t.curriculum.ctaBanner.subtitle}
+                  </p>
+
+                  {/* Trust / Benefit Chips */}
+                  <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
+                    <span className="cta-feature-chip">
+                      <span>🎯</span>
+                      <span>Age-Wise Milestones</span>
+                    </span>
+                    <span className="cta-feature-chip">
+                      <span>🏫</span>
+                      <span>Campus Tour & Walkthrough</span>
+                    </span>
+                    <span className="cta-feature-chip">
+                      <span>👨‍👩‍👧</span>
+                      <span>Friendly Counselor Session</span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Right Action Hub Column */}
+                <div className="col-lg-5">
+                  <div
+                    className="p-4 rounded-4 shadow-lg text-center"
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.08)",
+                      border: "1.5px solid rgba(255, 255, 255, 0.18)",
+                      backdropFilter: "blur(14px)",
+                    }}
+                  >
+                    <div className="small text-warning fw-bold text-uppercase mb-2" style={{ letterSpacing: "1px" }}>
+                      Get In Touch Directly
+                    </div>
+                    <div className="text-white fw-bold fs-5 mb-3">
+                      Book a Visit or Ask Any Question
+                    </div>
+
+                    {/* Primary & Secondary Action Buttons */}
+                    <div className="d-grid gap-2 mb-3">
+                      <Link
+                        href="/contact"
+                        className="btn cta-btn-gold btn-lg rounded-pill text-uppercase d-inline-flex align-items-center justify-content-center gap-2"
+                        style={{ letterSpacing: "0.5px", fontSize: "0.95rem" }}
+                      >
+                        <span>📞 {t.curriculum.ctaBanner.talkButton}</span>
+                        <span
+                          className="rounded-circle d-inline-flex align-items-center justify-content-center"
+                          style={{ width: "22px", height: "22px", backgroundColor: "rgba(0,0,0,0.12)" }}
+                        >
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
+                          </svg>
+                        </span>
+                      </Link>
+
+                      <Link
+                        href="/admissions"
+                        className="btn btn-outline-light btn-lg rounded-pill fw-bold text-uppercase d-inline-flex align-items-center justify-content-center gap-2"
+                        style={{ letterSpacing: "0.5px", fontSize: "0.95rem", borderWidth: "1.5px" }}
+                      >
+                        <span>🎒 {t.curriculum.ctaBanner.admissionsButton}</span>
+                        <span
+                          className="rounded-circle d-inline-flex align-items-center justify-content-center"
+                          style={{ width: "22px", height: "22px", backgroundColor: "rgba(255,255,255,0.15)" }}
+                        >
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
+                          </svg>
+                        </span>
+                      </Link>
+                    </div>
+
+                    {/* Instant Direct Links: Phone & WhatsApp */}
+                    <div className="pt-2 border-top border-white border-opacity-15 d-flex flex-wrap align-items-center justify-content-center gap-2">
+                      <a
+                        href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`}
+                        className="cta-phone-pill"
+                        title="Call School Helpline"
+                      >
+                        <span className="spinner-grow spinner-grow-sm text-success" role="status" style={{ width: "0.5rem", height: "0.5rem" }}></span>
+                        <span>{t.school.contacts.phonePrimary}</span>
+                      </a>
+
+                      <a
+                        href={`https://wa.me/${t.school.contacts.phonePrimary.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi, I want to know more about the curriculum and admissions at Rising Kids School.")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cta-whatsapp-pill"
+                        title="Chat on WhatsApp"
+                      >
+                        <span>💬 WhatsApp</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

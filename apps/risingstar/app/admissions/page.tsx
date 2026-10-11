@@ -110,7 +110,7 @@ export default function AdmissionsPage() {
   return (
     <div className="admissions-page">
       {/* Full Width Admissions Hero Banner Image with Overlay Breadcrumb */}
-      <section className="position-relative w-100 overflow-hidden bg-white border-bottom no-print">
+      <section className="position-relative w-100 overflow-hidden bg-white border-bottom no-print hero-banner-slider-section">
         {/* Interactive Floating Breadcrumb Pill on Banner Image */}
         <div
           className="position-absolute top-0 start-0 w-100 px-2 px-md-3"
