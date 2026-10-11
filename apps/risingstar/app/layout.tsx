@@ -51,43 +51,31 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <span>✉️ {t.school.contacts.email}</span>
               <span>📍 {t.school.location.fullAddress}</span>
             </div>
-            <div className="d-flex align-items-center gap-2">
+            <div className="d-flex align-items-center gap-3">
               <a
-                href={t.school.social.facebook}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                className="text-white d-inline-flex align-items-center justify-content-center text-decoration-none"
-                style={{
-                  width: "28px",
-                  height: "28px",
-                  borderRadius: "50%",
-                  border: "1.2px solid rgba(255, 255, 255, 0.45)",
-                  backgroundColor: "rgba(255, 255, 255, 0.08)",
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffffff">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </a>
-              <a
-                href={t.school.social.instagram}
+                href={t.school.social.instagram || "https://www.instagram.com/inforisingkidsschool"}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="text-white d-inline-flex align-items-center justify-content-center text-decoration-none"
-                style={{
-                  width: "28px",
-                  height: "28px",
-                  borderRadius: "50%",
-                  border: "1.2px solid rgba(255, 255, 255, 0.45)",
-                  backgroundColor: "rgba(255, 255, 255, 0.08)",
-                }}
+                title="Follow Rising Kids School on Instagram"
+                className="topbar-social-btn insta-btn"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2.5" />
+                  <circle cx="17.5" cy="6.5" r="1.5" fill="#ffffff" stroke="none" />
+                </svg>
+              </a>
+              <a
+                href={t.school.social.youtube || "https://www.youtube.com/@RisingKids-rl8xe"}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube"
+                title="Subscribe to Rising Kids School on YouTube"
+                className="topbar-social-btn yt-btn"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#ffffff">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </svg>
               </a>
             </div>
@@ -129,20 +117,31 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   </div>
                 </div>
 
-                <div className="d-flex gap-2 mt-3">
-                  <a href={t.school.social.facebook} target="_blank" rel="noopener noreferrer" className="footer-social-btn" title="Facebook">
-                    f
-                  </a>
-                  <a href={t.school.social.instagram} target="_blank" rel="noopener noreferrer" className="footer-social-btn" title="Instagram">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <div className="d-flex gap-3 mt-3">
+                  <a
+                    href={t.school.social.instagram || "https://www.instagram.com/inforisingkidsschool"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-social-btn insta-btn"
+                    title="Follow on Instagram"
+                    aria-label="Instagram"
+                  >
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle>
                     </svg>
                   </a>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="footer-social-btn yt-btn" title="YouTube">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  <a
+                    href={t.school.social.youtube || "https://www.youtube.com/@RisingKids-rl8xe"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-social-btn yt-btn"
+                    title="Subscribe on YouTube"
+                    aria-label="YouTube"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                     </svg>
                   </a>
                 </div>
