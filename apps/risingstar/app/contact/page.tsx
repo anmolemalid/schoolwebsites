@@ -170,7 +170,15 @@ export default function ContactPage() {
                   <div className="mb-4">
                     <p className="fw-bold mb-1 text-dark fs-6">{t.contact.getInTouch.addressLabel}</p>
                     <p className="text-muted mb-0" style={{ lineHeight: 1.6 }}>
-                      {t.school.location.fullAddress}
+                      <a
+                        href={t.school.location.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-decoration-none text-muted"
+                        title="Open in Google Maps"
+                      >
+                        {t.school.location.fullAddress} ↗
+                      </a>
                     </p>
                   </div>
 

@@ -49,7 +49,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className="d-flex align-items-center gap-4">
               <span>📞 {t.school.contacts.phoneDisplay}</span>
               <span>✉️ {t.school.contacts.email}</span>
-              <span>📍 {t.school.location.fullAddress}</span>
+              <a
+                href={t.school.location.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-decoration-none text-reset"
+                title="View on Google Maps"
+              >
+                📍 {t.school.location.fullAddress}
+              </a>
             </div>
             <div className="d-flex align-items-center gap-3">
               <a
@@ -180,10 +188,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
                   </div>
-                  <div>
+                  <a
+                    href={t.school.location.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-decoration-none text-reset"
+                    title="View on Google Maps"
+                  >
                     {t.school.location.address},<br />
                     {t.school.location.city} ({t.school.location.state.charAt(0)}.{t.school.location.state.charAt(t.school.location.state.indexOf(" ") + 1)}.){" "}{t.school.location.pincode}
-                  </div>
+                  </a>
                 </div>
 
                 <div className="footer-contact-item">
