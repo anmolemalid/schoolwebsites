@@ -809,20 +809,32 @@ export default function AdmissionsPage() {
                     {/* Row 2: Date Of Birth */}
                     <div className="row g-2 align-items-center form-row-slip mb-3 mb-md-2">
                       <div className="col-12 col-md-3 badge-col mb-1 mb-md-0">
-                        <span
-                          className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
-                          style={{ backgroundColor: "#004a90", fontSize: "0.88rem" }}
+                        <label
+                          htmlFor="dob-input"
+                          className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm mb-0"
+                          style={{ backgroundColor: "#004a90", fontSize: "0.88rem", cursor: "pointer" }}
                         >
                           Date Of Birth :
-                        </span>
+                        </label>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <input
+                          id="dob-input"
                           type="date"
                           className="form-control rounded-2 fs-6 py-2"
+                          style={{ cursor: "pointer" }}
                           required
                           value={formData.dob}
                           onChange={(e) => setFormData({ ...formData, dob: e.target.value })}
+                          onClick={(e) => {
+                            try {
+                              if ("showPicker" in e.currentTarget) {
+                                e.currentTarget.showPicker();
+                              }
+                            } catch (err) {
+                              // Ignore if blocked by browser
+                            }
+                          }}
                         />
                       </div>
                     </div>
