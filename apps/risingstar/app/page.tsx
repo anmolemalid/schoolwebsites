@@ -8,6 +8,33 @@ import { t } from "./lib/i18n";
 
 export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [enquirySubmitting, setEnquirySubmitting] = useState(false);
+  const [enquiryForm, setEnquiryForm] = useState({
+    parentName: "",
+    mobile: "",
+    grade: t.home.quickEnquiry.form.options[0] || "Play Group",
+    message: "",
+  });
+
+  const handleEnquirySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setEnquirySubmitting(true);
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "enquiry",
+          data: enquiryForm,
+        }),
+      });
+    } catch (err) {
+      console.error("Failed to send enquiry email:", err);
+    } finally {
+      setEnquirySubmitting(false);
+      setFormSubmitted(true);
+    }
+  };
 
   return (
     <div className="home-page position-relative">
@@ -390,31 +417,85 @@ export default function HomePage() {
                     <div className="display-4 text-success mb-2">🎉</div>
                     <h5 className="fw-bold text-success">{t.home.quickEnquiry.form.successHeading}</h5>
                     <p className="text-muted small mb-3">{t.home.quickEnquiry.form.successMessage}</p>
-                    <button onClick={() => setFormSubmitted(false)} className="btn btn-sm btn-outline-primary rounded-pill">
+                    <button
+                      onClick={() => {
+                        setEnquiryForm({
+                          parentName: "",
+                          mobile: "",
+                          grade: t.home.quickEnquiry.form.options[0] || "Play Group",
+                          message: "",
+                        });
+                        setFormSubmitted(false);
+                      }}
+                      className="btn btn-sm btn-outline-primary rounded-pill"
+                    >
                       {t.home.quickEnquiry.form.submitAnother}
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }} className="row g-3">
+                  <form onSubmit={handleEnquirySubmit} className="row g-3">
+                    <div className="col-12 d-flex justify-content-between align-items-center mb-1">
+                      <span className="small text-muted">Quick admission enquiry</span>
+                      <span className="small fw-bold" style={{ color: "#b91c1c" }}>* Mandatory</span>
+                    </div>
+
                     <div className="col-md-6">
-                      <input type="text" className="form-control rounded-3" placeholder={t.home.quickEnquiry.form.parentName} required />
+                      <input
+                        type="text"
+                        className="form-control rounded-3"
+                        placeholder={`${t.home.quickEnquiry.form.parentName} *`}
+                        required
+                        value={enquiryForm.parentName}
+                        onChange={(e) => setEnquiryForm({ ...enquiryForm, parentName: e.target.value })}
+                      />
                     </div>
                     <div className="col-md-6">
-                      <input type="tel" className="form-control rounded-3" placeholder={t.home.quickEnquiry.form.mobile} required />
+                      <input
+                        type="tel"
+                        className="form-control rounded-3"
+                        placeholder={`${t.home.quickEnquiry.form.mobile} *`}
+                        required
+                        value={enquiryForm.mobile}
+                        onChange={(e) => setEnquiryForm({ ...enquiryForm, mobile: e.target.value })}
+                      />
                     </div>
                     <div className="col-12">
-                      <select className="form-select rounded-3" defaultValue={t.home.quickEnquiry.form.options[0]}>
+                      <label className="form-label small fw-semibold text-muted mb-1 d-block">
+                        Grade / Class Applying For <span className="text-danger fw-bold">*</span>
+                      </label>
+                      <select
+                        className="form-select rounded-3"
+                        value={enquiryForm.grade}
+                        onChange={(e) => setEnquiryForm({ ...enquiryForm, grade: e.target.value })}
+                      >
                         {t.home.quickEnquiry.form.options.map((opt: string, idx: number) => (
                           <option key={idx} value={opt}>{opt}</option>
                         ))}
                       </select>
                     </div>
                     <div className="col-12">
-                      <textarea className="form-control rounded-3" rows={3} placeholder={t.home.quickEnquiry.form.message}></textarea>
+                      <textarea
+                        className="form-control rounded-3"
+                        rows={3}
+                        placeholder={`${t.home.quickEnquiry.form.message} (Optional)`}
+                        value={enquiryForm.message}
+                        onChange={(e) => setEnquiryForm({ ...enquiryForm, message: e.target.value })}
+                      ></textarea>
                     </div>
                     <div className="col-12">
-                      <button type="submit" className="btn btn-warning w-100 py-2 rounded-pill fw-bold text-dark">
-                        {t.home.quickEnquiry.form.submitButton}
+                      <button
+                        type="submit"
+                        disabled={enquirySubmitting}
+                        className="btn btn-warning w-100 py-2 rounded-pill fw-bold text-dark d-flex align-items-center justify-content-center gap-2"
+                      >
+                        {enquirySubmitting ? (
+                          <>
+                            <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            <span>Sending Enquiry...</span>
+                          </>
+                        ) : (
+                          <span>{t.home.quickEnquiry.form.submitButton}</span>
+                        )}
                       </button>
                     </div>
                   </form>

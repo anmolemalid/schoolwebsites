@@ -257,14 +257,14 @@ export default function GalleryPage() {
               >
                 {t.gallery.campusLife.filterLabels.outdoor}
               </button>
-              {t.gallery.campusLife.filterLabels.videos && (
+              {(t.gallery.campusLife.filterLabels as any)?.videos && (
                 <button
                   onClick={() => setFilter("videos")}
                   className={`btn btn-sm rounded-pill px-3 py-2 fw-bold ${
                     filter === "videos" ? "btn-danger shadow" : "btn-light border text-dark"
                   }`}
                 >
-                  {t.gallery.campusLife.filterLabels.videos} ({galleryItems.filter((i: any) => i.isVideo).length})
+                  {(t.gallery.campusLife.filterLabels as any).videos} ({galleryItems.filter((i: any) => i.isVideo).length})
                 </button>
               )}
             </div>

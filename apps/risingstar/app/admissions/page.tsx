@@ -102,9 +102,44 @@ export default function AdmissionsPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "admission",
+          data: formData,
+        }),
+      });
+    } catch (err) {
+      console.error("Failed to send admission email:", err);
+    } finally {
+      setSubmitting(false);
+      setFormSubmitted(true);
+    }
+  };
+
+  const resetForm = () => {
+    setFormData({
+      kidName: "",
+      dob: "",
+      enquiryFor: "",
+      parentName: "",
+      motherOccupation: "",
+      fatherOccupation: "",
+      address: "",
+      phone: "",
+      motherEmail: "",
+      fatherEmail: "",
+      sources: [],
+      otherSource: "",
+    });
+    setFormSubmitted(false);
   };
 
   return (
@@ -764,12 +799,20 @@ export default function AdmissionsPage() {
                         <div className="col-sm-6"><strong>Parent Name:</strong> {formData.parentName || "—"}</div>
                         <div className="col-sm-6"><strong>Phone:</strong> {formData.phone || "—"}</div>
                         <div className="col-sm-6"><strong>Address:</strong> {formData.address || "—"}</div>
+                        <div className="col-12 pt-1 border-top mt-2">
+                          <strong>How You Heard About Us:</strong>{" "}
+                          {formData.sources.length > 0
+                            ? formData.sources
+                                .map((s) => (s === "Other" && formData.otherSource ? `Other (${formData.otherSource})` : s))
+                                .join(", ")
+                            : "Website / Direct"}
+                        </div>
                       </div>
                     </div>
 
                     <div className="d-flex justify-content-center gap-3 no-print">
                       <button
-                        onClick={() => setFormSubmitted(false)}
+                        onClick={resetForm}
                         className="btn btn-warning px-4 py-2 rounded-pill fw-bold text-dark"
                       >
                         Submit Another Form
@@ -784,6 +827,11 @@ export default function AdmissionsPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="d-flex flex-column">
+                    <div className="d-flex justify-content-between align-items-center mb-2 px-1">
+                      <span className="small text-muted fw-semibold">Please fill the details below accurately</span>
+                      <span className="small fw-bold" style={{ color: "#b91c1c" }}>* Indicates mandatory fields</span>
+                    </div>
+
                     {/* Row 1: Kids Name */}
                     <div className="row g-2 align-items-center form-row-slip mb-3 mb-md-2">
                       <div className="col-12 col-md-3 badge-col mb-1 mb-md-0">
@@ -791,14 +839,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#2e7d32", fontSize: "0.88rem" }}
                         >
-                          Kids Name :
+                          Kids Name <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <input
                           type="text"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Enter child's full name"
+                          placeholder="Enter child's full name *"
                           required
                           value={formData.kidName}
                           onChange={(e) => setFormData({ ...formData, kidName: e.target.value })}
@@ -814,7 +862,7 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm mb-0"
                           style={{ backgroundColor: "#004a90", fontSize: "0.88rem", cursor: "pointer" }}
                         >
-                          Date Of Birth :
+                          Date Of Birth <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </label>
                       </div>
                       <div className="col-12 col-md-9 input-col">
@@ -846,7 +894,7 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#2e7d32", fontSize: "0.88rem" }}
                         >
-                          Enquiry For :
+                          Enquiry For <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
@@ -856,7 +904,7 @@ export default function AdmissionsPage() {
                           value={formData.enquiryFor}
                           onChange={(e) => setFormData({ ...formData, enquiryFor: e.target.value })}
                         >
-                          <option value="">Select Grade / Class</option>
+                          <option value="">Select Grade / Class *</option>
                           <option value="Play Group">Play Group (Ages 2 - 3)</option>
                           <option value="Nursery">Nursery (Ages 3 - 4)</option>
                           <option value="L.K.G">L.K.G (Ages 4 - 5)</option>
@@ -877,14 +925,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#004a90", fontSize: "0.88rem" }}
                         >
-                          Mother&apos;s/ Father&apos;s Name :
+                          Mother&apos;s/ Father&apos;s Name <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <input
                           type="text"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Parent / Guardian full name"
+                          placeholder="Parent / Guardian full name *"
                           required
                           value={formData.parentName}
                           onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
@@ -906,7 +954,7 @@ export default function AdmissionsPage() {
                         <input
                           type="text"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Mother's profession"
+                          placeholder="Mother's profession (Optional)"
                           value={formData.motherOccupation}
                           onChange={(e) => setFormData({ ...formData, motherOccupation: e.target.value })}
                         />
@@ -927,7 +975,7 @@ export default function AdmissionsPage() {
                         <input
                           type="text"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Father's profession"
+                          placeholder="Father's profession (Optional)"
                           value={formData.fatherOccupation}
                           onChange={(e) => setFormData({ ...formData, fatherOccupation: e.target.value })}
                         />
@@ -941,14 +989,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#2e7d32", fontSize: "0.88rem" }}
                         >
-                          Address :
+                          Address <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <textarea
                           rows={2}
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Residential address (Sector, locality, landmark...)"
+                          placeholder="Residential address (Sector, locality, landmark...) *"
                           required
                           value={formData.address}
                           onChange={(e) => setFormData({ ...formData, address: e.target.value })}
@@ -963,7 +1011,7 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#004a90", fontSize: "0.88rem" }}
                         >
-                          Phone :
+                          Phone <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
@@ -971,7 +1019,7 @@ export default function AdmissionsPage() {
                           type="tel"
                           pattern="[0-9]{10}"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="10-digit primary mobile number"
+                          placeholder="10-digit primary mobile number *"
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -993,7 +1041,7 @@ export default function AdmissionsPage() {
                         <input
                           type="email"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Mother's email address"
+                          placeholder="Mother's email address (Optional)"
                           value={formData.motherEmail}
                           onChange={(e) => setFormData({ ...formData, motherEmail: e.target.value })}
                         />
@@ -1014,7 +1062,7 @@ export default function AdmissionsPage() {
                         <input
                           type="email"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Father's email address"
+                          placeholder="Father's email address (Optional)"
                           value={formData.fatherEmail}
                           onChange={(e) => setFormData({ ...formData, fatherEmail: e.target.value })}
                         />
@@ -1128,14 +1176,24 @@ export default function AdmissionsPage() {
                     <div className="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-3 no-print">
                       <button
                         type="submit"
-                        className="btn btn-lg fw-bold rounded-pill text-white px-5 py-3 shadow"
+                        disabled={submitting}
+                        className="btn btn-lg fw-bold rounded-pill text-white px-5 py-3 shadow d-inline-flex align-items-center justify-content-center gap-2"
                         style={{
                           backgroundColor: "#004a90",
                           letterSpacing: "0.5px",
                           transition: "all 0.25s ease",
+                          cursor: submitting ? "not-allowed" : "pointer",
+                          opacity: submitting ? 0.8 : 1,
                         }}
                       >
-                        📩 Submit Admission Enquiry
+                        {submitting ? (
+                          <>
+                            <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            <span>Sending Application...</span>
+                          </>
+                        ) : (
+                          <span>📩 Submit Admission Enquiry</span>
+                        )}
                       </button>
                       <button
                         type="button"

@@ -6,6 +6,7 @@ import { t } from "../lib/i18n";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -13,9 +14,35 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "contact",
+          data: form,
+        }),
+      });
+    } catch (err) {
+      console.error("Failed to send contact email:", err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
+  };
+
+  const resetForm = () => {
+    setForm({
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+    setSubmitting(false);
+    setSubmitted(false);
   };
 
   return (
@@ -201,7 +228,7 @@ export default function ContactPage() {
                       {t.contact.sendEnquiry.successMessage}
                     </p>
                     <button
-                      onClick={() => setSubmitted(false)}
+                      onClick={resetForm}
                       className="btn btn-warning px-4 py-2 rounded-pill fw-bold text-dark"
                     >
                       {t.contact.sendEnquiry.sendAnother}
@@ -209,11 +236,15 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="d-flex flex-column gap-3">
+                    <div className="text-end small fw-bold" style={{ color: "#b91c1c" }}>
+                      * Indicates mandatory fields
+                    </div>
+
                     <div>
                       <input
                         type="text"
                         className="form-control form-control-lg rounded-3 fs-6"
-                        placeholder={t.contact.sendEnquiry.namePlaceholder}
+                        placeholder={`${t.contact.sendEnquiry.namePlaceholder} *`}
                         required
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -224,7 +255,7 @@ export default function ContactPage() {
                       <input
                         type="tel"
                         className="form-control form-control-lg rounded-3 fs-6"
-                        placeholder={t.contact.sendEnquiry.phonePlaceholder}
+                        placeholder={`${t.contact.sendEnquiry.phonePlaceholder} *`}
                         required
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -235,7 +266,7 @@ export default function ContactPage() {
                       <input
                         type="email"
                         className="form-control form-control-lg rounded-3 fs-6"
-                        placeholder={t.contact.sendEnquiry.emailPlaceholder}
+                        placeholder={`${t.contact.sendEnquiry.emailPlaceholder} (Optional)`}
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                       />
@@ -245,7 +276,7 @@ export default function ContactPage() {
                       <textarea
                         className="form-control rounded-3 fs-6"
                         rows={4}
-                        placeholder={t.contact.sendEnquiry.messagePlaceholder}
+                        placeholder={`${t.contact.sendEnquiry.messagePlaceholder} *`}
                         required
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -254,10 +285,23 @@ export default function ContactPage() {
 
                     <button
                       type="submit"
-                      className="btn btn-lg fw-bold rounded-pill text-white text-uppercase shadow-sm"
-                      style={{ backgroundColor: "#004a90", letterSpacing: "0.5px" }}
+                      disabled={submitting}
+                      className="btn btn-lg fw-bold rounded-pill text-white text-uppercase shadow-sm d-flex align-items-center justify-content-center gap-2"
+                      style={{
+                        backgroundColor: "#004a90",
+                        letterSpacing: "0.5px",
+                        cursor: submitting ? "not-allowed" : "pointer",
+                        opacity: submitting ? 0.8 : 1,
+                      }}
                     >
-                      {t.contact.sendEnquiry.submitButton}
+                      {submitting ? (
+                        <>
+                          <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                          <span>Sending Message...</span>
+                        </>
+                      ) : (
+                        <span>{t.contact.sendEnquiry.submitButton}</span>
+                      )}
                     </button>
                   </form>
                 )}
