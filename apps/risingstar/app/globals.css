@@ -3924,7 +3924,7 @@ main section.quick-access-cream-bg,
 .facilities-page section:not(.hero-banner-slider-section):not(.page-blue-banner),
 .gallery-page section:not(.page-blue-banner),
 .events-page section:not(.page-blue-banner),
-.contact-page section:not(.page-blue-banner) {
+.contact-page section:not(.hero-banner-slider-section):not(.page-blue-banner) {
   background-color: rgba(255, 253, 246, 0.55) !important;
   backdrop-filter: blur(2px);
 }

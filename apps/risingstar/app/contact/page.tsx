@@ -20,62 +20,115 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page">
-      {/* Royal Blue Hero Banner */}
-      <section className="page-blue-banner">
-        <div className="container position-relative z-2">
-          <div className="row align-items-center justify-content-between g-4">
-            <div className="col-lg-8 text-center text-lg-start">
-              {/* Breadcrumb */}
-              <nav aria-label="breadcrumb">
-                <ol className="breadcrumb mb-2" style={{ fontSize: "0.88rem" }}>
-                  <li className="breadcrumb-item">
-                    <Link href="/" className="text-white text-opacity-75 text-decoration-none">
-                      {t.nav.home}
-                    </Link>
-                  </li>
-                  <li className="breadcrumb-item active text-warning fw-bold" aria-current="page">
-                    {t.nav.contactUs}
-                  </li>
-                </ol>
+      {/* Full Width Contact Hero Banner Image with Overlay Breadcrumb */}
+      <section className="position-relative w-100 overflow-hidden bg-white border-bottom no-print hero-banner-slider-section">
+        {/* Interactive Floating Breadcrumb Pill on Banner Image */}
+        <div
+          className="position-absolute top-0 start-0 w-100 px-2 px-md-3"
+          style={{ zIndex: 10, paddingTop: "1rem", paddingBottom: "0.5rem" }}
+        >
+          <div className="container">
+            <div className="d-flex flex-wrap align-items-center justify-content-between gap-2">
+              <nav
+                aria-label="breadcrumb"
+                className="d-inline-flex align-items-center flex-wrap gap-2 px-3 py-2 rounded-pill shadow-lg"
+                style={{
+                  backgroundColor: "rgba(7, 28, 62, 0.90)",
+                  backdropFilter: "blur(12px)",
+                  border: "1.5px solid rgba(255, 210, 0, 0.6)",
+                  boxShadow: "0 8px 32px rgba(0, 0, 0, 0.35), 0 0 16px rgba(255, 210, 0, 0.25)",
+                }}
+              >
+                {/* Home Link with Interactive Hover */}
+                <Link
+                  href="/"
+                  className="text-white text-decoration-none fw-bold d-inline-flex align-items-center gap-1 px-2 py-1 rounded-pill banner-breadcrumb-link"
+                >
+                  <span>🏠</span>
+                  <span>{t.nav.home}</span>
+                </Link>
+
+                <span className="text-warning fw-bold" style={{ fontSize: "0.85rem" }}>▸</span>
+
+                {/* Current Page Active Badge */}
+                <span
+                  className="badge text-dark fw-bold px-3 py-2 rounded-pill d-inline-flex align-items-center gap-1 shadow-sm"
+                  style={{
+                    fontSize: "0.85rem",
+                    background: "linear-gradient(135deg, #ffd200 0%, #ffaa00 100%)",
+                    border: "1px solid #ffffff",
+                  }}
+                >
+                  <span>📞</span>
+                  <span>{t.nav.contactUs}</span>
+                </span>
+
+                {/* Divider for Quick Interactive Nav Jump Chips */}
+                <span className="text-white text-opacity-30 d-none d-sm-inline mx-1">|</span>
+
+                {/* Interactive Section Jump Chips */}
+                <div className="d-none d-sm-inline-flex align-items-center gap-1">
+                  <a
+                    href="#enquiry-form"
+                    className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
+                  >
+                    <span>📝</span>
+                    <span>Send Message</span>
+                  </a>
+
+                  <a
+                    href="#campus-location"
+                    className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
+                  >
+                    <span>📍</span>
+                    <span>Location Map</span>
+                  </a>
+
+                  <a
+                    href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`}
+                    className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
+                  >
+                    <span>📞</span>
+                    <span>Call Helpline</span>
+                  </a>
+                </div>
               </nav>
 
-              {/* Title & Kicker */}
-              <div className="page-blue-banner-kicker">{t.contact.banner.kicker}</div>
-              <h1 className="page-blue-banner-title">{t.contact.banner.title}</h1>
-              <p className="page-blue-banner-subtitle mb-3">
-                {t.contact.banner.subtitle}
-              </p>
-
-              <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
-                <span className="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill">
-                  {t.about.franchiseBadge}
-                </span>
-                <span className="badge bg-white text-primary fw-bold px-3 py-2 rounded-pill">
-                  {t.about.locationBadge}
-                </span>
-              </div>
-            </div>
-
-            <div className="col-lg-4 text-center text-lg-end">
-              <div className="p-3 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-25 shadow-sm text-center text-white d-inline-block w-100" style={{ maxWidth: "320px" }}>
-                <div className="fw-bold fs-5 text-warning mb-1">{t.contact.heroBox.title}</div>
-                <div className="small mb-3 text-white text-opacity-90">{t.contact.heroBox.description}</div>
-                <a href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`} className="btn btn-warning w-100 fw-bold rounded-pill text-dark text-uppercase d-inline-flex align-items-center justify-content-center gap-2" style={{ letterSpacing: "0.5px" }}>
-                  <span>{t.contact.heroBox.button}</span>
-                  <span className="rounded-circle d-inline-flex align-items-center justify-content-center text-dark" style={{ width: "20px", height: "20px", backgroundColor: "rgba(0,0,0,0.1)", flexShrink: 0 }}>
-                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  </span>
+              {/* Helpline Quick Badge on Right of Banner */}
+              <div className="d-none d-lg-block">
+                <a
+                  href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`}
+                  className="badge px-3 py-2 rounded-pill fw-bold text-white shadow-sm d-inline-flex align-items-center gap-2 text-decoration-none"
+                  style={{
+                    backgroundColor: "rgba(0, 74, 144, 0.88)",
+                    backdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255, 210, 0, 0.5)",
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  <span className="spinner-grow spinner-grow-sm text-warning" role="status" style={{ width: "0.6rem", height: "0.6rem" }}></span>
+                  <span>Helpline: {t.school.contacts.phonePrimary}</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
+
+        <picture className="w-100 d-block">
+          <source
+            media="(max-width: 767px)"
+            srcSet="/assets/contact_banner_mobile.jpg"
+          />
+          <img
+            src="/assets/contact_banner.jpg"
+            alt="Rising Kids School Contact Us - We'd Love to Hear From You!"
+            className="w-100 h-auto d-block hero-slider-img"
+          />
+        </picture>
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-5" style={{ backgroundColor: "#ffffff" }}>
+      <section id="enquiry-form" className="py-5" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
           <div className="row g-4 justify-content-center">
 
@@ -216,7 +269,7 @@ export default function ContactPage() {
       </section>
 
       {/* Find Us Section on Warm Cream */}
-      <section className="py-5 border-top border-bottom" style={{ backgroundColor: "#fff9e8" }}>
+      <section id="campus-location" className="py-5 border-top border-bottom" style={{ backgroundColor: "#fff9e8" }}>
         <div className="container text-center">
           <div className="mb-4">
             <span className="badge bg-warning-subtle text-dark border border-warning px-3 py-1 rounded-pill fw-bold small mb-2">
