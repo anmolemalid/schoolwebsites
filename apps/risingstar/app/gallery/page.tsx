@@ -14,12 +14,27 @@ export default function GalleryPage() {
   const [mounted, setMounted] = useState(false);
   const touchStartX = useRef<number | null>(null);
 
+  const featuredVideosList = (t.gallery as any).featuredVideos?.videos || [];
+  const [selectedFeaturedId, setSelectedFeaturedId] = useState<string>("jdQgN4pCCoE");
+  const [autoPlayVideo, setAutoPlayVideo] = useState<boolean>(false);
+  const [playlistFilter, setPlaylistFilter] = useState<string>("all");
+  const activeFeaturedVideo =
+    featuredVideosList.find((v: any) => v.id === selectedFeaturedId) ||
+    featuredVideosList[0] ||
+    {};
+
+  const displayedPlaylist = featuredVideosList.filter((v: any) =>
+    playlistFilter === "all" ? true : v.type === playlistFilter
+  );
+
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const filtered = galleryItems.filter(
-    (item: any) => filter === "all" || item.category === filter
+    (item: any) =>
+      filter === "all" ||
+      (filter === "videos" ? item.isVideo : item.category === filter)
   );
 
   const currentIndex = activeItem
@@ -125,7 +140,7 @@ export default function GalleryPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🖼️</span>
-                    <span>Photos & Videos</span>
+                    <span>Photo Gallery</span>
                   </a>
 
                   <a
@@ -134,6 +149,14 @@ export default function GalleryPage() {
                   >
                     <span>✨</span>
                     <span>Campus Life</span>
+                  </a>
+
+                  <a
+                    href="#featured-video"
+                    className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
+                  >
+                    <span>🎬</span>
+                    <span>Videos ({featuredVideosList.length})</span>
                   </a>
 
                   <a
@@ -234,6 +257,16 @@ export default function GalleryPage() {
               >
                 {t.gallery.campusLife.filterLabels.outdoor}
               </button>
+              {t.gallery.campusLife.filterLabels.videos && (
+                <button
+                  onClick={() => setFilter("videos")}
+                  className={`btn btn-sm rounded-pill px-3 py-2 fw-bold ${
+                    filter === "videos" ? "btn-danger shadow" : "btn-light border text-dark"
+                  }`}
+                >
+                  {t.gallery.campusLife.filterLabels.videos} ({galleryItems.filter((i: any) => i.isVideo).length})
+                </button>
+              )}
             </div>
           </div>
 
@@ -255,18 +288,64 @@ export default function GalleryPage() {
                     alt={item.title}
                     className="w-100 h-100 object-fit-cover"
                   />
+
+                  {/* YouTube Video Badge */}
+                  {item.isVideo && (
+                    <div className="position-absolute top-0 start-0 m-3" style={{ zIndex: 2 }}>
+                      <span
+                        className="badge rounded-pill px-2.5 py-1.5 fw-bold d-inline-flex align-items-center gap-1 shadow"
+                        style={{
+                          backgroundColor: "#ff0000",
+                          color: "#ffffff",
+                          fontSize: "0.75rem",
+                          letterSpacing: "0.3px",
+                        }}
+                      >
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#ffffff">
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                        <span>{item.isShort ? "⚡ Short" : "YouTube Video"}</span>
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Play Button Overlay for Videos */}
+                  {item.isVideo && (
+                    <div className="position-absolute top-50 start-50 translate-middle" style={{ zIndex: 2 }}>
+                      <div
+                        className="d-flex align-items-center justify-content-center rounded-circle shadow-lg"
+                        style={{
+                          width: "56px",
+                          height: "56px",
+                          backgroundColor: "rgba(255, 0, 0, 0.92)",
+                          border: "2.5px solid #ffffff",
+                          boxShadow: "0 8px 30px rgba(255, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.4)",
+                          transition: "transform 0.25s ease",
+                        }}
+                      >
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" style={{ marginLeft: "3px" }}>
+                          <polygon points="6 4 20 12 6 20 6 4" />
+                        </svg>
+                      </div>
+                    </div>
+                  )}
+
                   <div
                     className="position-absolute bottom-0 start-0 w-100 p-3 text-white"
                     style={{
                       background: "linear-gradient(to top, rgba(0, 45, 98, 0.95) 0%, rgba(0, 45, 98, 0.4) 70%, transparent 100%)",
+                      zIndex: 2,
                     }}
                   >
                     <h5 className="fw-bold text-white mb-1 fs-6">{item.title}</h5>
                     <p className="small text-white text-opacity-75 mb-1" style={{ fontSize: "0.8rem", lineHeight: 1.3 }}>
                       {item.desc}
                     </p>
-                    <span className="badge bg-warning text-dark rounded-pill px-2 py-1" style={{ fontSize: "0.72rem" }}>
-                      {t.gallery.campusLife.tapToView}
+                    <span
+                      className={`badge ${item.isVideo ? "bg-danger text-white" : "bg-warning text-dark"} rounded-pill px-2.5 py-1`}
+                      style={{ fontSize: "0.72rem" }}
+                    >
+                      {item.isVideo ? (item.isShort ? "⚡ Watch Short" : "▶ Watch Video") : t.gallery.campusLife.tapToView}
                     </span>
                   </div>
                 </div>
@@ -316,6 +395,301 @@ export default function GalleryPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured In-Page Video Section */}
+      <section id="featured-video" className="py-5 border-top border-bottom" style={{ backgroundColor: "#ffffff" }}>
+        <div className="container">
+          <div className="text-center mb-4">
+            <span
+              className="badge px-3 py-1.5 rounded-pill fw-bold small mb-2 d-inline-flex align-items-center gap-1 shadow-sm"
+              style={{
+                backgroundColor: "rgba(255, 0, 0, 0.08)",
+                border: "1.5px solid rgba(255, 0, 0, 0.35)",
+                color: "#ff0000",
+                fontSize: "0.82rem",
+                letterSpacing: "0.5px",
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff0000">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              <span>{(t.gallery as any).featuredVideos?.tag}</span>
+            </span>
+            <h2
+              className="display-6 fw-bold mb-2"
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                color: "#071c3e",
+                letterSpacing: "-0.5px",
+              }}
+            >
+              {(t.gallery as any).featuredVideos?.heading}
+            </h2>
+            <p
+              className="col-md-8 mx-auto mb-0 fs-5"
+              style={{
+                color: "#475569",
+                lineHeight: 1.6,
+              }}
+            >
+              {(t.gallery as any).featuredVideos?.subheading}
+            </p>
+          </div>
+
+          <div className="row justify-content-center mb-4">
+            <div className="col-lg-10 col-xl-9">
+              {/* Main Hero Video Player Card */}
+              <div
+                className="rounded-4 overflow-hidden p-2 p-md-3 bg-white"
+                style={{
+                  border: "2.5px solid #ffd200",
+                  boxShadow: "0 20px 50px rgba(0, 45, 98, 0.12)",
+                }}
+              >
+                {/* 16:9 Responsive Video Frame */}
+                <div
+                  className="rounded-3 overflow-hidden position-relative w-100 bg-black shadow-sm"
+                  style={{
+                    aspectRatio: "16 / 9",
+                    border: "1px solid #e2e8f0",
+                  }}
+                >
+                  <iframe
+                    key={activeFeaturedVideo.id}
+                    className="w-100 h-100 border-0"
+                    src={`https://www.youtube.com/embed/${activeFeaturedVideo.id}?autoplay=${autoPlayVideo ? 1 : 0}&rel=0`}
+                    title={activeFeaturedVideo.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+
+                {/* Video Info & Channel Bar */}
+                <div className="d-flex flex-wrap align-items-center justify-content-between gap-3 p-3 mt-1">
+                  <div>
+                    <div className="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                      <span
+                        className="badge rounded-pill px-2.5 py-1 text-white fw-bold small d-inline-flex align-items-center gap-1 shadow-sm"
+                        style={{ backgroundColor: "#ff0000" }}
+                      >
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff">
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                        <span>{activeFeaturedVideo.tag}</span>
+                      </span>
+                      <h4
+                        className="fw-bold mb-0 fs-5"
+                        style={{
+                          fontFamily: "'Poppins', sans-serif",
+                          color: "#071c3e",
+                        }}
+                      >
+                        {activeFeaturedVideo.title}
+                      </h4>
+                    </div>
+                    <p
+                      className="small mb-0"
+                      style={{
+                        maxWidth: "620px",
+                        lineHeight: 1.5,
+                        color: "#475569",
+                        fontSize: "0.88rem",
+                      }}
+                    >
+                      {activeFeaturedVideo.desc}
+                    </p>
+                  </div>
+
+                  <div className="d-flex align-items-center gap-2 flex-wrap">
+                    <a
+                      href={activeFeaturedVideo.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-sm btn-danger rounded-pill fw-bold px-3 py-2 d-inline-flex align-items-center gap-2 shadow-sm text-decoration-none"
+                      style={{
+                        backgroundColor: "#ff0000",
+                        color: "#ffffff",
+                        border: "2px solid #ff0000",
+                        fontWeight: 700,
+                        fontSize: "0.85rem",
+                      }}
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="#ffffff">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                      </svg>
+                      <span style={{ color: "#ffffff", fontWeight: 700 }}>
+                        {(t.gallery as any).featuredVideos?.watchOnYoutube}
+                      </span>
+                      <span style={{ color: "#ffffff" }}>↗</span>
+                    </a>
+
+                    <a
+                      href="https://www.youtube.com/@RisingKids-rl8xe"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-sm rounded-pill fw-bold px-3 py-2 text-decoration-none shadow-sm d-inline-flex align-items-center gap-2"
+                      style={{
+                        backgroundColor: "#071c3e",
+                        color: "#ffffff",
+                        border: "2px solid #071c3e",
+                        fontWeight: 700,
+                        fontSize: "0.85rem",
+                      }}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffd200">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                      </svg>
+                      <span style={{ color: "#ffffff", fontWeight: 700 }}>
+                        {(t.gallery as any).featuredVideos?.channelBadge}
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Interactive Video Playlist Hub with Filter Pills */}
+          <div className="row justify-content-center">
+            <div className="col-lg-10 col-xl-9">
+              <div className="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                <h5 className="fw-bold mb-0 text-dark d-flex align-items-center gap-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <span>📺</span>
+                  <span>School Video Library ({featuredVideosList.length})</span>
+                </h5>
+
+                {/* Filter Pills */}
+                <div className="d-flex align-items-center gap-1.5 flex-wrap">
+                  <button
+                    onClick={() => setPlaylistFilter("all")}
+                    className={`btn btn-sm rounded-pill px-3 py-1 fw-bold ${
+                      playlistFilter === "all" ? "btn-danger shadow-sm text-white" : "btn-light border text-dark"
+                    }`}
+                    style={{ fontSize: "0.8rem" }}
+                  >
+                    {(t.gallery as any).featuredVideos?.filters?.all || "All"} ({featuredVideosList.length})
+                  </button>
+                  <button
+                    onClick={() => setPlaylistFilter("celebrations")}
+                    className={`btn btn-sm rounded-pill px-3 py-1 fw-bold ${
+                      playlistFilter === "celebrations" ? "btn-danger shadow-sm text-white" : "btn-light border text-dark"
+                    }`}
+                    style={{ fontSize: "0.8rem" }}
+                  >
+                    {(t.gallery as any).featuredVideos?.filters?.celebrations || "Events & Stage 🎭"} ({featuredVideosList.filter((v: any) => v.type === "celebrations").length})
+                  </button>
+                  <button
+                    onClick={() => setPlaylistFilter("shorts")}
+                    className={`btn btn-sm rounded-pill px-3 py-1 fw-bold ${
+                      playlistFilter === "shorts" ? "btn-danger shadow-sm text-white" : "btn-light border text-dark"
+                    }`}
+                    style={{ fontSize: "0.8rem" }}
+                  >
+                    {(t.gallery as any).featuredVideos?.filters?.shorts || "Activity Shorts ⚡"} ({featuredVideosList.filter((v: any) => v.type === "shorts").length})
+                  </button>
+                </div>
+              </div>
+
+              <div className="row g-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+                {displayedPlaylist.map((video: any) => {
+                  const isPlaying = video.id === selectedFeaturedId;
+                  return (
+                    <div key={video.id} className="col">
+                      <div
+                        onClick={() => {
+                          setSelectedFeaturedId(video.id);
+                          setAutoPlayVideo(true);
+                        }}
+                        className={`h-100 rounded-3 overflow-hidden bg-white border position-relative transition-all ${
+                          isPlaying ? "shadow" : "shadow-sm"
+                        }`}
+                        style={{
+                          cursor: "pointer",
+                          borderColor: isPlaying ? "#ffd200" : "#e2e8f0",
+                          borderWidth: isPlaying ? "2.5px" : "1px",
+                          backgroundColor: isPlaying ? "#fffdf5" : "#ffffff",
+                          transform: isPlaying ? "translateY(-3px)" : "none",
+                          transition: "all 0.2s ease",
+                        }}
+                      >
+                        {/* Video Thumbnail with Aspect 16/9 */}
+                        <div className="position-relative w-100" style={{ aspectRatio: "16 / 9" }}>
+                          <img
+                            src={video.thumb}
+                            alt={video.title}
+                            className="w-100 h-100 object-fit-cover"
+                          />
+                          {/* Play / Now Playing Status Badge */}
+                          <div
+                            className="position-absolute top-0 start-0 m-1.5"
+                            style={{ zIndex: 2 }}
+                          >
+                            {isPlaying ? (
+                              <span
+                                className="badge rounded-pill px-2 py-1 fw-bold text-white shadow-sm"
+                                style={{ backgroundColor: "#ff0000", fontSize: "0.68rem" }}
+                              >
+                                {(t.gallery as any).featuredVideos?.nowPlaying || "Playing ▶"}
+                              </span>
+                            ) : (
+                              <span
+                                className="badge rounded-pill px-2 py-0.5 fw-bold text-dark shadow-sm"
+                                style={{ backgroundColor: "rgba(255, 255, 255, 0.9)", fontSize: "0.68rem" }}
+                              >
+                                {video.tag}
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Hover Play Icon Overlay */}
+                          {!isPlaying && (
+                            <div className="position-absolute top-50 start-50 translate-middle" style={{ zIndex: 2 }}>
+                              <div
+                                className="d-flex align-items-center justify-content-center rounded-circle"
+                                style={{
+                                  width: "36px",
+                                  height: "36px",
+                                  backgroundColor: "rgba(0, 0, 0, 0.65)",
+                                  color: "#ffffff",
+                                }}
+                              >
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffffff" style={{ marginLeft: "2px" }}>
+                                  <polygon points="6 4 20 12 6 20 6 4" />
+                                </svg>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Title & Tag */}
+                        <div className="p-2.5">
+                          <h6
+                            className="fw-bold mb-1 line-clamp-2"
+                            style={{
+                              fontSize: "0.82rem",
+                              lineHeight: 1.35,
+                              color: isPlaying ? "#071c3e" : "#334155",
+                            }}
+                          >
+                            {video.title}
+                          </h6>
+                          <span
+                            className="text-muted d-block small"
+                            style={{ fontSize: "0.72rem" }}
+                          >
+                            {isPlaying ? "▶ Watching Now" : "Tap to Watch"}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -574,27 +948,57 @@ export default function GalleryPage() {
                 </button>
               )}
 
-              {/* Central Full Viewport Hero Image Container */}
+              {/* Central Full Viewport Hero Image / Video Container */}
               <div
                 className="w-100 h-100 d-flex align-items-center justify-content-center p-3 p-md-5"
                 onClick={() => setActiveItem(null)}
               >
-                <img
-                  src={activeItem.image}
-                  alt={activeItem.title}
-                  onClick={(e) => e.stopPropagation()}
-                  className="rounded-4 shadow-lg d-block"
-                  style={{
-                    maxWidth: "96vw",
-                    maxHeight: "86vh",
-                    width: "auto",
-                    height: "auto",
-                    objectFit: "contain",
-                    border: "2px solid rgba(255, 255, 255, 0.2)",
-                    boxShadow: "0 25px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(0, 74, 144, 0.4)",
-                    animation: "fadeIn 0.25s ease-out",
-                  }}
-                />
+                {activeItem.isVideo && activeItem.youtubeId ? (
+                  <div
+                    className="w-100 d-flex flex-column align-items-center justify-content-center"
+                    style={{
+                      maxWidth: activeItem.isShort ? "400px" : "940px",
+                      zIndex: 10000002,
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <div
+                      className="w-100 rounded-4 overflow-hidden shadow-lg position-relative"
+                      style={{
+                        aspectRatio: activeItem.isShort ? "9 / 16" : "16 / 9",
+                        maxHeight: activeItem.isShort ? "70vh" : "auto",
+                        border: "2px solid rgba(255, 210, 0, 0.65)",
+                        boxShadow: "0 25px 80px rgba(0, 0, 0, 0.95), 0 0 45px rgba(255, 0, 0, 0.4)",
+                        backgroundColor: "#000000",
+                      }}
+                    >
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${activeItem.youtubeId}?autoplay=1&rel=0`}
+                        title={activeItem.title}
+                        className="w-100 h-100 border-0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <img
+                    src={activeItem.image}
+                    alt={activeItem.title}
+                    onClick={(e) => e.stopPropagation()}
+                    className="rounded-4 shadow-lg d-block"
+                    style={{
+                      maxWidth: "96vw",
+                      maxHeight: "86vh",
+                      width: "auto",
+                      height: "auto",
+                      objectFit: "contain",
+                      border: "2px solid rgba(255, 255, 255, 0.2)",
+                      boxShadow: "0 25px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(0, 74, 144, 0.4)",
+                      animation: "fadeIn 0.25s ease-out",
+                    }}
+                  />
+                )}
               </div>
 
               {/* Next Photo Floating Button */}
@@ -640,11 +1044,29 @@ export default function GalleryPage() {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="d-flex align-items-center justify-content-center gap-2 mb-1 flex-wrap">
+                  {activeItem.isVideo && (
+                    <span className="badge bg-danger text-white rounded-pill px-2.5 py-0.5 small fw-bold">
+                      {activeItem.isShort ? "⚡ YouTube Short" : "🎬 YouTube Video"}
+                    </span>
+                  )}
                   <h5 className="fw-bold text-white mb-0 fs-6">{activeItem.title}</h5>
                 </div>
-                <p className="text-white text-opacity-85 small mb-0" style={{ fontSize: "0.82rem", lineHeight: 1.4 }}>
+                <p className="text-white text-opacity-85 small mb-1" style={{ fontSize: "0.82rem", lineHeight: 1.4 }}>
                   {activeItem.desc}
                 </p>
+                {activeItem.videoUrl && (
+                  <a
+                    href={activeItem.videoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-sm btn-danger rounded-pill fw-bold d-inline-flex align-items-center gap-1.5 mt-1 px-3 py-1 text-decoration-none shadow-sm"
+                    style={{ fontSize: "0.78rem" }}
+                  >
+                    <span>▶</span>
+                    <span>{activeItem.isShort ? "Watch on YouTube Shorts" : "Watch on YouTube"}</span>
+                    <span>↗</span>
+                  </a>
+                )}
               </div>
             </div>,
             document.body

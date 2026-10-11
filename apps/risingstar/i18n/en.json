@@ -920,13 +920,6 @@
           "desc": "Happy students at Rising Kids School.",
           "category": "classroom",
           "image": "/assets/students.jpg"
-        },
-        {
-          "id": 12,
-          "title": "Rising Kids School Campus",
-          "desc": "School campus at C-47, Sector 9, New Vijay Nagar, Ghaziabad.",
-          "category": "outdoor",
-          "image": "/assets/school-banner.jpg"
         }
       ]
     },
@@ -949,6 +942,155 @@
           "icon": "🎯",
           "title": "Joyful Hands-On Learning",
           "desc": "Activity-based curriculum fostering creativity, curiosity, and strong foundational knowledge."
+        }
+      ]
+    },
+    "featuredVideos": {
+      "tag": "FEATURED VIDEOS 🎬",
+      "heading": "Watch Our Little Stars in Action",
+      "subheading": "Experience the festive joy, colorful stage performances, and vibrant celebrations by Rising Kids School students.",
+      "watchOnYoutube": "Watch on YouTube",
+      "channelBadge": "Rising Kids School YouTube Channel",
+      "nowPlaying": "Now Playing ▶",
+      "filters": {
+        "all": "All Videos",
+        "celebrations": "Events & Stage 🎭",
+        "shorts": "Activity Shorts ⚡"
+      },
+      "videos": [
+        {
+          "id": "jdQgN4pCCoE",
+          "title": "Janmashtami Celebration — Class LKG",
+          "desc": "Delightful Krishna Janmashtami festivities with our LKG students in traditional attire, joyful dances, and cultural celebrations.",
+          "tag": "Janmashtami 2023",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_jdQgN4pCCoE.jpg",
+          "url": "https://www.youtube.com/watch?v=jdQgN4pCCoE"
+        },
+        {
+          "id": "zt-0xtEzl9Q",
+          "title": "Dussehra Celebration 2023 - Ramleela Stage Drama",
+          "desc": "Joyful festive stage performance, colorful traditional costumes, and Ramleela enactment by Rising Kids School students.",
+          "tag": "Dussehra 2023",
+          "type": "celebrations",
+          "thumb": "/images/gallery/dussehra_video_thumb.jpg",
+          "url": "https://youtu.be/zt-0xtEzl9Q?si=Xxb_oEwONdHB0vLb"
+        },
+        {
+          "id": "LcpmFVAMI94",
+          "title": "Interactive Puppet Show Activity",
+          "desc": "Engaging storytelling and moral value learning through colorful puppets and joyful student interaction.",
+          "tag": "Puppet Show",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_LcpmFVAMI94.jpg",
+          "url": "https://youtu.be/LcpmFVAMI94?si=eeNBbOaRnHKgDv8S"
+        },
+        {
+          "id": "VskXt-89TyA",
+          "title": "Christmas & Winter Celebration",
+          "desc": "Festive Christmas cheer, Santa Claus appearance, gift distribution, and holiday carols.",
+          "tag": "Christmas 2023",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_VskXt-89TyA.jpg",
+          "url": "https://youtu.be/VskXt-89TyA?si=Lj6iW64O-2q3Gp3n"
+        },
+        {
+          "id": "cRYQz6dFV34",
+          "title": "Janmashtami Celebration — Play Group",
+          "desc": "Adorable toddlers of Play Group dressed up as Kanha and Radha celebrating Krishna Janmashtami.",
+          "tag": "Janmashtami Play Group",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_cRYQz6dFV34.jpg",
+          "url": "https://youtu.be/cRYQz6dFV34?si=PqPCz5AxhwIGoKYn"
+        },
+        {
+          "id": "cDxb8yAuHjw",
+          "title": "Republic Day Celebration — Class LKG",
+          "desc": "Patriotic parade, tricolor stage performance, and national song presentation by LKG students.",
+          "tag": "Republic Day",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_cDxb8yAuHjw.jpg",
+          "url": "https://youtu.be/cDxb8yAuHjw?si=7nQ__kaz5TE0OAV_"
+        },
+        {
+          "id": "dYvJbzU8OSU",
+          "title": "Jungle Adventure at City Forest Picnic",
+          "desc": "Students enjoying giant inflatable slides and outdoor recreation on the annual picnic.",
+          "tag": "City Forest Picnic",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_dYvJbzU8OSU.jpg",
+          "url": "https://youtube.com/shorts/dYvJbzU8OSU?si=t3m6aequ-hjr0plk"
+        },
+        {
+          "id": "13RJ5NPcRN8",
+          "title": "Joyful Learning & School Fun",
+          "desc": "Energetic student participation in interactive morning classroom activities and rhymes.",
+          "tag": "Morning Rhymes",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_13RJ5NPcRN8.jpg",
+          "url": "https://youtube.com/shorts/13RJ5NPcRN8?si=jX5TGAP-B42CgMpw"
+        },
+        {
+          "id": "Kz0k6hxo3vI",
+          "title": "Classroom Interactive Learning",
+          "desc": "Engaging early-learning sessions building curiosity, vocabulary, and friendship.",
+          "tag": "Classroom Learning",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_Kz0k6hxo3vI.jpg",
+          "url": "https://youtube.com/shorts/Kz0k6hxo3vI?si=Wt5KEO_U6qVqZZ_w"
+        },
+        {
+          "id": "UvrnD5J6Ws0",
+          "title": "Fun Movement & Activity Session",
+          "desc": "Little ones dancing and performing motor-skill coordination exercises with teachers.",
+          "tag": "Movement & Dance",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_UvrnD5J6Ws0.jpg",
+          "url": "https://youtube.com/shorts/UvrnD5J6Ws0?si=fhDTgtsvnjRa-rIL"
+        },
+        {
+          "id": "J61l3_ppuIM",
+          "title": "Winter Carnival & Joyful Moments",
+          "desc": "Festive school carnival celebrations filled with music, games, and happy memories.",
+          "tag": "Winter Carnival",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_J61l3_ppuIM.jpg",
+          "url": "https://youtube.com/shorts/J61l3_ppuIM?si=-VGsxBopS7zUbAMf"
+        },
+        {
+          "id": "UUJfLebKjdI",
+          "title": "Graduation & Farewell Celebration",
+          "desc": "Heartwarming farewell gathering honoring students stepping up to their next academic journey.",
+          "tag": "Farewell Ceremony",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_UUJfLebKjdI.jpg",
+          "url": "https://youtube.com/shorts/UUJfLebKjdI?si=ZGA1k8xy6NI9rieI"
+        },
+        {
+          "id": "r5weOYLrs3E",
+          "title": "Thumb Painting Creative Art Activity",
+          "desc": "Creative thumb painting activity fostering fine motor skills and artistic self-expression.",
+          "tag": "Thumb Painting",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_r5weOYLrs3E.jpg",
+          "url": "https://youtube.com/shorts/r5weOYLrs3E?si=tIYPqzf6O1wSKW9u"
+        },
+        {
+          "id": "GjtUTRtAxlc",
+          "title": "LKG Christmas Celebration & Carols",
+          "desc": "LKG kids celebrating Christmas in festive red attire with holiday cheers and carols.",
+          "tag": "Christmas Carols",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_GjtUTRtAxlc.jpg",
+          "url": "https://youtube.com/shorts/GjtUTRtAxlc?si=Mw0bIawcfv995DBz"
         }
       ]
     },

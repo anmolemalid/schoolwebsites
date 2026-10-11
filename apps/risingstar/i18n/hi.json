@@ -920,13 +920,6 @@
           "desc": "राइज़िंग किड्स स्कूल के खुशहाल छात्र।",
           "category": "classroom",
           "image": "/assets/students.jpg"
-        },
-        {
-          "id": 12,
-          "title": "राइज़िंग किड्स स्कूल परिसर",
-          "desc": "C-47, सेक्टर 9, न्यू विजय नगर, गाज़ियाबाद में स्कूल कैंपस।",
-          "category": "outdoor",
-          "image": "/assets/school-banner.jpg"
         }
       ]
     },
@@ -949,6 +942,155 @@
           "icon": "🎯",
           "title": "आनंदमयी व्यावहारिक शिक्षा",
           "desc": "गतिविधि आधारित पाठ्यक्रम जो रचनात्मकता, जिज्ञासा और मजबूत बुनियादी ज्ञान को बढ़ावा देता है।"
+        }
+      ]
+    },
+    "featuredVideos": {
+      "tag": "विशेष वीडियो 🎬",
+      "heading": "हमारे नन्हे सितारों को मंच पर देखें",
+      "subheading": "राइज़िंग किड्स स्कूल के उत्सवों की मनमोहक प्रस्तुतियां, रंग-बिरंगे परिधान और जीवंत ऊर्जा का अनुभव करें।",
+      "watchOnYoutube": "यूट्यूब पर देखें",
+      "channelBadge": "राइज़िंग किड्स स्कूल यूट्यूब चैनल",
+      "nowPlaying": "अभी चल रहा है ▶",
+      "filters": {
+        "all": "सभी वीडियो",
+        "celebrations": "उत्सव एवं मंच प्रस्तुतियां 🎭",
+        "shorts": "एक्टिविटी शॉर्ट्स ⚡"
+      },
+      "videos": [
+        {
+          "id": "jdQgN4pCCoE",
+          "title": "श्रीकृष्ण जन्माष्टमी उत्सव — कक्षा एलकेजी (LKG)",
+          "desc": "परंपरागत परिधानों में सजे एलकेजी के नन्हे कान्हा और गोपियों की मनमोहक प्रस्तुतियां और आनंदमयी जन्माष्टमी उत्सव।",
+          "tag": "जन्माष्टमी उत्सव",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_jdQgN4pCCoE.jpg",
+          "url": "https://www.youtube.com/watch?v=jdQgN4pCCoE"
+        },
+        {
+          "id": "zt-0xtEzl9Q",
+          "title": "दशहरा उत्सव 2023 - रामलीला मंचन (Dussehra Celebration)",
+          "desc": "राइज़िंग किड्स स्कूल के विद्यार्थियों द्वारा सुंदर मंच प्रदर्शन, पारंपरिक वेशभूषा और रामलीला नाटक मंचन।",
+          "tag": "दशहरा 2023",
+          "type": "celebrations",
+          "thumb": "/images/gallery/dussehra_video_thumb.jpg",
+          "url": "https://youtu.be/zt-0xtEzl9Q?si=Xxb_oEwONdHB0vLb"
+        },
+        {
+          "id": "LcpmFVAMI94",
+          "title": "कठपुतली शो गतिविधि (Puppet Show)",
+          "desc": "रंग-बिरंगी कठपुतलियों के माध्यम से रोचक कहानी वाचन और नैतिक शिक्षा का सुंदर सत्र।",
+          "tag": "पपेट शो गतिविधि",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_LcpmFVAMI94.jpg",
+          "url": "https://youtu.be/LcpmFVAMI94?si=eeNBbOaRnHKgDv8S"
+        },
+        {
+          "id": "VskXt-89TyA",
+          "title": "क्रिसमस एवं विंटर कार्निवल उत्सव",
+          "desc": "सैंटा क्लॉज का आगमन, उपहार वितरण और उल्लासपूर्ण क्रिसमस कैरल्स के साथ बच्चों की प्रस्तुतियां।",
+          "tag": "क्रिसमस उत्सव",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_VskXt-89TyA.jpg",
+          "url": "https://youtu.be/VskXt-89TyA?si=Lj6iW64O-2q3Gp3n"
+        },
+        {
+          "id": "cRYQz6dFV34",
+          "title": "श्रीकृष्ण जन्माष्टमी उत्सव — प्ले ग्रुप (Play Group)",
+          "desc": "राधा-कृष्ण की मनमोहक वेशभूषा में सजे प्ले ग्रुप के नन्हे-मुन्ने बच्चों का आकर्षक मंचन।",
+          "tag": "जन्माष्टमी प्ले ग्रुप",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_cRYQz6dFV34.jpg",
+          "url": "https://youtu.be/cRYQz6dFV34?si=PqPCz5AxhwIGoKYn"
+        },
+        {
+          "id": "cDxb8yAuHjw",
+          "title": "गणतंत्र दिवस समारोह — कक्षा एलकेजी (Republic Day)",
+          "desc": "तिरंगे के रंगों में देशभक्ति गीत और मनमोहक नृत्य प्रस्तुत करते एलकेजी के छात्र।",
+          "tag": "गणतंत्र दिवस",
+          "type": "celebrations",
+          "thumb": "/images/gallery/featured_cDxb8yAuHjw.jpg",
+          "url": "https://youtu.be/cDxb8yAuHjw?si=7nQ__kaz5TE0OAV_"
+        },
+        {
+          "id": "dYvJbzU8OSU",
+          "title": "सिटी फॉरेस्ट पिकनिक पर जंगल एडवेंचर",
+          "desc": "वार्षिक पिकनिक पर विशाल इन्फ्लेटेबल स्लाइड और आउटडोर खेल का आनंद लेते छात्र।",
+          "tag": "सिटी फॉरेस्ट पिकनिक",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_dYvJbzU8OSU.jpg",
+          "url": "https://youtube.com/shorts/dYvJbzU8OSU?si=t3m6aequ-hjr0plk"
+        },
+        {
+          "id": "13RJ5NPcRN8",
+          "title": "खुशहाल शिक्षण और स्कूल गतिविधियां",
+          "desc": "राइज़िंग किड्स स्कूल में इंटरैक्टिव मॉर्निंग एक्टिविटीज और कविताओं में छात्रों की भागीदारी।",
+          "tag": "मॉर्निंग राइम्स",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_13RJ5NPcRN8.jpg",
+          "url": "https://youtube.com/shorts/13RJ5NPcRN8?si=jX5TGAP-B42CgMpw"
+        },
+        {
+          "id": "Kz0k6hxo3vI",
+          "title": "कक्षा में इंटरैक्टिव लर्निंग",
+          "desc": "बच्चों की जिज्ञासा, शब्दावली और मित्रता को बढ़ावा देने वाले रोचक लर्निंग सत्र।",
+          "tag": "क्लासरूम लर्निंग",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_Kz0k6hxo3vI.jpg",
+          "url": "https://youtube.com/shorts/Kz0k6hxo3vI?si=Wt5KEO_U6qVqZZ_w"
+        },
+        {
+          "id": "UvrnD5J6Ws0",
+          "title": "फन मूवमेंट और एक्टिविटी सत्र",
+          "desc": "शिक्षिकाओं के साथ मोटर-स्किल और डांस अभ्यास करते नन्हे-मुन्ने बच्चे।",
+          "tag": "डांस एवं मूवमेंट",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_UvrnD5J6Ws0.jpg",
+          "url": "https://youtube.com/shorts/UvrnD5J6Ws0?si=fhDTgtsvnjRa-rIL"
+        },
+        {
+          "id": "J61l3_ppuIM",
+          "title": "विंटर कार्निवल और उत्सव के क्षण",
+          "desc": "संगीत, खेलों और सुखद यादों से भरा भव्य स्कूल कार्निवल उत्सव।",
+          "tag": "विंटर कार्निवल",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_J61l3_ppuIM.jpg",
+          "url": "https://youtube.com/shorts/J61l3_ppuIM?si=-VGsxBopS7zUbAMf"
+        },
+        {
+          "id": "UUJfLebKjdI",
+          "title": "विदाई एवं दीक्षांत समारोह",
+          "desc": "अगली कक्षा में कदम रखने वाले छात्रों का उत्साहवर्धन करता विदाई समारोह।",
+          "tag": "विदाई समारोह",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_UUJfLebKjdI.jpg",
+          "url": "https://youtube.com/shorts/UUJfLebKjdI?si=ZGA1k8xy6NI9rieI"
+        },
+        {
+          "id": "r5weOYLrs3E",
+          "title": "अंगूठा पेंटिंग और रचनात्मक कला गतिविधि",
+          "desc": "रचनात्मक अंगूठे की पेंटिंग जो बच्चों के फाइन-मोटर कौशल और कलात्मक अभिव्यक्ति को निखारती है।",
+          "tag": "अंगूठा पेंटिंग",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_r5weOYLrs3E.jpg",
+          "url": "https://youtube.com/shorts/r5weOYLrs3E?si=tIYPqzf6O1wSKW9u"
+        },
+        {
+          "id": "GjtUTRtAxlc",
+          "title": "LKG क्रिसमस उत्सव एवं कैरल्स",
+          "desc": "लाल परिधानों में क्रिसमस मनाते और खुशियां बिखेरते एलकेजी के बच्चे।",
+          "tag": "क्रिसमस कैरल्स",
+          "type": "shorts",
+          "isShort": true,
+          "thumb": "/images/gallery/short_GjtUTRtAxlc.jpg",
+          "url": "https://youtube.com/shorts/GjtUTRtAxlc?si=Mw0bIawcfv995DBz"
         }
       ]
     },

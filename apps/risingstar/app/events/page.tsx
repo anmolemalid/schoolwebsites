@@ -755,10 +755,6 @@ export default function EventsPage() {
             subBadge="Field Expeditions"
             title="Learning Through Exploration & Discovery"
             subtitle="Swipe or use controls to browse our students' real-world journeys across heritage, science, and nature."
-            actionLink={{
-              href: "/gallery",
-              label: "View Full Gallery",
-            }}
             items={educationalTourPhotos}
           />
         </div>
@@ -887,10 +883,6 @@ export default function EventsPage() {
             subBadge="Picnic Memories"
             title="Sunny Picnics, Nature Play & Community Meals"
             subtitle="Catch glimpses of our joyful winter picnics, lawn games, and shared laughter in open parks."
-            actionLink={{
-              href: "/gallery",
-              label: "View Gallery",
-            }}
             items={picnicPhotos}
           />
         </div>
@@ -1002,10 +994,10 @@ export default function EventsPage() {
                 </ul>
 
                 <Link
-                  href="/gallery"
+                  href="/admissions"
                   className="btn btn-warning w-100 fw-bold rounded-pill text-dark d-inline-flex align-items-center justify-content-center gap-2"
                 >
-                  <span>View Photos in Gallery</span>
+                  <span>Inquire for Admission</span>
                   <span>→</span>
                 </Link>
               </div>
@@ -1019,10 +1011,6 @@ export default function EventsPage() {
             subBadge="Stage Memories"
             title="100% Stage Participation, Dance & Theatrical Drama"
             subtitle="Relive the glittering performances, colourful thematic costumes, and proud moments of our annual function."
-            actionLink={{
-              href: "/gallery",
-              label: "View Gallery",
-            }}
             items={annualDayPhotos}
           />
         </div>
@@ -1151,10 +1139,6 @@ export default function EventsPage() {
             subBadge="Sports Memories"
             title="Track Sprints, Agility Drills & Victory Celebrations"
             subtitle="Celebrating youthful stamina, synchronized yoga formations, and active sporting camaraderie."
-            actionLink={{
-              href: "/gallery",
-              label: "View Gallery",
-            }}
             items={sportsDayPhotos}
           />
         </div>
@@ -1415,10 +1399,6 @@ export default function EventsPage() {
             subBadge="Social Impact"
             title="Eco Awareness, Tricolor Rallies & Civic Pride"
             subtitle="Heartwarming memories of our young change-makers planting trees, rallying for cleanliness, and spreading kindness."
-            actionLink={{
-              href: "/gallery",
-              label: "View Gallery",
-            }}
             items={csrRalliesPhotos}
           />
         </div>

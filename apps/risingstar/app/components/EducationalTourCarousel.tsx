@@ -13,10 +13,6 @@ export default function EducationalTourCarousel() {
       subBadge="Field Expeditions"
       title="Learning Through Exploration & Discovery"
       subtitle="Swipe or use controls to browse our students' real-world journeys across heritage, science, and nature."
-      actionLink={{
-        href: "/gallery",
-        label: "View Full Gallery",
-      }}
       items={educationalTourPhotos}
     />
   );
