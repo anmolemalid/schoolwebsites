@@ -140,7 +140,7 @@ export default function GalleryPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🖼️</span>
-                    <span>Photo Gallery</span>
+                    <span>{t.gallery.breadcrumbChips.photoGallery}</span>
                   </a>
 
                   <a
@@ -148,7 +148,7 @@ export default function GalleryPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>✨</span>
-                    <span>Campus Life</span>
+                    <span>{t.gallery.breadcrumbChips.campusLife}</span>
                   </a>
 
                   <a
@@ -156,7 +156,7 @@ export default function GalleryPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🎬</span>
-                    <span>Videos ({featuredVideosList.length})</span>
+                    <span>{t.gallery.breadcrumbChips.videosPrefix} ({featuredVideosList.length})</span>
                   </a>
 
                   <a
@@ -164,7 +164,7 @@ export default function GalleryPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🎒</span>
-                    <span>Book Tour</span>
+                    <span>{t.gallery.breadcrumbChips.bookTour}</span>
                   </a>
                 </div>
               </nav>
@@ -181,7 +181,7 @@ export default function GalleryPage() {
                   }}
                 >
                   <span className="spinner-grow spinner-grow-sm text-warning" role="status" style={{ width: "0.6rem", height: "0.6rem" }}></span>
-                  <span>Moments to Remember</span>
+                  <span>{t.gallery.breadcrumbChips.momentsToRemember}</span>
                 </span>
               </div>
             </div>
@@ -559,7 +559,7 @@ export default function GalleryPage() {
               <div className="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
                 <h5 className="fw-bold mb-0 text-dark d-flex align-items-center gap-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
                   <span>📺</span>
-                  <span>School Video Library ({featuredVideosList.length})</span>
+                  <span>{(t.gallery as any).featuredVideos?.libraryTitle || "School Video Library"} ({featuredVideosList.length})</span>
                 </h5>
 
                 {/* Filter Pills */}
@@ -681,7 +681,7 @@ export default function GalleryPage() {
                             className="text-muted d-block small"
                             style={{ fontSize: "0.72rem" }}
                           >
-                            {isPlaying ? "▶ Watching Now" : "Tap to Watch"}
+                            {isPlaying ? ((t.gallery as any).featuredVideos?.watchingNow || "▶ Watching Now") : ((t.gallery as any).featuredVideos?.tapToWatch || "Tap to Watch")}
                           </span>
                         </div>
                       </div>
@@ -894,7 +894,7 @@ export default function GalleryPage() {
                       fontSize: "0.85rem",
                     }}
                   >
-                    Photo {currentIndex + 1} of {filtered.length}
+                    {(t.gallery as any).lightbox?.photoOf || "Photo"} {currentIndex + 1} {(t.gallery as any).lightbox?.of || "of"} {filtered.length}
                   </span>
                 </div>
 
@@ -916,7 +916,7 @@ export default function GalleryPage() {
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                  <span>Close</span>
+                  <span>{(t.gallery as any).lightbox?.close || "Close"}</span>
                 </button>
               </div>
 
@@ -1046,7 +1046,7 @@ export default function GalleryPage() {
                 <div className="d-flex align-items-center justify-content-center gap-2 mb-1 flex-wrap">
                   {activeItem.isVideo && (
                     <span className="badge bg-danger text-white rounded-pill px-2.5 py-0.5 small fw-bold">
-                      {activeItem.isShort ? "⚡ YouTube Short" : "🎬 YouTube Video"}
+                      {activeItem.isShort ? ((t.gallery as any).lightbox?.youtubeShort || "⚡ YouTube Short") : ((t.gallery as any).lightbox?.youtubeVideo || "🎬 YouTube Video")}
                     </span>
                   )}
                   <h5 className="fw-bold text-white mb-0 fs-6">{activeItem.title}</h5>
@@ -1063,7 +1063,7 @@ export default function GalleryPage() {
                     style={{ fontSize: "0.78rem" }}
                   >
                     <span>▶</span>
-                    <span>{activeItem.isShort ? "Watch on YouTube Shorts" : "Watch on YouTube"}</span>
+                    <span>{activeItem.isShort ? ((t.gallery as any).lightbox?.watchOnShorts || "Watch on YouTube Shorts") : ((t.gallery as any).lightbox?.watchOnYouTube || "Watch on YouTube")}</span>
                     <span>↗</span>
                   </a>
                 )}

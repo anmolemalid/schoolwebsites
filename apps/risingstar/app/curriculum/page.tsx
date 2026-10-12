@@ -227,7 +227,7 @@ export default function CurriculumPage() {
                     }}
                   >
                     <span>✨</span>
-                    <span>PERSONALIZED ACADEMIC GUIDANCE</span>
+                    <span>{t.curriculum.ctaBanner.kicker}</span>
                   </div>
 
                   {/* Heading */}
@@ -244,15 +244,15 @@ export default function CurriculumPage() {
                   <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
                     <span className="cta-feature-chip">
                       <span>🎯</span>
-                      <span>Age-Wise Milestones</span>
+                      <span>{t.curriculum.ctaBanner.featureChips[0]}</span>
                     </span>
                     <span className="cta-feature-chip">
                       <span>🏫</span>
-                      <span>Campus Tour & Walkthrough</span>
+                      <span>{t.curriculum.ctaBanner.featureChips[1]}</span>
                     </span>
                     <span className="cta-feature-chip">
                       <span>👨‍👩‍👧</span>
-                      <span>Friendly Counselor Session</span>
+                      <span>{t.curriculum.ctaBanner.featureChips[2]}</span>
                     </span>
                   </div>
                 </div>
@@ -268,10 +268,10 @@ export default function CurriculumPage() {
                     }}
                   >
                     <div className="small text-warning fw-bold text-uppercase mb-2" style={{ letterSpacing: "1px" }}>
-                      Get In Touch Directly
+                      {t.curriculum.ctaBanner.directGetInTouch}
                     </div>
                     <div className="text-white fw-bold fs-5 mb-3">
-                      Book a Visit or Ask Any Question
+                      {t.curriculum.ctaBanner.askQuestion}
                     </div>
 
                     {/* Primary & Secondary Action Buttons */}

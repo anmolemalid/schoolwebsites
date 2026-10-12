@@ -102,7 +102,7 @@ export default function MobileQuickFlipFab() {
             onClick={toggleOpen}
             className="fab-badge-pill border-0 text-start"
           >
-            <span>Let's Connect</span>
+            <span>{t.floatingActions.letsConnect}</span>
             <span className="ms-1">▸</span>
           </button>
         )}

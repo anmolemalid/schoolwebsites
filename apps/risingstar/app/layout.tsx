@@ -6,32 +6,38 @@ import Link from "next/link";
 import MobileNav from "./components/MobileNav";
 import DesktopNav from "./components/DesktopNav";
 import MobileQuickFlipFab from "./components/MobileQuickFlipFab";
-import { t } from "./lib/i18n";
+import LanguageSwitcher from "./components/LanguageSwitcher";
+import { t, getCurrentLocale, getTranslations } from "./lib/i18n";
 
-export const metadata: Metadata = {
-  title: t.meta.defaultTitle,
-  description: t.meta.defaultDescription,
-  keywords: t.meta.keywords,
-  authors: [{ name: t.meta.siteName }],
-  creator: t.meta.siteName,
-  publisher: t.meta.siteName,
-  robots: {
-    index: true,
-    follow: true,
-  },
-  openGraph: {
-    type: "website",
-    locale: t.meta.locale,
-    siteName: t.meta.siteName,
-    title: t.meta.pages.home.ogTitle,
-    description: t.meta.pages.home.ogDescription,
-    images: ["/assets/finallogo.png"],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const dict = getTranslations();
+  return {
+    title: dict.meta.defaultTitle,
+    description: dict.meta.defaultDescription,
+    keywords: dict.meta.keywords,
+    authors: [{ name: dict.meta.siteName }],
+    creator: dict.meta.siteName,
+    publisher: dict.meta.siteName,
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: "website",
+      locale: dict.meta.locale,
+      siteName: dict.meta.siteName,
+      title: dict.meta.pages.home.ogTitle,
+      description: dict.meta.pages.home.ogDescription,
+      images: ["/assets/finallogo.png"],
+    },
+  };
+}
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const locale = getCurrentLocale();
+
   return (
-    <html lang="en" data-bs-theme="light">
+    <html lang={locale} data-bs-theme="light">
       <head>
         <link rel="icon" href="/assets/finallogo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/assets/finallogo.png" />
@@ -60,6 +66,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               </a>
             </div>
             <div className="d-flex align-items-center gap-3">
+              <LanguageSwitcher variant="topbar" />
               <a
                 href={t.school.social.instagram || "https://www.instagram.com/inforisingkidsschool"}
                 target="_blank"

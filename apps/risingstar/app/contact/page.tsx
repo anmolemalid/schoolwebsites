@@ -100,7 +100,7 @@ export default function ContactPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>📝</span>
-                    <span>Send Message</span>
+                    <span>{t.contact.breadcrumbChips.sendMessage}</span>
                   </a>
 
                   <a
@@ -108,7 +108,7 @@ export default function ContactPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>📍</span>
-                    <span>Location Map</span>
+                    <span>{t.contact.breadcrumbChips.locationMap}</span>
                   </a>
 
                   <a
@@ -116,7 +116,7 @@ export default function ContactPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>📞</span>
-                    <span>Call Helpline</span>
+                    <span>{t.contact.breadcrumbChips.callHelpline}</span>
                   </a>
                 </div>
               </nav>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   }}
                 >
                   <span className="spinner-grow spinner-grow-sm text-warning" role="status" style={{ width: "0.6rem", height: "0.6rem" }}></span>
-                  <span>Helpline: {t.school.contacts.phonePrimary}</span>
+                  <span>{t.contact.breadcrumbChips.helpline} {t.school.contacts.phonePrimary}</span>
                 </a>
               </div>
             </div>
@@ -245,7 +245,7 @@ export default function ContactPage() {
                 ) : (
                   <form onSubmit={handleSubmit} className="d-flex flex-column gap-3">
                     <div className="text-end small fw-bold" style={{ color: "#b91c1c" }}>
-                      * Indicates mandatory fields
+                      {t.contact.sendEnquiry.mandatoryNotice}
                     </div>
 
                     <div>
@@ -274,7 +274,7 @@ export default function ContactPage() {
                       <input
                         type="email"
                         className="form-control form-control-lg rounded-3 fs-6"
-                        placeholder={`${t.contact.sendEnquiry.emailPlaceholder} (Optional)`}
+                        placeholder={`${t.contact.sendEnquiry.emailPlaceholder} ${t.contact.sendEnquiry.optionalLabel}`}
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                       />
@@ -305,7 +305,7 @@ export default function ContactPage() {
                       {submitting ? (
                         <>
                           <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                          <span>Sending Message...</span>
+                          <span>{t.contact.sendEnquiry.submitting}</span>
                         </>
                       ) : (
                         <span>{t.contact.sendEnquiry.submitButton}</span>

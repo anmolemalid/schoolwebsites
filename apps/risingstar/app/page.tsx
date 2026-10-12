@@ -435,8 +435,8 @@ export default function HomePage() {
                 ) : (
                   <form onSubmit={handleEnquirySubmit} className="row g-3">
                     <div className="col-12 d-flex justify-content-between align-items-center mb-1">
-                      <span className="small text-muted">Quick admission enquiry</span>
-                      <span className="small fw-bold" style={{ color: "#b91c1c" }}>* Mandatory</span>
+                      <span className="small text-muted">{t.home.quickEnquiry.form.quickEnquiryNotice}</span>
+                      <span className="small fw-bold" style={{ color: "#b91c1c" }}>{t.home.quickEnquiry.form.mandatoryNotice}</span>
                     </div>
 
                     <div className="col-md-6">
@@ -461,7 +461,7 @@ export default function HomePage() {
                     </div>
                     <div className="col-12">
                       <label className="form-label small fw-semibold text-muted mb-1 d-block">
-                        Grade / Class Applying For <span className="text-danger fw-bold">*</span>
+                        {t.home.quickEnquiry.form.gradeSelectLabel} <span className="text-danger fw-bold">*</span>
                       </label>
                       <select
                         className="form-select rounded-3"
@@ -477,7 +477,7 @@ export default function HomePage() {
                       <textarea
                         className="form-control rounded-3"
                         rows={3}
-                        placeholder={`${t.home.quickEnquiry.form.message} (Optional)`}
+                        placeholder={`${t.home.quickEnquiry.form.message} ${t.home.quickEnquiry.form.optionalPlaceholder}`}
                         value={enquiryForm.message}
                         onChange={(e) => setEnquiryForm({ ...enquiryForm, message: e.target.value })}
                       ></textarea>
@@ -491,7 +491,7 @@ export default function HomePage() {
                         {enquirySubmitting ? (
                           <>
                             <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            <span>Sending Enquiry...</span>
+                            <span>{t.home.quickEnquiry.form.submittingButton}</span>
                           </>
                         ) : (
                           <span>{t.home.quickEnquiry.form.submitButton}</span>

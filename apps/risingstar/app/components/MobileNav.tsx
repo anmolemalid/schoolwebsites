@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { t } from "../lib/i18n";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,6 +79,9 @@ export default function MobileNav() {
             aria-label={t.header.closeMenu}
           />
         </div>
+
+        {/* Mobile Language Switcher on Hamburger Slider */}
+        <LanguageSwitcher variant="mobile" />
 
         {/* Drawer Links */}
         <div className="mobile-nav-links p-3">

@@ -5,76 +5,41 @@ import Link from "next/link";
 import { t } from "../lib/i18n";
 import AdmissionsSessionBanner from "../components/AdmissionsSessionBanner";
 
-const officialFeeSchedule = [
-  {
-    sn: "01",
-    title: "Admission Form Fee",
-    frequency: "One-Time (Application)",
-    desc: "Prospectus, registration form & initial admission counseling",
-    badge: "Applicable",
-    badgeColor: "bg-primary-subtle text-primary border border-primary border-opacity-25",
-  },
-  {
-    sn: "02",
-    title: "Admission Fee",
-    frequency: "One-Time (Enrollment)",
-    desc: "One-time enrollment upon student admission confirmation",
-    badge: "Applicable",
-    badgeColor: "bg-primary-subtle text-primary border border-primary border-opacity-25",
-  },
-  {
-    sn: "03",
-    title: "Annual Fee",
-    frequency: "Annual",
-    desc: "Smart class, campus upkeep, multimedia lab & infrastructure maintenance",
-    badge: "Annual",
-    badgeColor: "bg-warning-subtle text-dark border border-warning border-opacity-50",
-  },
-  {
-    sn: "04",
-    title: "Tuition Fee",
-    frequency: "Monthly / Quarterly",
-    desc: "Classroom instruction, qualified faculty, holistic learning modules",
-    badge: "Recurring",
-    badgeColor: "bg-success-subtle text-success border border-success border-opacity-25",
-  },
-  {
-    sn: "05",
-    title: "Student Kit",
-    frequency: "Annual Academic Kit",
-    desc: "Complete textbook set, notebooks, stationery, diary & school ID badge",
-    badge: "Package",
-    badgeColor: "bg-info-subtle text-dark border border-info border-opacity-25",
-  },
-  {
-    sn: "06",
-    title: "Activity Fee",
-    frequency: "Term-Wise",
-    desc: "Sports day, arts & craft, cultural events, yoga & stage exposure",
-    badge: "Term-Wise",
-    badgeColor: "bg-purple-subtle text-purple border border-purple border-opacity-25",
-  },
-  {
-    sn: "07",
-    title: "Examination Fee",
-    frequency: "Per Assessment Term",
-    desc: "Assessment worksheets, periodic evaluations, progress cards & certificates",
-    badge: "Per Term",
-    badgeColor: "bg-secondary-subtle text-secondary border border-secondary border-opacity-25",
-  },
-  {
-    sn: "08",
-    title: "Transport Fee",
-    frequency: "Optional (Monthly)",
-    desc: "Safe door-to-door cab / van transport facility with verified drivers (route based)",
-    badge: "Optional",
-    badgeColor: "bg-warning-subtle text-dark border border-warning border-opacity-50",
-  },
+const feeColorMap = [
+  "bg-primary-subtle text-primary border border-primary border-opacity-25",
+  "bg-primary-subtle text-primary border border-primary border-opacity-25",
+  "bg-warning-subtle text-dark border border-warning border-opacity-50",
+  "bg-success-subtle text-success border border-success border-opacity-25",
+  "bg-info-subtle text-dark border border-info border-opacity-25",
+  "bg-purple-subtle text-purple border border-purple border-opacity-25",
+  "bg-secondary-subtle text-secondary border border-secondary border-opacity-25",
+  "bg-warning-subtle text-dark border border-warning border-opacity-50",
+];
+
+const cardFeeStyles = [
+  { badgeColor: "bg-primary-subtle text-primary border-primary", icon: "📝", iconBg: "#e7f1ff", iconColor: "#0056b3" },
+  { badgeColor: "bg-danger-subtle text-danger border-danger", icon: "🎓", iconBg: "#ffebee", iconColor: "#d32f2f" },
+  { badgeColor: "bg-warning-subtle text-dark border-warning", icon: "🏫", iconBg: "#fff8e1", iconColor: "#f57f17" },
+  { badgeColor: "bg-success-subtle text-success border-success", icon: "📚", iconBg: "#e8f5e9", iconColor: "#2e7d32" },
+  { badgeColor: "bg-info-subtle text-dark border-info", icon: "🎒", iconBg: "#e1f5fe", iconColor: "#0288d1" },
+  { badgeColor: "bg-purple-subtle text-purple border-purple", icon: "🎨", iconBg: "#f3e5f5", iconColor: "#7b1fa2" },
+  { badgeColor: "bg-secondary-subtle text-secondary border-secondary", icon: "📑", iconBg: "#eceff1", iconColor: "#455a64" },
+  { badgeColor: "bg-warning-subtle text-dark border-warning", icon: "🚌", iconBg: "#fff9c4", iconColor: "#fbc02d" },
 ];
 
 export default function AdmissionsPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [feeViewMode, setFeeViewMode] = useState<"table" | "cards">("table");
+
+  const officialFeeSchedule = (t.admissions.officialFeeSchedule || []).map((item, idx) => ({
+    ...item,
+    badgeColor: feeColorMap[idx] || feeColorMap[0],
+  }));
+
+  const cardsFeeSchedule = (t.admissions.cardsFeeSchedule || []).map((item, idx) => ({
+    ...item,
+    ...(cardFeeStyles[idx] || cardFeeStyles[0]),
+  }));
   const [formData, setFormData] = useState({
     kidName: "",
     dob: "",
@@ -226,7 +191,7 @@ export default function AdmissionsPage() {
                     }}
                   >
                     <span>💰</span>
-                    <span>Fee Structure</span>
+                    <span>{t.admissions.breadcrumbChips.feeStructure}</span>
                   </a>
 
                   <a
@@ -250,7 +215,7 @@ export default function AdmissionsPage() {
                     }}
                   >
                     <span>📋</span>
-                    <span>Process</span>
+                    <span>{t.admissions.breadcrumbChips.process}</span>
                   </a>
 
                   <a
@@ -274,7 +239,7 @@ export default function AdmissionsPage() {
                     }}
                   >
                     <span>📝</span>
-                    <span>Enquiry</span>
+                    <span>{t.admissions.breadcrumbChips.enquiry}</span>
                   </a>
                 </div>
               </nav>
@@ -291,7 +256,7 @@ export default function AdmissionsPage() {
                   }}
                 >
                   <span className="spinner-grow spinner-grow-sm text-warning" role="status" style={{ width: "0.6rem", height: "0.6rem" }}></span>
-                  <span>Session 2027-28 Open</span>
+                  <span>{t.admissions.breadcrumbChips.sessionOpenBadge}</span>
                 </span>
               </div>
             </div>
@@ -356,13 +321,13 @@ export default function AdmissionsPage() {
           <div className="text-center mb-5">
             <span className="badge bg-primary-subtle text-primary border border-primary px-3 py-2 rounded-pill fw-bold small mb-2 d-inline-flex align-items-center gap-1">
               <span>💳</span>
-              <span>Transparent & Clear</span>
+              <span>{t.admissions.feeSection.tag}</span>
             </span>
             <h2 className="display-5 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Fee Structure & Components
+              {t.admissions.feeSection.heading}
             </h2>
             <p className="text-muted col-md-8 mx-auto fs-5">
-              Affordable and well-planned fee heads for holistic growth, quality education, smart learning, and activities.
+              {t.admissions.feeSection.subheading}
             </p>
           </div>
 
@@ -385,7 +350,7 @@ export default function AdmissionsPage() {
                 }
               >
                 <span>📋</span>
-                <span>Fee Slip Table</span>
+                <span>{t.admissions.feeSection.viewTable}</span>
               </button>
               <button
                 type="button"
@@ -400,7 +365,7 @@ export default function AdmissionsPage() {
                 }
               >
                 <span>🎴</span>
-                <span>Feature Cards</span>
+                <span>{t.admissions.feeSection.viewCards}</span>
               </button>
             </div>
           </div>
@@ -416,15 +381,15 @@ export default function AdmissionsPage() {
                   <span className="fs-4">📜</span>
                   <div>
                     <h3 className="h5 fw-bold mb-0 text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                      Official Fee Schedule (Play Group to Class V)
+                      {t.admissions.feeSection.tableTitle}
                     </h3>
                     <small className="text-white text-opacity-80">
-                      Standard fee heads applicable for Academic Session 2027-28
+                      {t.admissions.feeSection.tableSubtitle}
                     </small>
                   </div>
                 </div>
                 <span className="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold">
-                  ⭐ Session 2027-28
+                  {t.admissions.feeSection.sessionBadge}
                 </span>
               </div>
 
@@ -435,19 +400,19 @@ export default function AdmissionsPage() {
                     <thead>
                       <tr style={{ borderBottom: "2.5px solid #004a90" }}>
                         <th className="py-3 px-3 text-uppercase small fw-bold" style={{ color: "#004a90", width: "60px" }}>
-                          #
+                          {t.admissions.feeSection.colSn}
                         </th>
                         <th className="py-3 px-3 text-uppercase small fw-bold" style={{ color: "#004a90", width: "260px" }}>
-                          Fee Head
+                          {t.admissions.feeSection.colFeeHead}
                         </th>
                         <th className="py-3 px-3 text-uppercase small fw-bold" style={{ color: "#004a90", width: "180px" }}>
-                          Frequency / Nature
+                          {t.admissions.feeSection.colFrequency}
                         </th>
                         <th className="py-3 px-3 text-uppercase small fw-bold" style={{ color: "#004a90" }}>
-                          Coverage & Particulars
+                          {t.admissions.feeSection.colCoverage}
                         </th>
                         <th className="py-3 px-3 text-uppercase small fw-bold text-end" style={{ color: "#004a90", width: "120px" }}>
-                          Status
+                          {t.admissions.feeSection.colStatus}
                         </th>
                       </tr>
                     </thead>
@@ -534,7 +499,7 @@ export default function AdmissionsPage() {
                       </div>
 
                       <div className="mb-2 d-flex flex-wrap align-items-center gap-1">
-                        <span className="text-muted small fw-semibold">Frequency:</span>
+                        <span className="text-muted small fw-semibold">{t.admissions.feeSection.frequencyLabel}</span>
                         <span className="badge bg-light text-dark border px-2 py-1 small fw-semibold">
                           📅 {item.frequency}
                         </span>
@@ -555,80 +520,7 @@ export default function AdmissionsPage() {
           {/* Cards View */}
           {feeViewMode === "cards" && (
             <div className="row g-4 mb-5">
-              {[
-                {
-                  title: "Admission Form Fee",
-                  badge: "One-Time (Application)",
-                  badgeColor: "bg-primary-subtle text-primary border-primary",
-                  icon: "📝",
-                  iconBg: "#e7f1ff",
-                  iconColor: "#0056b3",
-                  desc: "School prospectus, student registration form, and initial admission counseling.",
-                },
-                {
-                  title: "Admission Fee",
-                  badge: "One-Time (Enrollment)",
-                  badgeColor: "bg-danger-subtle text-danger border-danger",
-                  icon: "🎓",
-                  iconBg: "#ffebee",
-                  iconColor: "#d32f2f",
-                  desc: "One-time enrollment fee upon confirmation of student admission into school records.",
-                },
-                {
-                  title: "Annual Fee",
-                  badge: "Payable Annually",
-                  badgeColor: "bg-warning-subtle text-dark border-warning",
-                  icon: "🏫",
-                  iconBg: "#fff8e1",
-                  iconColor: "#f57f17",
-                  desc: "Campus upkeep, digital smart class systems, infrastructure maintenance & safety facilities.",
-                },
-                {
-                  title: "Tuition Fee",
-                  badge: "Monthly / Quarterly",
-                  badgeColor: "bg-success-subtle text-success border-success",
-                  icon: "📚",
-                  iconBg: "#e8f5e9",
-                  iconColor: "#2e7d32",
-                  desc: "Comprehensive daily classroom learning, qualified educator guidance, and developmental curriculum.",
-                },
-                {
-                  title: "Student Kit",
-                  badge: "Annual Academic Kit",
-                  badgeColor: "bg-info-subtle text-dark border-info",
-                  icon: "🎒",
-                  iconBg: "#e1f5fe",
-                  iconColor: "#0288d1",
-                  desc: "Curriculum textbooks, notebook set, stationery kit, student ID card & school diary.",
-                },
-                {
-                  title: "Activity Fee",
-                  badge: "Term-Wise",
-                  badgeColor: "bg-purple-subtle text-purple border-purple",
-                  icon: "🎨",
-                  iconBg: "#f3e5f5",
-                  iconColor: "#7b1fa2",
-                  desc: "Sports events, cultural celebrations, arts & crafts supplies, yoga sessions & stage exposure.",
-                },
-                {
-                  title: "Examination Fee",
-                  badge: "Per Assessment Term",
-                  badgeColor: "bg-secondary-subtle text-secondary border-secondary",
-                  icon: "📑",
-                  iconBg: "#eceff1",
-                  iconColor: "#455a64",
-                  desc: "Continuous evaluation worksheets, periodic assessment prints, report cards & certifications.",
-                },
-                {
-                  title: "Transport Fee",
-                  badge: "Optional (Route Based)",
-                  badgeColor: "bg-warning-subtle text-dark border-warning",
-                  icon: "🚌",
-                  iconBg: "#fff9c4",
-                  iconColor: "#fbc02d",
-                  desc: "Safe, supervised door-to-door cab / van transport facility with verified drivers (as per route).",
-                },
-              ].map((fee, idx) => (
+              {cardsFeeSchedule.map((fee: any, idx: number) => (
                 <div key={idx} className="col-12 col-sm-6 col-lg-3">
                   <div
                     className="card h-100 border-0 rounded-4 shadow-sm p-4 text-start transition-all"
@@ -692,13 +584,13 @@ export default function AdmissionsPage() {
           <div className="text-center mb-4 no-print">
             <span className="badge bg-success-subtle text-success border border-success px-3 py-1 rounded-pill fw-bold small mb-2 d-inline-flex align-items-center gap-1">
               <span>📝</span>
-              <span>Official School Form</span>
+              <span>{t.admissions.slipForm.tag}</span>
             </span>
             <h2 className="display-5 fw-bold text-dark mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Admission Enquiry Form
+              {t.admissions.slipForm.heading}
             </h2>
             <p className="text-muted col-md-8 mx-auto fs-5">
-              Fill out the official Rising Kids School inquiry form below or download a printable copy for offline submission.
+              {t.admissions.slipForm.subheading}
             </p>
           </div>
 
@@ -733,18 +625,18 @@ export default function AdmissionsPage() {
                             letterSpacing: "0.3px",
                           }}
                         >
-                          Rising Kids School
+                          {t.admissions.slipForm.letterheadTitle}
                         </h3>
                         <p className="mb-0 text-muted small" style={{ lineHeight: 1.4 }}>
-                          C-47, Sector -9, New Vijay nagar, Ghaziabad (U.P.)
+                          {t.admissions.slipForm.letterheadAddress}
                         </p>
                         <p className="mb-0 text-muted small" style={{ lineHeight: 1.4 }}>
-                          <span>Ph: </span>
+                          <span>{t.admissions.slipForm.letterheadPh} </span>
                           <a href="tel:8826239341" className="text-decoration-none text-muted fw-semibold">8826239341</a>,{" "}
                           <a href="tel:8826239346" className="text-decoration-none text-muted fw-semibold">8826239346</a>
                           <span className="d-none d-md-inline"> | </span>
                           <span className="d-block d-md-inline">
-                            E-mail: <a href="mailto:inforisingkidsschool@gmail.com" className="text-decoration-none text-primary">inforisingkidsschool@gmail.com</a>
+                            {t.admissions.slipForm.letterheadEmail} <a href="mailto:inforisingkidsschool@gmail.com" className="text-decoration-none text-primary">inforisingkidsschool@gmail.com</a>
                           </span>
                         </p>
                       </div>
@@ -752,7 +644,7 @@ export default function AdmissionsPage() {
 
                     <div className="text-center text-sm-end">
                       <div className="badge bg-light text-dark border px-3 py-2 rounded-pill small fw-semibold shadow-sm">
-                        <span>Date: </span>
+                        <span>{t.admissions.slipForm.dateLabel} </span>
                         <span suppressHydrationWarning>{new Date().toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}</span>
                       </div>
                     </div>
@@ -775,7 +667,7 @@ export default function AdmissionsPage() {
                         fontFamily: "'Poppins', sans-serif",
                       }}
                     >
-                      ENQUIRY FORM
+                      {t.admissions.slipForm.bannerTitle}
                     </h4>
                   </div>
                 </div>
@@ -784,28 +676,28 @@ export default function AdmissionsPage() {
                   <div className="text-center py-5">
                     <div className="fs-1 text-success mb-3">🎉</div>
                     <h3 className="fw-bold text-success mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                      Enquiry Submitted Successfully!
+                      {t.admissions.slipForm.successTitle}
                     </h3>
                     <p className="text-muted mb-4 fs-5 col-md-10 mx-auto">
-                      Thank you for submitting the enquiry for <strong>{formData.kidName || "your child"}</strong> in <strong>{formData.enquiryFor || "Rising Kids"}</strong>. Our admission desk will connect with you on <strong>{formData.phone}</strong> shortly.
+                      {t.admissions.slipForm.successText1} <strong>{formData.kidName || "your child"}</strong> {t.admissions.slipForm.successText2} <strong>{formData.enquiryFor || "Rising Kids"}</strong>{t.admissions.slipForm.successText3} <strong>{formData.phone}</strong> {t.admissions.slipForm.successText4}
                     </p>
 
                     <div className="card bg-light border-0 p-4 rounded-4 mb-4 text-start col-md-8 mx-auto">
-                      <h6 className="fw-bold text-dark border-bottom pb-2 mb-3">Submitted Summary:</h6>
+                      <h6 className="fw-bold text-dark border-bottom pb-2 mb-3">{t.admissions.slipForm.summaryHeading}</h6>
                       <div className="row g-2 small">
-                        <div className="col-sm-6"><strong>Kid&apos;s Name:</strong> {formData.kidName || "—"}</div>
-                        <div className="col-sm-6"><strong>Date of Birth:</strong> {formData.dob || "—"}</div>
-                        <div className="col-sm-6"><strong>Enquiry For:</strong> {formData.enquiryFor || "—"}</div>
-                        <div className="col-sm-6"><strong>Parent Name:</strong> {formData.parentName || "—"}</div>
-                        <div className="col-sm-6"><strong>Phone:</strong> {formData.phone || "—"}</div>
-                        <div className="col-sm-6"><strong>Address:</strong> {formData.address || "—"}</div>
+                        <div className="col-sm-6"><strong>{t.admissions.slipForm.summaryKidName}</strong> {formData.kidName || "—"}</div>
+                        <div className="col-sm-6"><strong>{t.admissions.slipForm.summaryDob}</strong> {formData.dob || "—"}</div>
+                        <div className="col-sm-6"><strong>{t.admissions.slipForm.summaryEnquiryFor}</strong> {formData.enquiryFor || "—"}</div>
+                        <div className="col-sm-6"><strong>{t.admissions.slipForm.summaryParentName}</strong> {formData.parentName || "—"}</div>
+                        <div className="col-sm-6"><strong>{t.admissions.slipForm.summaryPhone}</strong> {formData.phone || "—"}</div>
+                        <div className="col-sm-6"><strong>{t.admissions.slipForm.summaryAddress}</strong> {formData.address || "—"}</div>
                         <div className="col-12 pt-1 border-top mt-2">
-                          <strong>How You Heard About Us:</strong>{" "}
+                          <strong>{t.admissions.slipForm.summaryReferral}</strong>{" "}
                           {formData.sources.length > 0
                             ? formData.sources
                                 .map((s) => (s === "Other" && formData.otherSource ? `Other (${formData.otherSource})` : s))
                                 .join(", ")
-                            : "Website / Direct"}
+                            : t.admissions.slipForm.summaryDirect}
                         </div>
                       </div>
                     </div>
@@ -815,21 +707,21 @@ export default function AdmissionsPage() {
                         onClick={resetForm}
                         className="btn btn-warning px-4 py-2 rounded-pill fw-bold text-dark"
                       >
-                        Submit Another Form
+                        {t.admissions.slipForm.submitAnother}
                       </button>
                       <button
                         onClick={() => window.print()}
                         className="btn btn-outline-primary px-4 py-2 rounded-pill fw-bold"
                       >
-                        🖨️ Print Confirmation
+                        {t.admissions.slipForm.printConfirmation}
                       </button>
                     </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="d-flex flex-column">
                     <div className="d-flex justify-content-between align-items-center mb-2 px-1">
-                      <span className="small text-muted fw-semibold">Please fill the details below accurately</span>
-                      <span className="small fw-bold" style={{ color: "#b91c1c" }}>* Indicates mandatory fields</span>
+                      <span className="small text-muted fw-semibold">{t.admissions.slipForm.fillAccurately}</span>
+                      <span className="small fw-bold" style={{ color: "#b91c1c" }}>{t.admissions.slipForm.mandatoryNotice}</span>
                     </div>
 
                     {/* Row 1: Kids Name */}
@@ -839,14 +731,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#2e7d32", fontSize: "0.88rem" }}
                         >
-                          Kids Name <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
+                          {t.admissions.slipForm.kidName} <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <input
                           type="text"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Enter child's full name *"
+                          placeholder={t.admissions.slipForm.kidNamePlaceholder}
                           required
                           value={formData.kidName}
                           onChange={(e) => setFormData({ ...formData, kidName: e.target.value })}
@@ -862,7 +754,7 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm mb-0"
                           style={{ backgroundColor: "#004a90", fontSize: "0.88rem", cursor: "pointer" }}
                         >
-                          Date Of Birth <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
+                          {t.admissions.slipForm.dob} <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </label>
                       </div>
                       <div className="col-12 col-md-9 input-col">
@@ -894,7 +786,7 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#2e7d32", fontSize: "0.88rem" }}
                         >
-                          Enquiry For <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
+                          {t.admissions.slipForm.enquiryFor} <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
@@ -904,16 +796,10 @@ export default function AdmissionsPage() {
                           value={formData.enquiryFor}
                           onChange={(e) => setFormData({ ...formData, enquiryFor: e.target.value })}
                         >
-                          <option value="">Select Grade / Class *</option>
-                          <option value="Play Group">Play Group (Ages 2 - 3)</option>
-                          <option value="Nursery">Nursery (Ages 3 - 4)</option>
-                          <option value="L.K.G">L.K.G (Ages 4 - 5)</option>
-                          <option value="U.K.G">U.K.G (Ages 5 - 6)</option>
-                          <option value="Class I">Class I</option>
-                          <option value="Class II">Class II</option>
-                          <option value="Class III">Class III</option>
-                          <option value="Class IV">Class IV</option>
-                          <option value="Class V">Class V</option>
+                          <option value="">{t.admissions.slipForm.selectGrade}</option>
+                          {t.admissions.slipForm.grades.map((grade: string) => (
+                            <option key={grade} value={grade}>{grade}</option>
+                          ))}
                         </select>
                       </div>
                     </div>
@@ -925,14 +811,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#004a90", fontSize: "0.88rem" }}
                         >
-                          Mother&apos;s/ Father&apos;s Name <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
+                          {t.admissions.slipForm.parentName} <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <input
                           type="text"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Parent / Guardian full name *"
+                          placeholder={t.admissions.slipForm.parentNamePlaceholder}
                           required
                           value={formData.parentName}
                           onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
@@ -947,14 +833,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#2e7d32", fontSize: "0.88rem" }}
                         >
-                          Mother&apos;s Occupation :
+                          {t.admissions.slipForm.motherOccupation} :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <input
                           type="text"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Mother's profession (Optional)"
+                          placeholder={t.admissions.slipForm.motherOccupationPlaceholder}
                           value={formData.motherOccupation}
                           onChange={(e) => setFormData({ ...formData, motherOccupation: e.target.value })}
                         />
@@ -968,14 +854,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#004a90", fontSize: "0.88rem" }}
                         >
-                          Father&apos;s Occupation :
+                          {t.admissions.slipForm.fatherOccupation} :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <input
                           type="text"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Father's profession (Optional)"
+                          placeholder={t.admissions.slipForm.fatherOccupationPlaceholder}
                           value={formData.fatherOccupation}
                           onChange={(e) => setFormData({ ...formData, fatherOccupation: e.target.value })}
                         />
@@ -989,14 +875,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#2e7d32", fontSize: "0.88rem" }}
                         >
-                          Address <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
+                          {t.admissions.slipForm.address} <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <textarea
                           rows={2}
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Residential address (Sector, locality, landmark...) *"
+                          placeholder={t.admissions.slipForm.addressPlaceholder}
                           required
                           value={formData.address}
                           onChange={(e) => setFormData({ ...formData, address: e.target.value })}
@@ -1011,7 +897,7 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#004a90", fontSize: "0.88rem" }}
                         >
-                          Phone <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
+                          {t.admissions.slipForm.phone} <span className="text-warning ms-1" style={{ fontSize: "1.1rem", lineHeight: 0.8 }}>*</span> :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
@@ -1019,7 +905,7 @@ export default function AdmissionsPage() {
                           type="tel"
                           pattern="[0-9]{10}"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="10-digit primary mobile number *"
+                          placeholder={t.admissions.slipForm.phonePlaceholder}
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -1034,14 +920,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#2e7d32", fontSize: "0.88rem" }}
                         >
-                          E-Mail (Mother) :
+                          {t.admissions.slipForm.motherEmail} :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <input
                           type="email"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Mother's email address (Optional)"
+                          placeholder={t.admissions.slipForm.motherEmailPlaceholder}
                           value={formData.motherEmail}
                           onChange={(e) => setFormData({ ...formData, motherEmail: e.target.value })}
                         />
@@ -1055,14 +941,14 @@ export default function AdmissionsPage() {
                           className="badge d-inline-flex d-md-flex align-items-center px-3 py-2 text-white fw-bold rounded-2 badge-slip shadow-sm"
                           style={{ backgroundColor: "#004a90", fontSize: "0.88rem" }}
                         >
-                          E-Mail (Father) :
+                          {t.admissions.slipForm.fatherEmail} :
                         </span>
                       </div>
                       <div className="col-12 col-md-9 input-col">
                         <input
                           type="email"
                           className="form-control rounded-2 fs-6 py-2"
-                          placeholder="Father's email address (Optional)"
+                          placeholder={t.admissions.slipForm.fatherEmailPlaceholder}
                           value={formData.fatherEmail}
                           onChange={(e) => setFormData({ ...formData, fatherEmail: e.target.value })}
                         />
@@ -1076,17 +962,11 @@ export default function AdmissionsPage() {
                         style={{ backgroundColor: "#2e7d32", fontSize: "0.88rem" }}
                       >
                         <span>📢</span>
-                        <span>How Did You Know About Rising Kids School ?</span>
+                        <span>{t.admissions.slipForm.referralTitle}</span>
                       </div>
 
                       <div className="row g-2 g-md-3 px-1">
-                        {[
-                          "Newspaper Leaflet",
-                          "Banner",
-                          "Pole Advertisement",
-                          "Website",
-                          "Reference",
-                        ].map((srcOption, idx) => (
+                        {t.admissions.slipForm.referralOptions.map((srcOption: string, idx: number) => (
                           <div key={idx} className="col-12 col-sm-6 col-md-4 referral-item">
                             <label
                               htmlFor={`src-${idx}`}
@@ -1131,7 +1011,7 @@ export default function AdmissionsPage() {
                               style={{ width: "1.15rem", height: "1.15rem", cursor: "pointer", flexShrink: 0 }}
                             />
                             <span className="small fw-semibold text-dark">
-                              Other (please specify)
+                              {t.admissions.slipForm.referralOther}
                             </span>
                           </label>
                         </div>
@@ -1141,7 +1021,7 @@ export default function AdmissionsPage() {
                             <input
                               type="text"
                               className="form-control rounded-2 fs-6 py-2"
-                              placeholder="Please specify how you heard about us..."
+                              placeholder={t.admissions.slipForm.otherPlaceholder}
                               value={formData.otherSource}
                               onChange={(e) => setFormData({ ...formData, otherSource: e.target.value })}
                             />
@@ -1163,11 +1043,11 @@ export default function AdmissionsPage() {
                     {/* Signatures Strip visible on print */}
                     <div className="d-none d-print-flex justify-content-between align-items-center signatures-strip pt-1 px-2">
                       <div>
-                        <span>Parent&apos;s Signature: </span>
+                        <span>{t.admissions.slipForm.parentSign} </span>
                         <span>____________________</span>
                       </div>
                       <div>
-                        <span>Admission In-Charge: </span>
+                        <span>{t.admissions.slipForm.inchargeSign} </span>
                         <span>____________________</span>
                       </div>
                     </div>
@@ -1189,10 +1069,10 @@ export default function AdmissionsPage() {
                         {submitting ? (
                           <>
                             <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            <span>Sending Application...</span>
+                            <span>{t.admissions.slipForm.submittingText}</span>
                           </>
                         ) : (
-                          <span>📩 Submit Admission Enquiry</span>
+                          <span>{t.admissions.slipForm.submitButton}</span>
                         )}
                       </button>
                       <button
@@ -1200,8 +1080,7 @@ export default function AdmissionsPage() {
                         onClick={() => window.print()}
                         className="btn btn-outline-secondary btn-lg fw-bold rounded-pill px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2"
                       >
-                        <span>🖨️</span>
-                        <span>Print Form</span>
+                        <span>{t.admissions.slipForm.printForm}</span>
                       </button>
                     </div>
                   </form>

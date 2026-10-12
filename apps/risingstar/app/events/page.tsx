@@ -2,14 +2,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { t } from "../lib/i18n";
 import GenericCarousel from "../components/GenericCarousel";
-import {
-  educationalTourPhotos,
-  picnicPhotos,
-  annualDayPhotos,
-  sportsDayPhotos,
-  olympiadPhotos,
-  csrRalliesPhotos,
-} from "../data/eventsCarouselData";
 
 export const metadata: Metadata = {
   title: t.meta.pages.events.title,
@@ -74,7 +66,7 @@ export default function EventsPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>📅</span>
-                    <span>Upcoming</span>
+                    <span>{t.events.breadcrumbChips.upcoming}</span>
                   </a>
 
                   <a
@@ -82,7 +74,7 @@ export default function EventsPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🗺️</span>
-                    <span>Tours</span>
+                    <span>{t.events.breadcrumbChips.tours}</span>
                   </a>
 
                   <a
@@ -90,7 +82,7 @@ export default function EventsPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🧺</span>
-                    <span>Picnics</span>
+                    <span>{t.events.breadcrumbChips.picnics}</span>
                   </a>
 
                   <a
@@ -98,7 +90,7 @@ export default function EventsPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🎭</span>
-                    <span>Annual Day</span>
+                    <span>{t.events.breadcrumbChips.annualDay}</span>
                   </a>
 
                   <a
@@ -106,7 +98,7 @@ export default function EventsPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🏃</span>
-                    <span>Sports Day</span>
+                    <span>{t.events.breadcrumbChips.sportsDay}</span>
                   </a>
 
                   <a
@@ -114,7 +106,7 @@ export default function EventsPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🧠</span>
-                    <span>Olympiad</span>
+                    <span>{t.events.breadcrumbChips.olympiad}</span>
                   </a>
 
                   <a
@@ -122,7 +114,7 @@ export default function EventsPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🌱</span>
-                    <span>CSR Rallies</span>
+                    <span>{t.events.breadcrumbChips.csrRallies}</span>
                   </a>
                 </div>
               </nav>
@@ -139,7 +131,7 @@ export default function EventsPage() {
                   }}
                 >
                   <span className="spinner-grow spinner-grow-sm text-warning" role="status" style={{ width: "0.6rem", height: "0.6rem" }}></span>
-                  <span>Co-Curricular Excellence</span>
+                  <span>{t.events.breadcrumbChips.coCurricularBadge}</span>
                 </span>
               </div>
             </div>
@@ -154,7 +146,7 @@ export default function EventsPage() {
           />
           <img
             src="/assets/events_banner.jpg"
-            alt="Rising Kids School Events - Educational Tours, Picnics, Annual Day, Sports Day, Olympiad, CSR Rallies"
+            alt={`${t.school.name} - ${t.nav.events}`}
             className="w-100 h-auto d-block hero-slider-img"
           />
         </picture>
@@ -165,13 +157,13 @@ export default function EventsPage() {
         <div className="container">
           <div className="text-center mb-4">
             <span className="badge bg-primary-subtle text-primary border border-primary px-3 py-1 rounded-pill fw-bold small mb-2">
-              CO-CURRICULAR CALENDAR
+              {t.events.pillarsStrip.tag}
             </span>
             <h2 className="fw-bold fs-3 text-dark mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Our 6 Signature Event Pillars
+              {t.events.pillarsStrip.heading}
             </h2>
             <p className="text-muted small col-md-7 mx-auto mb-0">
-              At Rising Kids School, experiential learning and joyous celebrations shape confident, empathetic, and resilient future leaders.
+              {t.events.pillarsStrip.subheading}
             </p>
           </div>
 
@@ -202,9 +194,9 @@ export default function EventsPage() {
                     </svg>
                   </div>
                   <div>
-                    <strong className="d-block text-dark small fw-bold mb-1">Educational Tours</strong>
+                    <strong className="d-block text-dark small fw-bold mb-1">{t.events.pillarsStrip.toursTitle}</strong>
                     <span className="badge px-2 py-1 rounded-pill small" style={{ backgroundColor: "#e0f2fe", color: "#0369a1", fontSize: "0.72rem" }}>
-                      Heritage & Visits
+                      {t.events.pillarsStrip.toursTag}
                     </span>
                   </div>
                 </div>
@@ -238,9 +230,9 @@ export default function EventsPage() {
                     </svg>
                   </div>
                   <div>
-                    <strong className="d-block text-dark small fw-bold mb-1">Picnics</strong>
+                    <strong className="d-block text-dark small fw-bold mb-1">{t.events.pillarsStrip.picnicsTitle}</strong>
                     <span className="badge px-2 py-1 rounded-pill small" style={{ backgroundColor: "#dcfce7", color: "#15803d", fontSize: "0.72rem" }}>
-                      Outdoor Joy
+                      {t.events.pillarsStrip.picnicsTag}
                     </span>
                   </div>
                 </div>
@@ -273,9 +265,9 @@ export default function EventsPage() {
                     </svg>
                   </div>
                   <div>
-                    <strong className="d-block text-dark small fw-bold mb-1">Annual Day</strong>
+                    <strong className="d-block text-dark small fw-bold mb-1">{t.events.pillarsStrip.annualDayTitle}</strong>
                     <span className="badge px-2 py-1 rounded-pill small" style={{ backgroundColor: "#ffe4e6", color: "#be123c", fontSize: "0.72rem" }}>
-                      100% Stage Play
+                      {t.events.pillarsStrip.annualDayTag}
                     </span>
                   </div>
                 </div>
@@ -309,9 +301,9 @@ export default function EventsPage() {
                     </svg>
                   </div>
                   <div>
-                    <strong className="d-block text-dark small fw-bold mb-1">Sports Day</strong>
+                    <strong className="d-block text-dark small fw-bold mb-1">{t.events.pillarsStrip.sportsDayTitle}</strong>
                     <span className="badge px-2 py-1 rounded-pill small" style={{ backgroundColor: "#fef3c7", color: "#b45309", fontSize: "0.72rem" }}>
-                      Track & Fitness
+                      {t.events.pillarsStrip.sportsDayTag}
                     </span>
                   </div>
                 </div>
@@ -346,9 +338,9 @@ export default function EventsPage() {
                     </svg>
                   </div>
                   <div>
-                    <strong className="d-block text-dark small fw-bold mb-1">Olympiad</strong>
+                    <strong className="d-block text-dark small fw-bold mb-1">{t.events.pillarsStrip.olympiadTitle}</strong>
                     <span className="badge px-2 py-1 rounded-pill small" style={{ backgroundColor: "#dbeafe", color: "#0369a1", fontSize: "0.72rem" }}>
-                      Academic Logic
+                      {t.events.pillarsStrip.olympiadTag}
                     </span>
                   </div>
                 </div>
@@ -380,9 +372,9 @@ export default function EventsPage() {
                     </svg>
                   </div>
                   <div>
-                    <strong className="d-block text-dark small fw-bold mb-1">CSR Rallies</strong>
+                    <strong className="d-block text-dark small fw-bold mb-1">{t.events.pillarsStrip.csrRalliesTitle}</strong>
                     <span className="badge px-2 py-1 rounded-pill small" style={{ backgroundColor: "#ede9fe", color: "#6d28d9", fontSize: "0.72rem" }}>
-                      Social Care
+                      {t.events.pillarsStrip.csrRalliesTag}
                     </span>
                   </div>
                 </div>
@@ -399,13 +391,13 @@ export default function EventsPage() {
         <div className="container">
           <div className="text-center mb-5">
             <span className="badge bg-warning text-dark border border-warning px-3 py-1 rounded-pill fw-bold small mb-2 shadow-sm">
-              🎉 UPCOMING CELEBRATIONS
+              🎉 {t.events.upcomingSection.tag}
             </span>
             <h2 className="display-6 fw-bold text-dark mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
-              Upcoming School Events & Festivals
+              {t.events.upcomingSection.heading}
             </h2>
             <p className="lead text-muted col-md-8 mx-auto fs-6">
-              Immersing young minds in joyful traditions, moral values, and cultural harmony through festive assemblies, theatrical role-play, and hands-on creative activities.
+              {t.events.upcomingSection.subheading}
             </p>
           </div>
 
@@ -439,45 +431,39 @@ export default function EventsPage() {
                         fontSize: "0.82rem",
                       }}
                     >
-                      📅 October
+                      📅 {t.events.upcomingSection.dussehra.date}
                     </span>
                   </div>
 
                   <span className="badge bg-warning-subtle text-dark border border-warning px-2 py-1 rounded-pill small fw-bold mb-2">
-                    Vijayadashami Assembly
+                    {t.events.upcomingSection.dussehra.badge}
                   </span>
                   <h3 className="fw-bold fs-4 text-dark mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    Dussehra Celebration
+                    {t.events.upcomingSection.dussehra.title}
                   </h3>
                   <p className="text-muted small mb-3" style={{ lineHeight: 1.6 }}>
-                    Celebrating the eternal triumph of goodness, truth, and courage over negativity through lively role-play and creative crafts.
+                    {t.events.upcomingSection.dussehra.desc}
                   </p>
 
                   <div className="p-3 rounded-3 bg-light border mb-3">
-                    <strong className="d-block small text-dark mb-2">Key Festivities:</strong>
+                    <strong className="d-block small text-dark mb-2">{t.events.upcomingSection.keyFestivitiesLabel}</strong>
                     <ul className="list-unstyled mb-0 d-flex flex-column gap-2 text-muted" style={{ fontSize: "0.83rem" }}>
-                      <li className="d-flex align-items-start gap-2">
-                        <span className="text-warning fw-bold">✦</span>
-                        <span><strong>Ramleela Skits:</strong> Moral role-play enacting the timeless values of righteousness and courage.</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2">
-                        <span className="text-warning fw-bold">✦</span>
-                        <span><strong>Eco Ravana Craft:</strong> Miniature effigy and puppet making using recyclable paper materials.</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2">
-                        <span className="text-warning fw-bold">✦</span>
-                        <span><strong>Ethnic Dress Day:</strong> Traditional Indian wear celebration & festive shloka chanting.</span>
-                      </li>
+                      {t.events.upcomingSection.dussehra.festivities.map((item, fIdx) => (
+                        <li key={fIdx} className="d-flex align-items-start gap-2">
+                          <span className="text-warning fw-bold">✦</span>
+                          <span><strong>{item.label}</strong> {item.desc}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
 
                 <div className="px-4 py-3 bg-light border-top d-flex align-items-center justify-content-between">
                   <span className="text-muted" style={{ fontSize: "0.78rem" }}>
-                    🎒 Playgroup to Class V
+                    🎒 {t.events.upcomingSection.dussehra.footerGrade}
                   </span>
                   <span className="badge bg-white text-dark border px-2 py-1 rounded-pill small fw-semibold">
-                    Culture & Values
+                    {t.events.upcomingSection.dussehra.footerTag}
                   </span>
                 </div>
               </div>
@@ -512,45 +498,39 @@ export default function EventsPage() {
                         fontSize: "0.82rem",
                       }}
                     >
-                      📅 October / November
+                      📅 {t.events.upcomingSection.diwali.date}
                     </span>
                   </div>
 
                   <span className="badge bg-warning text-dark px-2 py-1 rounded-pill small fw-bold mb-2">
-                    Festival of Lights
+                    {t.events.upcomingSection.diwali.badge}
                   </span>
                   <h3 className="fw-bold fs-4 text-dark mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    Diwali & Diya Gala
+                    {t.events.upcomingSection.diwali.title}
                   </h3>
                   <p className="text-muted small mb-3" style={{ lineHeight: 1.6 }}>
-                    Illuminating young hearts with love, harmony, environmental stewardship, and joyful classroom artistry.
+                    {t.events.upcomingSection.diwali.desc}
                   </p>
 
                   <div className="p-3 rounded-3 bg-light border mb-3">
-                    <strong className="d-block small text-dark mb-2">Key Festivities:</strong>
+                    <strong className="d-block small text-dark mb-2">{t.events.upcomingSection.keyFestivitiesLabel}</strong>
                     <ul className="list-unstyled mb-0 d-flex flex-column gap-2 text-muted" style={{ fontSize: "0.83rem" }}>
-                      <li className="d-flex align-items-start gap-2">
-                        <span className="text-warning fw-bold">✦</span>
-                        <span><strong>Clay Diya Painting:</strong> Hand-decorating earthen lamps with vivid paints, mirrors & sparkles.</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2">
-                        <span className="text-warning fw-bold">✦</span>
-                        <span><strong>Floral Rangoli Contests:</strong> Collaborative flower petal art developing color harmony and teamwork.</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2">
-                        <span className="text-warning fw-bold">✦</span>
-                        <span><strong>Green Diwali Pledge:</strong> Pledging for clean air, kindness to animals, and zero-smoke celebrations.</span>
-                      </li>
+                      {t.events.upcomingSection.diwali.festivities.map((item, fIdx) => (
+                        <li key={fIdx} className="d-flex align-items-start gap-2">
+                          <span className="text-warning fw-bold">✦</span>
+                          <span><strong>{item.label}</strong> {item.desc}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
 
                 <div className="px-4 py-3 bg-light border-top d-flex align-items-center justify-content-between">
                   <span className="text-muted" style={{ fontSize: "0.78rem" }}>
-                    🎒 All Grades & Faculty
+                    🎒 {t.events.upcomingSection.diwali.footerGrade}
                   </span>
                   <span className="badge bg-white text-dark border px-2 py-1 rounded-pill small fw-semibold">
-                    Diya & Rangoli Gala
+                    {t.events.upcomingSection.diwali.footerTag}
                   </span>
                 </div>
               </div>
@@ -585,45 +565,39 @@ export default function EventsPage() {
                         fontSize: "0.82rem",
                       }}
                     >
-                      📅 December 24–25
+                      📅 {t.events.upcomingSection.christmas.date}
                     </span>
                   </div>
 
                   <span className="badge bg-danger-subtle text-danger border border-danger px-2 py-1 rounded-pill small fw-bold mb-2">
-                    Winter Carnival & Carols
+                    {t.events.upcomingSection.christmas.badge}
                   </span>
                   <h3 className="fw-bold fs-4 text-dark mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                    Christmas Carnival
+                    {t.events.upcomingSection.christmas.title}
                   </h3>
                   <p className="text-muted small mb-3" style={{ lineHeight: 1.6 }}>
-                    Welcoming the magical winter cheer with Santa Claus, twinkling fairy lights, harmonious carols, and the joy of giving.
+                    {t.events.upcomingSection.christmas.desc}
                   </p>
 
                   <div className="p-3 rounded-3 bg-light border mb-3">
-                    <strong className="d-block small text-dark mb-2">Key Festivities:</strong>
+                    <strong className="d-block small text-dark mb-2">{t.events.upcomingSection.keyFestivitiesLabel}</strong>
                     <ul className="list-unstyled mb-0 d-flex flex-column gap-2 text-muted" style={{ fontSize: "0.83rem" }}>
-                      <li className="d-flex align-items-start gap-2">
-                        <span className="text-danger fw-bold">✦</span>
-                        <span><strong>Santa Claus Visit:</strong> Jolly laughs, jingling bells, surprise candy pouches, and photo memories.</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2">
-                        <span className="text-danger fw-bold">✦</span>
-                        <span><strong>Tree Decoration:</strong> Adorning pine branches with stars, ribbons, stockings, and paper snowflakes.</span>
-                      </li>
-                      <li className="d-flex align-items-start gap-2">
-                        <span className="text-danger fw-bold">✦</span>
-                        <span><strong>Carol Choir & Joy of Giving:</strong> Melodious choir singing and Secret Santa handmade cards exchange.</span>
-                      </li>
+                      {t.events.upcomingSection.christmas.festivities.map((item, fIdx) => (
+                        <li key={fIdx} className="d-flex align-items-start gap-2">
+                          <span className="text-danger fw-bold">✦</span>
+                          <span><strong>{item.label}</strong> {item.desc}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
 
                 <div className="px-4 py-3 bg-light border-top d-flex align-items-center justify-content-between">
                   <span className="text-muted" style={{ fontSize: "0.78rem" }}>
-                    🎒 Whole School Community
+                    🎒 {t.events.upcomingSection.christmas.footerGrade}
                   </span>
                   <span className="badge bg-white text-dark border px-2 py-1 rounded-pill small fw-semibold">
-                    Santa & Carols Choir
+                    {t.events.upcomingSection.christmas.footerTag}
                   </span>
                 </div>
               </div>
@@ -640,66 +614,30 @@ export default function EventsPage() {
           <div className="row align-items-center g-5">
             <div className="col-lg-7">
               <span className="badge bg-primary-subtle text-primary border border-primary px-3 py-1 rounded-pill fw-bold small mb-2">
-                1. EXPERIENTIAL LEARNING & HERITAGE
+                {t.events.educationalTours.badge}
               </span>
               <h2 className="display-6 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Educational Tours & Field Visits
+                {t.events.educationalTours.title}
               </h2>
               <p className="lead text-primary fw-semibold mb-3" style={{ fontSize: "1.08rem" }}>
-                Expanding young horizons beyond textbook pages through structured experiential journeys.
+                {t.events.educationalTours.lead}
               </p>
               <p className="text-muted mb-4" style={{ lineHeight: 1.7 }}>
-                At Rising Kids School, learning is never confined to classroom walls. Our carefully planned educational field tours take children to architectural landmarks, planetariums, science museums, botanical gardens, and local craft centers. These journeys connect classroom lessons with real-world wonder, fostering acute observational skills, intellectual curiosity, and cultural pride.
+                {t.events.educationalTours.desc}
               </p>
 
               <div className="row g-3">
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🏛️</span>
-                      <strong className="text-dark small">Heritage & History</strong>
+                {t.events.educationalTours.features.map((feat, idx) => (
+                  <div key={idx} className="col-sm-6">
+                    <div className="p-3 rounded-4 bg-light border h-100">
+                      <div className="d-flex align-items-center gap-2 mb-2">
+                        <span className="fs-4">{feat.icon}</span>
+                        <strong className="text-dark small">{feat.title}</strong>
+                      </div>
+                      <p className="small text-muted mb-0">{feat.desc}</p>
                     </div>
-                    <p className="small text-muted mb-0">
-                      Visiting historic monuments and architectural gems to discover India&apos;s rich cultural tapestry firsthand.
-                    </p>
                   </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🔬</span>
-                      <strong className="text-dark small">Science & Planetariums</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Interactive science centers, galaxy dome shows, and nature labs that ignite a passion for discovery.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🛡️</span>
-                      <strong className="text-dark small">100% Safe Supervision</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Full teacher and female attendant escort, certified first-aid kits, and real-time parent transit notifications.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">📝</span>
-                      <strong className="text-dark small">Reflective Learning</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Post-tour classroom drawing worksheets, journaling, and group presentations to consolidate knowledge.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -713,35 +651,29 @@ export default function EventsPage() {
               >
                 <div className="d-flex align-items-center justify-content-between mb-3">
                   <span className="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill">
-                    Annual Term Expedition
+                    {t.events.educationalTours.highlightsBadge}
                   </span>
                   <span className="fs-3">🗺️</span>
                 </div>
-                <h4 className="fw-bold text-white mb-2">Tour Highlights</h4>
+                <h4 className="fw-bold text-white mb-2">{t.events.educationalTours.highlightsTitle}</h4>
                 <p className="text-white text-opacity-80 small mb-4">
-                  Every tour is integrated with our curriculum syllabus for Classes Nursery to V.
+                  {t.events.educationalTours.highlightsSubtitle}
                 </p>
 
                 <ul className="list-unstyled d-flex flex-column gap-3 small text-white text-opacity-90 mb-4">
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Destinations:</strong> Heritage Monuments, Science City, Botanical Parks, Dairy & Farm Centers.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Ratio:</strong> 1 Teacher per 8 Students with dedicated support staff.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Skill Outcome:</strong> Inquiry-based thinking, group coordination, and observational acumen.</span>
-                  </li>
+                  {t.events.educationalTours.highlights.map((item, idx) => (
+                    <li key={idx} className="d-flex align-items-start gap-2">
+                      <span className="text-warning fw-bold">✓</span>
+                      <span><strong>{item.label}</strong> {item.desc}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <Link
                   href="/admissions"
                   className="btn btn-warning w-100 fw-bold rounded-pill text-dark d-inline-flex align-items-center justify-content-center gap-2"
                 >
-                  <span>Inquire for Admission</span>
+                  <span>{t.events.educationalTours.button}</span>
                   <span>→</span>
                 </Link>
               </div>
@@ -751,11 +683,11 @@ export default function EventsPage() {
           {/* Educational Tours Horizontal Scrollable Carousel */}
           <GenericCarousel
             className="mt-5 pt-4 border-top"
-            badge="PHOTO MEMORIES"
-            subBadge="Field Expeditions"
-            title="Learning Through Exploration & Discovery"
-            subtitle="Swipe or use controls to browse our students' real-world journeys across heritage, science, and nature."
-            items={educationalTourPhotos}
+            badge={t.events.educationalTours.carousel.badge}
+            subBadge={t.events.educationalTours.carousel.subBadge}
+            title={t.events.educationalTours.carousel.title}
+            subtitle={t.events.educationalTours.carousel.subtitle}
+            items={t.events.photos.educationalTours}
           />
         </div>
       </section>
@@ -768,66 +700,30 @@ export default function EventsPage() {
           <div className="row align-items-center g-5 flex-lg-row-reverse">
             <div className="col-lg-7">
               <span className="badge bg-success-subtle text-success border border-success px-3 py-1 rounded-pill fw-bold small mb-2">
-                2. JOYFUL OUTDOOR BONDING
+                {t.events.picnics.badge}
               </span>
               <h2 className="display-6 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                School Picnics & Nature Excursions
+                {t.events.picnics.title}
               </h2>
               <p className="lead text-success fw-semibold mb-3" style={{ fontSize: "1.08rem" }}>
-                Unstructured outdoor joy, social bonding, and nature discovery in safe green spaces.
+                {t.events.picnics.lead}
               </p>
               <p className="text-muted mb-4" style={{ lineHeight: 1.7 }}>
-                Our annual picnics offer children a rejuvenating escape into fresh air and open lawns. Away from screens and desks, students bond with teachers and classmates through group picnic games, nature scavenger hunts, and shared tiffin baskets. Picnics develop lifelong values of sharing, mutual respect, table manners, and joy in collective play.
+                {t.events.picnics.desc}
               </p>
 
               <div className="row g-3">
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🌳</span>
-                      <strong className="text-dark small">Lush Green Venues</strong>
+                {t.events.picnics.features.map((feat, idx) => (
+                  <div key={idx} className="col-sm-6">
+                    <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
+                      <div className="d-flex align-items-center gap-2 mb-2">
+                        <span className="fs-4">{feat.icon}</span>
+                        <strong className="text-dark small">{feat.title}</strong>
+                      </div>
+                      <p className="small text-muted mb-0">{feat.desc}</p>
                     </div>
-                    <p className="small text-muted mb-0">
-                      Carefully vetted open-air amusement and ecological parks with clean child-safe play equipment.
-                    </p>
                   </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🥪</span>
-                      <strong className="text-dark small">Community Meals & Sharing</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Encouraging table manners, healthy eating habits, and the joy of sharing snacks with friends.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🎈</span>
-                      <strong className="text-dark small">Lively Group Games</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Parachute play, sack races, tug-of-war, musical statues, and frisbee on sprawling manicured grass.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🚌</span>
-                      <strong className="text-dark small">Safe School Vans</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Comfortable transport driven by vetted drivers and accompanied by watchful class mentors.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -841,35 +737,29 @@ export default function EventsPage() {
               >
                 <div className="d-flex align-items-center justify-content-between mb-3">
                   <span className="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill">
-                    Winter Season Fun
+                    {t.events.picnics.highlightsBadge}
                   </span>
                   <span className="fs-3">🧺</span>
                 </div>
-                <h4 className="fw-bold text-white mb-2">Picnic Experience</h4>
+                <h4 className="fw-bold text-white mb-2">{t.events.picnics.highlightsTitle}</h4>
                 <p className="text-white text-opacity-80 small mb-4">
-                  Organized every winter season across lush picnic destinations around NCR.
+                  {t.events.picnics.highlightsSubtitle}
                 </p>
 
                 <ul className="list-unstyled d-flex flex-column gap-3 small text-white text-opacity-90 mb-4">
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Timing:</strong> November to February during sunny winter afternoons.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Food & Hydration:</strong> Hygienic fresh meals, fresh juices, and filtered mineral water.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Development:</strong> Social-emotional bonding, active outdoor wellness, and sensory relaxation.</span>
-                  </li>
+                  {t.events.picnics.highlights.map((item, idx) => (
+                    <li key={idx} className="d-flex align-items-start gap-2">
+                      <span className="text-warning fw-bold">✓</span>
+                      <span><strong>{item.label}</strong> {item.desc}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <a
                   href="#join-events"
                   className="btn btn-warning w-100 fw-bold rounded-pill text-dark d-inline-flex align-items-center justify-content-center gap-2"
                 >
-                  <span>Connect with Rising Kids</span>
+                  <span>{t.events.picnics.button}</span>
                   <span>→</span>
                 </a>
               </div>
@@ -879,11 +769,11 @@ export default function EventsPage() {
           {/* School Picnics Photo Carousel */}
           <GenericCarousel
             className="mt-5 pt-4 border-top"
-            badge="OUTDOOR EXCURSIONS"
-            subBadge="Picnic Memories"
-            title="Sunny Picnics, Nature Play & Community Meals"
-            subtitle="Catch glimpses of our joyful winter picnics, lawn games, and shared laughter in open parks."
-            items={picnicPhotos}
+            badge={t.events.picnics.carousel.badge}
+            subBadge={t.events.picnics.carousel.subBadge}
+            title={t.events.picnics.carousel.title}
+            subtitle={t.events.picnics.carousel.subtitle}
+            items={t.events.photos.picnics}
           />
         </div>
       </section>
@@ -896,66 +786,30 @@ export default function EventsPage() {
           <div className="row align-items-center g-5">
             <div className="col-lg-7">
               <span className="badge bg-danger-subtle text-danger border border-danger px-3 py-1 rounded-pill fw-bold small mb-2">
-                3. GRAND STAGE SPECTACLE
+                {t.events.annualDay.badge}
               </span>
               <h2 className="display-6 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Annual Day & Cultural Celebration
+                {t.events.annualDay.title}
               </h2>
               <p className="lead text-danger fw-semibold mb-3" style={{ fontSize: "1.08rem" }}>
-                Empowering 100% student stage participation, creative expression, and artistic excellence.
+                {t.events.annualDay.lead}
               </p>
               <p className="text-muted mb-4" style={{ lineHeight: 1.7 }}>
-                The Grand Annual Function is the crowning cultural milestone of our academic year. At Rising Kids School, we champion a strict <strong>100% stage participation policy</strong> — ensuring every student from Playgroup to Class V performs before a proud audience of parents and mentors. From vibrant folk rhythms and theatrical value dramas to musical recitals, children shed inhibitions and discover unshakeable confidence.
+                {t.events.annualDay.desc}
               </p>
 
               <div className="row g-3">
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🌟</span>
-                      <strong className="text-dark small">100% Stage Time Policy</strong>
+                {t.events.annualDay.features.map((feat, idx) => (
+                  <div key={idx} className="col-sm-6">
+                    <div className="p-3 rounded-4 bg-light border h-100">
+                      <div className="d-flex align-items-center gap-2 mb-2">
+                        <span className="fs-4">{feat.icon}</span>
+                        <strong className="text-dark small">{feat.title}</strong>
+                      </div>
+                      <p className="small text-muted mb-0">{feat.desc}</p>
                     </div>
-                    <p className="small text-muted mb-0">
-                      No child is left behind in the audience. Every single child performs under the auditorium lights.
-                    </p>
                   </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">💃</span>
-                      <strong className="text-dark small">Thematic Dance & Drama</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Traditional classical, patriotic dances, rhymes recitation, and value-packed theatrical skits.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🏆</span>
-                      <strong className="text-dark small">Annual Prize Distribution</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Honoring academic toppers, 100% attendance achievers, star artists, and good citizens.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">👨‍👩‍👧‍👦</span>
-                      <strong className="text-dark small">Family Celebration</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      A grand gathering with parents and grandparents celebrating the growth of our young stars.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -969,35 +823,29 @@ export default function EventsPage() {
               >
                 <div className="d-flex align-items-center justify-content-between mb-3">
                   <span className="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill">
-                    Flagship Gala
+                    {t.events.annualDay.highlightsBadge}
                   </span>
                   <span className="fs-3">🎭</span>
                 </div>
-                <h4 className="fw-bold text-white mb-2">Stage Magic</h4>
+                <h4 className="fw-bold text-white mb-2">{t.events.annualDay.highlightsTitle}</h4>
                 <p className="text-white text-opacity-80 small mb-4">
-                  Transforming shy voices into bold, expressive performers through professional stage training.
+                  {t.events.annualDay.highlightsSubtitle}
                 </p>
 
                 <ul className="list-unstyled d-flex flex-column gap-3 small text-white text-opacity-90 mb-4">
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Costumes:</strong> Thematic, colourful stage costumes curated for every age group.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Audio-Visual:</strong> Professional theatrical lighting, sound engineering, and HD video captures.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Outcome:</strong> Lifelong public-speaking confidence and expressive body language.</span>
-                  </li>
+                  {t.events.annualDay.highlights.map((item, idx) => (
+                    <li key={idx} className="d-flex align-items-start gap-2">
+                      <span className="text-warning fw-bold">✓</span>
+                      <span><strong>{item.label}</strong> {item.desc}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <Link
                   href="/admissions"
                   className="btn btn-warning w-100 fw-bold rounded-pill text-dark d-inline-flex align-items-center justify-content-center gap-2"
                 >
-                  <span>Inquire for Admission</span>
+                  <span>{t.events.annualDay.button}</span>
                   <span>→</span>
                 </Link>
               </div>
@@ -1007,11 +855,11 @@ export default function EventsPage() {
           {/* Annual Day Cultural Carousel */}
           <GenericCarousel
             className="mt-5 pt-4 border-top"
-            badge="CULTURAL GALA"
-            subBadge="Stage Memories"
-            title="100% Stage Participation, Dance & Theatrical Drama"
-            subtitle="Relive the glittering performances, colourful thematic costumes, and proud moments of our annual function."
-            items={annualDayPhotos}
+            badge={t.events.annualDay.carousel.badge}
+            subBadge={t.events.annualDay.carousel.subBadge}
+            title={t.events.annualDay.carousel.title}
+            subtitle={t.events.annualDay.carousel.subtitle}
+            items={t.events.photos.annualDay}
           />
         </div>
       </section>
@@ -1024,66 +872,30 @@ export default function EventsPage() {
           <div className="row align-items-center g-5 flex-lg-row-reverse">
             <div className="col-lg-7">
               <span className="badge bg-warning-subtle text-dark border border-warning px-3 py-1 rounded-pill fw-bold small mb-2">
-                4. PHYSICAL FITNESS & SPORTSMANSHIP
+                {t.events.sportsDay.badge}
               </span>
               <h2 className="display-6 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Annual Sports Day & Athletic Meet
+                {t.events.sportsDay.title}
               </h2>
               <p className="lead text-primary fw-semibold mb-3" style={{ fontSize: "1.08rem" }}>
-                Building agility, resilience, healthy competition, and enduring sporting spirit.
+                {t.events.sportsDay.lead}
               </p>
               <p className="text-muted mb-4" style={{ lineHeight: 1.7 }}>
-                Sports Day at Rising Kids School celebrates the energetic spirit of our young athletes. Designed with age-tailored tracks, fun obstacle races, synchronized march pasts, and yoga demonstrations, the event teaches children that fitness is a joyful lifestyle and true victory lies in giving one&apos;s best and cheering for peers.
+                {t.events.sportsDay.desc}
               </p>
 
               <div className="row g-3">
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🏃</span>
-                      <strong className="text-dark small">Track & Field Sprints</strong>
+                {t.events.sportsDay.features.map((feat, idx) => (
+                  <div key={idx} className="col-sm-6">
+                    <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
+                      <div className="d-flex align-items-center gap-2 mb-2">
+                        <span className="fs-4">{feat.icon}</span>
+                        <strong className="text-dark small">{feat.title}</strong>
+                      </div>
+                      <p className="small text-muted mb-0">{feat.desc}</p>
                     </div>
-                    <p className="small text-muted mb-0">
-                      50m/100m dashes, baton relays, hoop hops, and agility obstacle courses tailored by grade.
-                    </p>
                   </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🧘</span>
-                      <strong className="text-dark small">Mass Drill & Yoga Display</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Synchronized dumbbell exercises, ribbon drills, and calming Surya Namaskar formations.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🥇</span>
-                      <strong className="text-dark small">Medals & House Trophies</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Gold, Silver, and Bronze medals for winners alongside participation certificates for all.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🤝</span>
-                      <strong className="text-dark small">Parent-Teacher Fun Races</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Delightful lemon-and-spoon and tug-of-war races with parents cheering on the field.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -1097,35 +909,29 @@ export default function EventsPage() {
               >
                 <div className="d-flex align-items-center justify-content-between mb-3">
                   <span className="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill">
-                    Athletics & Agility
+                    {t.events.sportsDay.highlightsBadge}
                   </span>
                   <span className="fs-3">🏆</span>
                 </div>
-                <h4 className="fw-bold text-white mb-2">Fit India Champions</h4>
+                <h4 className="fw-bold text-white mb-2">{t.events.sportsDay.highlightsTitle}</h4>
                 <p className="text-white text-opacity-80 small mb-4">
-                  Fostering gross motor skills, stamina, and healthy sportsmanship from Kindergarten upwards.
+                  {t.events.sportsDay.highlightsSubtitle}
                 </p>
 
                 <ul className="list-unstyled d-flex flex-column gap-3 small text-white text-opacity-90 mb-4">
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Pre-Primary Races:</strong> Ball collection, frog jump, caterpillar race, beanbag toss.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Primary Events:</strong> 100m sprint, 4x50m relay, long jump, tug-of-war.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Core Values:</strong> Teamwork, resilience, sportsmanship, and personal best.</span>
-                  </li>
+                  {t.events.sportsDay.highlights.map((item, idx) => (
+                    <li key={idx} className="d-flex align-items-start gap-2">
+                      <span className="text-warning fw-bold">✓</span>
+                      <span><strong>{item.label}</strong> {item.desc}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <a
                   href="#join-events"
                   className="btn btn-warning w-100 fw-bold rounded-pill text-dark d-inline-flex align-items-center justify-content-center gap-2"
                 >
-                  <span>Explore Sports Program</span>
+                  <span>{t.events.sportsDay.button}</span>
                   <span>→</span>
                 </a>
               </div>
@@ -1135,11 +941,11 @@ export default function EventsPage() {
           {/* Sports Day Athletic Carousel */}
           <GenericCarousel
             className="mt-5 pt-4 border-top"
-            badge="FITNESS & AGILITY"
-            subBadge="Sports Memories"
-            title="Track Sprints, Agility Drills & Victory Celebrations"
-            subtitle="Celebrating youthful stamina, synchronized yoga formations, and active sporting camaraderie."
-            items={sportsDayPhotos}
+            badge={t.events.sportsDay.carousel.badge}
+            subBadge={t.events.sportsDay.carousel.subBadge}
+            title={t.events.sportsDay.carousel.title}
+            subtitle={t.events.sportsDay.carousel.subtitle}
+            items={t.events.photos.sportsDay}
           />
         </div>
       </section>
@@ -1152,66 +958,30 @@ export default function EventsPage() {
           <div className="row align-items-center g-5">
             <div className="col-lg-7">
               <span className="badge bg-info-subtle text-dark border border-info px-3 py-1 rounded-pill fw-bold small mb-2">
-                5. ACADEMIC EXCELLENCE & LOGICAL REASONING
+                {t.events.olympiad.badge}
               </span>
               <h2 className="display-6 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                National & International Olympiads
+                {t.events.olympiad.title}
               </h2>
               <p className="lead text-primary fw-semibold mb-3" style={{ fontSize: "1.08rem" }}>
-                Cultivating critical thinking, mathematical acumen, and national competitive exposure.
+                {t.events.olympiad.lead}
               </p>
               <p className="text-muted mb-4" style={{ lineHeight: 1.7 }}>
-                Rising Kids School actively prepares and registers primary students for prestigious national and international Olympiad examinations. Through Science (NSO), Mathematics (IMO), English (IEO), Cyber (NCO), and General Knowledge Olympiads, our learners develop sharp analytical faculties, out-of-the-box problem solving, and confidence to compete at higher levels.
+                {t.events.olympiad.desc}
               </p>
 
               <div className="row g-3">
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">📐</span>
-                      <strong className="text-dark small">Math & Science (IMO / NSO)</strong>
+                {t.events.olympiad.features.map((feat, idx) => (
+                  <div key={idx} className="col-sm-6">
+                    <div className="p-3 rounded-4 bg-light border h-100">
+                      <div className="d-flex align-items-center gap-2 mb-2">
+                        <span className="fs-4">{feat.icon}</span>
+                        <strong className="text-dark small">{feat.title}</strong>
+                      </div>
+                      <p className="small text-muted mb-0">{feat.desc}</p>
                     </div>
-                    <p className="small text-muted mb-0">
-                      Application-based numeric logic, pattern identification, and scientific aptitude questions.
-                    </p>
                   </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">📖</span>
-                      <strong className="text-dark small">English & Cyber (IEO / NCO)</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Advanced grammar, phonics mastery, reading comprehension, and digital technology concepts.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🏅</span>
-                      <strong className="text-dark small">Certificates & Medals</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Merit certificates, national percentiles, and gold medals that boost academic self-esteem.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-light border h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">📚</span>
-                      <strong className="text-dark small">Dedicated Mentorship</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Special teacher mentoring, conceptual worksheets, and previous-year mock test practice.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -1225,35 +995,29 @@ export default function EventsPage() {
               >
                 <div className="d-flex align-items-center justify-content-between mb-3">
                   <span className="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill">
-                    Class I to Class V
+                    {t.events.olympiad.highlightsBadge}
                   </span>
                   <span className="fs-3">🧠</span>
                 </div>
-                <h4 className="fw-bold text-white mb-2">Olympiad Program</h4>
+                <h4 className="fw-bold text-white mb-2">{t.events.olympiad.highlightsTitle}</h4>
                 <p className="text-white text-opacity-80 small mb-4">
-                  Building strong conceptual reasoning from the earliest formative school years.
+                  {t.events.olympiad.highlightsSubtitle}
                 </p>
 
                 <ul className="list-unstyled d-flex flex-column gap-3 small text-white text-opacity-90 mb-4">
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Subjects:</strong> Mathematics (IMO), Science (NSO), English (IEO), Cyber (NCO), GK (IGKO).</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Preparation:</strong> In-school weekly puzzle challenges and reasoning worksheets.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Benefit:</strong> Deep conceptual clarity eliminating fear of competitive assessments.</span>
-                  </li>
+                  {t.events.olympiad.highlights.map((item, idx) => (
+                    <li key={idx} className="d-flex align-items-start gap-2">
+                      <span className="text-warning fw-bold">✓</span>
+                      <span><strong>{item.label}</strong> {item.desc}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <Link
                   href="/curriculum"
                   className="btn btn-warning w-100 fw-bold rounded-pill text-dark d-inline-flex align-items-center justify-content-center gap-2"
                 >
-                  <span>Explore Academic Syllabus</span>
+                  <span>{t.events.olympiad.button}</span>
                   <span>→</span>
                 </Link>
               </div>
@@ -1263,15 +1027,15 @@ export default function EventsPage() {
           {/* Academic Olympiads Carousel */}
           <GenericCarousel
             className="mt-5 pt-4 border-top"
-            badge="ACADEMIC MERIT"
-            subBadge="Olympiad Stars"
-            title="Analytical Thinking, Cyber Logic & National Contests"
-            subtitle="Celebrating young minds solving complex puzzles, excelling in IT labs, and earning national medals."
+            badge={t.events.olympiad.carousel.badge}
+            subBadge={t.events.olympiad.carousel.subBadge}
+            title={t.events.olympiad.carousel.title}
+            subtitle={t.events.olympiad.carousel.subtitle}
             actionLink={{
               href: "/curriculum",
-              label: "Explore Curriculum",
+              label: (t.events.olympiad.carousel as any).actionLabel || t.events.olympiad.button,
             }}
-            items={olympiadPhotos}
+            items={t.events.photos.olympiad}
           />
         </div>
       </section>
@@ -1283,67 +1047,31 @@ export default function EventsPage() {
         <div className="container">
           <div className="row align-items-center g-5 flex-lg-row-reverse">
             <div className="col-lg-7">
-              <span className="badge bg-purple-subtle text-purple border border-purple px-3 py-1 rounded-pill fw-bold small mb-2" style={{ backgroundColor: "rgba(111, 66, 193, 0.12)", color: "var(--secondary-grape)" }}>
-                6. SOCIAL RESPONSIBILITY & COMMUNITY CARE
+              <span className="badge border px-3 py-1 rounded-pill fw-bold small mb-2" style={{ backgroundColor: "rgba(111, 66, 193, 0.12)", color: "var(--secondary-grape)", borderColor: "rgba(111, 66, 193, 0.3)" }}>
+                {t.events.csrRallies.badge}
               </span>
               <h2 className="display-6 fw-bold text-dark mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                CSR Rallies & Social Initiatives
+                {t.events.csrRallies.title}
               </h2>
               <p className="lead fw-semibold mb-3" style={{ color: "var(--secondary-grape)", fontSize: "1.08rem" }}>
-                &ldquo;Greener Tomorrow Together&rdquo; — Nurturing empathetic, eco-conscious global citizens.
+                {t.events.csrRallies.lead}
               </p>
               <p className="text-muted mb-4" style={{ lineHeight: 1.7 }}>
-                At Rising Kids School, moral and character education is given utmost priority. Through our dedicated CSR rallies and community awareness walks, children become champions of social causes. Whether it is sapling plantation, Swachh Bharat cleanliness rallies, anti-plastic drives, or kindness weeks, our students learn that they have the power to create a positive impact on the world around them.
+                {t.events.csrRallies.desc}
               </p>
 
               <div className="row g-3">
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🌳</span>
-                      <strong className="text-dark small">Tree Plantation Drives</strong>
+                {t.events.csrRallies.features.map((feat, idx) => (
+                  <div key={idx} className="col-sm-6">
+                    <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
+                      <div className="d-flex align-items-center gap-2 mb-2">
+                        <span className="fs-4">{feat.icon}</span>
+                        <strong className="text-dark small">{feat.title}</strong>
+                      </div>
+                      <p className="small text-muted mb-0">{feat.desc}</p>
                     </div>
-                    <p className="small text-muted mb-0">
-                      &ldquo;Greener Tomorrow Together&rdquo; — students plant saplings with teachers and adopt them to care for.
-                    </p>
                   </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">♻️</span>
-                      <strong className="text-dark small">Anti-Plastic Eco Walks</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Neighborhood slogan rallies promoting cloth bags, paper reuse, and eco-friendly home habits.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🧹</span>
-                      <strong className="text-dark small">Swachh Vidyalaya & Civic Sense</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Teaching waste segregation (Wet/Dry bins), clean hands hygiene, and respect for public spaces.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-sm-6">
-                  <div className="p-3 rounded-4 bg-white border shadow-sm h-100">
-                    <div className="d-flex align-items-center gap-2 mb-2">
-                      <span className="fs-4">🎁</span>
-                      <strong className="text-dark small">Joy of Giving Drives</strong>
-                    </div>
-                    <p className="small text-muted mb-0">
-                      Sharing books, toys, and winter garments with underprivileged children during festive seasons.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -1357,35 +1085,29 @@ export default function EventsPage() {
               >
                 <div className="d-flex align-items-center justify-content-between mb-3">
                   <span className="badge bg-warning text-dark fw-bold px-3 py-1 rounded-pill">
-                    Greener Tomorrow Together
+                    {t.events.csrRallies.highlightsBadge}
                   </span>
                   <span className="fs-3">🌱</span>
                 </div>
-                <h4 className="fw-bold text-white mb-2">Social Awareness</h4>
+                <h4 className="fw-bold text-white mb-2">{t.events.csrRallies.highlightsTitle}</h4>
                 <p className="text-white text-opacity-80 small mb-4">
-                  Instilling heart-to-heart values of empathy, ecology, and civic mindfulness.
+                  {t.events.csrRallies.highlightsSubtitle}
                 </p>
 
                 <ul className="list-unstyled d-flex flex-column gap-3 small text-white text-opacity-90 mb-4">
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Plantation Drives:</strong> Every child participates in planting and nurturing plants.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Civic Drives:</strong> Slogan placard walks raising community awareness on traffic & hygiene.</span>
-                  </li>
-                  <li className="d-flex align-items-start gap-2">
-                    <span className="text-warning fw-bold">✓</span>
-                    <span><strong>Character Building:</strong> Empathy, humility, and environmental responsibility from childhood.</span>
-                  </li>
+                  {t.events.csrRallies.highlights.map((item, idx) => (
+                    <li key={idx} className="d-flex align-items-start gap-2">
+                      <span className="text-warning fw-bold">✓</span>
+                      <span><strong>{item.label}</strong> {item.desc}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <a
                   href="#join-events"
                   className="btn btn-warning w-100 fw-bold rounded-pill text-dark d-inline-flex align-items-center justify-content-center gap-2"
                 >
-                  <span>Join Our School Family</span>
+                  <span>{t.events.csrRallies.button}</span>
                   <span>→</span>
                 </a>
               </div>
@@ -1395,11 +1117,11 @@ export default function EventsPage() {
           {/* CSR Rallies & Social Initiatives Carousel */}
           <GenericCarousel
             className="mt-5 pt-4 border-top"
-            badge="COMMUNITY ACTION"
-            subBadge="Social Impact"
-            title="Eco Awareness, Tricolor Rallies & Civic Pride"
-            subtitle="Heartwarming memories of our young change-makers planting trees, rallying for cleanliness, and spreading kindness."
-            items={csrRalliesPhotos}
+            badge={t.events.csrRallies.carousel.badge}
+            subBadge={t.events.csrRallies.carousel.subBadge}
+            title={t.events.csrRallies.carousel.title}
+            subtitle={t.events.csrRallies.carousel.subtitle}
+            items={t.events.photos.csrRallies}
           />
         </div>
       </section>
@@ -1476,7 +1198,7 @@ export default function EventsPage() {
                     }}
                   >
                     <span>✨</span>
-                    <span>EXPERIENCE CO-CURRICULAR EXCELLENCE</span>
+                    <span>{t.events.actionBanner.tag}</span>
                   </div>
 
                   {/* Heading */}
@@ -1491,24 +1213,18 @@ export default function EventsPage() {
 
                   {/* Feature Chips */}
                   <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mb-4">
-                    <span className="badge px-3 py-2 rounded-pill" style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}>
-                      🗺️ Educational Tours
-                    </span>
-                    <span className="badge px-3 py-2 rounded-pill" style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}>
-                      🧺 Annual Picnics
-                    </span>
-                    <span className="badge px-3 py-2 rounded-pill" style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}>
-                      🎭 100% Stage Participation
-                    </span>
-                    <span className="badge px-3 py-2 rounded-pill" style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}>
-                      🏃 Active Sports
-                    </span>
-                    <span className="badge px-3 py-2 rounded-pill" style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}>
-                      🧠 Olympiads
-                    </span>
-                    <span className="badge px-3 py-2 rounded-pill" style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}>
-                      🌱 CSR Rallies
-                    </span>
+                    {t.events.actionBanner.chips.map((chip: string, cIdx: number) => (
+                      <span
+                        key={cIdx}
+                        className="badge px-3 py-2 rounded-pill"
+                        style={{
+                          backgroundColor: "rgba(255, 255, 255, 0.12)",
+                          border: "1px solid rgba(255, 255, 255, 0.2)",
+                        }}
+                      >
+                        {chip}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
@@ -1523,10 +1239,10 @@ export default function EventsPage() {
                     }}
                   >
                     <div className="small text-warning fw-bold text-uppercase mb-2" style={{ letterSpacing: "1px" }}>
-                      Admissions Open 2027-28
+                      {t.events.actionBanner.admissionsOpen}
                     </div>
                     <div className="text-white fw-bold fs-5 mb-3">
-                      Give Your Child Every Opportunity
+                      {t.events.actionBanner.opportunityTitle}
                     </div>
 
                     {/* Primary & Secondary Action Buttons */}
@@ -1569,20 +1285,20 @@ export default function EventsPage() {
                       <a
                         href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`}
                         className="cta-phone-pill"
-                        title="Call School Helpline"
+                        title={t.contact.breadcrumbChips.callHelpline || "Call School Helpline"}
                       >
                         <span className="spinner-grow spinner-grow-sm text-success" role="status" style={{ width: "0.5rem", height: "0.5rem" }}></span>
                         <span>{t.school.contacts.phonePrimary}</span>
                       </a>
 
                       <a
-                        href={`https://wa.me/${t.school.contacts.phonePrimary.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi, I want to enquire about school events and admissions at Rising Kids School.")}`}
+                        href={`https://wa.me/${t.school.contacts.phonePrimary.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(t.events.actionBanner.whatsAppMessage)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="cta-whatsapp-pill"
-                        title="Chat on WhatsApp"
+                        title={t.floatingActions.whatsappChat || "Chat on WhatsApp"}
                       >
-                        <span>💬 WhatsApp</span>
+                        <span>💬 {t.events.actionBanner.whatsAppText}</span>
                       </a>
                     </div>
                   </div>

@@ -123,7 +123,8 @@
     "facilities": "Facilities",
     "gallery": "Gallery",
     "events": "Events",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "openBadge": "OPEN"
   },
   "header": {
     "phoneAria": "Call school helpline",
@@ -261,8 +262,11 @@
       "heading": "Request a Call Back",
       "description": "Leave your contact details and our admissions officer will reach out promptly.",
       "form": {
+        "quickEnquiryNotice": "Quick admission enquiry",
+        "mandatoryNotice": "* Mandatory",
         "parentName": "Parent Name",
         "mobile": "Mobile Number",
+        "gradeSelectLabel": "Grade / Class Applying For",
         "classSelectDefault": "Class Seeking: Play Group",
         "options": [
           "Class Seeking: Play Group",
@@ -271,8 +275,10 @@
           "Class Seeking: UKG",
           "Class Seeking: Class I to V"
         ],
-        "message": "Your Message (Optional)",
+        "message": "Your Message",
+        "optionalPlaceholder": "(Optional)",
         "submitButton": "SUBMIT ENQUIRY ➜",
+        "submittingButton": "Sending Enquiry...",
         "successHeading": "Form Submitted Successfully!",
         "successMessage": "Our team will call you back within 24 hours.",
         "submitAnother": "Submit Another"
@@ -332,6 +338,16 @@
       "title": "About Rising Kids School",
       "subtitle": "Govt. Recognized & Affiliated • 8 Years of Nurturing Confident, Curious & Compassionate Learners in New Vijay Nagar, Ghaziabad."
     },
+    "breadcrumbChips": {
+      "corePillars": "5 Core Pillars",
+      "govtRecognition": "Govt. Recognition",
+      "studentBenefits": "PRASHAST, PEN & APAAR",
+      "growthLadder": "Learning Ladder",
+      "leadershipDesk": "Leadership Desk",
+      "journeyTimeline": "8-Year Journey",
+      "enquireNow": "Enquire Now",
+      "legacyBadge": "Est. 2018 | 8 Years of Excellence"
+    },
     "heroBox": {
       "title": "Admissions Open 2027-28",
       "description": "Nurturing curiosity, character & creativity every day.",
@@ -354,24 +370,97 @@
         "registryLabel": "100% Student Digital ID"
       }
     },
+    "pillarsSection": {
+      "tag": "OUR FOUNDATIONAL PILLARS",
+      "heading": "5 Pillars of Child Excellence",
+      "description": "Every day at Rising Kids School is guided by these five core commitments to ensure each child blossoms into a confident, compassionate learner."
+    },
     "corePillars": [
-      { "icon": "💖", "color": "#f43f5e", "title": "Safe & Nurturing Environment", "desc": "CCTV-monitored, secure and emotionally supportive campus." },
-      { "icon": "🌱", "color": "#10b981", "title": "Play-Based Learning", "desc": "Hands-on Montessori apparatus and sensory exploration." },
-      { "icon": "🧘", "color": "#f59e0b", "title": "Holistic Development", "desc": "Balancing cognitive, social-emotional and creative growth." },
-      { "icon": "👥", "color": "#0ea5e9", "title": "Experienced & Registered Teachers", "desc": "Certified educators registered on national teacher databases." },
-      { "icon": "🎓", "color": "#8b5cf6", "title": "Academic Excellence", "desc": "Foundational literacy, numeracy and Olympiad preparation." }
+      {
+        "icon": "💖",
+        "color": "#f43f5e",
+        "title": "Safe & Nurturing Environment",
+        "desc": "CCTV-monitored, secure and emotionally supportive campus."
+      },
+      {
+        "icon": "🌱",
+        "color": "#10b981",
+        "title": "Play-Based Learning",
+        "desc": "Hands-on Montessori apparatus and sensory exploration."
+      },
+      {
+        "icon": "🧘",
+        "color": "#f59e0b",
+        "title": "Holistic Development",
+        "desc": "Balancing cognitive, social-emotional and creative growth."
+      },
+      {
+        "icon": "👥",
+        "color": "#0ea5e9",
+        "title": "Experienced & Registered Teachers",
+        "desc": "Certified educators registered on national teacher databases."
+      },
+      {
+        "icon": "🎓",
+        "color": "#8b5cf6",
+        "title": "Academic Excellence",
+        "desc": "Foundational literacy, numeracy and Olympiad preparation."
+      }
     ],
+    "growthLadderSection": {
+      "tag": "LEARNING PROGRESSION",
+      "heading": "Learn • Play • Explore • Grow • Shine",
+      "description": "Our structured pedagogical continuum guides children through every step of early childhood and primary schooling."
+    },
     "growthLadder": [
-      { "step": "1", "label": "Learn", "color": "#0284c7", "icon": "📘", "desc": "Foundational phonics & literacy" },
-      { "step": "2", "label": "Play", "color": "#e11d48", "icon": "📕", "desc": "Hands-on creative discovery" },
-      { "step": "3", "label": "Explore", "color": "#d97706", "icon": "📙", "desc": "STEM experiments & nature tours" },
-      { "step": "4", "label": "Grow", "color": "#059669", "icon": "📗", "desc": "Social-emotional character building" },
-      { "step": "5", "label": "Shine", "color": "#7c3aed", "icon": "🔮", "desc": "Stage confidence & leadership" }
+      {
+        "step": "1",
+        "label": "Learn",
+        "color": "#0284c7",
+        "icon": "📘",
+        "desc": "Foundational phonics & literacy"
+      },
+      {
+        "step": "2",
+        "label": "Play",
+        "color": "#e11d48",
+        "icon": "📕",
+        "desc": "Hands-on creative discovery"
+      },
+      {
+        "step": "3",
+        "label": "Explore",
+        "color": "#d97706",
+        "icon": "📙",
+        "desc": "STEM experiments & nature tours"
+      },
+      {
+        "step": "4",
+        "label": "Grow",
+        "color": "#059669",
+        "icon": "📗",
+        "desc": "Social-emotional character building"
+      },
+      {
+        "step": "5",
+        "label": "Shine",
+        "color": "#7c3aed",
+        "icon": "🔮",
+        "desc": "Stage confidence & leadership"
+      }
     ],
     "govtRecognition": {
       "tag": "ACCREDITATIONS & AFFILIATIONS",
       "heading": "Govt. Recognized & Fully Aligned with National Education System",
       "subtitle": "Rising Kids School operates under strict compliance with statutory government standards, providing parents with verifiable trust, transparent governance, and peace of mind.",
+      "flagship": {
+        "upGovtBadge": "UP GOVERNMENT",
+        "upGovtTitle": "Government Recognized & Affiliated",
+        "upGovtDesc": "Recognized by the Government of Uttar Pradesh and affiliated with the relevant educational board, we follow all formal schooling guidelines.",
+        "natPoliciesBadge": "NATIONAL POLICIES",
+        "natPoliciesTitle": "Aligned with National Education System",
+        "natPoliciesDesc": "We follow all educational policies and digital initiatives as per Government guidelines, ensuring every child is a part of the formal schooling system."
+      },
       "cards": [
         {
           "badge": "STATUTORY RECOGNITION",
@@ -403,6 +492,12 @@
       "tag": "NATIONAL DIGITAL INITIATIVES & STUDENT PROFILES",
       "heading": "PRASHAST, Student PEN & APAAR Number",
       "subtitle": "Connecting our students and certified teachers directly with Government of India digital education portals.",
+      "tags": {
+        "ncert": "NCERT / MoE",
+        "udise": "UDISE+ Code",
+        "nep": "NEP 2020",
+        "digilocker": "DigiLocker Integrated"
+      },
       "prashast": {
         "title": "PRASHAST",
         "tagline": "Solve • Synergise • Simplify",
@@ -475,6 +570,12 @@
           "1:8 Caring Teacher-Student Ratio",
           "Open Parent-School Synergy"
         ]
+      },
+      "signOffs": {
+        "founderSignOff": "With warm regards & dedication,",
+        "founderBadge": "Est. 2018",
+        "branchHeadSignOff": "In partnership for your child's growth,",
+        "branchHeadBadge": "Campus Leadership"
       }
     },
     "timeline": {
@@ -484,6 +585,7 @@
       "filterAll": "All 8 Years (2018 - 2026)",
       "filterPhase1": "Phase 1: Foundation (2018 - 2021)",
       "filterPhase2": "Phase 2: Growth & Accreditation (2022 - 2026)",
+      "yearPrefix": "YEAR",
       "items": [
         {
           "year": "2018",
@@ -491,7 +593,8 @@
           "phase": 1,
           "title": "The Inception & Founding Vision",
           "subtitle": "Foundational Playgroup & Nursery Wing",
-          "description": "Rising Kids School opened its doors in New Vijay Nagar, Ghaziabad with child-friendly Montessori apparatus, dedicated early educators, and a clear vision to provide value-grounded foundation education."
+          "description": "Rising Kids School opened its doors in New Vijay Nagar, Ghaziabad with child-friendly Montessori apparatus, dedicated early educators, and a clear vision to provide value-grounded foundation education.",
+          "highlight": "Inception in New Vijay Nagar, Ghaziabad"
         },
         {
           "year": "2019",
@@ -499,7 +602,8 @@
           "phase": 1,
           "title": "Kindergarten Expansion & Stage Culture",
           "subtitle": "LKG, UKG & Inaugural Annual Gala",
-          "description": "Expanded into Kindergarten programs, established dedicated audio-visual phonics labs, and hosted our 1st Annual Day Gala with 100% stage participation for all children."
+          "description": "Expanded into Kindergarten programs, established dedicated audio-visual phonics labs, and hosted our 1st Annual Day Gala with 100% stage participation for all children.",
+          "highlight": "100% Student Participation & Phonics Lab"
         },
         {
           "year": "2020",
@@ -507,7 +611,8 @@
           "phase": 1,
           "title": "Pandemic Resilience & Virtual Storytelling",
           "subtitle": "Zero Disruption in Early Learning",
-          "description": "Quickly transitioned to interactive virtual circles during COVID-19, home-delivered DIY sensory kits, and conducted weekly parent guidance webinars to keep little minds thriving."
+          "description": "Quickly transitioned to interactive virtual circles during COVID-19, home-delivered DIY sensory kits, and conducted weekly parent guidance webinars to keep little minds thriving.",
+          "highlight": "Uninterrupted Digital Story Circles"
         },
         {
           "year": "2021",
@@ -515,7 +620,8 @@
           "phase": 1,
           "title": "Blended Innovation & Foundational Literacy",
           "subtitle": "Safe Campus Reopening & FLN Toolkits",
-          "description": "Safely welcomed children back with sanitized classrooms, outdoor sensory exploration stations, and launched intensive Foundational Literacy and Numeracy (FLN) play modules."
+          "description": "Safely welcomed children back with sanitized classrooms, outdoor sensory exploration stations, and launched intensive Foundational Literacy and Numeracy (FLN) play modules.",
+          "highlight": "FLN Literacy Kits & Safe Campus Reopening"
         },
         {
           "year": "2022",
@@ -523,7 +629,8 @@
           "phase": 2,
           "title": "Primary Wing & Govt. Recognition",
           "subtitle": "Class V Extension & UDISE+ Integration",
-          "description": "Earned formal Government Recognition & Affiliation from the Basic Education Department, received our unique UDISE+ government code, and inaugurated science & IT discovery labs."
+          "description": "Earned formal Government Recognition & Affiliation from the Basic Education Department, received our unique UDISE+ government code, and inaugurated science & IT discovery labs.",
+          "highlight": "Govt. Recognized & UDISE+ Unique Code"
         },
         {
           "year": "2023",
@@ -531,7 +638,8 @@
           "phase": 2,
           "title": "NEP 2020 & PRASHAST Inclusive Integration",
           "subtitle": "NCF-FS Alignment & Child Screening",
-          "description": "Fully restructured curriculum under the National Curriculum Framework (NCF-FS) and deployed the NCERT PRASHAST screening framework for personalized inclusive child care."
+          "description": "Fully restructured curriculum under the National Curriculum Framework (NCF-FS) and deployed the NCERT PRASHAST screening framework for personalized inclusive child care.",
+          "highlight": "NEP 2020 NCF-FS & PRASHAST Inclusive Screening"
         },
         {
           "year": "2024",
@@ -539,7 +647,8 @@
           "phase": 2,
           "title": "PEN & APAAR National Registry Rollout",
           "subtitle": "100% Digital Student Profiling",
-          "description": "Successfully onboarded 100% of enrolled students into the Ministry of Education's Permanent Education Number (PEN) and DigiLocker-linked APAAR ID registry."
+          "description": "Successfully onboarded 100% of enrolled students into the Ministry of Education's Permanent Education Number (PEN) and DigiLocker-linked APAAR ID registry.",
+          "highlight": "100% Onboarding to National PEN & APAAR"
         },
         {
           "year": "2025–26",
@@ -547,9 +656,15 @@
           "phase": 2,
           "title": "8 Glorious Years of Holistic Excellence",
           "subtitle": "Olympiad Laurels & Community Trust",
-          "description": "Celebrating 8 years of transformative early education with National Olympiad wins, thriving sports and cultural traditions, and over 500+ happy alumni flourishing in higher schools."
+          "description": "Celebrating 8 years of transformative early education with National Olympiad wins, thriving sports and cultural traditions, and over 500+ happy alumni flourishing in higher schools.",
+          "highlight": "8 Glorious Years • 500+ Alumni Milestone"
         }
       ]
+    },
+    "principlesSection": {
+      "tag": "FOUNDATIONAL GUIDING PRINCIPLES",
+      "heading": "Vision, Mission & Guiding Ethics",
+      "description": "Our core pillars ensure that every child experiences intellectual stimulation, character fortitude, and warm emotional support every single day."
     },
     "moreThanAcademics": {
       "tag": "OUR PHILOSOPHY",
@@ -606,7 +721,21 @@
         "title": "Life Skills & Habits",
         "description": "Building independence, table etiquettes, personal hygiene, responsibility, and practical everyday skills."
       }
-    ]
+    ],
+    "ctaSection": {
+      "heading": "Join the Rising Kids School Family",
+      "chips": [
+        "🏛️ Govt. Recognized",
+        "📋 PRASHAST & UDISE+",
+        "🆔 Student PEN & APAAR",
+        "⏳ 8 Years of Trust"
+      ],
+      "admissionsOpen": "Admissions Open 2027-28",
+      "journeyTitle": "Start Your Child's Journey Today",
+      "visitCampus": "📍 Visit School Campus",
+      "whatsAppText": "💬 WhatsApp",
+      "whatsAppMessage": "Hi, I want to know more about Rising Kids School admissions and government recognition."
+    }
   },
   "curriculum": {
     "banner": {
@@ -775,8 +904,16 @@
       ]
     },
     "ctaBanner": {
+      "kicker": "PERSONALIZED ACADEMIC GUIDANCE",
       "title": "Want to know more?",
       "subtitle": "Speak to the school team about the programme and age-wise learning plan.",
+      "featureChips": [
+        "Age-Wise Milestones",
+        "Campus Tour & Walkthrough",
+        "Friendly Counselor Session"
+      ],
+      "directGetInTouch": "Get In Touch Directly",
+      "askQuestion": "Book a Visit or Ask Any Question",
       "talkButton": "Talk to Us",
       "admissionsButton": "Admissions"
     }
@@ -786,6 +923,12 @@
       "kicker": "Start Your Child's Journey Today",
       "title": "Admissions Open 2027-28",
       "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
+    },
+    "breadcrumbChips": {
+      "feeStructure": "Fee Structure",
+      "process": "Process",
+      "enquiry": "Enquiry",
+      "sessionOpenBadge": "Session 2027-28 Open"
     },
     "heroBox": {
       "title": "Direct Helpdesk",
@@ -837,13 +980,24 @@
         "highlight": "Session start from October to April for all classes",
         "desc": "Admissions and curriculum session start from October to April across all grades (Playgroup, Nursery, L.K.G, U.K.G, and Class I to V)."
       },
+      "allClassesBadge": "🏫 All Classes",
+      "allClassesSpan": "Playgroup – Class V",
+      "registrationOpen": "Registration & admissions open for current academic term",
+      "playgroupBadge": "👶 Playgroup Admissions",
+      "twoBatchesBadge": "2 Flexible Batches",
       "playgroup": {
         "title": "Playgroup Class Admissions",
         "highlight": "Playgroup class admission in two batches",
         "batch1": "Batch 1 - April",
         "batch2": "Batch 2 - July",
         "desc": "Early childhood admissions are scheduled in two flexible batches for toddler convenience."
-      }
+      },
+      "batch1Title": "Batch 1",
+      "batch1Intake": "April Intake",
+      "batch2Title": "Batch 2",
+      "batch2Intake": "July Intake",
+      "needHelp": "Need help selecting the right class or batch? Connect with our admission desk.",
+      "applyEnquiryNow": "📝 Apply / Enquiry Now"
     },
     "joyfulStart": {
       "title": "Give your child a joyful start",
@@ -895,6 +1049,196 @@
         "defaultChild": "your child",
         "submitAnother": "Submit Another Enquiry"
       }
+    },
+    "feeSection": {
+      "tag": "Transparent & Clear",
+      "heading": "Fee Structure & Components",
+      "subheading": "Affordable and well-planned fee heads for holistic growth, quality education, smart learning, and activities.",
+      "viewTable": "Fee Slip Table",
+      "viewCards": "Feature Cards",
+      "tableTitle": "Official Fee Schedule (Play Group to Class V)",
+      "tableSubtitle": "Standard fee heads applicable for Academic Session 2027-28",
+      "sessionBadge": "⭐ Session 2027-28",
+      "colSn": "#",
+      "colFeeHead": "Fee Head",
+      "colFrequency": "Frequency / Nature",
+      "colCoverage": "Coverage & Particulars",
+      "colStatus": "Status",
+      "frequencyLabel": "Frequency:"
+    },
+    "officialFeeSchedule": [
+      {
+        "sn": "01",
+        "title": "Admission Form Fee",
+        "frequency": "One-Time (Application)",
+        "desc": "Prospectus, registration form & initial admission counseling",
+        "badge": "Applicable"
+      },
+      {
+        "sn": "02",
+        "title": "Admission Fee",
+        "frequency": "One-Time (Enrollment)",
+        "desc": "One-time enrollment upon student admission confirmation",
+        "badge": "Applicable"
+      },
+      {
+        "sn": "03",
+        "title": "Annual Fee",
+        "frequency": "Annual",
+        "desc": "Smart class, campus upkeep, multimedia lab & infrastructure maintenance",
+        "badge": "Annual"
+      },
+      {
+        "sn": "04",
+        "title": "Tuition Fee",
+        "frequency": "Monthly / Quarterly",
+        "desc": "Classroom instruction, qualified faculty, holistic learning modules",
+        "badge": "Recurring"
+      },
+      {
+        "sn": "05",
+        "title": "Student Kit",
+        "frequency": "Annual Academic Kit",
+        "desc": "Complete textbook set, notebooks, stationery, diary & school ID badge",
+        "badge": "Package"
+      },
+      {
+        "sn": "06",
+        "title": "Activity Fee",
+        "frequency": "Term-Wise",
+        "desc": "Sports day, arts & craft, cultural events, yoga & stage exposure",
+        "badge": "Term-Wise"
+      },
+      {
+        "sn": "07",
+        "title": "Examination Fee",
+        "frequency": "Per Assessment Term",
+        "desc": "Assessment worksheets, periodic evaluations, progress cards & certificates",
+        "badge": "Per Term"
+      },
+      {
+        "sn": "08",
+        "title": "Transport Fee",
+        "frequency": "Optional (Monthly)",
+        "desc": "Safe door-to-door cab / van transport facility with verified drivers (route based)",
+        "badge": "Optional"
+      }
+    ],
+    "cardsFeeSchedule": [
+      {
+        "title": "Admission Form Fee",
+        "badge": "One-Time (Application)",
+        "desc": "School prospectus, student registration form, and initial admission counseling."
+      },
+      {
+        "title": "Admission Fee",
+        "badge": "One-Time (Enrollment)",
+        "desc": "One-time enrollment fee upon confirmation of student admission into school records."
+      },
+      {
+        "title": "Annual Fee",
+        "badge": "Payable Annually",
+        "desc": "Campus upkeep, digital smart class systems, infrastructure maintenance & safety facilities."
+      },
+      {
+        "title": "Tuition Fee",
+        "badge": "Monthly / Quarterly",
+        "desc": "Comprehensive daily classroom learning, qualified educator guidance, and developmental curriculum."
+      },
+      {
+        "title": "Student Kit",
+        "badge": "Annual Academic Kit",
+        "desc": "Curriculum textbooks, notebook set, stationery kit, student ID card & school diary."
+      },
+      {
+        "title": "Activity Fee",
+        "badge": "Term-Wise",
+        "desc": "Sports events, cultural celebrations, arts & crafts supplies, yoga sessions & stage exposure."
+      },
+      {
+        "title": "Examination Fee",
+        "badge": "Per Assessment Term",
+        "desc": "Continuous evaluation worksheets, periodic assessment prints, report cards & certifications."
+      },
+      {
+        "title": "Transport Fee",
+        "badge": "Optional (Route Based)",
+        "desc": "Safe, supervised door-to-door cab / van transport facility with verified drivers (as per route)."
+      }
+    ],
+    "slipForm": {
+      "tag": "Official School Form",
+      "heading": "Admission Enquiry Form",
+      "subheading": "Fill out the official Rising Kids School inquiry form below or download a printable copy for offline submission.",
+      "letterheadTitle": "Rising Kids School",
+      "letterheadAddress": "C-47, Sector -9, New Vijay nagar, Ghaziabad (U.P.)",
+      "letterheadPh": "Ph:",
+      "letterheadEmail": "E-mail:",
+      "dateLabel": "Date:",
+      "bannerTitle": "ENQUIRY FORM",
+      "successTitle": "Enquiry Submitted Successfully!",
+      "successText1": "Thank you for submitting the enquiry for",
+      "successText2": "in",
+      "successText3": ". Our admission desk will connect with you on",
+      "successText4": "shortly.",
+      "summaryHeading": "Submitted Summary:",
+      "summaryKidName": "Kid's Name:",
+      "summaryDob": "Date of Birth:",
+      "summaryEnquiryFor": "Enquiry For:",
+      "summaryParentName": "Parent Name:",
+      "summaryPhone": "Phone:",
+      "summaryAddress": "Address:",
+      "summaryReferral": "How You Heard About Us:",
+      "summaryDirect": "Website / Direct",
+      "submitAnother": "Submit Another Form",
+      "printConfirmation": "🖨️ Print Confirmation",
+      "fillAccurately": "Please fill the details below accurately",
+      "mandatoryNotice": "* Indicates mandatory fields",
+      "kidName": "Kids Name",
+      "kidNamePlaceholder": "Enter child's full name *",
+      "dob": "Date Of Birth",
+      "enquiryFor": "Enquiry For",
+      "selectGrade": "Select Grade / Class *",
+      "grades": [
+        "Play Group (Ages 2 - 3)",
+        "Nursery (Ages 3 - 4)",
+        "L.K.G (Ages 4 - 5)",
+        "U.K.G (Ages 5 - 6)",
+        "Class I",
+        "Class II",
+        "Class III",
+        "Class IV",
+        "Class V"
+      ],
+      "parentName": "Mother's/ Father's Name",
+      "parentNamePlaceholder": "Parent / Guardian full name *",
+      "motherOccupation": "Mother's Occupation",
+      "motherOccupationPlaceholder": "Mother's profession (Optional)",
+      "fatherOccupation": "Father's Occupation",
+      "fatherOccupationPlaceholder": "Father's profession (Optional)",
+      "address": "Address",
+      "addressPlaceholder": "Residential address (Sector, locality, landmark...) *",
+      "phone": "Phone",
+      "phonePlaceholder": "10-digit primary mobile number *",
+      "motherEmail": "E-Mail (Mother)",
+      "motherEmailPlaceholder": "Mother's email address (Optional)",
+      "fatherEmail": "E-Mail (Father)",
+      "fatherEmailPlaceholder": "Father's email address (Optional)",
+      "referralTitle": "How Did You Know About Rising Kids School ?",
+      "referralOptions": [
+        "Newspaper Leaflet",
+        "Banner",
+        "Pole Advertisement",
+        "Website",
+        "Reference"
+      ],
+      "referralOther": "Other (please specify)",
+      "otherPlaceholder": "Please specify how you heard about us...",
+      "parentSign": "Parent's Signature:",
+      "inchargeSign": "Admission In-Charge:",
+      "submittingText": "Sending Application...",
+      "submitButton": "📩 Submit Admission Enquiry",
+      "printForm": "🖨️ Print Form"
     }
   },
   "facilities": {
@@ -902,6 +1246,12 @@
       "kicker": "Safe, Smart & Joyful Environment",
       "title": "Our School Facilities",
       "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
+    },
+    "breadcrumbChips": {
+      "highlights": "Highlights",
+      "safety": "Safety",
+      "visitCampus": "Visit Campus",
+      "modernSafeCampus": "Modern Safe Campus"
     },
     "heroBox": {
       "title": "Campus Tour",
@@ -1015,8 +1365,16 @@
       ]
     },
     "actionBanner": {
+      "kicker": "SAFE & STIMULATING LEARNING ENVIRONMENT",
       "title": "Want to see our campus in person?",
       "subtitle": "Book a personalized walk-through tour with our principal and coordinator.",
+      "featureChips": [
+        "24/7 CCTV & Security Guard",
+        "Safe Van & Bus Transport",
+        "Pure RO Drinking Water"
+      ],
+      "planVisit": "Plan A School Visit",
+      "experienceModern": "Experience Our Modern Campus",
       "visitButton": "Book Campus Visit",
       "admissionsButton": "Admissions"
     }
@@ -1026,6 +1384,13 @@
       "kicker": "Moments of Joy & Achievements",
       "title": "School Photo Gallery",
       "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
+    },
+    "breadcrumbChips": {
+      "photoGallery": "Photo Gallery",
+      "campusLife": "Campus Life",
+      "videosPrefix": "Videos",
+      "bookTour": "Book Tour",
+      "momentsToRemember": "Moments to Remember"
     },
     "heroBox": {
       "title": "Campus Life",
@@ -1160,7 +1525,10 @@
       "subheading": "Experience the festive joy, colorful stage performances, and vibrant celebrations by Rising Kids School students.",
       "watchOnYoutube": "Watch on YouTube",
       "channelBadge": "Rising Kids School YouTube Channel",
+      "libraryTitle": "School Video Library",
       "nowPlaying": "Now Playing ▶",
+      "watchingNow": "▶ Watching Now",
+      "tapToWatch": "Tap to Watch",
       "filters": {
         "all": "All Videos",
         "celebrations": "Events & Stage 🎭",
@@ -1308,6 +1676,15 @@
       "subtitle": "Book a personalized campus tour and meet our educators in New Vijay Nagar, Ghaziabad.",
       "tourButton": "Book Campus Tour",
       "admissionsButton": "Admissions Open"
+    },
+    "lightbox": {
+      "close": "Close",
+      "photoOf": "Photo",
+      "of": "of",
+      "watchOnYouTube": "Watch on YouTube",
+      "watchOnShorts": "Watch on YouTube Shorts",
+      "youtubeShort": "⚡ YouTube Short",
+      "youtubeVideo": "🎬 YouTube Video"
     }
   },
   "events": {
@@ -1428,7 +1805,670 @@
       "title": "Join our upcoming school celebrations",
       "subtitle": "Schedule a campus visit or talk to our coordinators to know more about admissions.",
       "enquireButton": "Enquire Admissions",
-      "contactButton": "Contact Us"
+      "contactButton": "Contact Us",
+      "tag": "EXPERIENCE CO-CURRICULAR EXCELLENCE",
+      "chips": [
+        "🗺️ Educational Tours",
+        "🧺 Annual Picnics",
+        "🎭 100% Stage Participation",
+        "🏃 Active Sports",
+        "🧠 Olympiads",
+        "🌱 CSR Rallies"
+      ],
+      "admissionsOpen": "Admissions Open 2027-28",
+      "opportunityTitle": "Give Your Child Every Opportunity",
+      "whatsAppMessage": "Hi, I want to enquire about school events and admissions at Rising Kids School.",
+      "whatsAppText": "WhatsApp"
+    },
+    "breadcrumbChips": {
+      "upcoming": "Upcoming",
+      "tours": "Tours",
+      "picnics": "Picnics",
+      "annualDay": "Annual Day",
+      "sportsDay": "Sports Day",
+      "olympiad": "Olympiad",
+      "csrRallies": "CSR Rallies",
+      "coCurricularBadge": "Co-Curricular Excellence"
+    },
+    "pillarsStrip": {
+      "tag": "CO-CURRICULAR CALENDAR",
+      "heading": "Our 6 Signature Event Pillars",
+      "subheading": "At Rising Kids School, experiential learning and joyous celebrations shape confident, empathetic, and resilient future leaders.",
+      "toursTitle": "Educational Tours",
+      "toursTag": "Heritage & Visits",
+      "picnicsTitle": "Picnics",
+      "picnicsTag": "Outdoor Joy",
+      "annualDayTitle": "Annual Day",
+      "annualDayTag": "100% Stage Play",
+      "sportsDayTitle": "Sports Day",
+      "sportsDayTag": "Track & Fitness",
+      "olympiadTitle": "Olympiad",
+      "olympiadTag": "Academic Logic",
+      "csrRalliesTitle": "CSR Rallies",
+      "csrRalliesTag": "Social Care"
+    },
+    "upcomingSection": {
+      "tag": "UPCOMING CELEBRATIONS",
+      "heading": "Upcoming School Events & Festivals",
+      "subheading": "Immersing young minds in joyful traditions, moral values, and cultural harmony through festive assemblies, theatrical role-play, and hands-on creative activities.",
+      "keyFestivitiesLabel": "Key Festivities:",
+      "dussehra": {
+        "date": "October",
+        "badge": "Vijayadashami Assembly",
+        "title": "Dussehra Celebration",
+        "desc": "Celebrating the eternal triumph of goodness, truth, and courage over negativity through lively role-play and creative crafts.",
+        "festivities": [
+          {
+            "label": "Ramleela Skits:",
+            "desc": "Moral role-play enacting the timeless values of righteousness and courage."
+          },
+          {
+            "label": "Eco Ravana Craft:",
+            "desc": "Miniature effigy and puppet making using recyclable paper materials."
+          },
+          {
+            "label": "Ethnic Dress Day:",
+            "desc": "Traditional Indian wear celebration & festive shloka chanting."
+          }
+        ],
+        "footerGrade": "Playgroup to Class V",
+        "footerTag": "Culture & Values"
+      },
+      "diwali": {
+        "date": "October / November",
+        "badge": "Festival of Lights",
+        "title": "Diwali & Diya Gala",
+        "desc": "Illuminating young hearts with love, harmony, environmental stewardship, and joyful classroom artistry.",
+        "festivities": [
+          {
+            "label": "Clay Diya Painting:",
+            "desc": "Hand-decorating earthen lamps with vivid paints, mirrors & sparkles."
+          },
+          {
+            "label": "Floral Rangoli Contests:",
+            "desc": "Collaborative flower petal art developing color harmony and teamwork."
+          },
+          {
+            "label": "Green Diwali Pledge:",
+            "desc": "Pledging for clean air, kindness to animals, and zero-smoke celebrations."
+          }
+        ],
+        "footerGrade": "All Grades & Faculty",
+        "footerTag": "Diya & Rangoli Gala"
+      },
+      "christmas": {
+        "date": "December 24–25",
+        "badge": "Winter Carnival & Carols",
+        "title": "Christmas Carnival",
+        "desc": "Welcoming the magical winter cheer with Santa Claus, twinkling fairy lights, harmonious carols, and the joy of giving.",
+        "festivities": [
+          {
+            "label": "Santa Claus Visit:",
+            "desc": "Jolly laughs, jingling bells, surprise candy pouches, and photo memories."
+          },
+          {
+            "label": "Tree Decoration:",
+            "desc": "Adorning pine branches with stars, ribbons, stockings, and paper snowflakes."
+          },
+          {
+            "label": "Carol Choir & Joy of Giving:",
+            "desc": "Melodious choir singing and Secret Santa handmade cards exchange."
+          }
+        ],
+        "footerGrade": "Whole School Community",
+        "footerTag": "Santa & Carols Choir"
+      }
+    },
+    "educationalTours": {
+      "badge": "1. EXPERIENTIAL LEARNING & HERITAGE",
+      "title": "Educational Tours & Field Visits",
+      "lead": "Expanding young horizons beyond textbook pages through structured experiential journeys.",
+      "desc": "At Rising Kids School, learning is never confined to classroom walls. Our carefully planned educational field tours take children to architectural landmarks, planetariums, science museums, botanical gardens, and local craft centers. These journeys connect classroom lessons with real-world wonder, fostering acute observational skills, intellectual curiosity, and cultural pride.",
+      "features": [
+        {
+          "icon": "🏛️",
+          "title": "Heritage & History",
+          "desc": "Visiting historic monuments and architectural gems to discover India's rich cultural tapestry firsthand."
+        },
+        {
+          "icon": "🔬",
+          "title": "Science & Planetariums",
+          "desc": "Interactive science centers, galaxy dome shows, and nature labs that ignite a passion for discovery."
+        },
+        {
+          "icon": "🛡️",
+          "title": "100% Safe Supervision",
+          "desc": "Full teacher and female attendant escort, certified first-aid kits, and real-time parent transit notifications."
+        },
+        {
+          "icon": "📝",
+          "title": "Reflective Learning",
+          "desc": "Post-tour classroom drawing worksheets, journaling, and group presentations to consolidate knowledge."
+        }
+      ],
+      "highlightsBadge": "Annual Term Expedition",
+      "highlightsTitle": "Tour Highlights",
+      "highlightsSubtitle": "Every tour is integrated with our curriculum syllabus for Classes Nursery to V.",
+      "highlights": [
+        {
+          "label": "Destinations:",
+          "desc": "Heritage Monuments, Science City, Botanical Parks, Dairy & Farm Centers."
+        },
+        {
+          "label": "Ratio:",
+          "desc": "1 Teacher per 8 Students with dedicated support staff."
+        },
+        {
+          "label": "Skill Outcome:",
+          "desc": "Inquiry-based thinking, group coordination, and observational acumen."
+        }
+      ],
+      "button": "Inquire for Admission",
+      "carousel": {
+        "badge": "PHOTO MEMORIES",
+        "subBadge": "Field Expeditions",
+        "title": "Learning Through Exploration & Discovery",
+        "subtitle": "Swipe or use controls to browse our students' real-world journeys across heritage, science, and nature."
+      }
+    },
+    "picnics": {
+      "badge": "2. JOYFUL OUTDOOR BONDING",
+      "title": "School Picnics & Nature Excursions",
+      "lead": "Unstructured outdoor joy, social bonding, and nature discovery in safe green spaces.",
+      "desc": "Our annual picnics offer children a rejuvenating escape into fresh air and open lawns. Away from screens and desks, students bond with teachers and classmates through group picnic games, nature scavenger hunts, and shared tiffin baskets. Picnics develop lifelong values of sharing, mutual respect, table manners, and joy in collective play.",
+      "features": [
+        {
+          "icon": "🌳",
+          "title": "Lush Green Venues",
+          "desc": "Carefully vetted open-air amusement and ecological parks with clean child-safe play equipment."
+        },
+        {
+          "icon": "🥪",
+          "title": "Community Meals & Sharing",
+          "desc": "Encouraging table manners, healthy eating habits, and the joy of sharing snacks with friends."
+        },
+        {
+          "icon": "🎈",
+          "title": "Lively Group Games",
+          "desc": "Parachute play, sack races, tug-of-war, musical statues, and frisbee on sprawling manicured grass."
+        },
+        {
+          "icon": "🚌",
+          "title": "Safe School Vans",
+          "desc": "Comfortable transport driven by vetted drivers and accompanied by watchful class mentors."
+        }
+      ],
+      "highlightsBadge": "Winter Season Fun",
+      "highlightsTitle": "Picnic Experience",
+      "highlightsSubtitle": "Organized every winter season across lush picnic destinations around NCR.",
+      "highlights": [
+        {
+          "label": "Timing:",
+          "desc": "November to February during sunny winter afternoons."
+        },
+        {
+          "label": "Food & Hydration:",
+          "desc": "Hygienic fresh meals, fresh juices, and filtered mineral water."
+        },
+        {
+          "label": "Development:",
+          "desc": "Social-emotional bonding, active outdoor wellness, and sensory relaxation."
+        }
+      ],
+      "button": "Connect with Rising Kids",
+      "carousel": {
+        "badge": "OUTDOOR EXCURSIONS",
+        "subBadge": "Picnic Memories",
+        "title": "Sunny Picnics, Nature Play & Community Meals",
+        "subtitle": "Catch glimpses of our joyful winter picnics, lawn games, and shared laughter in open parks."
+      }
+    },
+    "annualDay": {
+      "badge": "3. GRAND STAGE SPECTACLE",
+      "title": "Annual Day & Cultural Celebration",
+      "lead": "Empowering 100% student stage participation, creative expression, and artistic excellence.",
+      "desc": "The Grand Annual Function is the crowning cultural milestone of our academic year. At Rising Kids School, we champion a strict 100% stage participation policy — ensuring every student from Playgroup to Class V performs before a proud audience of parents and mentors. From vibrant folk rhythms and theatrical value dramas to musical recitals, children shed inhibitions and discover unshakeable confidence.",
+      "features": [
+        {
+          "icon": "🌟",
+          "title": "100% Stage Time Policy",
+          "desc": "No child is left behind in the audience. Every single child performs under the auditorium lights."
+        },
+        {
+          "icon": "💃",
+          "title": "Thematic Dance & Drama",
+          "desc": "Traditional classical, patriotic dances, rhymes recitation, and value-packed theatrical skits."
+        },
+        {
+          "icon": "🏆",
+          "title": "Annual Prize Distribution",
+          "desc": "Honoring academic toppers, 100% attendance achievers, star artists, and good citizens."
+        },
+        {
+          "icon": "👨‍👩‍👧‍👦",
+          "title": "Family Celebration",
+          "desc": "A grand gathering with parents and grandparents celebrating the growth of our young stars."
+        }
+      ],
+      "highlightsBadge": "Flagship Gala",
+      "highlightsTitle": "Stage Magic",
+      "highlightsSubtitle": "Transforming shy voices into bold, expressive performers through professional stage training.",
+      "highlights": [
+        {
+          "label": "Costumes:",
+          "desc": "Thematic, colourful stage costumes curated for every age group."
+        },
+        {
+          "label": "Audio-Visual:",
+          "desc": "Professional theatrical lighting, sound engineering, and HD video captures."
+        },
+        {
+          "label": "Outcome:",
+          "desc": "Lifelong public-speaking confidence and expressive body language."
+        }
+      ],
+      "button": "Inquire for Admission",
+      "carousel": {
+        "badge": "CULTURAL GALA",
+        "subBadge": "Stage Memories",
+        "title": "100% Stage Participation, Dance & Theatrical Drama",
+        "subtitle": "Relive the glittering performances, colourful thematic costumes, and proud moments of our annual function."
+      }
+    },
+    "sportsDay": {
+      "badge": "4. PHYSICAL FITNESS & SPORTSMANSHIP",
+      "title": "Annual Sports Day & Athletic Meet",
+      "lead": "Building agility, resilience, healthy competition, and enduring sporting spirit.",
+      "desc": "Sports Day at Rising Kids School celebrates the energetic spirit of our young athletes. Designed with age-tailored tracks, fun obstacle races, synchronized march pasts, and yoga demonstrations, the event teaches children that fitness is a joyful lifestyle and true victory lies in giving one's best and cheering for peers.",
+      "features": [
+        {
+          "icon": "🏃",
+          "title": "Track & Field Sprints",
+          "desc": "50m/100m dashes, baton relays, hoop hops, and agility obstacle courses tailored by grade."
+        },
+        {
+          "icon": "🧘",
+          "title": "Mass Drill & Yoga Display",
+          "desc": "Synchronized dumbbell exercises, ribbon drills, and calming Surya Namaskar formations."
+        },
+        {
+          "icon": "🥇",
+          "title": "Medals & House Trophies",
+          "desc": "Gold, Silver, and Bronze medals for winners alongside participation certificates for all."
+        },
+        {
+          "icon": "🤝",
+          "title": "Parent-Teacher Fun Races",
+          "desc": "Delightful lemon-and-spoon and tug-of-war races with parents cheering on the field."
+        }
+      ],
+      "highlightsBadge": "Athletics & Agility",
+      "highlightsTitle": "Fit India Champions",
+      "highlightsSubtitle": "Fostering gross motor skills, stamina, and healthy sportsmanship from Kindergarten upwards.",
+      "highlights": [
+        {
+          "label": "Pre-Primary Races:",
+          "desc": "Ball collection, frog jump, caterpillar race, beanbag toss."
+        },
+        {
+          "label": "Primary Events:",
+          "desc": "100m sprint, 4x50m relay, long jump, tug-of-war."
+        },
+        {
+          "label": "Core Values:",
+          "desc": "Teamwork, resilience, sportsmanship, and personal best."
+        }
+      ],
+      "button": "Explore Sports Program",
+      "carousel": {
+        "badge": "FITNESS & AGILITY",
+        "subBadge": "Sports Memories",
+        "title": "Track Sprints, Agility Drills & Victory Celebrations",
+        "subtitle": "Celebrating youthful stamina, synchronized yoga formations, and active sporting camaraderie."
+      }
+    },
+    "olympiad": {
+      "badge": "5. ACADEMIC EXCELLENCE & LOGICAL REASONING",
+      "title": "National & International Olympiads",
+      "lead": "Cultivating critical thinking, mathematical acumen, and national competitive exposure.",
+      "desc": "Rising Kids School actively prepares and registers primary students for prestigious national and international Olympiad examinations. Through Science (NSO), Mathematics (IMO), English (IEO), Cyber (NCO), and General Knowledge Olympiads, our learners develop sharp analytical faculties, out-of-the-box problem solving, and confidence to compete at higher levels.",
+      "features": [
+        {
+          "icon": "📐",
+          "title": "Math & Science (IMO / NSO)",
+          "desc": "Application-based numeric logic, pattern identification, and scientific aptitude questions."
+        },
+        {
+          "icon": "📖",
+          "title": "English & Cyber (IEO / NCO)",
+          "desc": "Advanced grammar, phonics mastery, reading comprehension, and digital technology concepts."
+        },
+        {
+          "icon": "🏅",
+          "title": "Certificates & Medals",
+          "desc": "Merit certificates, national percentiles, and gold medals that boost academic self-esteem."
+        },
+        {
+          "icon": "📚",
+          "title": "Dedicated Mentorship",
+          "desc": "Special teacher mentoring, conceptual worksheets, and previous-year mock test practice."
+        }
+      ],
+      "highlightsBadge": "Class I to Class V",
+      "highlightsTitle": "Olympiad Program",
+      "highlightsSubtitle": "Building strong conceptual reasoning from the earliest formative school years.",
+      "highlights": [
+        {
+          "label": "Subjects:",
+          "desc": "Mathematics (IMO), Science (NSO), English (IEO), Cyber (NCO), GK (IGKO)."
+        },
+        {
+          "label": "Preparation:",
+          "desc": "In-school weekly puzzle challenges and reasoning worksheets."
+        },
+        {
+          "label": "Benefit:",
+          "desc": "Deep conceptual clarity eliminating fear of competitive assessments."
+        }
+      ],
+      "button": "Explore Academic Syllabus",
+      "carousel": {
+        "badge": "ACADEMIC MERIT",
+        "subBadge": "Olympiad Stars",
+        "title": "Analytical Thinking, Cyber Logic & National Contests",
+        "subtitle": "Celebrating young minds solving complex puzzles, excelling in IT labs, and earning national medals.",
+        "actionLabel": "Explore Curriculum"
+      }
+    },
+    "csrRallies": {
+      "badge": "6. SOCIAL RESPONSIBILITY & COMMUNITY CARE",
+      "title": "CSR Rallies & Social Initiatives",
+      "lead": "\"Greener Tomorrow Together\" — Nurturing empathetic, eco-conscious global citizens.",
+      "desc": "At Rising Kids School, moral and character education is given utmost priority. Through our dedicated CSR rallies and community awareness walks, children become champions of social causes. Whether it is sapling plantation, Swachh Bharat cleanliness rallies, anti-plastic drives, or kindness weeks, our students learn that they have the power to create a positive impact on the world around them.",
+      "features": [
+        {
+          "icon": "🌳",
+          "title": "Tree Plantation Drives",
+          "desc": "\"Greener Tomorrow Together\" — students plant saplings with teachers and adopt them to care for."
+        },
+        {
+          "icon": "♻️",
+          "title": "Anti-Plastic Eco Walks",
+          "desc": "Neighborhood slogan rallies promoting cloth bags, paper reuse, and eco-friendly home habits."
+        },
+        {
+          "icon": "🧹",
+          "title": "Swachh Vidyalaya & Civic Sense",
+          "desc": "Teaching waste segregation (Wet/Dry bins), clean hands hygiene, and respect for public spaces."
+        },
+        {
+          "icon": "🎁",
+          "title": "Joy of Giving Drives",
+          "desc": "Sharing books, toys, and winter garments with underprivileged children during festive seasons."
+        }
+      ],
+      "highlightsBadge": "Greener Tomorrow Together",
+      "highlightsTitle": "Social Awareness",
+      "highlightsSubtitle": "Instilling heart-to-heart values of empathy, ecology, and civic mindfulness.",
+      "highlights": [
+        {
+          "label": "Plantation Drives:",
+          "desc": "Every child participates in planting and nurturing plants."
+        },
+        {
+          "label": "Civic Drives:",
+          "desc": "Slogan placard walks raising community awareness on traffic & hygiene."
+        },
+        {
+          "label": "Character Building:",
+          "desc": "Empathy, humility, and environmental responsibility from childhood."
+        }
+      ],
+      "button": "Join Our School Family",
+      "carousel": {
+        "badge": "COMMUNITY ACTION",
+        "subBadge": "Social Impact",
+        "title": "Eco Awareness, Tricolor Rallies & Civic Pride",
+        "subtitle": "Heartwarming memories of our young change-makers planting trees, rallying for cleanliness, and spreading kindness."
+      }
+    },
+    "photos": {
+      "educationalTours": [
+        {
+          "id": "tour-1",
+          "image": "/images/events/educational-tours/tour_heritage.jpg",
+          "tag": "🏛️ Heritage Visit",
+          "title": "Historical Monument Walk",
+          "desc": "Exploring ancient architectural landmarks and discovering Indian cultural roots.",
+          "category": "History & Heritage"
+        },
+        {
+          "id": "tour-2",
+          "image": "/images/events/educational-tours/tour_science.jpg",
+          "tag": "🔬 Science Center",
+          "title": "Interactive Science Museum",
+          "desc": "Hands-on scientific exhibits, glowing globes, and interactive mechanics models.",
+          "category": "STEM & Discovery"
+        },
+        {
+          "id": "tour-3",
+          "image": "/images/events/educational-tours/tour_nature.jpg",
+          "tag": "🌿 Botanical Garden",
+          "title": "Nature Discovery Walk",
+          "desc": "Examining plants, vibrant flowers, and leaves with magnifying glasses in green parks.",
+          "category": "Flora & Environment"
+        },
+        {
+          "id": "tour-4",
+          "image": "/images/events/educational-tours/tour_planetarium.jpg",
+          "tag": "✨ Planetarium Dome",
+          "title": "Astronomy & Space Show",
+          "desc": "Witnessing celestial galaxy projections, shining planets, and solar system wonders.",
+          "category": "Astronomy & Space"
+        },
+        {
+          "id": "tour-5",
+          "image": "/images/events/educational-tours/tour_farm.jpg",
+          "tag": "🌾 Agro Experience",
+          "title": "Organic Farm & Ecology Tour",
+          "desc": "Observing crops, seasonal harvests, soil conservation, and dairy animals firsthand.",
+          "category": "Agriculture & Ecology"
+        },
+        {
+          "id": "tour-6",
+          "image": "/images/events/educational-tours/tour_pottery.jpg",
+          "tag": "🏺 Traditional Craft",
+          "title": "Hands-on Pottery Workshop",
+          "desc": "Shaping wet clay on pottery wheels to appreciate indigenous artisan traditions.",
+          "category": "Art & Indigenous Crafts"
+        },
+        {
+          "id": "tour-7",
+          "image": "/images/events/educational-tours/tour_rail_museum.jpg",
+          "tag": "🚂 Rail Heritage",
+          "title": "Transport & Steam Locomotive Museum",
+          "desc": "Climbing aboard historic vintage rail coaches and learning transport evolution.",
+          "category": "Transport & Engineering"
+        },
+        {
+          "id": "tour-8",
+          "image": "/images/events/educational-tours/tour_zoo.jpg",
+          "tag": "🐾 Wildlife Sanctuary",
+          "title": "Zoological Biodiversity Walk",
+          "desc": "Safe guided observation of diverse animal species, bird calls, and ecosystem balance.",
+          "category": "Zoology & Wildlife"
+        }
+      ],
+      "picnics": [
+        {
+          "id": "picnic-1",
+          "image": "/images/events/picnics/picnic_park_mat.jpg",
+          "tag": "🥪 Outdoor Picnic",
+          "title": "Sunny Park Lawn Lunch",
+          "desc": "Sharing tiffin baskets, refreshing juices, and laughing together on open lawns.",
+          "category": "Joyful Bonding"
+        },
+        {
+          "id": "picnic-2",
+          "image": "/images/events/picnics/picnic_farm_visit.jpg",
+          "tag": "🌿 Farm Discovery",
+          "title": "Organic Farm Excursion",
+          "desc": "Hands-on encounters with calves, green vegetation, and farm produce.",
+          "category": "Nature & Animals"
+        },
+        {
+          "id": "picnic-3",
+          "image": "/images/events/picnics/picnic_zoo_safari.jpg",
+          "tag": "🦒 Zoo Expedition",
+          "title": "Open-Air Wildlife Park",
+          "desc": "Observing zebras, giraffes, and exotic flora during a sunny day out.",
+          "category": "Wildlife & Parks"
+        },
+        {
+          "id": "picnic-4",
+          "image": "/images/events/picnics/picnic_lawn_fun.jpg",
+          "tag": "🌻 Green Lawns",
+          "title": "Rejuvenating Green Spaces",
+          "desc": "Recharging minds in clean, scenic natural surroundings away from screens.",
+          "category": "Wellness & Play"
+        }
+      ],
+      "annualDay": [
+        {
+          "id": "annual-1",
+          "image": "/images/events/annual-day/annual_stage_performance.jpg",
+          "tag": "🌟 Grand Gala",
+          "title": "100% Student Stage Spectacle",
+          "desc": "Vibrant yellow and red sparkling costumes lighting up the auditorium stage.",
+          "category": "Stage Confidence"
+        },
+        {
+          "id": "annual-2",
+          "image": "/images/events/annual-day/annual_theatrical_play.jpg",
+          "tag": "🎭 Value Drama",
+          "title": "Theatrical Skits & Role-Play",
+          "desc": "Enacting moral and patriotic stories with expressive acting and music.",
+          "category": "Creative Drama"
+        },
+        {
+          "id": "annual-3",
+          "image": "/images/events/annual-day/annual_music_rhythm.png",
+          "tag": "🎶 Musical Recital",
+          "title": "Melody & Rhythm Chorus",
+          "desc": "Synchronized instruments, rhymes, and joyful choral songs.",
+          "category": "Music & Performing Arts"
+        },
+        {
+          "id": "annual-4",
+          "image": "/images/events/annual-day/annual_cultural_celebration.png",
+          "tag": "🏆 Cultural Honors",
+          "title": "Annual Celebration & Awards",
+          "desc": "Celebrating student accomplishments and star performers with parents.",
+          "category": "Achievements"
+        }
+      ],
+      "sportsDay": [
+        {
+          "id": "sports-1",
+          "image": "/images/events/sports-day/sports_track_sprint.jpg",
+          "tag": "🏃 Track Sprint",
+          "title": "100m Dash & Agility Races",
+          "desc": "Spirited runners dashing toward the finish line with determination.",
+          "category": "Athletics & Sprints"
+        },
+        {
+          "id": "sports-2",
+          "image": "/images/events/sports-day/sports_lawn_race.jpg",
+          "tag": "🏅 Lawn Sprints",
+          "title": "Fun Obstacle Challenges",
+          "desc": "Energetic relay sprints on lush green lawns cheered by school houses.",
+          "category": "Fitness & Agility"
+        },
+        {
+          "id": "sports-3",
+          "image": "/images/events/sports-day/sports_swings_agility.avif",
+          "tag": "🧘 Agility & Drills",
+          "title": "Outdoor Agility & Play Grounds",
+          "desc": "Developing gross motor balance, coordination, and physical stamina.",
+          "category": "Coordination"
+        },
+        {
+          "id": "sports-4",
+          "image": "/images/events/sports-day/sports_agility_games.avif",
+          "tag": "🤝 Team Spirit",
+          "title": "House Sportsmanship & Drills",
+          "desc": "Fostering teamwork, camaraderie, and joy in active physical lifestyles.",
+          "category": "Sportsmanship"
+        }
+      ],
+      "olympiad": [
+        {
+          "id": "olympiad-1",
+          "image": "/images/events/olympiad/olympiad_smart_it_lab.jpg",
+          "tag": "💻 Cyber Olympiad",
+          "title": "National Cyber Olympiad (NCO)",
+          "desc": "Foundational digital reasoning, typing logic, and computer science aptitude.",
+          "category": "Digital Logic"
+        },
+        {
+          "id": "olympiad-2",
+          "image": "/images/events/olympiad/olympiad_guided_learning.jpg",
+          "tag": "📐 Math & Science",
+          "title": "IMO & NSO Reasoning Practice",
+          "desc": "Weekly conceptual problem-solving, pattern finding, and science aptitude.",
+          "category": "Analytical Thinking"
+        },
+        {
+          "id": "olympiad-3",
+          "image": "/images/events/olympiad/olympiad_achievers.jpg",
+          "tag": "🥇 Proud Achievers",
+          "title": "Medal & Merit Holders",
+          "desc": "Honoring national percentile winners with gold medals and certificates.",
+          "category": "Academic Excellence"
+        },
+        {
+          "id": "olympiad-4",
+          "image": "/images/events/olympiad/olympiad_cyber_lab.jpg",
+          "tag": "🧠 Logic Lab",
+          "title": "Hands-on Technology Practice",
+          "desc": "Building critical thinking and confidence for national competitive stages.",
+          "category": "STEM & Innovation"
+        }
+      ],
+      "csrRallies": [
+        {
+          "id": "csr-1",
+          "image": "/images/events/csr-rallies/csr_plantation_drive.jpg",
+          "tag": "🌱 Green Drive",
+          "title": "Greener Tomorrow Together",
+          "desc": "Hands-on sapling plantation drive nurturing eco-conscious young citizens.",
+          "category": "Environmental Care"
+        },
+        {
+          "id": "csr-2",
+          "image": "/images/events/csr-rallies/csr_national_rally.jpg",
+          "tag": "🇮🇳 Patriotism",
+          "title": "Tricolor Awareness March",
+          "desc": "Students holding national flags and spreading civic pride through the community.",
+          "category": "Civic Consciousness"
+        },
+        {
+          "id": "csr-3",
+          "image": "/images/events/csr-rallies/csr_school_flag_march.jpg",
+          "tag": "📢 Student Voices",
+          "title": "Community Social Rally",
+          "desc": "Marching with school banners for cleanliness, tree planting, and traffic safety.",
+          "category": "Social Impact"
+        },
+        {
+          "id": "csr-4",
+          "image": "/images/events/csr-rallies/csr_community_pledge.jpg",
+          "tag": "🤝 School Body",
+          "title": "Rising Kids Community Pledge",
+          "desc": "United student assembly committing to empathy, cleanliness, and kindness.",
+          "category": "Moral Values"
+        }
+      ]
     }
   },
   "contact": {
@@ -1436,6 +2476,12 @@
       "kicker": "We Would Be Happy to Answer Your Questions",
       "title": "Contact Rising Kids School",
       "subtitle": "Play Group to Class V  |  Co-Education  |  English Medium  |  Govt. Recognized"
+    },
+    "breadcrumbChips": {
+      "sendMessage": "Send Message",
+      "locationMap": "Location Map",
+      "callHelpline": "Call Helpline",
+      "helpline": "Helpline:"
     },
     "heroBox": {
       "title": "Direct Helpdesk",
@@ -1469,11 +2515,14 @@
     },
     "sendEnquiry": {
       "heading": "Send an enquiry",
+      "mandatoryNotice": "* Indicates mandatory fields",
       "namePlaceholder": "Your Name",
       "phonePlaceholder": "Phone Number",
       "emailPlaceholder": "Email Address",
+      "optionalLabel": "(Optional)",
       "messagePlaceholder": "How can we help?",
       "submitButton": "Send Message",
+      "submitting": "Sending Message...",
       "successHeading": "Thank you!",
       "successMessage": "Your enquiry has been received. The school team will contact you shortly.",
       "sendAnother": "Send Another Message"
@@ -1503,7 +2552,8 @@
     "whatsappChat": "Chat on WhatsApp",
     "callUs": "📞 Call Us",
     "whatsapp": "💬 WhatsApp",
-    "direction": "📍 Direction"
+    "direction": "📍 Direction",
+    "letsConnect": "Let's Connect"
   },
   "heroSliderBadges": {
     "safeTitle": "100% Safe",
@@ -1650,5 +2700,16 @@
         "ctaLink": "#gallery"
       }
     ]
+  },
+  "carousel": {
+    "hintText": "👈 Swipe horizontally or click photos to expand full viewport 👉",
+    "tapToEnlarge": "Tap to Enlarge",
+    "photoCounter": "Photo {current} of {total}",
+    "close": "Close",
+    "prev": "Previous photo (Left Arrow)",
+    "next": "Next photo (Right Arrow)",
+    "viewFullScreen": "Click to view full screen",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right"
   }
 }

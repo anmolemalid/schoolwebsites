@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect, useCallback, ReactNode } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { t } from "../lib/i18n";
 
 export interface CarouselItem {
   id: string | number;
@@ -42,9 +43,10 @@ export default function GenericCarousel({
   itemWidth = 320,
   className = "",
   showScrollHint = true,
-  hintText = "👈 Swipe horizontally or click photos to expand full viewport 👉",
+  hintText,
   extraHeaderRight,
 }: GenericCarouselProps) {
+  const activeHintText = hintText || t.carousel.hintText;
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -202,7 +204,7 @@ export default function GenericCarousel({
                 borderColor: canScrollLeft ? "rgba(255, 210, 0, 0.4)" : undefined,
                 cursor: canScrollLeft ? "pointer" : "default",
               }}
-              aria-label="Scroll left"
+              aria-label={t.carousel.scrollLeft}
             >
               <svg
                 width="18"
@@ -235,7 +237,7 @@ export default function GenericCarousel({
                 borderColor: canScrollRight ? "rgba(255, 210, 0, 0.4)" : undefined,
                 cursor: canScrollRight ? "pointer" : "default",
               }}
-              aria-label="Scroll right"
+              aria-label={t.carousel.scrollRight}
             >
               <svg
                 width="18"
@@ -303,7 +305,7 @@ export default function GenericCarousel({
                     height: "32px",
                     backdropFilter: "blur(6px)",
                   }}
-                  title="Click to view full screen"
+                  title={t.carousel.viewFullScreen}
                 >
                   <svg
                     width="16"
@@ -353,12 +355,12 @@ export default function GenericCarousel({
       {/* Optional Mobile Swipe / Expand Hint Bar */}
       {showScrollHint && (
         <div className="d-flex align-items-center justify-content-between mt-2 pt-1 text-muted small">
-          <span style={{ fontSize: "0.78rem" }}>{hintText}</span>
+          <span style={{ fontSize: "0.78rem" }}>{activeHintText}</span>
           <span
             className="badge bg-light text-dark border px-2 py-1 rounded-pill"
             style={{ fontSize: "0.75rem" }}
           >
-            Tap to Enlarge
+            {t.carousel.tapToEnlarge}
           </span>
         </div>
       )}
@@ -432,7 +434,9 @@ export default function GenericCarousel({
                       fontSize: "0.85rem",
                     }}
                   >
-                    Photo {currentIndex + 1} of {items.length}
+                    {t.carousel.photoCounter
+                      .replace("{current}", String(currentIndex + 1))
+                      .replace("{total}", String(items.length))}
                   </span>
                 </div>
 
@@ -448,7 +452,7 @@ export default function GenericCarousel({
                     pointerEvents: "auto",
                     cursor: "pointer",
                   }}
-                  aria-label="Close Fullscreen View"
+                  aria-label={t.carousel.close}
                 >
                   <svg
                     width="18"
@@ -463,7 +467,7 @@ export default function GenericCarousel({
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
-                  <span>Close</span>
+                  <span>{t.carousel.close}</span>
                 </button>
               </div>
 
@@ -486,8 +490,8 @@ export default function GenericCarousel({
                     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.6)",
                     cursor: "pointer",
                   }}
-                  title="Previous photo (Left Arrow)"
-                  aria-label="Previous photo"
+                  title={t.carousel.prev}
+                  aria-label={t.carousel.prev}
                 >
                   <svg
                     width="28"
@@ -547,8 +551,8 @@ export default function GenericCarousel({
                     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.6)",
                     cursor: "pointer",
                   }}
-                  title="Next photo (Right Arrow)"
-                  aria-label="Next photo"
+                  title={t.carousel.next}
+                  aria-label={t.carousel.next}
                 >
                   <svg
                     width="28"

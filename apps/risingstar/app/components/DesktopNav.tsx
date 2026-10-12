@@ -29,7 +29,7 @@ export default function DesktopNav() {
       >
         <span className="nav-icon me-1">🎒</span>
         <span>{t.nav.admissions}</span>
-        <span className="nav-open-badge ms-1">OPEN</span>
+        <span className="nav-open-badge ms-1">{t.nav.openBadge}</span>
       </Link>
       <Link
         href="/curriculum"

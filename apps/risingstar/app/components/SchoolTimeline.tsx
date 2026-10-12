@@ -9,6 +9,7 @@ export interface TimelineItem {
   title: string;
   subtitle: string;
   description: string;
+  highlight?: string;
 }
 
 interface SchoolTimelineProps {
@@ -17,10 +18,12 @@ interface SchoolTimelineProps {
     all: string;
     phase1: string;
     phase2: string;
+    yearPrefix?: string;
   };
+  yearPrefix?: string;
 }
 
-export default function SchoolTimeline({ items, filterLabels }: SchoolTimelineProps) {
+export default function SchoolTimeline({ items, filterLabels, yearPrefix }: SchoolTimelineProps) {
   const [activeFilter, setActiveFilter] = useState<"all" | 1 | 2>("all");
 
   const filteredItems = items.filter((item) => {
@@ -169,7 +172,7 @@ export default function SchoolTimeline({ items, filterLabels }: SchoolTimelinePr
               {/* Circular Center Badge */}
               <div
                 className="timeline-kids-badge"
-                title={`Year ${item.year}: ${item.title}`}
+                title={`${yearPrefix || filterLabels.yearPrefix || "YEAR"} ${item.year}: ${item.title}`}
               >
                 <span>{item.icon}</span>
               </div>
@@ -193,7 +196,7 @@ export default function SchoolTimeline({ items, filterLabels }: SchoolTimelinePr
                       letterSpacing: "0.5px",
                     }}
                   >
-                    YEAR {item.year}
+                    {(yearPrefix || filterLabels.yearPrefix || "YEAR")} {item.year}
                   </span>
 
                   <span
@@ -225,14 +228,7 @@ export default function SchoolTimeline({ items, filterLabels }: SchoolTimelinePr
                     ⭐
                   </span>
                   <span className="text-dark small fw-semibold">
-                    {item.year === "2018" && "Inception in New Vijay Nagar, Ghaziabad"}
-                    {item.year === "2019" && "100% Student Participation & Phonics Lab"}
-                    {item.year === "2020" && "Uninterrupted Digital Story Circles"}
-                    {item.year === "2021" && "FLN Literacy Kits & Safe Campus Reopening"}
-                    {item.year === "2022" && "Govt. Recognized & UDISE+ Unique Code"}
-                    {item.year === "2023" && "NEP 2020 NCF-FS & PRASHAST Inclusive Screening"}
-                    {item.year === "2024" && "100% Onboarding to National PEN & APAAR"}
-                    {item.year === "2025–26" && "8 Glorious Years • 500+ Alumni Milestone"}
+                    {item.highlight || item.title}
                   </span>
                 </div>
               </div>

@@ -180,7 +180,7 @@ export default function FacilitiesPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🎯</span>
-                    <span>Highlights</span>
+                    <span>{t.facilities.breadcrumbChips.highlights}</span>
                   </a>
 
                   <a
@@ -188,7 +188,7 @@ export default function FacilitiesPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🛡️</span>
-                    <span>Safety</span>
+                    <span>{t.facilities.breadcrumbChips.safety}</span>
                   </a>
 
                   <a
@@ -196,7 +196,7 @@ export default function FacilitiesPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>📍</span>
-                    <span>Visit Campus</span>
+                    <span>{t.facilities.breadcrumbChips.visitCampus}</span>
                   </a>
                 </div>
               </nav>
@@ -213,7 +213,7 @@ export default function FacilitiesPage() {
                   }}
                 >
                   <span className="spinner-grow spinner-grow-sm text-warning" role="status" style={{ width: "0.6rem", height: "0.6rem" }}></span>
-                  <span>Modern Safe Campus</span>
+                  <span>{t.facilities.breadcrumbChips.modernSafeCampus}</span>
                 </span>
               </div>
             </div>
@@ -377,7 +377,7 @@ export default function FacilitiesPage() {
                     }}
                   >
                     <span>✨</span>
-                    <span>SAFE & STIMULATING LEARNING ENVIRONMENT</span>
+                    <span>{t.facilities.actionBanner.kicker}</span>
                   </div>
 
                   {/* Heading */}
@@ -394,15 +394,15 @@ export default function FacilitiesPage() {
                   <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
                     <span className="cta-feature-chip">
                       <span>📹</span>
-                      <span>24/7 CCTV & Security Guard</span>
+                      <span>{t.facilities.actionBanner.featureChips[0]}</span>
                     </span>
                     <span className="cta-feature-chip">
                       <span>🚌</span>
-                      <span>Safe Van & Bus Transport</span>
+                      <span>{t.facilities.actionBanner.featureChips[1]}</span>
                     </span>
                     <span className="cta-feature-chip">
                       <span>🚰</span>
-                      <span>Pure RO Drinking Water</span>
+                      <span>{t.facilities.actionBanner.featureChips[2]}</span>
                     </span>
                   </div>
                 </div>
@@ -418,10 +418,10 @@ export default function FacilitiesPage() {
                     }}
                   >
                     <div className="small text-warning fw-bold text-uppercase mb-2" style={{ letterSpacing: "1px" }}>
-                      Plan A School Visit
+                      {t.facilities.actionBanner.planVisit}
                     </div>
                     <div className="text-white fw-bold fs-5 mb-3">
-                      Experience Our Modern Campus
+                      {t.facilities.actionBanner.experienceModern}
                     </div>
 
                     {/* Primary & Secondary Action Buttons */}

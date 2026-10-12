@@ -4,8 +4,8 @@ import { t } from "../lib/i18n";
 import SchoolTimeline from "../components/SchoolTimeline";
 
 export const metadata: Metadata = {
-  title: `${t.meta.pages.about.title} | Govt. Recognized & Affiliated`,
-  description: `${t.meta.pages.about.description} Govt. Recognized & Affiliated with UDISE+ code, PRASHAST teacher registration, Student PEN & APAAR number. Celebrating 8 years of excellence.`,
+  title: t.meta.pages.about.title,
+  description: t.meta.pages.about.description,
 };
 
 export default function AboutPage() {
@@ -64,7 +64,7 @@ export default function AboutPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>💖</span>
-                    <span>5 Core Pillars</span>
+                    <span>{t.about.breadcrumbChips.corePillars}</span>
                   </a>
 
                   <a
@@ -72,7 +72,7 @@ export default function AboutPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🏛️</span>
-                    <span>Govt. Recognition</span>
+                    <span>{t.about.breadcrumbChips.govtRecognition}</span>
                   </a>
 
                   <a
@@ -80,7 +80,7 @@ export default function AboutPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🆔</span>
-                    <span>PRASHAST, PEN & APAAR</span>
+                    <span>{t.about.breadcrumbChips.studentBenefits}</span>
                   </a>
 
                   <a
@@ -88,7 +88,7 @@ export default function AboutPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>📚</span>
-                    <span>Learning Ladder</span>
+                    <span>{t.about.breadcrumbChips.growthLadder}</span>
                   </a>
 
                   <a
@@ -96,7 +96,7 @@ export default function AboutPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🖋️</span>
-                    <span>Leadership Desk</span>
+                    <span>{t.about.breadcrumbChips.leadershipDesk}</span>
                   </a>
 
                   <a
@@ -104,7 +104,7 @@ export default function AboutPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>⏳</span>
-                    <span>8-Year Journey</span>
+                    <span>{t.about.breadcrumbChips.journeyTimeline}</span>
                   </a>
 
                   <Link
@@ -112,7 +112,7 @@ export default function AboutPage() {
                     className="text-decoration-none px-2 py-1 rounded-pill d-inline-flex align-items-center gap-1 banner-nav-chip"
                   >
                     <span>🎒</span>
-                    <span>Enquire Now</span>
+                    <span>{t.about.breadcrumbChips.enquireNow}</span>
                   </Link>
                 </div>
               </nav>
@@ -129,7 +129,7 @@ export default function AboutPage() {
                   }}
                 >
                   <span className="spinner-grow spinner-grow-sm text-warning" role="status" style={{ width: "0.6rem", height: "0.6rem" }}></span>
-                  <span>Est. 2018 | 8 Years of Excellence</span>
+                  <span>{t.about.breadcrumbChips.legacyBadge}</span>
                 </span>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function AboutPage() {
           />
           <img
             src="/assets/slider/hero_banner_2.jpg"
-            alt="Rising Kids School - About Us - Govt. Recognized Preschool and Primary School in New Vijay Nagar, Ghaziabad"
+            alt={`${t.school.name} - ${t.nav.aboutUs}`}
             className="w-100 h-auto d-block hero-slider-img"
           />
         </picture>
@@ -162,15 +162,15 @@ export default function AboutPage() {
       >
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge-pill-kids mb-2">OUR FOUNDATIONAL PILLARS</span>
+            <span className="badge-pill-kids mb-2">{t.about.pillarsSection.tag}</span>
             <h2
               className="display-6 fw-bold mb-3"
               style={{ color: "var(--primary-royal)", fontFamily: "'Poppins', sans-serif" }}
             >
-              5 Pillars of Child Excellence
+              {t.about.pillarsSection.heading}
             </h2>
             <p className="text-muted col-md-7 mx-auto">
-              Every day at Rising Kids School is guided by these five core commitments to ensure each child blossoms into a confident, compassionate learner.
+              {t.about.pillarsSection.description}
             </p>
           </div>
 
@@ -247,15 +247,15 @@ export default function AboutPage() {
                   </span>
                   <div>
                     <span className="badge bg-primary text-white fw-bold px-2 py-1 rounded-pill small mb-1">
-                      UP GOVERNMENT
+                      {t.about.govtRecognition.flagship.upGovtBadge}
                     </span>
                     <h3 className="fw-bold fs-4 text-dark mb-0">
-                      Government Recognized & Affiliated
+                      {t.about.govtRecognition.flagship.upGovtTitle}
                     </h3>
                   </div>
                 </div>
                 <p className="text-dark mb-0 fs-5" style={{ lineHeight: 1.65 }}>
-                  Recognized by the Government of Uttar Pradesh and affiliated with the relevant educational board, we follow all formal schooling guidelines.
+                  {t.about.govtRecognition.flagship.upGovtDesc}
                 </p>
               </div>
             </div>
@@ -277,15 +277,15 @@ export default function AboutPage() {
                   </span>
                   <div>
                     <span className="badge bg-warning text-dark fw-bold px-2 py-1 rounded-pill small mb-1">
-                      NATIONAL POLICIES
+                      {t.about.govtRecognition.flagship.natPoliciesBadge}
                     </span>
                     <h3 className="fw-bold fs-4 text-dark mb-0">
-                      Aligned with National Education System
+                      {t.about.govtRecognition.flagship.natPoliciesTitle}
                     </h3>
                   </div>
                 </div>
                 <p className="text-dark mb-0 fs-5" style={{ lineHeight: 1.65 }}>
-                  We follow all educational policies and digital initiatives as per Government guidelines, ensuring every child is a part of the formal schooling system.
+                  {t.about.govtRecognition.flagship.natPoliciesDesc}
                 </p>
               </div>
             </div>
@@ -356,7 +356,7 @@ export default function AboutPage() {
                   <span className="badge bg-danger-subtle text-danger border border-danger fw-bold px-3 py-1 rounded-pill small">
                     {t.about.studentBenefits.prashast.badge}
                   </span>
-                  <span className="text-muted small fw-bold">NCERT / MoE</span>
+                  <span className="text-muted small fw-bold">{t.about.studentBenefits.tags.ncert}</span>
                 </div>
 
                 <div className="d-flex align-items-center gap-3 mb-3">
@@ -403,7 +403,7 @@ export default function AboutPage() {
                   <span className="badge bg-primary fw-bold text-white px-3 py-1 rounded-pill small">
                     {t.about.studentBenefits.pen.badge}
                   </span>
-                  <span className="text-muted small fw-bold">UDISE+ Code</span>
+                  <span className="text-muted small fw-bold">{t.about.studentBenefits.tags.udise}</span>
                 </div>
 
                 <div className="d-flex align-items-center gap-3 mb-3">
@@ -450,7 +450,7 @@ export default function AboutPage() {
                   <span className="badge bg-success fw-bold text-white px-3 py-1 rounded-pill small">
                     {t.about.studentBenefits.apaar.badge}
                   </span>
-                  <span className="text-muted small fw-bold">NEP 2020</span>
+                  <span className="text-muted small fw-bold">{t.about.studentBenefits.tags.nep}</span>
                 </div>
 
                 <div className="d-flex align-items-center gap-3 mb-3">
@@ -470,7 +470,7 @@ export default function AboutPage() {
                       {t.about.studentBenefits.apaar.title}
                     </h3>
                     <small className="text-success fw-bold">
-                      DigiLocker Integrated
+                      {t.about.studentBenefits.tags.digilocker}
                     </small>
                   </div>
                 </div>
@@ -503,15 +503,15 @@ export default function AboutPage() {
       >
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge-pill-kids mb-2">LEARNING PROGRESSION</span>
+            <span className="badge-pill-kids mb-2">{t.about.growthLadderSection.tag}</span>
             <h2
               className="display-6 fw-bold mb-3"
               style={{ color: "var(--primary-royal)", fontFamily: "'Poppins', sans-serif" }}
             >
-              Learn • Play • Explore • Grow • Shine
+              {t.about.growthLadderSection.heading}
             </h2>
             <p className="text-muted col-md-7 mx-auto">
-              Our structured pedagogical continuum guides children through every step of early childhood and primary schooling.
+              {t.about.growthLadderSection.description}
             </p>
           </div>
 
@@ -673,14 +673,14 @@ export default function AboutPage() {
                   {/* Formal Sign-off */}
                   <div className="d-flex align-items-center justify-content-between pt-2 border-top">
                     <div>
-                      <small className="text-muted d-block">With warm regards & dedication,</small>
+                      <small className="text-muted d-block">{t.about.deskMessages.signOffs.founderSignOff}</small>
                       <strong className="text-dark fs-6 d-block" style={{ fontFamily: "'Poppins', sans-serif" }}>
                         {t.about.deskMessages.founder.name}
                       </strong>
                       <span className="small text-muted">{t.about.deskMessages.founder.role}</span>
                     </div>
                     <span className="badge bg-light text-dark border px-3 py-2 rounded-pill small fw-bold">
-                      Est. 2018
+                      {t.about.deskMessages.signOffs.founderBadge}
                     </span>
                   </div>
                 </div>
@@ -788,14 +788,14 @@ export default function AboutPage() {
                   {/* Formal Sign-off */}
                   <div className="d-flex align-items-center justify-content-between pt-2 border-top">
                     <div>
-                      <small className="text-muted d-block">In partnership for your child&apos;s growth,</small>
+                      <small className="text-muted d-block">{t.about.deskMessages.signOffs.branchHeadSignOff}</small>
                       <strong className="text-dark fs-6 d-block" style={{ fontFamily: "'Poppins', sans-serif" }}>
                         {t.about.deskMessages.branchHead.name}
                       </strong>
                       <span className="small text-muted">{t.about.deskMessages.branchHead.role}</span>
                     </div>
                     <span className="badge bg-light text-dark border px-3 py-2 rounded-pill small fw-bold">
-                      Campus Leadership
+                      {t.about.deskMessages.signOffs.branchHeadBadge}
                     </span>
                   </div>
                 </div>
@@ -834,6 +834,7 @@ export default function AboutPage() {
               all: t.about.timeline.filterAll,
               phase1: t.about.timeline.filterPhase1,
               phase2: t.about.timeline.filterPhase2,
+              yearPrefix: t.about.timeline.yearPrefix,
             }}
           />
         </div>
@@ -845,12 +846,12 @@ export default function AboutPage() {
       <section className="py-5" id="vision-mission" style={{ backgroundColor: "#ffffff" }}>
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge-pill-kids mb-2">FOUNDATIONAL GUIDING PRINCIPLES</span>
+            <span className="badge-pill-kids mb-2">{t.about.principlesSection.tag}</span>
             <h2 className="display-6 fw-bold mb-3" style={{ color: "var(--primary-royal)" }}>
-              Vision, Mission & Guiding Ethics
+              {t.about.principlesSection.heading}
             </h2>
             <p className="text-muted col-md-7 mx-auto">
-              Our core pillars ensure that every child experiences intellectual stimulation, character fortitude, and warm emotional support every single day.
+              {t.about.principlesSection.description}
             </p>
           </div>
 
@@ -1021,7 +1022,7 @@ export default function AboutPage() {
                   🌟 {t.about.heroBox.title}
                 </span>
                 <h3 className="display-6 fw-bold text-white mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                  Join the Rising Kids School Family
+                  {t.about.ctaSection.heading}
                 </h3>
                 <p className="lead text-white text-opacity-90 mb-4" style={{ fontSize: "1.08rem" }}>
                   {t.about.heroBox.description}
@@ -1029,30 +1030,15 @@ export default function AboutPage() {
 
                 {/* Highlights tags */}
                 <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mb-4">
-                  <span
-                    className="badge px-3 py-2 rounded-pill"
-                    style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}
-                  >
-                    🏛️ Govt. Recognized
-                  </span>
-                  <span
-                    className="badge px-3 py-2 rounded-pill"
-                    style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}
-                  >
-                    📋 PRASHAST & UDISE+
-                  </span>
-                  <span
-                    className="badge px-3 py-2 rounded-pill"
-                    style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}
-                  >
-                    🆔 Student PEN & APAAR
-                  </span>
-                  <span
-                    className="badge px-3 py-2 rounded-pill"
-                    style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}
-                  >
-                    ⏳ 8 Years of Trust
-                  </span>
+                  {t.about.ctaSection.chips.map((chip, idx) => (
+                    <span
+                      key={idx}
+                      className="badge px-3 py-2 rounded-pill"
+                      style={{ backgroundColor: "rgba(255, 255, 255, 0.12)", border: "1px solid rgba(255, 255, 255, 0.2)" }}
+                    >
+                      {chip}
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -1067,10 +1053,10 @@ export default function AboutPage() {
                     }}
                   >
                     <div className="small text-warning fw-bold text-uppercase mb-2" style={{ letterSpacing: "1px" }}>
-                      Admissions Open 2027-28
+                      {t.about.ctaSection.admissionsOpen}
                     </div>
                     <div className="text-white fw-bold fs-5 mb-3">
-                      Start Your Child&apos;s Journey Today
+                      {t.about.ctaSection.journeyTitle}
                     </div>
 
                     {/* Primary & Secondary Action Buttons */}
@@ -1096,7 +1082,7 @@ export default function AboutPage() {
                         className="btn btn-outline-light btn-lg rounded-pill fw-bold text-uppercase d-inline-flex align-items-center justify-content-center gap-2"
                         style={{ letterSpacing: "0.5px", fontSize: "0.95rem", borderWidth: "1.5px" }}
                       >
-                        <span>📍 Visit School Campus</span>
+                        <span>{t.about.ctaSection.visitCampus}</span>
                         <span
                           className="rounded-circle d-inline-flex align-items-center justify-content-center"
                           style={{ width: "22px", height: "22px", backgroundColor: "rgba(255,255,255,0.15)" }}
@@ -1113,20 +1099,20 @@ export default function AboutPage() {
                       <a
                         href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`}
                         className="cta-phone-pill"
-                        title="Call School Helpline"
+                        title={t.contact.breadcrumbChips.callHelpline}
                       >
                         <span className="spinner-grow spinner-grow-sm text-success" role="status" style={{ width: "0.5rem", height: "0.5rem" }}></span>
                         <span>{t.school.contacts.phonePrimary}</span>
                       </a>
 
                       <a
-                        href={`https://wa.me/${t.school.contacts.phonePrimary.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi, I want to know more about Rising Kids School admissions and government recognition.")}`}
+                        href={`https://wa.me/${t.school.contacts.phonePrimary.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(t.about.ctaSection.whatsAppMessage)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="cta-whatsapp-pill"
-                        title="Chat on WhatsApp"
+                        title={t.floatingActions.whatsappChat}
                       >
-                        <span>💬 WhatsApp</span>
+                        <span>{t.about.ctaSection.whatsAppText}</span>
                       </a>
                     </div>
                   </div>

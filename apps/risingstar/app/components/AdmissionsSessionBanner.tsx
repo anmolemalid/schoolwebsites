@@ -74,7 +74,7 @@ export default function AdmissionsSessionBanner() {
                     className="badge rounded-pill px-3 py-1.5 fw-bold small shadow-sm"
                     style={{ backgroundColor: "#ffd200", color: "#071c3e" }}
                   >
-                    🏫 All Classes
+                    {sessionInfo?.allClassesBadge || "🏫 All Classes"}
                   </span>
                   <span
                     className="badge rounded-pill px-2.5 py-1.5 small fw-semibold text-white"
@@ -83,7 +83,7 @@ export default function AdmissionsSessionBanner() {
                       border: "1px solid rgba(255, 255, 255, 0.25)",
                     }}
                   >
-                    Playgroup – Class V
+                    {sessionInfo?.allClassesSpan || "Playgroup – Class V"}
                   </span>
                 </div>
 
@@ -103,10 +103,10 @@ export default function AdmissionsSessionBanner() {
                     <span className="fs-4 flex-shrink-0">🗓️</span>
                     <div>
                       <div className="fw-bold text-warning fs-5" style={{ letterSpacing: "0.2px" }}>
-                        Session start from October to April for all classes
+                        {sessionInfo?.allClasses?.highlight || "Session start from October to April for all classes"}
                       </div>
                       <div className="text-white text-opacity-75 small mt-1">
-                        Registration & admissions open for current academic term
+                        {sessionInfo?.registrationOpen || "Registration & admissions open for current academic term"}
                       </div>
                     </div>
                   </div>
@@ -135,10 +135,10 @@ export default function AdmissionsSessionBanner() {
                     className="badge rounded-pill px-3 py-1.5 fw-bold small text-white shadow-sm"
                     style={{ backgroundColor: "#2e7d32" }}
                   >
-                    👶 Playgroup Admissions
+                    {sessionInfo?.playgroupBadge || "👶 Playgroup Admissions"}
                   </span>
                   <span className="badge bg-success-subtle text-success border border-success border-opacity-25 px-2.5 py-1.5 rounded-pill small fw-bold">
-                    2 Flexible Batches
+                    {sessionInfo?.twoBatchesBadge || "2 Flexible Batches"}
                   </span>
                 </div>
 
@@ -156,7 +156,7 @@ export default function AdmissionsSessionBanner() {
                 >
                   <div className="fw-bold text-white fs-5 mb-2 d-flex align-items-center gap-2">
                     <span>🎒</span>
-                    <span>Playgroup class admission in two batches:</span>
+                    <span>{sessionInfo?.playgroup?.highlight || "Playgroup class admission in two batches:"}</span>
                   </div>
 
                   <div className="row g-2 mt-1">
@@ -170,8 +170,8 @@ export default function AdmissionsSessionBanner() {
                       >
                         <span className="fs-5 flex-shrink-0">🌱</span>
                         <div>
-                          <div className="fw-bold text-warning small">Batch 1</div>
-                          <div className="fw-bold text-white fs-6">April Intake</div>
+                          <div className="fw-bold text-warning small">{sessionInfo?.batch1Title || "Batch 1"}</div>
+                          <div className="fw-bold text-white fs-6">{sessionInfo?.batch1Intake || "April Intake"}</div>
                         </div>
                       </div>
                     </div>
@@ -186,8 +186,8 @@ export default function AdmissionsSessionBanner() {
                       >
                         <span className="fs-5 flex-shrink-0">☀️</span>
                         <div>
-                          <div className="fw-bold text-warning small">Batch 2</div>
-                          <div className="fw-bold text-white fs-6">July Intake</div>
+                          <div className="fw-bold text-warning small">{sessionInfo?.batch2Title || "Batch 2"}</div>
+                          <div className="fw-bold text-white fs-6">{sessionInfo?.batch2Intake || "July Intake"}</div>
                         </div>
                       </div>
                     </div>
@@ -209,7 +209,7 @@ export default function AdmissionsSessionBanner() {
           >
             <div className="d-flex align-items-center gap-2 text-white text-opacity-90 small">
               <span className="fs-5">ℹ️</span>
-              <span>Need help selecting the right class or batch? Connect with our admission desk.</span>
+              <span>{sessionInfo?.needHelp || "Need help selecting the right class or batch? Connect with our admission desk."}</span>
             </div>
 
             <div className="d-flex flex-wrap align-items-center justify-content-center gap-2 w-100 w-md-auto">
@@ -218,7 +218,7 @@ export default function AdmissionsSessionBanner() {
                 className="btn btn-warning rounded-pill fw-bold text-dark px-4 py-2 shadow-sm d-inline-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto"
                 style={{ fontSize: "0.92rem" }}
               >
-                <span>📝 Apply / Enquiry Now</span>
+                <span>{sessionInfo?.applyEnquiryNow || "📝 Apply / Enquiry Now"}</span>
               </Link>
               <a
                 href={`tel:${t.school.contacts.phonePrimary.replace(/\s/g, "")}`}
